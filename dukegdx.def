@@ -1,0 +1,5 @@
+// Keys
+tilefromtexture 9220 { file "tiles/9220.png" }
+
+// Armor
+tilefromtexture 9221 { file "tiles/9221.png" }

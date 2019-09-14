@@ -1,0 +1,963 @@
+
+define SECTOREFFECTOR 1
+define ACTIVATOR 2
+define TOUCHPLATE 3
+define ACTIVATORLOCKED 4
+define MUSICANDSFX 5
+define LOCATORS 6
+define CYCLER 7
+define MASTERSWITCH 8
+define RESPAWN 9
+define GPSPEED 10
+define ARROW 20
+define REVOLVER 21
+define UZISPRITE 22
+define RPGSPRITE 23
+define SHADOW 24 									
+define FLAMETHROWER 25                   
+define HEAVYHBOMB 26
+define VERYHOT 27                               
+define SHOTGUNSPRITE 28
+define SMOLSPIDER 29                          
+define HEALTHBOX 30
+define BULLETBOX 31
+define INVENTORYBOX 33
+define REDHIELD 37 											
+define BULLET 40
+define BATTERYBULLET 41
+define DOCTOR 42                     
+define RPGBULLET 44
+define CRYSTALBULLET 46
+define HBOMBBULLET 47
+define BULLETLOTS 48
+define SHOTGUNBULLET 49
+define GRAPES 51													
+define APPLE 52                                                        
+define MEDICINE 53
+define SHIELD 54
+define SNAKE 55                                                  
+define AIRTANK 56
+define REDKEY 57 													
+define REDPOISON 59											
+define BLUEKEY 60   											
+define BLUEPOISON 61									
+define MIRRORBROKE 70
+define MOONSKY1 80
+define MOONSKY2 81
+define MOONSKY3 82
+define MOONSKY4 83
+define BIGORBIT1 84
+define BIGORBIT2 85
+define BIGORBIT3 86
+define BIGORBIT4 87
+define BIGORBIT5 88
+define LA 89
+define BLUEHEALTH 100										
+define TECHLIGHT2 120
+define TECHLIGHTBUST2 121
+define TECHLIGHT4 122
+define TECHLIGHTBUST4 123
+define WALLLIGHT4 124
+define WALLLIGHTBUST4 125
+define ACCESSSWITCH 130
+define SLOTDOOR 132
+define LIGHTSWITCH 134
+define SPACEDOORSWITCH 136
+define SPACELIGHTSWITCH 138
+define FRANKENSTINESWITCH 140
+define NUKEBUTTON 142
+define MULTISWITCH 146
+define DOORSHOCK 160
+define DIPSWITCH 162
+define DIPSWITCH2 164
+define TECHSWITCH 166
+define DIPSWITCH3 168
+define ACCESSSWITCH2 170
+// define REFLECTWATERTILE 180
+define FLOORSLIME 200
+define BIGFORCE 230
+define EPISODE 247
+define MASKWALL9 255
+define W_LIGHT 260
+define SCREENBREAK1 263
+/*
+define SCREENBREAK2 264
+define SCREENBREAK3 265
+define SCREENBREAK4 266
+define SCREENBREAK5 267
+*/
+define SCREENBREAK6 268
+/*
+define SCREENBREAK7 269
+define SCREENBREAK8 270
+define SCREENBREAK9 271
+define SCREENBREAK10 272
+define SCREENBREAK11 273
+define SCREENBREAK12 274
+define SCREENBREAK13 275
+*/
+define MASKWALL1 285
+define W_TECHWALL1 293
+define W_TECHWALL2 297
+define W_TECHWALL3 301
+define W_TECHWALL4 305
+define WATERTILE2 336
+define BPANNEL1 341
+define PANNEL1 342
+define PANNEL2 343
+define WATERTILE 344
+define STATIC 351
+define W_SCREENBREAK 357
+define W_HITTECHWALL3 360
+define W_HITTECHWALL4 361
+define W_HITTECHWALL2 362
+define W_HITTECHWALL1 363
+define MASKWALL10 387
+define MASKWALL11 391
+// define DOORTILE22 395
+define FANSPRITE 407
+define FANSPRITEBROKE 411
+define GORGUL1 487										
+define VIEWSCREEN2 499
+define VIEWSCREENBROKE 501
+define VIEWSCREEN 502
+define GLASS 503
+define GLASS2 504
+define STAINGLASS1 510
+define MASKWALL5 514
+define SATELITE 516
+define FUELPOD 517
+define SLIMEPIPE 538
+define CRACK1 546
+define CRACK2 547
+define CRACK3 548
+define CRACK4 549
+define FOOTPRINTS 550
+define DOMELITE 551
+define CAMERAPOLE 554
+define CHAIR1 556
+define CHAIR2 557
+define BROKENCHAIR 559
+define MIRROR 560
+define WATERFOUNTAIN 563
+define WATERFOUNTAINBROKE 567
+define FEMMAG1 568
+define TOILET 569
+define STALL 571
+define STALLBROKE 573
+define FEMMAG2 577
+define REACTOR2 578
+define REACTOR2BURNT 579
+define REACTOR2SPARK 580
+define GRATE1 595
+define BGRATE1 596
+define SOLARPANNEL 602
+define ANTENNA 607
+define MASKWALL12 609
+define TOILETBROKE 615
+define ARTSTAT2 616
+define ARTSTAT1B 617
+define ARTSTAT3 618
+define ARTSTAT1 619
+define CAMERA1 621
+define BRICK 626
+define SPLINTERWOOD 630
+define ARTSTAT2B 633
+define BOLT1 634
+define W_NUMBERS 640
+define WATERDRIP 660
+define WATERBUBBLE 661
+define WATERBUBBLEMAKER 662
+define W_FORCEFIELD 663
+define VACUUM 669
+define FOOTPRINTS2 672
+define FOOTPRINTS3 673
+define FOOTPRINTS4 674
+define EGG 675
+define SCALE 678
+define CHAIR3 680
+define CAMERALIGHT 685
+define MOVIECAMERA 686
+define IVUNIT 689
+define POT1 694
+define POT2 695
+define POT3 697
+define ARTSTAT3B 700
+define WALLLIGHT3 701
+define WALLLIGHTBUST3 702
+define WALLLIGHT1 703
+define WALLLIGHTBUST1 704
+define WALLLIGHT2 705
+define WALLLIGHTBUST2 706
+define LIGHTSWITCH2 712
+define WAITTOBESEATED 716
+define DOORTILE14 717
+define STATUE 753
+define CARPET 762
+define VASE 765
+define VASE1 768                 
+define VASE2 769
+define VASE3 774
+define VASE4 779
+define DOORTILE16 781
+define SKULL 792                               
+define OJ 806
+define MASKWALL13 830
+define HURTRAIL 859
+define POWERSWITCH1 860
+define LOCKSWITCH1 862
+define POWERSWITCH2 864
+define ATM 867
+define STATUEFLASH 869
+define ATMBROKE 888
+define BIGHOLE2 893
+define KILLWEAPON 901  												
+define QUEBALL 902
+define POCKET 903
+define PUFFSMOKE 904 											
+define TREE1 908
+define TREE2 910
+define CACTUS 911
+define MASKWALL2 913
+define MASKWALL3 914
+define MASKWALL4 915
+define FIREEXT 916
+define CRYSTALALL 921
+define NEON1 925
+define NEON2 926
+define CACTUSBROKE 939
+define BOUNCEMINE 940
+define BROKEFIREHYDRENT 950
+define BOX 951
+define BULLETHOLE 952
+define BOTTLE1 954
+define BOTTLE2 955
+define BOTTLE3 956
+define BOTTLE4 957
+define FEMPIC5 963
+define FEMPIC6 964
+define FEMPIC7 965
+define HYDROPLANT 969
+define OCEANSPRITE1 971
+define OCEANSPRITE2 972
+define OCEANSPRITE3 973
+define OCEANSPRITE4 974
+define OCEANSPRITE5 975
+define GENERICPOLE 977
+define CONE 978
+define HANGLIGHT 979
+define HYDRENT 981
+define MASKWALL14 988
+define TIRE 990
+define ARTSTAT5 994
+define ARTSTAT6 995
+define ARTSTAT4 996
+define ARTSTAT4B 997
+define BROKEHYDROPLANT 1003
+define ARTSTAT5B 1005
+define NEON3 1007
+define NEON4 1008
+define NEON5 1009
+define BOTTLE5 1012
+define BOTTLE6 1013
+define BOTTLE8 1014
+define SPOTLITE 1020
+define HANGOOZ 1022
+define MASKWALL15 1024
+define VASE5 1025                                                                           
+define BIGSMOKE 1026 													
+define GLASSPIECES 1031
+define HORSELITE 1034
+define NEON6 1046
+define MASKWALL6 1059
+define CLOCK 1060
+define SHADOWNET 1062
+define BROKENCLOCK 1067
+define PLUG 1069
+define OOZFILTER 1079
+define FLOORPLASMA 1082
+define REACTOR 1088
+define REACTORSPARK 1092
+define REACTORBURNT 1096
+define DOORTILE15 1102
+define HANDSWITCH 1111
+define CIRCLEPANNEL 1113
+define CIRCLEPANNELBROKE 1114
+define PULLSWITCH 1122
+define MASKWALL8 1124
+define BIGHOLE 1141
+define ALIENSWITCH 1142
+// define DOORTILE21 1144
+define HANDPRINTSWITCH 1155
+define BOTTLE10 1157
+define VASE6 1158                                                             
+define BOTTLE12 1159
+define FORPITCHER1 1160                                                 
+define FORPITCHER2 1161
+define FORPITCHER3 1162
+define FORPITCHER4 1163
+define BOTTLE17 1164
+define BOTTLE18 1165
+define BOTTLE19 1166
+define DOORTILE17 1169
+define MASKWALL7 1174
+define JAILBARBREAK 1175
+// define DOORTILE11 1178
+// define DOORTILE12 1179
+define VENDMACHINE 1212
+define VENDMACHINEBROKE 1214
+define COLAMACHINE 1215
+define COLAMACHINEBROKE 1217
+define WEB 1221                                                     			 
+define BIGSPIDER 1222                                                             
+// define BARBROKE 1225
+define BLOODPOOL 1226
+define NUKEBARREL 1227
+define NUKEBARRELDENTED 1228
+define NUKEBARRELLEAKED 1229
+define CANWITHSOMETHING 1232
+define MONEY 1233
+define BANNER 1236
+define EXPLODINGBARREL 1238
+define EXPLODINGBARREL2 1239
+define AALIQ 1240
+define SEENINE 1247
+define SEENINEDEAD 1248
+define MASK 1250
+define WEBMOON 1255
+define ARTSTAT6B 1260
+define TRANSPORTERBEAM 1261
+define RAT 1267
+define TRASH 1272
+define BLANKSCREEN 1293
+define BIRDFECES 1294                                                  
+define FEMPIC3 1298
+define FEMPIC4 1306
+define BABA 1312
+define ALLFISH 1317
+define NEWBOMB 1321
+define STRAW4 1323
+define GORGUL2 1325            									     
+define REPEATSPAWN 1334
+define FEM6PAD 1335
+define OSTRICH 1336    												
+define HELECOPT 1346
+define FETUSJIB 1347
+define YELLOWKEY 1348                                            
+define DIESKELETON 1353   										
+define INDY 1355
+define FETUS 1358
+define FETUSBROKE 1359
+define BIRDDIE 1352  													
+define LUKE 1354
+define COOLEXPLOSION1 1360
+define WATERSPLASH2 1380
+define FIREVASE 1390
+define SCRATCH 1393
+define PUDDLE 1395
+define APLAYERTOP 1400
+define APLAYER 1405
+define PLAYERONWATER 1420
+define HEROLYINGDEAD 1518
+define HEROTORSO 1520
+define HEROGUN 1528
+define HEROLEG 1536
+define SHARK 1550
+define BLOOD 1620
+define FIRELASER 1625
+define TRANSPORTERSTAR 1630
+define SPIT 1636
+define LOOGIE 1637
+define FIST 1640
+define FREEZEBLAST 1641
+define DEVISTATORBLAST 1642
+define SHRINKSPARK 1646
+define TONGUE 1647
+define MORTER 1650
+define SHRINKEREXPLOSION 1656
+define RADIUSEXPLOSION 1670
+define FORCERIPPLE 1671
+define SPECTRAL 1680                                          
+define PEPER 1681
+define IDOL 1682
+define SPECTRALTOP 1705
+define LIMON 1715
+define KIWI 1725
+define SPECTRALDSPRITE 1734
+define SPECTRALONTOILET 1741
+define SNAKEMASK 1744
+define HEADJIB1 1768
+define ARMJIB1 1772
+define LEGJIB1 1776
+define HANGMAN 1820
+define DEFISPAWN 1821
+define OCTATOP 1845
+define OCTADEADSPRITE 1855
+define INNERJAW 1860
+define LBALLE 1880
+define EXPLOSION2 1890
+define BATSTAYPUT 1920
+define BAT 1921
+define SPECTRAL2 1960                             
+define SKELETON 2000                         
+define FORAUTO 2001
+define MOONDISTL 2045
+define SKELETONDEADSPRITE 2060
+define SKELETTOP 2061
+define DEMON 2120                               
+define AGENT 2121
+define FORMORFING 2150
+define GREENDEMON 2160
+define FORWIZZ 2165
+define DEMONDEADSPRITE 2185
+define FECES 2200
+define DEMONHEAD1 2201
+define DEMONARM1 2205
+define DEMONLEG1 2209
+define EXPLOSION2BOT 2219
+define USERWEAPON 2235
+define HEADERBAR 2242
+define JIBS1 2245
+define JIBS2 2250
+define JIBS4 2260
+define JIBS5 2265
+define BURNING 2270
+define FIRE 2271
+define BLOODSPLAT1 2296
+define BLOODSPLAT3 2297
+define OOZ 2300
+define WALLBLOOD1 2301
+define WALLBLOOD2 2302
+define WALLBLOOD3 2303
+define WALLBLOOD4 2304
+define WALLBLOOD5 2305
+define WALLBLOOD6 2306
+define WALLBLOOD7 2307
+define WALLBLOOD8 2308
+define BURNING2 2310
+define FIRE2 2311
+define CRACKKNUCKLES 2324
+define SMALLSMOKE 2329
+define SMALLSMOKEMAKER 2330
+define FLOORFLAME 2333
+define FLOWER 2360									
+define GNAWER 2370                       
+define WATERDRIPSPLASH 2380
+define SCRAP6 2390
+define SCRAP1 2400
+define SCRAP2 2404
+define SCRAP3 2408
+define SCRAP4 2412
+define SCRAP5 2416
+define ORGANTIC 2420
+define BETAVERSION 2440
+define PLAYERISHERE 2442
+define PLAYERWASHERE 2443
+define SELECTDIR 2444
+define F1HELP 2445
+define NOTCHON 2446
+define NOTCHOFF 2447
+define BACKGROUNDSCREEN 2448
+define HEROICON 2452
+define BADGUYICON 2453
+define FOODICON 2454
+define GETICON 2455
+define MENUSCREEN 2456
+define MENUBAR 2457
+define KILLSICON 2458
+define MEDICINE_ICON 2460
+define HEAT_ICON 2461
+define BOTTOMSTATUSBAR 2462
+define BOOT_ICON 2463
+define FRAGBAR 2465
+define REDKEY_ICON 2467
+define AIRTANK_ICON 2468
+define SNAKE_ICON 2469
+define YELLOWKEY_ICON 2470
+define ACCESS_ICON 2471
+define DIGITALNUM 2472
+define HEROCAR 2491
+define CAMCORNER 2482
+define CAMLIGHT 2484
+define LOGO 2485
+define TITLE 2486
+define NUKEWARNINGICON 2487
+define MOUSECURSOR 2488
+define SLIDEBAR 2489
+define DREALMS 2492
+define BETASCREEN 2493
+define WINDOWBORDER1 2494
+define TEXTBOX 2495
+define WINDOWBORDER2 2496
+define HERONUKEM 2497
+define THREEDEE 2498
+define INGAMEHEROTHREEDEE 2499
+define DEVISTATOR 2510
+define KNEE 2521
+define CROSSHAIR 2523
+define FIRSTGUN 2524
+define FIRSTGUNRELOAD 2528
+define FALLINGCLIP 2530
+define CLIPINHAND 2531
+define HAND 2532
+define SHELL 2533
+define SHOTGUNSHELL 2535
+define CHAINGUN 2536
+define RPGGUN 2544
+define RPGMUZZLEFLASH 2545
+define FREEZE 2548
+define CATLITE 2552
+define SHRINKER 2556
+define HANDHOLDINGLASER 2563
+define TRIPBOMB 2566
+define LASERLINE 2567
+define HANDHOLDINGACCESS 2568
+define HANDREMOTE 2570
+define HANDTHROW 2573
+define TIP 2576
+define GLAIR 2578
+define SCUBAMASK 2581
+define SPACEMASK 2584
+define FORCESPHERE 2590
+define SHOTSPARK1 2595
+define RPG 2605
+define LASERSITE 2612
+define SHOTGUN 2613
+define WIZZ 2630
+define MAXLIFT 2631
+define WIZZSHOOT 2660
+define WIZZLOB 2670
+define BOSSTOP 2696
+define MERCURY 2710														
+define SANDMAN 2760                                                          
+define SPINNINGNUKEICON 2813
+define BIGFNTCURSOR 2820
+define SMALLFNTCURSOR 2821
+define STARTALPHANUM 2822
+define ENDALPHANUM 2915
+define BIGALPHANUM 2940
+define BIGPERIOD 3002
+define BIGCOMMA 3003
+define BIGX 3004
+define BIGQ 3005
+define BIGSEMI 3006
+define BIGCOLIN 3007
+define THREEBYFIVE 3010
+define BIGAPPOS 3022
+define BLANK 3026
+define MINIFONT 3072
+define BUTTON1 3164
+define GLASS3 3187
+define RESPAWNMARKERRED 3190
+define RESPAWNMARKERYELLOW 3200
+define RESPAWNMARKERGREEN 3210
+define BONUSSCREEN 3240
+define VIEWBORDER 3250
+define VICTORY1 3260
+define ORDERING 3270
+define TEXTSTORY 3280
+define BORNTOBEWILDSCREEN 3370
+define BLIMP 3400
+define FEM9 3450
+define FOOTPRINT 3701
+define POOP 3998
+define FRAMEEFFECT1 3999
+
+
+define KNEE_WEAPON         0
+define PISTOL_WEAPON       1
+define SHOTGUN_WEAPON      2
+define CHAINGUN_WEAPON     3
+define RPG_WEAPON          4
+define HANDBOMB_WEAPON     5
+define SHRINKER_WEAPON     6
+define DEVISTATOR_WEAPON   7
+define TRIPBOMB_WEAPON     8
+define FREEZE_WEAPON       9
+
+
+define faceplayer 1
+define geth 2
+define getv 4
+define randomangle 8
+define faceplayerslow 16
+define spin 32
+define faceplayersmart 64
+define fleeenemy 128
+define jumptoplayer 257
+define seekplayer 512
+define furthestdir 1024
+define dodgebullet 4096
+
+
+define NO       0
+define YES      1
+
+
+define pstanding 1
+define pwalking 2
+define prunning 4
+define pducking 8
+define pfalling 16
+define pjumping 32
+define phigher 64
+define pwalkingback 128
+define prunningback 256
+define pkicking 512
+define pshrunk 1024
+define pjetpack 2048
+define ponsteroids 4096
+define ponground 8192
+define palive 16384
+define pdead 32768
+define pfacing 65536
+
+define GET_SHIELD       1
+define GET_SCUBA        2
+define GET_REDKEY      4
+define GET_ACCESS       6
+define GET_MEDICINE     9
+define GET_BLUEPOISON       10
+
+// ЗВУКИ
+
+define KICK_HIT                                  0
+define PISTOL_RICOCHET                  1
+define PISTOL_BODYHIT                    2
+define PISTOL_FIRE                            3
+define EJECT_CLIP                              4
+define INSERT_CLIP                            5
+define CHAINGUN_FIRE                      6
+define RPG_SHOOT                      7
+define POOLBALLHIT                          8
+define RPG_EXPLODE                  9
+define CAT_FIRE                                 10
+define SHRINKER_FIRE                      11
+define VIRTUAL                                   12         //  Бесконечный полет
+define PIPEBOMB_BOUNCE              13
+define PIPEBOMB_EXPLODE             14
+define LASERTRIP_ONWALL              15
+define LASERTRIP_ARMING               16
+define LASERTRIP_EXPLODE             17
+define VENT_BUST                              18
+define GLASS_BREAKING                    19
+define GLASS_HEAVYBREAK               20
+define SHORT_CIRCUIT                       21
+define ITEM_SPLASH                           22
+define HERO_BREATHING                   23
+define HERO_EXHALING                      24
+define HERO_GASP                              25
+define SLIM_RECOG                             26
+define BIGHART                                    27              //    Низкое буханье(( окружение )
+define SIMPLY                                      28              //    Капающая вода ( зацикленая )
+define ENDSEQVOL3SND2                   29
+define ENDSEQVOL3SND3                   30             //    Ликующая толпа
+define HEADER_WALK                          31             //    ГОЛОВАСТИК  ( передвижение )
+define SUPER2                                      32             //   О кей ,супермен !  ( оператор )
+define HERO_CRACK                             33
+define SLIM_ATTACK                             34
+define SOMETHINGHITFORCE              35
+define NOTSOME                                   36        //   Не угадал ( коментарий )
+define HERO_KILLED1                          37
+define HERO_GRUNT                            38
+define HERO_HARTBEAT                      39
+define HERO_ONWATER                       40
+define HERO_DEAD                               41
+define HERO_LAND                               42
+define HERO_WALKINDUCTS               43
+define DEVIL2                                        44          //  Смех нездоровый ( пугалка зацикленная )
+define HERO_YES                                 45
+define SHORTING                                  46          //  Короткое замыкание ( окружение )
+define STEPONGLASS                           47          //  Хождение по стеклам  
+define HERO_UNDERWATER                48
+define NOTFOR                                      49                    //        Кабина занята  ( оператор )
+define HMANSONG                                 50                    //       Активация ( палач поет )
+define HMANSTEP                                  51                    //       Палач шагает
+define DANGOR                                      52                    //        Осторожно горгул  ( оператор )              
+define NOTROUGH                                 53                    //        Здесь не пролезть ( оператор )
+define KEROSENE                                  54                    //        Керосин
+define TOSEE                                          55                   //        Тебя засекли ( оператор )
+define HMANPAIN                                    56                  //        короткий с_мешок  ( палач )
+define OPONLINE                                    57                   //       Оператор на связи
+define LETSGO                                        58                   //       Ну, давай еще немножко ( оператор )
+define FORSPIDER                                  59                   //      Тихо,здесь кто то есть  ( оператор )
+define EXIT                                              60                   //       Для выхода ESC ( оператор )
+define LIZARD_BEG                                61
+define AGENT01                                      62                    //       Агенство нашло возможность помочь ( агент )
+define LIZARD_DEATH                            63
+define LIZARD_SPIT                                64
+define LBALLE1_HISSRATTLE                65
+define LBALLE1_HISSSCREECH             66
+define DENRA                                          67                   //   Осторожно справа ( оператор )
+define FLESH_BURNING                         68
+define SQUISHED                                    69
+define TELEPORTER                               70
+define ELEVATOR_ON                             71
+define HERO_KILLED3                            72
+define ELEVATOR_OFF                            73
+define DOOR_OPERATE1                        74
+define AUTOBUS                                      75                   //   Автобус
+define SWITCH_ON                                 76
+define FAN                                               77
+define HERO_GETWEAPON3                  78
+define MIND                                             79                    //   Думай ( оператор )    ???
+define FLUGER                                        80                    //    Флюгер
+define EARTHQUAKE                               81
+define INTRUDER_ALERT                        82
+define END_OF_LEVEL_WARN                83
+define PRESSING                                     84                   //    Пресс
+define AM_HERE                                      85
+define TUNELL                                         86                    //   Тунель времени открывается
+define GEARS_GRINDING                        87
+define BUBBLE_AMBIENCE                    88
+define CRESCENDO                                 89                    //  Крещендо ( тарелка по нарастающей )
+define SEWER_AMBIENCE                      90
+define PRESSS                                         91                    //   Опускающийся потолок
+define SOMETHING_DRIPPING                92
+define STEAM_HISSING                            93
+define BATSOUND                                     94                    //    Летучая мыша
+define THE_FLY                                        95
+define WIZ1_ROAM                                   96
+define WIZ1_RECOG                                 97
+define WIZ1_ATTACK1                              98
+define WIZ1_PAIN                                     99
+define WIZ1_DYING                                  100
+define MEMA_ROAM                                  101
+define MEMA_RECOG                                102
+define MEMA_ATTACK                               103
+define MEMA_PAIN                                    104
+define MEMA_DYING                                 105
+define SHDWATT                                       106
+define HERO_GETWEAPON2                    107
+define SAMA_DYING                                 108
+define SHOTGUN_FIRE                             109
+define PRED_ROAM                                  110
+define PRED_RECOG                                111
+define PRED_ATTACK                               112
+define PRED_PAIN                                    113
+define PRED_DYING                                 114
+define CAPT_ROAM                                   115
+define CAPT_ATTACK                                 116
+define CAPT_RECOG                                 117
+define CAPT_PAIN                                     118
+define CAPT_DYING                                  119
+define SKEL_ROAM                                   120
+define SKEL_RECOG                                 121
+define SKEL_ATTACK                                122
+define SKEL_PAIN                                     123
+define SKEL_DYING                                  124
+define RECO_ROAM                                  125
+define RECO_RECOG                                126
+define RECO_ATTACK                                127
+define RECO_PAIN                                     128
+define BIRD01                                            129                //    Птица какучая
+define LBALL_ROAM                                  130
+define LBALL_RECOG                                131
+define LBALL_ATTACK1                              132
+define LBALL_PAIN                                     133
+define LBALL_DYING                                 134
+define COMM_ROAM                                  135
+define COMM_RECOG                                136
+define COMM_ATTACK                               137
+define COMM_PAIN                                    138
+define COMM_DYING                                 139
+define AXEINFLY                                        140         //   Топор в полете
+define AXEINBODY                                     141        //    Попадание топора в героя
+define AXEINWALL                                     142         //   Попадание топора в стену
+define OCTA_PAIN                                      143
+define OCTA_DYING                                   144
+define CAPT_ROAM2                                  145
+define HERORUN                                       146          //   Звук шагов при беге
+define NOSEE                                             147          //    Не вижу тебя ( оператор )
+define SAMA_WALK                                    148
+define SLIM_DYING                                    149
+define SAMA_ROAM                                    150
+define SAMA_RECOG                                  151
+define SAMA_ATTACK1                               152
+define SAMA_PAIN                                      153
+define WIZ1_ATTACK2                                154
+define COMM_SPIN                                     155
+define WIZ1_WALK                                     156
+define LBALL_ATTACK2                              157
+define THUD                                                158
+define OCTA_ATTACK2                                159
+define WIERDSHOT_FLY                            160
+define TURNDOOR                                      161             //    Дверь поворотная
+define TAPLAP                                             162             //     Вляпался по крупному ( оператор )
+define SLIM_ROAM                                     163
+define LADY_SCREAM                                164
+define ENIGMA                                            165             //    Загадочное действие  ( кратко )
+define OLDLIFT                                           166             //    Ржавый подъемник
+define SKY_TH                                            167             //    Гром небесный
+define BHAHA2                                            168             //     Бес прикалывается
+define SHOTGUN_COCK                             169
+define PRESSURI                                        170
+define DIAFRA                                              171              //   Дверь диафрагма
+define GENERIC_AMBIENCE3                     172
+define GENERIC_AMBIENCE4                     173
+define MYSTIFIE                                          174
+define WOLF                                                175              //  Волк ( звук окружающий )
+define SAMA_ATTACK2                                176
+define HEALTH                                             177
+define STRAUS1                                           178
+define POISON                                             179
+define CASH                                                 180
+define L_CREAK                                           181
+define BOGDOOR                                         182             //   Скользящая ржавая дверь
+define DEVIL                                                 183
+define PROBLEM2                                        184
+define OFFICE1                                             185
+define AMBIENCE10                                     186
+define OFFICE2                                             187
+define MODERN                                           188
+define AGAIN                                                189              //  Мясо2
+define BIGMETOP                                        190
+define GULLS02                                           191
+define STEEL                                                192
+define CHOISING                                          193
+define FIRE_CRACKLE                                 194              //   Большой огонь
+define SUCCESS                                          195              //     Желаем успеха ( агент )
+define SUCCESS2                                        196              //     Желаем успеха ( агент )
+define AGENT02                                           197              //     Желаем успеха ( агент )
+define SKEL_CAPTURE_HERO                    198
+define LEVEL                                                199              //     Звук при перезагрузке уровня
+define HERO_LAND_HURT                          200
+define HERO_HIT_STRIPPER1                    201
+define COWARD                                           202               //    Ну как прогулка  ( оператор )
+define HERO_KILLED2                                 203
+define PRED_ROAM2                                   204
+define SKEL_ROAM2                                    205
+define HERO_GETWEAPON1                       206
+define HERO_SEARCH2                               207
+define HERO_CRACK2                                  208
+define HERO_SEARCH                                  209
+define HERO_GET                                         210
+define HERO_LONGTERM_PAIN                   211
+define MONITOR_ACTIVE                              212
+define NITEVISION_ONOFF                           213
+define HERO_HIT_STRIPPER2                     214
+define HERO_CRACK_FIRST                         215
+define HERO_USEMEDKIT                            216
+define SILENCE                                             217                  //     Слишком тихо ( оператор )
+define KEYDOOR                                          218                  //    Двеь открываемая ключем
+define SELECT_WEAPON                             219
+define WATER_GURGLE                               220
+define HERO_GETWEAPON4                        221
+define GARDIN                                              222                   //     гардина
+define JIBBED_ACTOR2                                223
+define JIBBED_ACTOR3                                224
+define JIBBED_ACTOR4                                225
+define SUPERLEVEL                                      226                   //    4 уровень  - Амба
+define SUCCESS3                                          227                   //    Желаем успеха  ( 1 уровень )
+define JIBBED_ACTOR7                                 228
+define HERO_GOTHEALTHATLOW                 229
+define ARIA                                                      230                 //     Ария ,, Мясо ,, с аплодисментами
+define BONES03                                              231
+define  MER_BOMBFLY                                  232                 //     Летающая бомба Меркуримана
+define OST_D                                                  233
+define CARDINAL                                             234                 //     Ее Высочество ( клавесин кардинала )
+define DINNER                                                235                    
+define SANDSOUND                                        236                  //    Пересыпающийся песок
+define FIRE_F                                                  237                 //    Огонь  ( колонны в Пирамиде )
+define REMEMBER                                         238                  //    Диктор
+define RATTLE                                                239                   //   Гремучая змея ( погремушка )
+define NOWAY                                               240                    //   Дальше дороги нет
+define HOOFS                                                241                    //    копыта
+define SHUTTLEAMB                                     242                    //    гуделка пекельная
+define EXITMENUSOUND                              243
+define FLY_BY                                              244
+define HERO_SCREAM                                  245
+define SHRINKER_HIT                                   246
+define RATTY                                                  247                    //   Крыски побежали
+define INTO_MENU                                        248
+define BONUSMUSIC                                     249                    //   Музыка между уровнями
+define RING                                                    250                    //   Колокольчик ( стоп для ENIGMA )
+define CSTL_P                                                251                    //   Двигающаяся решетка
+define HMANATTACK                                      252                    //   Атака палача ( работа )
+define SKEL_ROAM3                                     253
+define ORIENTAL                                           254
+define LBALL_JETSND                                  255
+define TOWERFLAG                                       256                    //  Башенный флаг
+define HOWOUT                                             257                    //  Певчая птица
+define BRIDGE                                               258                    //    Подъемный мост
+define OPERATORS4                                      259                    //   Шумелка операторская
+define DOORPSS                                            260                    //    Помповая двеь
+define OPERATORS                                        261                    //   Бики-жмяки копьютерные
+define T_FAN                                                  262                     //    Вентилятор
+define JIBBED_ACTOR13                               263
+define HERO_GETWEAPON6                         264
+define JIBBED_ACTOR8                                 265
+define JIBBED_ACTOR9                                 266
+define JIBBED_ACTOR10                               267
+define JIBBED_ACTOR11                               268
+define JIBBED_ACTOR12                               269
+define HERO_KILLED4                                   270
+define HERO_KILLED5                                   271
+define PREZIDENT                                         272                     //      президент
+define HERO_STEPONFECES                         273
+define HERO_LONGTERM_PAIN2                   274            
+define HERO_LONGTERM_PAIN3                   275      
+define HERO_LONGTERM_PAIN4                   276
+define COMPANB2                                          277
+define KTIT                                                      278
+define HEROWALK                                          279                //   Звук шагов
+define STEPNIT                                               280
+define SULTAN                                                281                //   Гонг
+define BONGO                                                 282                //   Бонго (  муз.инстр. )
+define SLIM_HATCH                                        283
+define RIPHEADNECK                                     284
+define MAGICRYSTALL                                   285                //  Магический кристал
+define OPERATORS2                                      286                //  Гуделка компьютерная
+define OPERATORS3                                      287                //  Болталка операторская
+define SHUTTLE                                             288                //   ШАТЛ
+define ENDSEQVOL3SND5                             289
+define ENDSEQVOL3SND6                             290
+define ENDSEQVOL3SND7                             291
+define ENDSEQVOL3SND8                             292
+define ENDSEQVOL3SND9                             293
+define WHIPYOURASS                                   294
+define ENDSEQVOL2SND1                             295
+define ENDSEQVOL2SND2                             296
+define ENDSEQVOL2SND3                             297
+define ENDSEQVOL2SND4                             298
+define ENDSEQVOL2SND5                             299
+define ENDSEQVOL2SND6                             300
+define ENDSEQVOL2SND7                             301
+define GORGUL                                               302            //  Горгул активируется
+define SOMETHINGFROZE                              303
+define HERO_LONGTERM_PAIN5                   304
+define HERO_LONGTERM_PAIN6                   305
+define HERO_LONGTERM_PAIN7                   306
+define HERO_LONGTERM_PAIN8                   307
+define KLAVA                                                    308             //   Монолог уборщицы
+define MAT                                                       309             //   Это еще не все... ( тень )
+define SLADE                                                   310
+define KAMORA                                                311              //    Маска змееплюйка
+define METDOOR                                             312              //   Падающая решетка
+define BOMBSPAWN                                       313              //  Вращающаяся мина ( порождаемая )                   
+define SHARKSOUND                                      314               //   Акула
+define OFNOISE                                               315               //    Офисный шум
+define WATCIRC                                               316              //   Льющаяся вода ( обычно )
+define TIME                                                      317
+define SOFTLAP                                               318             //   Вода - плеск
+define OIL2                                                       319             //   Огонь  ( небольшой )
+define ZEFIR                                                     320            //   Легкий ветер
+define FLYBAT                                                  321            //   Шелест кожанных крыльев
+define SHDWWALK                                           322            //   Тень ( ходит - бродит )
+define THUNDER                                               323
+define CANE00                                                   324           //   Болотные стрекоталки
+define DUCK                                                      325            //   Крякалка
+define BOG_P                                                    326           //   Болото с плюхом
+define BUBBY                                                   327
+define WIND_H                                                 328
+define LONGBEL                                               329            //   Колокол
+define SQUEAKY                                               330            //   Каменный стоп
+define ST_MACH                                               331
+define UFO_STOP                                             332           //   НЛО - Стоп
+define UFO_PLAY                                             333           //   НЛО - Полет
+define SH_DOOR                                              334
+define OLD_MASH                                            335            //  Древний механизм ( большая дверь замка )
+define SKAVEN                                                  336           //   Знатный шипун ( стоп большой замковой двери )
+define PUTSH                                                    337           //   Упавшая гильза
+define CSTL_S                                                   338           //   Стоп для разных железяк ( дверей и т.д. )
+define SPIDER                                                   339           //   Пауки ( хрусь - хрусь )

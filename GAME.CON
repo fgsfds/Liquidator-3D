@@ -1,0 +1,4690 @@
+
+include TREE.CON
+include SOUND.CON
+
+state headhitstate ends
+
+move WEAMFLY 60
+
+state vz10
+	ifhitweapon
+	{ 
+		ifactor RPGBULLET { shoot RPG }
+		else
+			spawn  BURNING
+			spawn EXPLOSION2
+			debris SCRAP2 10
+			sound PIPEBOMB_EXPLODE spawn BIGSMOKE spawn BIGSMOKE
+			hitradius 1024 WEAKEST WEAK MEDIUMSTRENGTH TOUGH
+			ifpdistl 4000 { addphealth -20 quote 108 palfrom 48 52 soundonce HERO_LONGTERM_PAIN3 }
+			ifrnd 256 { killit }
+	}
+ends
+
+state vzsp10
+	ifhitweapon
+	{
+		debris SCRAP2 5
+		ifrnd 256 { killit }
+	}
+ends
+
+state quikget
+	soundonce HERO_GET
+    palfrom 16 0 32
+    killit
+ends
+
+move RESPAWN_ACTOR_FLAG
+
+state getcode
+     soundonce HERO_GET
+     ifrespawn
+    {
+        move RESPAWN_ACTOR_FLAG
+        spawn RESPAWNMARKERRED
+        cstat 32768
+    }
+    else killit
+ends
+
+state delete_enemy killit ends
+
+action ASHARKCRUZING 0 8 5 1 10
+action ASHARKFLEE    0 8 5 1 10
+action ASHARKATACK   0 8 5 1 6
+action ASHARKSHRUNK  0 8 5 1 10
+
+move SHARKVELS 24
+move SHARKFASTVELS 72
+move SHARKFLEEVELS 40
+move SHARFRO
+
+state shark10
+	ifaction ASHARKFLEE
+    {
+        ifcount 16 ifrnd 48 { action ASHARKCRUZING soundonce SHARKSOUND move SHARKVELS randomangle geth }
+    }
+    else ifaction ASHARKCRUZING
+    {
+        ifcansee ifcount 48 ifrnd 2 { action ASHARKATACK soundonce SHARKSOUND move SHARKFASTVELS faceplayerslow getv break }
+        ifcount 32 ifnotmoving
+        {
+            ifrnd 128 move SHARKVELS randomangle geth
+            else move SHARKFASTVELS randomangle geth
+        }
+    }
+    else ifaction ASHARKATACK
+    {
+        ifcount 2
+        {
+       ifpdistl 1024 { spawn WATERBUBBLE spawn WATERBUBBLE spawn WATERBUBBLE spawn WATERBUBBLE }
+            ifpdistl 1280
+            {
+                ifp palive ifcanshoottarget
+                {
+                    sound HERO_GRUNT
+                    palfrom 32 32
+                    addphealth SHARKBITESTRENGTH
+                    spawn WATERBUBBLE spawn WATERBUBBLE spawn WATERBUBBLE spawn WATERBUBBLE
+                }
+                action ASHARKFLEE
+                move SHARKFLEEVELS fleeenemy
+            }
+        }
+        else ifnotmoving
+            { ifcount 32 { action ASHARKCRUZING move SHARKVELS randomangle geth } }
+        else ifcount 48 ifrnd 2
+            { action ASHARKCRUZING move SHARKFASTVELS randomangle geth }
+    }
+    ifhitweapon
+    	{
+    	   		addkills -1
+	       		ifdead
+       			addkills -1
+				ifstrength 0 { spritepal 2 sound SQUISHED debris SCRAP3 10 ifrnd 256 { killit } }
+    	}
+sizeat 15 15
+ends
+
+actor SHARK SHARKSTRENGTH ASHARKCRUZING	SHARKVELS randomangle geth
+		state shark10 cstat 257
+enda
+
+action BURNING_FLAME    0   12   1   1   2
+move BURNING_VELS 
+
+state burningstate
+    ifcount 128 { sizeat 8 8 sizeat 8 8 ifactioncount 36 killit }
+    else
+    {
+        ifmove 0 move BURNING_VELS
+        else { ifspawnedby 3 { sizeat 40 40 sizeat 40 40 } }
+		else sizeat 52 52
+        ifp palive ifpdistl 844 ifrnd 32 ifcansee { soundonce HERO_LONGTERM_PAIN addphealth -1 palfrom 48 52 }
+        else
+	        ifcansee ifpdistl 5000 sizeat 40 40
+			ifactioncount 4 { sizeat 30 30 }
+		else ifspawnedby MORTER { fall ifactioncount 12 { killit } }
+		else ifspawnedby DEMON
+			{
+			fall
+				ifactioncount 24 sizeat 16 16
+				ifactioncount 48 { killit }
+			}
+    }
+ends
+
+actor BURNING WEAK BURNING_FLAME soundonce FIRE_CRACKLE ifactioncount 48 { killit }
+    state burningstate
+enda
+
+actor BURNING2 WEAK BURNING_FLAME
+    state burningstate
+enda
+
+action ACRYSTAL10  0 4 1 1 40
+action ACRYSTAL20  0 4 1 1 40
+action ACRYSTAL30  0 4 1 1 40
+action ACRYSTAL40  0 4 1 1 40
+move CRYFACE 30 -52
+
+state crystal20
+			ifspawnedby WATERFOUNTAINBROKE sizeat 5 5
+	else ifspawnedby CRYSTALALL { } else sizeat 5 5 cstat 258
+			ifpdistl RETRIEVEDISTANCE ifcansee
+{
+	ifhitspace { addphealth 100 soundonce HEALTH }
+	ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifp palive ifcount 6 ifpdistl RETRIEVEDISTANCE
+    	ifhitspace ifpinventory GET_SHIELD SHIELD_AMOUNT
+        ifcanseetarget
+    {
+        addinventory GET_SHIELD SHIELD_AMOUNT
+        ifspawnedby SHIELD state getcode
+    }
+	ifaction 0 { ifhitspace { action ACRYSTAL20 } }
+		ifaction ACRYSTAL20 { spritepal 3 }
+	ifspritepal 3 { ifhitspace ifactioncount 4 { action ACRYSTAL30 } }
+		ifaction ACRYSTAL30 { spritepal 5 }
+	ifspritepal 5 { ifhitspace ifactioncount 4 { action ACRYSTAL40 } }
+		ifaction ACRYSTAL40 { spritepal 9 cstat 257 }
+	ifspritepal 9 { ifhitspace ifactioncount 4 { action ACRYSTAL10 } }
+}
+	ifaction ACRYSTAL10 { spritepal 10 }
+	ifspritepal 10
+		{
+			ifactioncount 0 { soundonce MAGICRYSTALL move CRYFACE faceplayer }
+			ifactioncount 16 { soundonce GLASS_HEAVYBREAK spritepal 2 lotsofglass 30 }
+			ifactioncount 18 { resetplayer killit }
+		}
+ends
+
+actor CRYSTALALL 0
+state crystal20 fall
+enda
+
+actor WATERBUBBLEMAKER 0 0 randomangle
+	spritepal 1 ifcansee { ifpdistl 4000 { ifinwater { ifrnd 2 spawn WATERBUBBLE } } }
+enda
+
+action BUBBLE
+action CRACKEDBUBBLE    1
+move BUBMOVE                -10 -36
+move BUBMOVEFAST        -10 -52
+
+actor WATERBUBBLE 0 BUBBLE BUBMOVE getv geth randomangle spritepal 1
+    ifaction CRACKEDBUBBLE
+    {
+		ifceilingdistl 20 { killit }
+        ifinwater ifrnd 192 killit
+        ifactioncount  210 killit
+        ifonwater killit
+    }
+    else
+    {
+        ifcount 4
+        {
+            ifrnd 192 move BUBMOVE getv geth randomangle
+            else move BUBMOVEFAST getv geth randomangle
+            resetcount
+        }
+        ifonwater
+        {
+            iffloordistl 8 action CRACKEDBUBBLE killit
+        }
+        else ifactioncount 400 action CRACKEDBUBBLE
+    }
+	ifspawnedby SHARK { spritepal 2 }
+enda
+
+move SMOKEVEL 8 -16
+move ENGINE_SMOKE 64 -64
+move SMOKESHOOTOUT -192
+move SMOKESPI 150
+
+action SMOKEFRAMES 0 4 1 1 10
+action SMOKFLOOR 981 9 1 1 5
+
+actor SMALLSMOKE 0 SMOKEFRAMES
+	ifceilingdistl 32 { killit }
+    ifmove 0
+    {
+	    ifspawnedby PUFFSMOKE { spritepal 2 fall action SMOKFLOOR }
+       	iffloordistl 12 ifspawnedby SHOTSPARK1 { fall action SMOKFLOOR soundonce PISTOL_RICOCHET }
+    	ifspawnedby SECTOREFFECTOR move ENGINE_SMOKE geth getv
+		else move SMOKEVEL geth getv faceplayer
+        ifspawnedby RPG { cstat 2 spritepal 1 }
+    }
+    ifspawnedby KNEE { killit }
+    ifonwater ifspawnedby SHOTSPARK1 { killit }
+    ifinwater ifspawnedby SHOTSPARK1 { killit }
+    ifpdistl 1596 ifspawnedby RPG killit
+    ifspritepal 0 { ifactioncount 4 { killit } }
+    ifspritepal 1 { ifactioncount 4 { killit } }
+    ifspritepal 2 { ifactioncount 9 { killit } }
+    else
+	    ifonwater { stopsound PISTOL_RICOCHET }
+	    ifinwater { stopsound PISTOL_RICOCHET }
+enda
+
+action BARREL_DENTING  2 3 1 1 8
+action BARREL_DENTED   1
+action BARREL_DENTED2  2
+action AISP10 168
+
+actor NUKEBARRELDENTED cactor NUKEBARREL action BARREL_DENTED enda
+actor NUKEBARRELLEAKED cactor NUKEBARREL action BARREL_DENTED2 enda
+actor NUKEBARREL 50
+    ifsquished
+    {
+    	addphealth 5 cstat 416 spritepal 1 strength 0
+    	sizeat 30 30 sizeat 30 30 sizeat 30 30 sizeat 30 30 cactor PUDDLE
+    }
+    fall
+    ifaction BARREL_DENTING
+    {
+    	ifactioncount 1 { debris SCRAP2 1 }
+		ifactioncount 2 { strength 0 sizeat 30 30 sizeat 30 30 sizeat 30 30 sizeat 30 30 }
+        ifactioncount 3 { cstat 416 addphealth 5 spritepal 1 cactor PUDDLE }
+    }
+    else ifhitweapon
+    {
+        ifdead { sound VENT_BUST action BARREL_DENTING }
+        else
+        {
+            ifaction 0 action BARREL_DENTED
+            else ifaction BARREL_DENTED { action BARREL_DENTED2 }
+            else ifaction BARREL_DENTED2 action BARREL_DENTING resetactioncount
+        }
+    }
+enda
+
+state burningbarrelcode
+    fall
+    ifcount 32
+    {
+        resetcount
+        ifp palive ifpdistl 1480 ifp phigher
+        {
+            addphealth -1
+            palfrom 16 16
+            ifrnd 96 sound HERO_LONGTERM_PAIN
+        }
+    }
+    ifhitweapon
+    {
+        sound VENT_BUST
+        debris SCRAP1 10
+        ifrnd 128 spawn BURNING
+        else spawn BURNING2
+        killit
+    }
+ends
+actor FIREVASE state burningbarrelcode enda
+
+actor AALIQ cstat 32768 ifpdistl 1024 ifhitspace endofgame 2 enda
+
+action SHRINKERFRAMES 0 9 1 1 5
+
+actor SHRINKEREXPLOSION 0 SHRINKERFRAMES fall
+	ifactioncount 0 { hitradius 512 WEAKEST WEAKEST WEAKEST WEAKEST }
+    ifactioncount 2
+	{
+	hitradius 1024 HBOMBTOUGH HBOMBTOUGH HBOMBTOUGH HBOMBTOUGH
+	}
+    ifactioncount 9
+    {
+    spawn EXPLOSION2BOT
+    hitradius 1024 HBOMBTOUGH HBOMBTOUGH HBOMBTOUGH HBOMBTOUGH
+	ifrnd 256 { killit }
+    }
+	else ifactioncount 0 { soundonce FIRE_CRACKLE }
+enda
+
+action EXPLOSION_FRAMES 0 20 1 1 10
+action EXPLOSION_MYME 15  5 1 1 10
+action ANEWEXPL10  44 22 1 1 7
+action ANEWEXPL20  90 17 1 1 10
+action ANEWEXPL30  209 21 1 1 10
+action ANEWEXPL40  1328 22 1 1 10
+
+move EXPL    -350
+move EXPL1  -350 500
+move EXPL2  0 -100
+move EXPL3  0 -250
+move EXPL4  0 -750
+
+state expl10
+	ifaction 0 { action EXPLOSION_FRAMES }
+	ifaction EXPLOSION_FRAMES
+		ifactioncount 0 { move EXPL  geth }
+		ifactioncount 1
+			{
+				iffloordistl 32 { move EXPL3 geth }
+				else ifrnd 64 { move 0 }
+			}
+		ifactioncount 3 { move 0 }
+		ifactioncount 20 { killit }
+ends
+state exdron
+	ifaction 0 { action ANEWEXPL10 cstat 257 }
+	ifaction ANEWEXPL10 ifactioncount 22 { killit }
+ends
+state exdron1
+	ifaction 0 { action ANEWEXPL20 cstat 257 }
+	ifaction ANEWEXPL20
+	ifactioncount 1 { move 0 }
+	ifactioncount 17 { killit }
+ends
+state exdron2
+	ifaction 0 { action ANEWEXPL30 cstat 257 }
+	ifaction ANEWEXPL30 { ifactioncount 21 { killit } }
+ends
+state exdron3
+	ifaction 0 { action ANEWEXPL40 }
+	ifaction ANEWEXPL40
+	ifactioncount 0
+	{
+	ifceilingdistl 48 { move EXPL1 geth }
+	iffloordistl 48 { move 0 }
+	}
+	ifactioncount 1
+	{
+		iffloordistl 16 { move EXPL2 geth }
+		else { move 0 }
+	}
+	ifactioncount 3 { move 0 }
+	ifactioncount 22 { killit }
+ends
+state kiallbuch
+	ifaction EXPLOSION_FRAMES ifactioncount 20 killit
+	ifaction ANEWEXPL10 ifactioncount 22 killit
+	ifaction ANEWEXPL20 ifactioncount 17 killit
+	ifaction ANEWEXPL30 ifactioncount 21 killit
+	ifaction ANEWEXPL40 ifactioncount 22 killit
+ends
+
+actor EXPLOSION2
+	state kiallbuch
+		ifspawnedby SPECTRAL2 { killit }
+		ifspawnedby LBALLE { spritepal 5 }
+		ifspawnedby BOUNCEMINE { spritepal 5 }
+		ifspawnedby NEWBOMB { spritepal 11 }
+		ifspawnedby FIREEXT { spritepal 11 }
+		ifspawnedby HEAVYHBOMB { spritepal 3 }
+		ifspawnedby RPGBULLET { spritepal 2 }
+		ifspawnedby HBOMBBULLET { spritepal 2 }
+		ifspawnedby RPG
+			{
+				iffloordistl 8 { spritepal 3 }
+				else ifceilingdistl 60 { spritepal 11 }
+				else { spritepal 9 }
+			}
+	else ifspawnedby MORTER { spritepal 11 }
+		ifspritepal 0 { state exdron3 iffloordistl 48 { move EXPL3 geth } }
+		ifspritepal 2 { state exdron2 }
+		ifspritepal 3 { state exdron }
+		ifspritepal 5 { state exdron1 }
+		ifspritepal 9
+			{
+			sizeat 30 30 sizeat 30 30 sizeat 30 30 sizeat 30 30 state expl10 iffloordistl 48 { move EXPL4 geth }
+			}
+		ifspritepal 11 { state exdron3 }
+			ifpdistl 2500 { move 0 }
+			ifactioncount 2 { move 0 }
+enda
+
+actor EXPLOSION2BOT 1 EXPLOSION_FRAMES fall cstat 257
+    ifactioncount 20 { killit }
+    ifspawnedby SHRINKEREXPLOSION { ifaction EXPLOSION_FRAMES { action EXPLOSION_MYME } }
+    ifaction EXPLOSION_MYME { ifactioncount 5 { killit } }
+enda
+
+action FFLAME_FR  0 16 1 1 5
+action FFLAME
+
+move FFF 200
+move FFF1
+
+state fff1  ifpdistl 5000 { sizeat 30 30 action FFLAME_FR } ends
+state fff2 ifaction FFLAME_FR {  move FFF1 getv }
+			   ifactioncount 1 { soundonce CAT_FIRE }
+			   ifactioncount 16 { action FFLAME move FFF spin }
+			   ifmove FFF { stopsound CAT_FIRE }
+			   else ifaction FFLAME_FR
+			   ifpdistl 1024 { hitradius 2048 WEAKEST WEAKEST WEAKEST WEAKEST palfrom 48 52 }
+ends
+state fff3 ifaction FFLAME ifcount 10 action FFLAME_FR ends
+
+actor FLOORFLAME state fff1 state fff2 state fff3 enda
+
+action ASATNSPIN   0 10 1 1 10
+action ASATSHOOTING -10 7 1 1 16
+action ASATWAIT 0 1 5 1 10
+
+move TURRVEL
+
+state flower10
+	fall sizeat 15 15
+    ifaction 0 ifpdistl 5000
+    {
+        action ASATSHOOTING
+        move TURRVEL faceplayer
+    }
+    else ifaction ASATNSPIN
+        { ifactioncount 10 { action ASATWAIT move TURRVEL faceplayer } }
+    else ifaction ASATSHOOTING
+    {
+        ifactioncount 12 { ifrnd 32 action ASATWAIT }
+        ifcount 32 resetcount
+        else ifcount 4 { ifcount 5 { } else { ifcansee { sound PRED_ATTACK shoot COOLEXPLOSION1 } } }
+    }
+    else ifaction ASATWAIT
+        { ifactioncount 64 ifrnd 32 ifp palive ifcansee { action ASATSHOOTING move TURRVEL faceplayer } }
+    ifhitweapon { ifdead { spritepal 8 addkills 1 sound SQUISHED debris SCRAP3 15 killit }
+        else { action ASATNSPIN debris SCRAP3 4 } move 0 }
+ends
+
+actor FLOWER ROTTURRETSTRENGTH state flower10 enda
+
+action TRANSFOWARD 0  6  1  1  2
+action TRANSBACK   5  6  1 -1  2
+actor TRANSPORTERSTAR 0 TRANSFOWARD
+    ifaction TRANSFOWARD
+    {
+        ifactioncount 6
+            action TRANSBACK
+    }
+    else
+        ifactioncount 6 killit
+        ifspawnedby RESPAWN { killit }
+enda
+
+action BEAMFOWARD  0  6  1  1  25
+actor TRANSPORTERBEAM 0 BEAMFOWARD
+	cstat 128
+	sizeat 5 5 sizeat 5 5 sizeat 5 5
+    ifactioncount 6 { killit }
+enda
+
+state randgetweapsnds
+    ifrnd 64 soundonce HERO_GETWEAPON1
+    else ifrnd 96 soundonce HERO_GETWEAPON2
+    else ifrnd 128 soundonce HERO_GETWEAPON3
+    else ifrnd 140 soundonce HERO_GETWEAPON4
+    else soundonce HERO_GETWEAPON6
+ends
+
+state getweaponcode
+	state randgetweapsnds
+	palfrom 32 0 32
+    ifgotweaponce 1 break
+    ifrespawn
+    {
+        move RESPAWN_ACTOR_FLAG
+        spawn RESPAWNMARKERRED
+        cstat 32768
+    }
+    else killit
+ends
+
+state quikweaponget
+    state randgetweapsnds
+    palfrom 32 0 32
+    ifgotweaponce 1 break
+    killit
+ends
+
+actor SHIELD sizeat 25 20
+    fall
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifp palive ifhitspace ifpdistl 900
+    		ifpinventory GET_SHIELD SHIELD_AMOUNT
+        ifcanseetarget
+    {
+        addinventory GET_SHIELD SHIELD_AMOUNT quote 67
+        ifspawnedby SHIELD state getcode
+        else state quikget
+    }
+enda
+
+actor AIRTANK sizeat 9 7
+    fall
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifp palive ifhitspace ifpdistl 900 ifpinventory GET_SCUBA SCUBA_AMOUNT
+        ifcanseetarget
+    {
+        addinventory GET_SCUBA SCUBA_AMOUNT quote 39 state getcode
+        ifspawnedby AIRTANK state getcode
+        else state quikget
+    }
+enda
+
+actor BULLET cstat 257 sizeat 10 10
+    fall
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifp palive ifcount 6 ifpdistl RETRIEVEDISTANCE ifcanseetarget
+    {
+        addammo PISTOL_WEAPON PISTOLBULLETAMOUNT quote 65
+        ifspawnedby BULLET state getcode
+        else state quikget
+    }
+state vz10
+enda
+
+actor SHOTGUNBULLET cstat 257
+    fall sizeat 15 15 
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifp palive ifcount 6 ifpdistl RETRIEVEDISTANCE ifcanseetarget
+    {
+        addammo SHOTGUN_WEAPON SHOTGUNBULLETAMOUNT quote 69
+        ifspawnedby SHOTGUNBULLET state getcode
+        else state quikget
+    }
+state vz10
+enda
+
+actor BULLETLOTS
+    fall
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifp palive ifcount 6 ifpdistl RETRIEVEDISTANCE ifcanseetarget
+    {
+        addammo PISTOL_WEAPON 12 quote 65
+        ifspawnedby BULLETLOTS state getcode
+        else state quikget
+    }
+enda
+
+actor BATTERYBULLET cstat 257 sizeat 15 15
+    fall
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifcanseetarget
+    {
+        addammo CHAINGUN_WEAPON CHAINGUNBULLETAMOUNT quote 63
+        ifspawnedby BATTERYBULLET state getcode
+        else state quikget
+    }
+state vz10
+enda
+
+actor RPGBULLET cstat 257 sizeat 18 18
+    fall
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifcanseetarget
+    {
+        addammo RPG_WEAPON RPGBULLETBOX quote 64
+        ifspawnedby RPGBULLET state getcode
+        else state quikget
+    }
+state vz10
+enda
+
+actor HBOMBBULLET cstat 257 sizeat 15 15
+    fall
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifcanseetarget
+    {
+        ifgotweaponce 0 break
+
+        addweapon HANDBOMB_WEAPON 1 soundonce HERO_GET quote 55
+        addammo HANDBOMB_WEAPON HANDBOMBBOX
+
+        ifspawnedby HBOMBBULLET state getweaponcode
+        else state quikweaponget
+    }
+state vz10
+enda
+
+actor RPGSPRITE cstat 257 sizeat 13 13
+    fall
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifcanseetarget
+    {
+        ifgotweaponce 0 break
+
+        addweapon RPG_WEAPON RPGBULLETBOX quote 56
+        ifspawnedby RPGSPRITE state getweaponcode
+        else state quikweaponget
+    }
+state vzsp10
+enda
+
+actor SHOTGUNSPRITE cstat 257
+    fall sizeat 12 12
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifcanseetarget
+    {
+        ifspawnedby SKELETON
+        {
+            addweapon SHOTGUN_WEAPON 0
+            ifrnd 64 addammo SHOTGUN_WEAPON 4
+            else ifrnd 64 addammo SHOTGUN_WEAPON 3
+            else ifrnd 64 addammo SHOTGUN_WEAPON 2
+            else addammo SHOTGUN_WEAPON 1
+        }
+        else
+        {
+            ifgotweaponce 0 break
+            addweapon SHOTGUN_WEAPON SHOTGUNBULLETAMOUNT quote 57
+        }
+        ifspawnedby SHOTGUNSPRITE state getweaponcode
+        else state quikweaponget
+    }
+state vzsp10
+enda
+
+action AFLASHAPPLE     3668 5 1 1 15
+action AFLASHAPPL10     3668 5 1 1 10
+action AFLASHGRAPES  3699 9 1 1 10
+action AFLASHGRAP10  3699 9 1 1 10
+action AAPGR  -13
+action AAPSHADOW 48
+action ANEWFLASHAP1 1266 3 1 1 15
+action ANEWFLASHAP2 1266 3 1 1 15
+
+move FLASHUP 0 -100
+move FLASHFLASH
+move FLASHDOUN 0 100
+
+state agentget
+	ifspawnedby AGENT ifspritepal 0 { cstat 32768 fall spritepal 11 }
+	ifspritepal 11 { sizeat 5 5 sizeat 5 5 sizeat 5 5 sizeat 5 5 }
+	iffloordistl 40 ifspritepal 11 ifcount 48 { cstat 384 action AAPSHADOW }
+	ifspritepal 11 ifcansee ifhitspace ifpdistl 1024
+    { tip
+        { addphealth 100 palfrom 52 0 50 quote 19
+        ifspawnedby BLUEHEALTH state getcode soundonce HEALTH
+        killit }
+    }
+ends
+
+actor APPLE
+ifspawnedby RESPAWN
+{
+	action AAPGR
+	sizeat 2 2
+    fall
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifphealthl MAXPLAYERHEALTH
+    {
+        addphealth 30 quote 62
+        ifspawnedby APPLE state getcode
+        else state quikget
+    }
+}
+ifspritepal 3 ifactioncount 5 { killit }
+ifspawnedby PUDDLE
+	{
+		sizeat 5 5
+		ifmove 0 { cstat 32768 action ANEWFLASHAP1 ifactioncount 3 { move FLASHDOUN geth } }
+		ifmove FLASHDOUN iffloordistl 50 { move FLASHFLASH geth action ANEWFLASHAP2 cstat 128 }
+		ifactioncount 3 { killit }
+	}
+ifspawnedby MERCURY
+	{
+		sizeat 5 5
+		ifmove 0 { cstat 32768 action ANEWFLASHAP1 move FLASHDOUN randomangle }
+		ifmove FLASHDOUN iffloordistl 50 { move FLASHFLASH geth action ANEWFLASHAP2 cstat 128 }
+		ifactioncount 3 { killit }
+	}
+state agentget
+enda
+
+actor GRAPES
+ifspawnedby RESPAWN
+{
+	action AAPGR
+	sizeat 3 3
+    fall
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifphealthl MAXPLAYERHEALTH
+    {
+        addphealth 10 quote 61
+        ifspawnedby GRAPES state getcode
+        else state quikget
+    }
+}
+ifspritepal 3 { ifactioncount 9 { killit } }
+enda
+
+actor MEDICINE sizeat 5 4
+    fall
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifp palive ifhitspace ifpdistl 900
+        ifpinventory GET_MEDICINE MEDICINE_AMOUNT ifcanseetarget
+    {
+        addinventory GET_MEDICINE MEDICINE_AMOUNT quote 3
+
+        ifspawnedby MEDICINE state getcode
+        else state quikget
+    }
+enda
+
+actor REVOLVER cstat 257 sizeat 3 3
+    fall
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifcanseetarget
+    {
+    	quote 68
+        soundonce INSERT_CLIP
+        ifgotweaponce 0 break
+
+        addweapon PISTOL_WEAPON 12
+        ifspawnedby REVOLVER state getweaponcode
+        else state quikweaponget
+    }
+state vzsp10
+enda
+
+action ACANDLE 463
+state fire9
+	ifspritepal 0 { cstat 32768 }
+	ifspritepal 5 { strength 0 sizeat 10 1 }
+	ifhitspace { ifpdistl 900 { addphealth -1 quote 108 palfrom 48 52 soundonce HERO_LONGTERM_PAIN } }
+ends
+state fire10
+ifspritepal 0 { ifpdistl 900 { addphealth -1 quote 108 palfrom 48 52 soundonce HERO_LONGTERM_PAIN } }
+ends
+state fire20 ifspawnedby RESPAWN { spritepal 3 sizeat 10 5 action ACANDLE cstat 385 } ends
+state fire30
+	ifspritepal 3
+		{ ifhitweapon
+   			{ spritepal 5 }
+			{ ifwasweapon RPG { killit } }
+		}
+	ifspritepal 5 { ifhitweapon { killit } }
+ends
+
+actor VERYHOT BOMBTOUGH fall state fire9 state fire10 state fire20 state fire30 enda
+
+actor UZISPRITE cstat 257
+	sizeat 10 10
+    fall
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifcanseetarget
+    {
+        ifgotweaponce 0 break
+
+        addweapon CHAINGUN_WEAPON 50 quote 54
+        ifspawnedby UZISPRITE state getweaponcode
+        else state quikweaponget
+    }
+state vzsp10
+enda
+
+actor FLAMETHROWER cstat 257 sizeat 12 12
+   fall
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifcanseetarget
+    {
+        ifgotweaponce 0 break
+        addweapon SHRINKER_WEAPON 10 quote 60
+        ifspawnedby FLAMETHROWER state getweaponcode
+        else state quikweaponget
+    }
+state vzsp10
+enda
+
+state firestate
+    ifgapzl 16 break
+    ifinwater killit
+    ifp palive ifpdistl 844 ifrnd 32 ifcansee { soundonce HERO_LONGTERM_PAIN addphealth -1 palfrom 32 32 }
+    ifactor FIRE ifspawnedby FIRE break
+    else ifactor FIRE2 ifspawnedby FIRE2 break
+    iffloordistl 128
+    {
+        ifcount 32 sizeat 8 8
+        ifcount 64 killit
+    }
+    else killit
+ends
+
+action FIRE_FRAMES     -1 14 1 1 1
+move FIREVELS
+actor FIRE WEAK FIRE_FRAMES FIREVELS state firestate enda
+actor FIRE2 WEAK FIRE_FRAMES FIREVELS state firestate enda
+
+action AFEC10 2
+action AFEC20  -1356
+
+state fec10  ifspawnedby BIRDFECES { action AFEC10 spritepal 8 sizeat 10 10 }
+					ifspritepal 8
+						{
+							iffloordistl 50 { soundonce HERO_STEPONFECES sound STEPNIT }
+							iffloordistl 8 { killit }
+						}
+ends
+state fec11
+    ifcount 24
+    {
+        ifpdistl RETRIEVEDISTANCE ifspritepal 3
+        {
+            soundonce HERO_STEPONFECES
+            sound STEPNIT
+            killit
+        }
+    }
+    else sizeat 32 32
+ends
+state fec12 ifspawnedby PUFFSMOKE { action AFEC20 sizeat 50 50 }
+	ifaction AFEC20 { iffloordistl 4 { ifonwater { spawn REDHIELD ifrnd 256 { killit } }
+	else ifrnd 256 { killit } } }
+ends
+move AFFF 50
+actor FECES fall state fec10 state fec11 state fec12 enda
+
+state spect_body_jibs
+    ifrnd 64 guts HEADJIB1 2
+    ifrnd 64 guts LEGJIB1 2
+    ifrnd 64 guts ARMJIB1 2
+    ifrnd 48 spawn RAT
+ends
+
+state demon_body_jibs
+guts DEMONHEAD1 1
+guts DEMONLEG1 1
+guts DEMONARM1 2
+ends
+
+action BLOODFRAMES 0 4 1 1 5
+action AQS
+
+move BL10DOUN 0 450
+move BL10STOP
+
+actor BLOOD 0 BLOODFRAMES
+    sizeat 50 50 sizeat 50 50 sizeat 50 50
+	move BL10DOUN geth
+	ifmove BL10DOUN { cstat 32768 }
+	ifactioncount 1 { move BL10STOP }
+	ifmove BL10STOP { cstat 128 }
+    ifactioncount 4 killit
+    ifawayfromwall killit
+    ifspawnedby SHOTSPARK1
+    {
+    	ifceilingdistl 32 { killit }
+    	ifonwater { killit }
+		ifinwater { killit }
+    }
+    ifspawnedby RESPAWN { action AQS }
+enda
+
+actor KNEE KNEE_WEAPON_STRENGTH enda
+actor SPIT SPIT_WEAPON_STRENGTH enda
+actor CHAINGUN CHAINGUN_WEAPON_STRENGTH enda
+actor SHOTGUN SHOTGUN_WEAPON_STRENGTH enda
+actor FIRELASER FIRELASER_WEAPON_STRENGTH enda
+actor HEAVYHBOMB HANDBOMB_WEAPON_STRENGTH enda
+actor BOUNCEMINE BOUNCEMINE_WEAPON_STRENGTH enda
+actor MORTER MORTER_WEAPON_STRENGTH enda
+actor SHRINKSPARK SHRINKER_WEAPON_STRENGTH enda
+actor RPG RPG_WEAPON_STRENGTH enda
+actor COOLEXPLOSION1 COOL_EXPLOSION_STRENGTH enda
+actor TRIPBOMB TRIPBOMB_STRENGTH enda
+actor FREEZEBLAST FREEZETHROWER_WEAPON_STRENGTH enda
+
+action WEAP2FRAMES 0  4  1  1  6
+actor SHOTSPARK1 PISTOL_WEAPON_STRENGTH WEAP2FRAMES
+    ifdead { killit }
+    ifactioncount 4 { killit }
+    else
+    {
+        ifspritepal 9 { ifactioncount 3 spawn WATERBUBBLE }
+        else ifcount 2 { }
+        else ifspritepal 5 { spawn WATERSPLASH2 }
+        else ifspritepal 0 ifrnd 32 { spawn BLOOD }
+     }
+		ifinwater { spritepal 9 }
+		ifonwater { spritepal 5 ifactioncount 3 ifrnd 32 { spawn REDHIELD } }
+enda
+
+move HERONOTMOVING
+state handle_dead_dukes
+    fall
+    ifmove 0
+    {
+        ifrnd 128 cstat 4
+        else cstat 0
+        move HERONOTMOVING
+    }
+    ifsquished { sound SQUISHED killit }
+    else ifcount 1024 ifpdistl 4096 killit
+    else { strength 0 ifhitweapon ifwasweapon RADIUSEXPLOSION { killit } }
+ends
+action PLYINGFRAMES 0 1 0 1 1
+
+actor HEROLYINGDEAD 0 PLYINGFRAMES
+    state handle_dead_dukes
+    spritepal 0 cstat 258
+enda
+
+action PSTAND                  0 1 5 1 1
+action PEXPLODE         106 5 1 1 10
+action PEXPLODEAD     113 1 1
+action PJPHOUVER         15 1 5 1
+action PWALK                  20 4 5 1 16
+action PRUN                    20 4 5 1 10
+action PWALKBACK         45 4 5  -1 16
+action PRUNBACK           45 4 5  -1 10
+action PJUMPING            50 4 5 1 30
+action PFALLING              65 1 5
+action PDUCKING             86 1 5
+action PCRAWLING          86 3 5 1 20
+action PAKICKING            40 2 5 1 25
+action PFLINTCHING      106 1 1 1 10
+action PTHROWNBACK  106 5 1 1 18
+action PLYINGDEAD       113 1 1
+action PSWIMMINGGO   375 1 5 1 10
+action PSWIMMING        375 4 5 1 13
+action PSWIMMINGWAIT 395 1 5 1 13
+action PTREDWATER       395 2 5 1 17
+
+move PSTOPED
+move PSHRINKING
+
+state check_dead_thrown_back
+    ifdead
+    {
+        strength 0
+        action PTHROWNBACK
+    }
+ends
+
+state check_pstandard
+    ifp pwalking action PWALK
+    else ifp pkicking action PAKICKING
+    else ifp pwalkingback action PWALKBACK
+    else ifp prunning action PRUN
+    else ifp prunningback action PRUNBACK
+    else ifp pjumping action PJUMPING
+    else ifp pducking action PDUCKING
+ends
+
+actor APLAYER 100 PSTAND 0 0 cstat 258
+    ifaction 0 action PSTAND
+    ifdead
+    {
+        ifsquished palfrom 48 52
+        else fall
+        ifactioncount 7 { move 0 } else ifactioncount 6
+        {
+            ifmultiplayer { }
+            else
+            {
+                ifrnd 32 sound HERO_KILLED5
+                else ifrnd 32 sound HERO_KILLED3
+                else ifrnd 32 sound HERO_KILLED1
+                else ifrnd 32 sound HERO_KILLED2
+            }
+        }
+        ifaction PLYINGDEAD
+        {
+            ifactioncount 3 move PSTOPED
+            quote 13
+            ifhitspace
+            {
+                action PSTAND
+                spawn HEROLYINGDEAD
+                resetplayer
+            }
+            break
+        }
+        else ifaction PTHROWNBACK
+        {
+            ifactioncount 5
+            {
+                action PLYINGDEAD
+            }
+            else ifactioncount 1 move 0
+            break
+        }
+        else ifaction PEXPLODEAD
+        {
+            quote 13
+            ifhitspace
+            {
+                action PSTAND
+                resetplayer
+            }
+            break
+        }
+        else ifaction PEXPLODE { ifactioncount 5 { action PEXPLODEAD } break }
+        else ifp pshrunk { sound HERO_DEAD cstat 32768 action PLYINGDEAD }
+        else
+        {
+            ifinwater { action PLYINGDEAD spawn WATERBUBBLE spawn WATERBUBBLE }
+            else { action PEXPLODE cstat 32768 sound HERO_DEAD }
+        }
+        break
+    }
+    ifsquished { strength -1 break }
+    ifp ponsteroids
+    {
+        ifp pstanding { }
+        else spawn FRAMEEFFECT1
+    }
+    ifmove PSHRINKING
+    {
+        ifcount 32
+        {
+            ifcount SHRUNKDONECOUNT move 0
+            else ifcount SHRUNKCOUNT
+            {
+                sizeat 42 36
+                ifgapzl 24
+                {
+                    strength 0
+                    palfrom 48 52
+                    break
+                }
+            }
+            else ifp ponsteroids count SHRUNKCOUNT
+        }
+        else
+        {
+            ifp ponsteroids count SHRUNKCOUNT
+            else { sizeat 8 9 spawn FRAMEEFFECT1 }
+        }
+    }
+    else ifhitweapon
+    {
+        ifdead
+        {
+                ifphealthl YELLHURTSOUNDSTRENGTH
+                {
+                    ifrnd 74 sound HERO_LONGTERM_PAIN2
+                    else ifrnd 8 sound HERO_LONGTERM_PAIN3
+                    else sound HERO_LONGTERM_PAIN4
+                }
+                ifrnd 128 sound HERO_LONGTERM_PAIN
+        }
+        ifstrength TOUGH { state headhitstate sound HERO_GRUNT ifp pstanding action PFLINTCHING }
+        ifwasweapon RPG { ifrnd 32 spawn BLOOD ifdead palfrom 48 52 break }
+        ifwasweapon RADIUSEXPLOSION { ifdead palfrom 48 52 break }
+        ifwasweapon FIREEXT { ifdead palfrom 48 52 break }
+        ifwasweapon SHOTSPARK1 palfrom 48 52
+        else ifwasweapon COOLEXPLOSION1 palfrom 48 52
+        else ifwasweapon KNEE palfrom 48 52
+        else ifwasweapon FIRELASER palfrom 48 52
+        else ifwasweapon FREEZEBLAST addphealth -10 palfrom 16 0 32 HERO_LONGTERM_PAIN4
+        state check_dead_thrown_back
+        break
+    }
+    ifaction PFLINTCHING { ifactioncount 2 action PSTAND break }
+    ifinwater
+    {
+        ifaction PTREDWATER
+        {
+            ifp pwalking prunning action PSWIMMINGGO
+        }
+        else ifp pstanding pwalkingback prunningback action PTREDWATER
+        else
+        {
+            ifaction PSWIMMING { ifrnd 4 spawn WATERBUBBLE ifactioncount 4 action PSWIMMINGWAIT }
+            else ifaction PSWIMMINGWAIT { ifactioncount 2 action PSWIMMINGGO }
+            else ifaction PSWIMMINGGO { ifactioncount 2 action PSWIMMING }
+            else action PTREDWATER
+        }
+        ifrnd 4 spawn WATERBUBBLE
+        break
+    }
+    else ifp pjetpack
+    {
+        ifaction PJPHOUVER { ifactioncount 4 resetactioncount }
+        else action PJPHOUVER break
+    }
+    else
+    {
+        ifaction PTREDWATER action PSTAND
+        ifaction PSWIMMING action PSTAND
+        ifaction PSWIMMINGWAIT action PSTAND
+        ifaction PSWIMMINGGO action PSTAND
+        ifaction PJPHOUVER action PFALLING
+    }
+    ifaction PFALLING
+    {
+        ifp ponground
+            action PSTAND
+        else
+        {
+            ifp pfalling break
+            else state check_pstandard
+        }
+    }
+    ifaction PDUCKING
+    {
+        ifgapzl 48 { ifp pwalking pwalkingback prunning prunningback action PCRAWLING }
+        else ifp pducking { ifp pwalking pwalkingback prunning prunningback action PCRAWLING }
+        else { ifp pstanding action PSTAND else state check_pstandard }
+    }
+    else ifaction PCRAWLING
+    {
+        ifgapzl 48 { ifp pstanding action PCRAWLING }
+        else ifp pducking { ifp pstanding action PDUCKING }
+        else { ifp pstanding action PSTAND else state check_pstandard }
+    }
+    else ifgapzl 48 action PDUCKING
+    else ifaction PJUMPING
+    {
+        ifp ponground action PSTAND
+        else ifactioncount 4 ifp pfalling action PFALLING
+    }
+    ifp pfalling action PFALLING
+    else ifaction PSTAND state check_pstandard
+    else ifaction PAKICKING { ifactioncount 2 action PSTAND break }
+    else ifaction PWALK
+    {
+        ifp pfalling action PFALLING
+        else ifp pstanding action PSTAND
+        else ifp prunning action PRUN
+        else ifp pwalkingback action PWALKBACK
+        else ifp prunningback action PRUNBACK
+        else ifp pjumping action PJUMPING
+        else ifp pducking action PDUCKING
+    }
+    else ifaction PRUN
+    {
+        ifp pstanding action PSTAND
+        else ifp pwalking action PWALK
+        else ifp pwalkingback action PWALKBACK
+        else ifp prunningback action PRUNBACK
+        else ifp pjumping action PJUMPING
+        else ifp pducking action PDUCKING
+    }
+    else ifaction PWALKBACK
+    {
+        ifp pstanding action PSTAND
+        else ifp pwalking action PWALK
+        else ifp prunning action PRUN
+        else ifp prunningback action PRUNBACK
+        else ifp pjumping action PJUMPING
+        else ifp pducking action PDUCKING
+    }
+    else ifaction PRUNBACK
+    {
+        ifp pstanding action PSTAND
+        else ifp pwalking action PWALK
+        else ifp prunning action PRUN
+        else ifp pwalkingback action PWALKBACK
+        else ifp pjumping action PJUMPING
+        else ifp pducking action PDUCKING
+    }
+		ifstrength 40 {	sound HERO_HARTBEAT	}
+enda
+
+move NEWSANMY
+state del10
+ifspawnedby SANDMAN
+	{	
+	ifmove 0 { cstat 0 }
+	sizeat 15 15 spritepal 3
+	ifcount 16 ifrnd 1 { move NEWSANMY geth cstat 257 cactor SANDMAN }
+	}
+	ifspawnedby RESPAWN { cstat 258 spritepal 0 sizeat 15 15 strength SPECTSTRENGTH }
+	ifstrength SPECTSTRENGTH ifspritepal 0 { ifcount 32 ifrnd 16 { spritepal 21 cactor SPECTRAL2 } }
+ends
+
+actor ORGANTIC state del10 enda
+
+state del11
+ifspawnedby SANDMAN
+	{	
+	ifmove 0 { cstat 0 }
+	sizeat 15 15 spritepal 5
+	ifcount 16 ifrnd 1 { move NEWSANMY geth cstat 257 cactor SANDMAN }
+	}
+	ifspawnedby RESPAWN { spritepal 9 strength SMOLSPIDERSTRENGTH cactor BIGSPIDER }
+ends
+
+actor SMOLSPIDER fall state del11 enda
+
+action ABIGSPIDER       0 4 1 1 10
+action ABIGSPIDER10   0 4 1 1 10
+move BIGSP 70
+move BIGSP10 50
+move BIGSP20 100
+move BIGSP30 0  -150
+move BIGSP40 0  -100
+
+state big100 ifmove 0 { ifrnd 256 { action ABIGSPIDER ifcansee { move BIGSP40 jumptoplayer } } }
+					 else ifcansee { ifaction ABIGSPIDER { ifnotmoving { move BIGSP40 geth } } }
+ends
+state big200
+	ifspritepal 9 { fall }
+	iffloordistl 50 ifpdistl 1024 { spritepal 9 }
+	ifspritepal 9 ifpdistl 1024 { spritepal 3 }
+	ifpdistl 900
+		{
+			ifspritepal 3 ifmove BIGSP { sound SPIDER addphealth -1 palfrom 48 52 }
+			ifspritepal 3 ifrnd 64
+				{
+				addphealth -1 palfrom 48 52 soundonce SPIDER action ABIGSPIDER10 move BIGSP10 jumptoplayer
+				}
+			ifmove BIGSP10 { soundonce SPIDER }
+			iffloordistl 50 ifpdistl 1024 { spritepal 5 move BIGSP30 geth }
+		}
+ends
+state big300
+	ifceilingdistl 70 { cstat 257 move BIGSP20 geth }
+	iffloordistl 8 { cstat 265 ifnotmoving ifrnd 256 { action ABIGSPIDER10 move BIGSP40 jumptoplayer } }
+	ifnotmoving
+	{
+	ifawayfromwall { action ABIGSPIDER10 move BIGSP10 jumptoplayer ifrnd 128 { spritepal 9 } }
+	ifceilingdistl 70 { spritepal 9 ifrnd 128 { action ABIGSPIDER move BIGSP faceplayer } }
+	iffloordistl 8 
+		{
+			ifmove BIGSP
+			{
+			ifrnd 256 { action ABIGSPIDER10
+			move BIGSP40 jumptoplayer }
+			else spritepal 9 move BIGSP faceplayer
+			}
+		}
+	}
+ends
+state big400 ifhitweapon { { cstat 258 spritepal 4 debris SCRAP3 5 sound SQUISHED { killit } } } ends
+
+actor BIGSPIDER SMOLSPIDERSTRENGTH sizeat 7 7
+	state big100 state big200 state big300 state big400
+enda
+
+action ASPECTSTAND                  0 1 5 1 1
+action ASPECTSTAYSTAND        -2 1 5 1 1
+action ASPECTWALKING             0 4 5 1 25
+action ASPECTWALKINGBACK  15 4 5 -1 25
+action ASPECTRUNNING             0 4 5 1 12
+action ASPECTSHOOT               35 1 5 1 30
+action ASPECTJETPACK            40 1 5 1 1
+action ASPECTJETPACKILL       40 2 5 1 50
+action ASPECTFLINTCH             50 1 1 1 6
+action ASPECTDYING                50 5 1 1 25
+action ASPECTDEAD                  54
+action ASPECTPLAYDEAD         54
+action ASPECTSUFFERDEAD    58 2 1 -4 24
+action ASPECTSUFFERING       59 2 1 1 21
+action ASPECTDUCK                 64 1 5 1 3
+action ASPECTDUCKSHOOT     64 2 5 1 25
+action ASPECTABOUTHIDE      74 1 1 1 25
+action ASPECTHIDE                  79 1 1 1 25
+action ASPECTREAPPEAR        74 1 1 1 25
+action ASPECTTOIL     0
+
+move SPECTWALKVELS 72
+move SPECTWALKVELSBACK -72
+move SPECTJETPACKVELS 64 -84
+move SPECTJETPACKILLVELS 192 -38
+move SPECTRUNVELS 108
+move SPECTSTOPPED
+move DONTGETUP
+move SHRUNKVELS 32
+
+ai AISPECTSEEKENEMY  ASPECTWALKING   SPECTWALKVELS seekplayer
+ai AISPECTSEEKPLAYER ASPECTWALKING   SPECTWALKVELS seekplayer
+ai AISPECTFLEEING    ASPECTWALKING   SPECTWALKVELS fleeenemy
+ai AISPECTFLEEINGBACK ASPECTWALKINGBACK   SPECTWALKVELSBACK faceplayer
+ai AISPECTDODGE      ASPECTWALKING   SPECTRUNVELS  dodgebullet
+ai AISPECTSHOOTING   ASPECTSHOOT     SPECTSTOPPED  faceplayer
+ai AISPECTDUCKING    ASPECTDUCK      SPECTSTOPPED  faceplayer
+ai AISPECTJETPACK    ASPECTJETPACK   SPECTJETPACKVELS seekplayer
+ai AISPECTSHRUNK     ASPECTWALKING   SHRUNKVELS fleeenemy
+ai AISPECTHIDE       ASPECTABOUTHIDE SPECTSTOPPED faceplayer
+
+state specthidestate
+    ifaction ASPECTREAPPEAR
+    {
+        ifactioncount 2 { sound AM_HERE ai AISPECTSHOOTING cstat 258 }
+        else { sizeat 15 15 sizeat 15 15 sizeat 15 15 sizeat 15 15 spawn FRAMEEFFECT1 }
+    }
+    else ifaction ASPECTWALKING
+    {
+        ifpdistl 2448 ifpdistl 1024
+        {
+            ifceilingdistl 48 break
+            ifp pfacing break
+
+            ifgapzl 64 { } else ifawayfromwall { spawn TRANSPORTERSTAR action ASPECTREAPPEAR move 0 break }
+        }
+    }
+    else ifaction ASPECTHIDE
+    {
+        ifactioncount 2
+        {
+            spawn TRANSPORTERSTAR
+            soundonce MYSTIFIE
+            action ASPECTWALKING move SPECTWALKVELS faceplayer
+            cstat 32768
+        }
+        else
+        {
+            sizeat 0 15
+            sizeat 0 15
+            sizeat 0 15
+            sizeat 0 15
+            spawn FRAMEEFFECT1
+        }
+    }
+    else ifaction ASPECTABOUTHIDE ifactioncount 2 { action ASPECTHIDE cstat 258 }
+ends
+
+state spectgunnashoot cstat 258
+    ifp palive
+    {
+        ifpdistl 1024 ai AISPECTSHOOTING
+        else ifmove 0
+        {
+            ifactioncount 12 ifrnd 16 ifcanshoottarget
+            {
+                ifspritepal 21 ifrnd 4 ifpdistl 4096 ai AISPECTHIDE
+                else
+                {
+                    ifpdistl 1100 ai AISPECTFLEEING
+                    else
+                    {
+                        ifpdistl 4096 ifcansee ifcanshoottarget ai AISPECTSHOOTING
+                        else { move SPECTRUNVELS seekplayer action ASPECTRUNNING }
+                    }
+                }
+            }
+        }
+        else ifcount 26 ifrnd 32 ai AISPECTSHOOTING
+    }
+ends
+
+state spectseekstate
+    state spectgunnashoot
+    ifinwater { ai AISPECTJETPACK break }
+    ifcansee
+    {
+        ifmove SPECTRUNVELS ifpdistl 1596 ai AISPECTDUCKING
+        ifp phigher { ifceilingdistl 128 { } else ifmove 0 ai AISPECTJETPACK break }
+        else ifrnd 2
+        {
+            ifspritepal 21 ifpdistl 1596 { ai AISPECTHIDE break }
+            ifbulletnear { ifrnd 128 ai AISPECTDODGE else ai AISPECTDUCKING break }
+        }
+    }
+    ifnotmoving { ifrnd 32 operate else ifcount 32 ifp palive ifcansee ifcanshoottarget ai AISPECTSHOOTING }
+    ifrnd 1
+    {
+        ifrnd 128 soundonce PRED_ROAM
+        else soundonce PRED_ROAM2
+    }
+ends
+
+state spectduckstate
+    ifaction ASPECTDUCK
+        { ifactioncount 8 { ifp palive { ifrnd 128 action ASPECTDUCKSHOOT } else ifmove DONTGETUP break else ai AISPECTSEEKPLAYER } }
+    else ifaction ASPECTDUCKSHOOT
+    {
+        ifcount 64
+        {
+            ifmove DONTGETUP resetcount
+            else
+            {
+                ifpdistl 1100 { ai AISPECTFLEEING }
+                else ai AISPECTSEEKPLAYER
+            }
+        }
+        else ifactioncount 2
+        	{
+        		ifcanshoottarget { sound PRED_ATTACK resetactioncount ifspritepal 21 { shoot FIRELASER } }
+        		else ai AISPECTSEEKPLAYER
+        	}
+    }
+ends
+
+state spectshootstate
+    ifactioncount 2
+    {
+        ifcanshoottarget
+        {
+            shoot FIRELASER sound PRED_ATTACK resetactioncount
+            ifrnd 128 ai AISPECTSEEKPLAYER
+            ifcount 24
+            {
+                ifrnd 96 ifpdistl 2048 ai AISPECTSEEKPLAYER
+                else
+                {
+                    ifpdistl 1596 ai AISPECTFLEEING
+                    else ai AISPECTFLEEINGBACK
+                }
+            }
+        }
+        else ai AISPECTSEEKPLAYER
+    }
+ends
+
+state spectfleestate
+    ifactioncount 7
+    {
+        ifpdistl 3084 { ai AISPECTSEEKPLAYER break }
+        else ifrnd 32 ifp palive ifcansee ifcanshoottarget { ifrnd 128 ai AISPECTDUCKING else ai AISPECTSHOOTING break }
+    }
+    ifnotmoving
+    {
+        ifrnd 32 operate
+        else ifcount 32 ifp palive ifcansee ifcanshoottarget { ifrnd 128 ai AISPECTSHOOTING else ai AISPECTDUCKING }
+    }
+ends
+
+state spectdying cstat 2
+    iffloordistl 32 { ifactioncount 5 { cstat 0 iffloordistl 8 sound THUD ifrnd 64 spawn RAT
+	cstat 2 strength 0 move SPECTSTOPPED action ASPECTDEAD } break }
+    else { cstat 258 move 0 action ASPECTDYING }
+ends
+
+state checkspecthit
+    ifaction ASPECTSUFFERING { stopsound LIZARD_BEG sound PRED_DYING
+    cstat 0 strength 0 action ASPECTSUFFERDEAD break }
+    ifdead
+    {
+        addkills 1
+        ifwasweapon RPG { sound SQUISHED state spect_body_jibs state delete_enemy }
+	    else ifwasweapon RADIUSEXPLOSION { sound SQUISHED state spect_body_jibs state delete_enemy }
+        else { sound PRED_DYING ifrnd 32 iffloordistl 32 { sound LIZARD_BEG
+        strength 0 move 0 action ASPECTSUFFERING break } action ASPECTDYING cstat 258 break }
+    }
+    else
+    {
+        sound PRED_PAIN guts JIBS4 5
+        iffloordistl 32 ifrnd 96 action ASPECTFLINTCH
+    }
+ends
+
+state spectjetpackstate
+    ifaction ASPECTJETPACKILL
+    {
+        ifcansee ifactioncount 2
+        {
+            resetactioncount
+            sound PRED_ATTACK
+            ifspritepal 21 { shoot FIRELASER }
+        }
+        ifp phigher ai AISPECTJETPACK
+        else ifinwater ai AISPECTJETPACK
+        else ifcount 26 iffloordistl 32 ai AISPECTSEEKPLAYER
+    }
+    else ifcount 48 ifcansee
+        { action ASPECTJETPACKILL move SPECTJETPACKILLVELS seekplayer }
+ends
+
+state spectsufferingstate
+    ifactioncount 2
+    {
+        ifrnd 16 spawn WATERDRIP
+        ifactioncount 14 { stopsound LIZARD_BEG cstat 0 strength 0 action ASPECTSUFFERDEAD break }
+    }
+ends
+
+state spectcode fall
+    ifinwater ifrnd 1 spawn WATERBUBBLE
+    ifaction ASPECTSTAND { ifrnd 192 ai AISPECTSHOOTING else ai AISPECTSEEKPLAYER }
+    else ifaction ASPECTPLAYDEAD
+    {
+        ifhitweapon
+        {
+            ifwasweapon RADIUSEXPLOSION { sound SQUISHED state spect_body_jibs state delete_enemy }
+            break
+        }
+        ifcount PLAYDEADTIME { addkills -1 soundonce PRED_ROAM cstat 257 strength 1 ai AISPECTSHOOTING }
+        else ifp pfacing resetcount
+        break
+    }
+    else ifaction ASPECTDEAD
+    {
+        strength 0
+        ifrespawn ifcount RESPAWNACTORTIME
+        {
+        	sound MYSTIFIE spawn TRANSPORTERSTAR cstat 257 strength SPECTSTRENGTH ai AISPECTSEEKENEMY
+        }
+        ifhitweapon
+        {
+            ifwasweapon RADIUSEXPLOSION { sound SQUISHED state spect_body_jibs state delete_enemy }
+            break
+        }
+    }
+        else ifaction ASPECTSUFFERDEAD
+    {
+        ifactioncount 2
+        {
+            ifrnd 64 { resetcount action ASPECTPLAYDEAD cstat 258 }
+            else { soundonce PRED_DYING action ASPECTDEAD cstat 258 }
+        }
+    }
+    else ifaction ASPECTDYING { state spectdying break }
+    else ifaction ASPECTSUFFERING
+        { state spectsufferingstate ifhitweapon state checkspecthit break }
+    else ifaction ASPECTFLINTCH { ifactioncount 4 ai AISPECTSEEKENEMY }
+    else
+    {
+        ifai AISPECTSEEKPLAYER state spectseekstate
+        else ifai AISPECTJETPACK
+        {
+            state spectjetpackstate
+            ifinwater { }
+        }
+        else ifai AISPECTSEEKENEMY state spectseekstate
+        else ifai AISPECTSHOOTING state spectshootstate
+        else ifai AISPECTFLEEING state spectfleestate
+        else ifai AISPECTFLEEINGBACK state spectfleestate
+        else ifai AISPECTDODGE state spectseekstate
+        else ifai AISPECTDUCKING state spectduckstate
+        else ifai AISPECTHIDE { state specthidestate break }
+    }
+    ifhitweapon state checkspecthit
+ends
+state specmy10 ifstrength TOUGH { soundonce CAPT_ROAM ifcount 16 { stopsound CAPT_ROAM } } ends
+state specmy20 ifspawnedby RESPAWN { sizeat 15 15 } ends
+
+actor SPECTRAL SPECTSTRENGTH ASPECTSTAND state spectcode spritepal 21 sizeat 15 15 enda
+
+action ASPBOT10  -1627
+
+actor SPECTRALONTOILET SPECTSTRENGTH cstat 257
+	ifspawnedby RESPAWN { action ASPBOT10 spritepal 11 sizeat 10 10
+	ifpdistl 1500 ifhitspace { tip operate ai AISPECTSEEKPLAYER cactor SPECTRAL } }
+	ifhitweapon { lotsofglass 20 killit }
+enda
+
+action ADEMWALKING       0 4 5 1 15
+action ADEMRUNNING       0 4 5 1 11
+action ADEMTHINK           20 2 5 1 40
+action ADEMSCREAM       30 1 5 1 2
+action ADEMJUMP            45 2 5 1 10
+action ADEMFALL              55 3 1 1 15
+action ADEMSHOOTING    70 2 5 1 17
+action ADEMDYING           60 6 1 1 20
+action ADEMLYINGDEAD  65 1
+
+move DEMWALKVEL 72
+move DEMRUNVEL 192
+move DEMJUMPVEL 184
+move DEMSTOP
+
+ai AIDEMGETENEMY ADEMWALKING DEMWALKVEL seekplayer
+ai AIDEMDODGE ADEMRUNNING DEMRUNVEL dodgebullet
+ai AIDEMCHARGEENEMY ADEMRUNNING DEMRUNVEL seekplayer
+ai AIDEMFLEENEMY ADEMWALKING DEMWALKVEL fleeenemy
+ai AIDEMSHOOTENEMY ADEMSHOOTING DEMSTOP faceplayer
+ai AIDEMJUMPENEMY ADEMJUMP DEMJUMPVEL jumptoplayer
+ai AIDEMTHINK ADEMTHINK DEMSTOP faceplayerslow
+ai AIDEMSPIT ADEMSCREAM DEMSTOP faceplayerslow
+ai AIDEMDYING ADEMDYING DEMSTOP faceplayer
+
+state demonseekstate
+
+    ifmove 0
+    {
+        ifcansee ifp palive ifpdistl 2048 ifcount 16 ifcanshoottarget { ai AIDEMSHOOTENEMY break }
+        ifai AIDEMCHARGEENEMY
+        {
+            ifcount 72 ifcanshoottarget { ai AIDEMSHOOTENEMY break }
+            ifp phigher ifpdistl 2048 ifrnd 6 { ai AIDEMJUMPENEMY break }
+        }
+        else ifpdistl 4096
+        {
+        	ifrnd 92
+        		{
+        			ifcount 48 ifcanshoottarget	{ ai AIDEMSHOOTENEMY }
+         		}
+         }
+        else ifcount 24 { ai AIDEMCHARGEENEMY break }
+        iffloordistl 16 { ifcount 48 ifnotmoving ifcansee { ai AIDEMJUMPENEMY break } }
+        else { ifpdistl 1280 ai AIDEMJUMPENEMY break }
+
+        ifrnd 4 ifnotmoving operate
+        else ifrnd 1 ifbulletnear
+        {
+            ifgapzl 128 ai AIDEMDODGE
+            else ifmove 0 { ifrnd 32 ai AIDEMJUMPENEMY else ai AIDEMDODGE }
+        }
+    }
+    else
+    {
+        ifactioncount 16
+        {
+        	ifp palive ifrnd 32 ifcansee ifcanshoottarget { ai AIDEMSHOOTENEMY }
+        }
+        ifcount 16 ifrnd 32 move DEMWALKVEL randomangle geth
+    }
+ends
+
+state demonfleestate
+    ifcount 16 { ifrnd 48 ifp palive ifcansee ai AIDEMSPIT }
+    else { iffloordistl 16 { } else ai AIDEMGETENEMY break }
+ends
+
+state demonthinkstate
+    ifrnd 8 soundonce CAPT_ROAM
+    ifactioncount 3
+    {
+        ifrnd 32 ifp palive ifcansee ai AIDEMSPIT
+        else ifrnd 96 ai AIDEMGETENEMY
+    }
+    else ifactioncount 2 ifrnd 16 { shoot MORTER }
+    ifrnd 1 ifbulletnear
+    {
+        ifgapzl 96 ai AIDEMDODGE
+        else { ifrnd 128 ai AIDEMJUMPENEMY else ai AIDEMDODGE }
+    }
+ends
+
+state demonshootstate
+    ifcount 20 ifrnd 8
+    {
+        ifcansee ifpdistl 2048 { ifrnd 128 ai AIDEMFLEENEMY break }
+        ifrnd 80 { ai AIDEMTHINK }
+        else ai AIDEMGETENEMY
+    }
+    ifactioncount 2
+    {
+        ifcansee
+        {
+            ifpdistl 4000 { sound CAPT_ATTACK shoot SPIT resetactioncount }
+            else { ai AIDEMTHINK }
+        }
+        else ai AIDEMGETENEMY
+    }
+ends
+
+state checkdemonhit
+		ifrnd 24 { spawn EXPLOSION2BOT }
+    ifdead
+    {
+        addkills 1
+
+        ifwasweapon RPG
+        	{
+        	sound SQUISHED spawn EXPLOSION2BOT state delete_enemy
+        	}
+        else ifwasweapon RADIUSEXPLOSION
+        	{
+        	sound SQUISHED spawn EXPLOSION2BOT state delete_enemy
+        	}
+        else { ai AIDEMDYING ifrnd 64 { spawn EXPLOSION2BOT } }
+        sound CAPT_DYING
+    }
+    else
+    {
+        sound CAPT_PAIN
+        ifp palive ifcansee ifcanshoottarget { ai AIDEMSHOOTENEMY break }
+    }
+ends
+
+state demonjumpstate
+    ifaction ADEMFALL
+    	{
+    	iffloordistl 16 { stopsound THUD soundonce HOOFS ai AIDEMGETENEMY }
+    	}
+    else ifactioncount 8 action ADEMFALL
+ends
+
+state demondyingstate
+    ifaction ADEMLYINGDEAD
+    {
+        strength 0
+        ifhitweapon ifwasweapon RADIUSEXPLOSION
+        	{
+        		sound SQUISHED spawn EXPLOSION2BOT state delete_enemy
+        	}
+    }
+    else ifai AIDEMDYING
+    {
+    	ifactioncount 6
+	    {
+   		iffloordistl 8
+   			{
+	   			sound THUD spawn BURNING move DEMSTOP cstat 32768 spawn SHADOW ifrnd 256 { killit }
+   			}
+	    }
+    }
+ends
+
+state demondodgestate
+    ifcount 13 ai AIDEMGETENEMY
+ends
+
+actor DEMON DEMSTRENGTH fall
+	sizeat 19 15
+	ifai 0 ai AIDEMGETENEMY
+    else ifaction ADEMLYINGDEAD { fall state demondyingstate break }
+    else ifai AIDEMJUMPENEMY state demonjumpstate
+    else
+    {
+        fall
+        ifai AIDEMGETENEMY state demonseekstate
+        else ifai AIDEMCHARGEENEMY state demonseekstate
+        else ifai AIDEMDODGE state demondodgestate
+        else ifai AIDEMSHOOTENEMY state demonshootstate
+        else ifai AIDEMFLEENEMY state demonfleestate
+        else ifai AIDEMTHINK state demonthinkstate
+        else ifai AIDEMDYING state demondyingstate
+        else ifai AIDEMSPIT
+            {
+            	ifcount 26 ai AIDEMGETENEMY else ifcount 18 ifrnd 96 { shoot MORTER sound LIZARD_SPIT }
+            }
+    }
+    ifhitweapon state checkdemonhit
+enda
+
+action LBALLEFRAMES            0 7 1 1 5
+action LBALLESCREAM            0 7 1 1 5
+move LBALLERUNVELS       128 64
+move LBALLERUNUPVELS  128 -64
+move LBALLEBULLVELS     252 -64
+move LBALLEBACKWARDS  -64 -64
+move LBALLERISE                 32 -32
+move LBALLESTOPPED        -16
+
+ai AILBALLEGETE LBALLESCREAM LBALLERUNVELS faceplayerslow getv
+ai AILBALLEWAIT LBALLEFRAMES LBALLESTOPPED faceplayerslow
+ai AILBALLEGETUP LBALLESCREAM LBALLERUNUPVELS faceplayer getv
+ai AILBALLEPULLBACK LBALLEFRAMES LBALLEBACKWARDS faceplayerslow
+ai AILBALLEHIT LBALLESCREAM LBALLEBACKWARDS faceplayer
+ai AILBALLESHRUNK LBALLEFRAMES SHRUNKVELS fleeenemy
+ai AILBALLEDODGE LBALLEFRAMES LBALLEBULLVELS dodgebullet geth
+ai AILBALLEDODGEUP LBALLEFRAMES LBALLERISE getv geth
+
+state checklinballhitstate
+    ifdead
+    {
+        addkills 1
+        guts JIBS5 20
+        spawn EXPLOSION2
+        sound RPG_EXPLODE
+        hitradius 2048 15 20 25 30
+        killit
+    }
+        else
+    {
+        sound LBALL_PAIN guts JIBS5 20
+        ifbulletnear
+        {
+            ifceilingdistl 64 ifrnd 48 ai AILBALLEDODGE
+            ai AILBALLEDODGEUP
+        }
+        else ai AILBALLEGETE
+    }
+ends
+
+state checklinballnearplayer
+    ifp palive ifpdistl 1596
+    {
+        ifcount 8
+        {
+            addkills 1
+            sound LBALL_ATTACK2
+            guts JIBS5 20
+            spawn EXPLOSION2
+            sound RPG_EXPLODE
+            hitradius 2048 15 20 25 30
+            killit
+        }
+        else ifcount 3 { }
+    }
+ends
+
+state linballgetstate
+    ifrnd 192
+    {
+        ifcansee
+        {
+            ifbulletnear { ai AILBALLEDODGE break }
+            ifmove LBALLEBULLVELS
+            {
+                ifcount 64 ai AILBALLEPULLBACK
+                else ifnotmoving ifcount 16 ai AILBALLEPULLBACK
+            }
+            else ifcount 32
+            {
+                ifp phigher move LBALLEBULLVELS geth getv
+                else move LBALLEBULLVELS geth
+            }
+        }
+        else ifrnd 1 operate
+    }
+ends
+
+state linballdodgestate
+    ifai AILBALLEDODGEUP
+    {
+       ifcount 8 ai AILBALLEGETE
+       else ifnotmoving ai AILBALLEGETE
+    }
+    else
+    {
+        ifcount 8 ai AILBALLEGETE
+        else ifnotmoving ai AILBALLEGETE
+    }
+ends
+
+actor LBALLE LBALLESTRENGTH sizeat 17 12
+    state checklinballnearplayer
+    ifrnd 2 fall
+    else soundonce LBALL_JETSND
+    ifaction 0 ai AILBALLEGETE
+    else ifai AILBALLEWAIT
+    {
+        ifactioncount 4 ifrnd 16 ifcansee { sound LBALL_ATTACK1 ifp phigher ai AILBALLEGETUP else ai AILBALLEGETE }
+    }
+    else ifai AILBALLEGETE state linballgetstate
+    else ifai AILBALLEGETUP state linballgetstate
+    else ifai AILBALLEPULLBACK { ifcount 32 ai AILBALLEWAIT }
+    else ifai AILBALLEHIT { ifcount 8 ai AILBALLEWAIT }
+    else ifai AILBALLEDODGE state linballdodgestate
+    else ifai AILBALLEDODGEUP state linballdodgestate
+    ifhitweapon state checklinballhitstate
+    ifrnd 1 soundonce LBALL_ROAM
+enda
+
+action ASKELWALK             0  4 5 1 20
+action ASKELRUN               0  4 5 1 11
+action ASKELSHOOT           30 2 5 1 58
+action ASKELCOCK              25 1 5 1 16
+action ASKELSTAND            -268
+action ASKELDIVE                40 2 5 1 40
+action ASKELDIVESHOOT    45 2 5 1 58
+action ASKELDYING            55 5 1 1 25
+action ASKELHIT                 55 1 1 1 10
+action ASKELDEAD             60 1 0 0 1
+action ASHRINK
+action EGGWAIT                 62 1 0 0 10
+action EGGOPEN1              62 2 1 1 50
+action EGGOPEN2              64 1 0 0 1
+action EGGOPEN3 0
+action ASKELDY10             -44 3 1 1 17
+action ASKELDY20             -42 3 -1 1 14
+action SKELDYMY 	    	20 5 1 1 20
+action SKELDYMYA 	       -3 3 1 1 35
+action ANEWSKELET         59  5  -1 1 20
+action ANEWSKELET10     -268 3  1 1 10
+
+move WQW10
+move WQW20
+move SKELWMY 25
+move SKELWALKVELS 72
+move SKELRUNVELS 108
+move SKELSTOPPED
+move SKELLLL
+
+ai AISKELSEEKENEMY ASKELWALK SKELWALKVELS seekplayer
+ai AISKELSHOOTENEMY ASKELSHOOT SKELSTOPPED faceplayer
+ai AISKELFLEEENEMY ASKELWALK SKELWALKVELS fleeenemy
+ai AISKELSHOOT ASKELSHOOT SKELSTOPPED faceplayer
+ai AISKELDODGE ASKELRUN SKELRUNVELS dodgebullet
+ai AISKELCHARGE ASKELRUN SKELRUNVELS seekplayer
+ai AISKELDIVING ASKELDIVE SKELSTOPPED faceplayer
+ai AISKELDYING ASKELDYING SKELSTOPPED faceplayer
+ai AISKELSHRINK ASKELWALK SHRUNKVELS fleeenemy
+ai AISKELHIT ASKELHIT SKELSTOPPED faceplayer
+
+state frower
+	ifspritepal 0 ifhitweapon { ifwasweapon SHRINKSPARK { strength WEAPONSTRENGTH } }
+	ifspritepal 0 ifstrength WEAPONSTRENGTH { spritepal 4 move 0 action ASHRINK }
+	ifspritepal 21 ifhitweapon { ifwasweapon SHRINKSPARK { strength WEAPONSTRENGTH } }
+	ifspritepal 21 ifstrength WEAPONSTRENGTH { spritepal 4 move 0 action ASHRINK }
+	ifwasweapon SHOTSPARK1 { ifstrength WEAPONSTRENGTH { getlastpal ai AISKELDYING sound SKEL_DYING } }
+ends
+state vic10 guts HEADJIB1 2 guts LEGJIB1 2 guts ARMJIB1 2 ends
+state skelseekenemystate
+    ifai AISKELCHARGE
+    {
+        ifcansee ifpdistl 3084
+        {
+            ifnotmoving ai AISKELSEEKENEMY
+            else ai AISKELDIVING
+        }
+        break
+    }
+    else iffloordistl 32
+    {
+        ifpdistl 4096 { ifmove 0 ai AISKELCHARGE }
+        ifrnd 8 { ifbulletnear ai AISKELDODGE }
+    }
+    ifrnd 128 ifcansee
+    {
+        ifai AISKELDODGE { ifcount 32 ai AISKELCHARGE break }
+        iffloordistl 32
+        {
+            ifpdistl 1024 ifp palive ifcanshoottarget
+                { ai AISKELSHOOTENEMY break }
+            ifcount 48 { ifrnd 8 ifp palive ifcanshoottarget { ifrnd 192 ai AISKELSHOOTENEMY else ai AISKELDIVING break } }
+        }
+    }
+ends
+
+state skelshootenemystate
+    {
+        ifcount 12 { } else ifcount 11
+        {
+            ifcanshoottarget { sound SKEL_ATTACK shoot SHOTGUN shoot SHOTGUN }
+            else ai AISKELSEEKENEMY
+        }
+        ifcount 25 { } else ifcount 24 { action ASKELCOCK }  sound BONES03
+        ifcount 48 { } else ifcount 47
+        {
+            ifcanshoottarget { sound SKEL_ATTACK shoot SHOTGUN shoot SHOTGUN }
+            else ai AISKELSEEKENEMY
+        }
+        ifcount 60 { } else ifcount 59 { action ASKELCOCK } sound BONES03
+        ifcount 72
+        {
+            ifrnd 64 resetcount
+            else
+            {
+                ifpdistl 768 ai AISKELFLEEENEMY
+                else ai AISKELSEEKENEMY
+            }
+        }
+        ifaction ASKELCOCK ifactioncount 2 action ASKELSHOOT
+    }
+    else ai AISKELSEEKENEMY
+ends
+
+state skelfleeenemystate
+    ifactioncount 8 ai AISKELSEEKENEMY
+    else ifnotmoving ai AISKELSEEKENEMY
+ends
+
+state skeldivestate
+    ifaction ASKELDIVESHOOT
+    {
+        ifcansee
+        {
+            ifcount 12 { } else ifcount 11
+            {
+                ifcanshoottarget { sound SKEL_ATTACK shoot SHOTGUN shoot SHOTGUN }
+                else ai AISKELSEEKENEMY
+            }
+            ifcount 25 { } else ifcount 24 { sound BONES03 }
+            ifcount 48 { } else ifcount 47
+            {
+                ifcanshoottarget { sound SKEL_ATTACK shoot SHOTGUN shoot SHOTGUN }
+                else ai AISKELSEEKENEMY
+            }
+            ifcount 60 { } else ifcount 59
+            {
+                sound BONES03
+                ifgapzl 32 ai AISKELDIVING
+                else
+                {
+                    ifpdistl 4096 ai AISKELFLEEENEMY
+                    else ai AISKELSEEKENEMY
+                }
+            }
+        }
+        else ifgapzl 32 ai AISKELDIVING else ai AISKELSEEKENEMY
+    }
+    else ifactioncount 2 ifp palive { resetcount action ASKELDIVESHOOT }
+ends
+
+state checkskelhitstate
+	addkills 1 guts JIBS2 5 guts JIBS1 1
+    ifstrength 30 { move SKELSTOPPED geth action ASKELDY10 soundonce SKEL_ROAM2 }
+	ifstrength 10 { spritepal 11 action SKELDYMY }
+   ifdead
+    {
+    	state frower
+        addkills 1
+        ifspritepal 0
+        {
+        	ifwasweapon RADIUSEXPLOSION { sound SQUISHED guts JIBS2 5 guts JIBS1 1
+        	state demon_body_jibs state delete_enemy }
+        }
+        ifspritepal 21
+        {
+		ifwasweapon SHOTSPARK1 { state demon_body_jibs ifrnd 256 { killit } }
+		ifwasweapon RADIUSEXPLOSION { sound SQUISHED guts JIBS2 5 guts JIBS1 1
+																												 state demon_body_jibs state delete_enemy }
+        ifwasweapon RPG { sound SQUISHED guts JIBS2 5 guts JIBS1 1 state demon_body_jibs state delete_enemy }
+        }
+		ifspritepal 4 { ifwasweapon RADIUSEXPLOSION { sound SQUISHED money 5 state delete_enemy } }
+        else
+        ifspritepal 0
+        {
+        ifwasweapon RPG { sound SQUISHED guts JIBS2 5 guts JIBS1 1 state demon_body_jibs state delete_enemy }
+        }
+        ifspritepal 4
+        {
+        ifwasweapon RPG { sound SQUISHED money 5 state delete_enemy }
+        }
+        ifspritepal 0 { ai AISKELDYING cstat 0 sound SKEL_DYING }
+        ifspritepal 4 { ai AISKELDYING cstat 0 sound SKEL_DYING }
+    }
+    else
+    {
+        sound SKEL_PAIN
+    }
+ ends
+
+state skeldyingstate
+	ifactioncount 0
+	{ ifspritepal 21 { sound SQUISHED guts JIBS2 5 guts JIBS1 1 state demon_body_jibs state delete_enemy } }
+	ifactioncount 5	{ action ASKELDEAD }
+    ifpdistl 2500 { ifaction ASKELDEAD
+      {
+          ifcount 64 { action EGGWAIT move 0 }
+        {
+            ifrnd 128 { action EGGWAIT move 0 }            
+            else
+            {
+                sound SLIM_HATCH
+                action EGGOPEN1
+            }
+        }
+    } }
+    ifaction EGGOPEN1 { ifactioncount 2 action EGGOPEN2 }
+    ifaction EGGOPEN2
+    { 
+     ifactioncount 0
+     	{
+     	action EGGOPEN3
+     		{
+     			ifspritepal 0 { spawn GNAWER }
+     			ifspritepal 4 { spawn GNAWER }
+			}
+		 }
+	}
+	 ifaction EGGOPEN3
+	 	{
+	 		cstat 257
+	 		cactor DIESKELETON
+	 	}
+ends
+
+state spspec10
+	ifspawnedby RESPAWN
+		{
+			strength SKELETONSTRENGTH
+			ifaction ASKELSTAND { spritepal 0 }
+			spritepal 0
+		}
+	ifspawnedby SPECTRAL2 spritepal 21 { ifaction ASKELSTAND { move WQW10 action ANEWSKELET10 } }
+	ifmove WQW10 ifaction ANEWSKELET10
+		{
+			spritepal 21 ifactioncount 3 { action ANEWSKELET move WQW20 geth state vic10 }
+		}
+	ifmove WQW20 ifaction ANEWSKELET
+		{
+			spritepal 21 ifactioncount 5 { ai AISKELDODGE }
+		}
+		ifmove WQW10 { ifhitweapon { ifspritepal 21
+				{
+					state vic10
+        			state demon_body_jibs
+       		 		ifrnd 256 { killit }
+        		} } }
+		ifmove WQW20 { ifhitweapon { ifspritepal 21
+				{
+					state vic10
+        			state demon_body_jibs
+       		 		ifrnd 256 { killit }
+        		} } }
+ends
+actor SKELETON SKELETONSTRENGTH ASKELSTAND state spspec10
+	sizeat 16 13 fall
+    ifaction ASKELSTAND
+    {
+    	ifspritepal 21 { action ANEWSKELET10 move WQW10 geth }
+    	ifspritepal 0 { ai AISKELSEEKENEMY }
+    }
+    else ifai AISKELDYING state skeldyingstate
+    else ifai AISKELHIT { ifactioncount 3 ai AISKELSEEKENEMY }
+   	else ifaction ASKELDY10 { ifactioncount 3 { action ASKELDY20 move SKELLLL geth } }
+	else ifaction ASKELDY20 ifmove SKELLLL { ifactioncount 3 { ai AISKELFLEEENEMY cstat 257 } }
+	else ifaction SKELDYMY
+	 {
+	 ifwasweapon RADIUSEXPLOSION { sound SQUISHED guts JIBS2 5 guts JIBS1 1
+																												 state demon_body_jibs state delete_enemy }
+     ifwasweapon RPG { sound SQUISHED guts JIBS2 5 guts JIBS1 1 state demon_body_jibs state delete_enemy }
+	 ifactioncount 5 { cstat 257 guts DEMONARM1 2 move SKELWMY geth action SKELDYMYA soundonce SKEL_DYING }
+	 }
+	else ifaction SKELDYMYA
+		{
+			ifactioncount 6 { move 0 cstat 257 sound SQUISHED guts DEMONHEAD1 1 cactor DIESKELETON }
+		}
+    else
+    {
+        ifai AISKELSEEKENEMY state skelseekenemystate
+        else ifai AISKELDODGE state skelseekenemystate
+        else ifai AISKELSHOOTENEMY state skelshootenemystate
+        else ifai AISKELFLEEENEMY state skelfleeenemystate
+        else ifai AISKELDIVING state skeldivestate
+        else ifai AISKELCHARGE state skelseekenemystate
+        ifhitweapon state checkskelhitstate
+        ifrnd 1
+        {
+            ifrnd 32 soundonce SKEL_ROAM
+            else ifrnd 64 soundonce SKEL_ROAM2
+            else soundonce SKEL_ROAM3
+        }
+    }
+enda
+
+action AWIZZWALK             0  4  5  1  15
+action AWIZZRUN                0  6  5  1  15
+action AWIZZSHOOT          30 2  5  1  50
+action AWIZZLOB               40 2  5  1  35
+action AWIZZDYING           50 19  1  1  10
+action WIZZFLINTCH          50 1  1  1  1
+action AWIZZDEAD             69
+
+move PALWIZZSHRUNKRUNVELS 32
+move PALWIZZRUNVELS 50
+move PALWIZZGO 70
+move WIZZWALKVELS 32
+move WIZZRUNVELS 50
+move PALWIZZGOBACK 100
+move WIZZSTOPPED
+
+ai AIWIZZSEEKENEMY AWIZZWALK WIZZWALKVELS furthestdir
+ai AIWIZZRUNENEMY AWIZZRUN WIZZRUNVELS seekplayer
+ai AIWIZZSHOOTENEMY AWIZZSHOOT WIZZSTOPPED furthestdir
+ai AIWIZZLOBBED AWIZZLOB WIZZSTOPPED faceplayersmart
+ai AIWIZZDYING AWIZZDYING WIZZSTOPPED faceplayer
+ai AIWIZZPALSHRINK AWIZZWALK PALWIZZSHRUNKRUNVELS furthestdir
+ai AIWIZZGO AWIZZWALK PALWIZZGO randomangle geth
+ai AIWIZZGOBACK AWIZZWALK PALWIZZGOBACK dodgebullet
+
+state checkwizzaseekstate
+	ai AIWIZZSEEKENEMY
+    ifspritepal 0 { }
+    else move PALWIZZRUNVELS seekplayer
+ends
+state wizzarunenemystate
+    ifpdistl 4000 { ifp palive ai AIWIZZSHOOTENEMY }
+    else ifcansee { ifactioncount 6 { ifcanshoottarget { resetactioncount } else ai AIWIZZSEEKENEMY } }
+    else ai AIWIZZSEEKENEMY
+ends
+
+state wizzaseekenemystate
+    ifrnd 2 soundonce WIZ1_ROAM
+	else ifactioncount 6 { resetactioncount }
+	ifpdistl 4000 ifp palive { ai AIWIZZLOBBED }
+    ifcansee ifcount 32
+    {
+        ifrnd 64 { ifp palive ifcanshoottarget ai AIWIZZSHOOTENEMY }
+        else ifpdistl 2548 ifrnd 192
+            ifcanshoottarget
+            {
+                ifrnd 64
+                {
+                    ai AIWIZZRUNENEMY
+                    ifspritepal 0 { } else move PALWIZZRUNVELS seekplayer
+                }
+                else ai AIWIZZLOBBED
+            }
+    }
+ends
+
+state wizzadyingstate
+  ifaction AWIZZDEAD
+	ifactioncount 0 { cstat 0 }
+	ifactioncount 19 { iffloordistl 8 { soundonce RING action AWIZZDEAD cstat 0 sizeat 0 0  ifrnd 256 { killit } }
+  	ifspritepal 26 endofgame 52 }
+ends
+
+state wizzalobbedstate
+    ifcansee
+    {
+        ifactioncount 2
+        {
+        sound WIZ1_ATTACK2
+        ifrnd 5 { cstat 0 spawn FORWIZZ }
+        else { cstat 257 }
+        }
+        ifactioncount 4 { ai AIWIZZGO }
+        else ifcount 64 ifrnd 16 state checkwizzaseekstate
+    }
+    else state checkwizzaseekstate
+ends
+
+state wizzashootenemy
+    ifcount 72 state checkwizzaseekstate
+    else ifaction AWIZZSHOOT
+    {
+    ifrnd 5 { cstat 0 spawn FORWIZZ }
+    ifactioncount 4
+    	{
+		ai AIWIZZGO
+        sound WIZ1_ATTACK1
+    	}
+	}
+ends
+
+state checkwizzahitstate
+	ai AIWIZZLOBBED
+	ifspritepal 3 { ai AIWIZZGOBACK }
+    ifdead
+    {
+        addkills 1
+        ai AIWIZZDYING getlastpal
+    }
+    else
+    {
+        ifrnd 32 { action WIZZFLINTCH getlastpal move 0 }
+        ifspritepal 0 { }
+     }
+ends
+
+state wizzacode
+    ifai 0 { ifspritepal 0 ai AIWIZZRUNENEMY else { strength WIZZPALSTRENGTH ai AIWIZZSHOOTENEMY } }
+    else ifaction WIZZFLINTCH { ifactioncount 3 ai AIWIZZSHOOTENEMY }
+    else ifai AIWIZZSEEKENEMY state wizzaseekenemystate
+    else ifai AIWIZZRUNENEMY state wizzarunenemystate
+    else ifai AIWIZZSHOOTENEMY state wizzashootenemy
+    else ifai AIWIZZLOBBED state wizzalobbedstate
+    else ifai AIWIZZGO ifactioncount 4 { state wizzaseekenemystate }
+    else ifai AIWIZZGOBACK ifactioncount 4 { state wizzaseekenemystate }
+    ifai AIWIZZDYING state wizzadyingstate
+    else
+    {
+        ifhitweapon state checkwizzahitstate
+    }
+    ifbulletnear { spritepal 3 }
+ends
+
+actor WIZZ WIZZSTRENGTH fall state wizzacode sizeat 15 15 enda
+
+action AMERCURYWALK               0  4  5  1  20
+action AMERCURYNONGO
+action AMERCURYRUN                  0  4  5  1 20
+action AMERCURYSHOOT            20  2  5  1  90
+action AMERCURYLOB                 30  2  5  1  90
+action AMERCURYDYING             40  8  1  1  20
+action AMERCURYHEALTH           47  7  -1  1  20
+action AMERCURYXY                   0  4  1  1  20
+action MERCURYFLINTCH            40  1  1  1  1
+action AMERCURYDEAD               48
+
+move PALMERCURYSHRUNKRUNVELS 32
+move PALMERCURYRUNVELS 50
+move MERCURYWALKVELS 32
+move MERCURYRUNVELS 50
+move MERCURYSTOPPED
+move PALMERCURY 300
+move MERSTOPPED
+move MERKILUP 0 -70
+move MERSTOPP 0 -40
+
+ai AIMERCURYSEEKENEMY AMERCURYWALK MERCURYWALKVELS seekplayer
+ai AIMERCURYRUNENEMY AMERCURYRUN MERCURYRUNVELS faceplayer
+ai AIMERCURYSHOOTENEMY AMERCURYSHOOT MERCURYSTOPPED faceplayer
+ai AIMERCURYLOBBED AMERCURYLOB MERCURYSTOPPED faceplayer
+ai AIMERCURYDYING AMERCURYDYING MERCURYSTOPPED randomangle
+ai AIMERCURYPALSHRINK AMERCURYWALK PALMERCURYSHRUNKRUNVELS furthestdir
+
+state checkmercuryseekstate
+    ai AIMERCURYSEEKENEMY
+    ifspritepal 0 { } else move PALMERCURYRUNVELS seekplayer
+ends
+
+state mercuryrunenemystate
+    ifcansee
+    {
+        ifactioncount 3 { ifcanshoottarget { resetactioncount } else ai AIMERCURYSEEKENEMY }
+        ifcount 48 ifrnd 2 { ifp palive { sound MEMA_ATTACK ai AIMERCURYSHOOTENEMY } break }
+    }
+    else ai AIMERCURYSEEKENEMY
+ends
+
+state mercuryseekenemystate
+    ifrnd 2 soundonce MEMA_ROAM
+    else ifactioncount 3 { resetactioncount }
+    ifcansee ifcount 32 ifp palive ifrnd 48 ifcanshoottarget
+    {
+        ifrnd 64 ifpdistl 4096
+        {
+            ai AIMERCURYRUNENEMY
+            ifspritepal 0 { }
+            else move PALMERCURYRUNVELS seekplayer
+            break
+        }
+        ifcansee { ifrnd 256 { sound MEMA_ATTACK ai AIMERCURYLOBBED } }
+        else
+        	{
+        		sound MEMA_ATTACK ai AIMERCURYSHOOTENEMY
+        		ifspritepal 2 { stopsound MEMA_ATTACK }
+        	}
+    }
+ends
+
+state mercurydyingstate
+	ifpdistl RETRIEVEDISTANCE
+		{
+	  		 getlastpal { ifrnd 48 spawn FOOTPRINTS soundonce STEPNIT
+	  		 sizeat 0 0 sizeat 0 0 sizeat 0 0
+	  		 move PALMERCURY faceplayer spritepal 9 }
+	         ifspritepal 9 { ifrnd 12 { killit } }
+		}
+	ifaction AMERCURYDEAD
+	{
+    	ifspritepal 3 break
+    	else { strength 0 ifhitweapon ifwasweapon RADIUSEXPLOSION
+    	{ sound SQUISHED { killit } break } }
+ 	}
+  	ifactioncount 3 ifrnd 16 ifspritepal 2 { addphealth -2 spawn APPLE soundonce SHORT_CIRCUIT }
+	ifactioncount 8
+	{
+		ifspritepal 7
+	 	{
+ 			iffloordistl 8 action AMERCURYDEAD sizeat 10 10 sizeat 10 10 sizeat 10 10 cstat 416
+ 		}
+ 		ifspritepal 8
+	 	{
+ 			iffloordistl 8 action AMERCURYDEAD sizeat 10 10 sizeat 10 10 sizeat 10 10 cstat 416
+ 		}
+ 		ifspritepal 2 {	action AMERCURYHEALTH move MERKILUP geth sizeat 10 10 }
+ 		ifspritepal 3
+		{
+		iffloordistl 8 action AMERCURYNONGO
+			{
+			sizeat 10 10 sizeat 10 10 sizeat 10 10 sizeat 10 10
+			spritepal 11 cstat 257 strength 40 cactor DOCTOR
+			}
+		}
+		ifspritepal 26 endofgame 52
+	}
+	ifmove MERKILUP ifaction AMERCURYHEALTH ifactioncount 7 { action AMERCURYXY move MERSTOPP geth }
+	ifmove MERSTOPP ifaction AMERCURYXY
+	{
+		ifactioncount 0 { sizeat 10 13 }
+		ifactioncount 3 { sizeat 15 10 }
+		ifactioncount 6 { sizeat 30 7 }
+		ifactioncount 7 { spawn BOUNCEMINE ifrnd 256 { killit } }
+	}
+ends
+
+state mercurylobbedstate
+    ifcansee
+    {
+        ifactioncount 2 resetactioncount
+        else ifactioncount 1
+        {
+        	ifrnd 16
+        	{
+        		ifspritepal 3 { spawn DOCTOR }
+                ifspritepal 7 { soundonce STEEL shoot FREEZEBLAST }
+				ifspritepal 8 { soundonce STEEL shoot FREEZEBLAST }
+				ifspritepal 2 { addphealth -5 spawn APPLE stopsound MEMA_ATTACK soundonce SHORT_CIRCUIT }
+			}
+		}
+        else ifcount 64 ifrnd 16 state checkmercuryseekstate
+    }
+    else state checkmercuryseekstate
+ends
+
+state mercuryshootenemy
+    ifcount 72 state checkmercuryseekstate
+    else ifaction AMERCURYSHOOT ifactioncount 1
+    {
+    	ifrnd 16
+    	{
+      		ifspritepal 3 { spawn DOCTOR }
+      		ifspritepal 7 { soundonce STEEL shoot FREEZEBLAST }
+			ifspritepal 8 { soundonce STEEL shoot FREEZEBLAST }
+	  		ifspritepal 2 { addphealth -5 spawn APPLE stopsound MEMA_ATTACK soundonce SHORT_CIRCUIT }
+      		ifactioncount 2 { state checkmercuryseekstate }
+		}
+	}
+    else state checkmercuryseekstate
+ends
+
+state checkmercuryhitstate
+    ifdead
+    {
+        sound MEMA_DYING
+        addkills 1
+        ai AIMERCURYDYING
+    }
+    else
+    {
+        ifrnd 144
+        {
+            ifrnd 32 { action MERCURYFLINTCH move 0 }
+            else
+            {
+            sound MEMA_ATTACK ai AIMERCURYSHOOTENEMY
+            ifspritepal 2 { stopsound MEMA_ATTACK }
+            }
+        }
+        ifspritepal 0 { }
+		soundonce MEMA_PAIN
+        ifspritepal 3 { sizeat 10 10 spawn TRASH }
+	}
+ends
+
+state mercurycode
+    ifai 0 { ifspritepal 3 ai AIMERCURYRUNENEMY
+    else { strength 1 { sound MEMA_ATTACK ai AIMERCURYSHOOTENEMY } } }
+    else ifaction MERCURYFLINTCH { ifactioncount 3 ai AIMERCURYSEEKENEMY }
+    else ifai AIMERCURYSEEKENEMY state mercuryseekenemystate
+    else ifai AIMERCURYRUNENEMY state mercuryrunenemystate
+    else ifai AIMERCURYSHOOTENEMY state mercuryshootenemy
+    else ifai AIMERCURYLOBBED state mercurylobbedstate
+    ifai AIMERCURYDYING state mercurydyingstate
+    else
+    {
+        ifhitweapon state checkmercuryhitstate
+        ifwasweapon RPG { killit }
+        ifwasweapon FREEZEBLAST { spritepal 7 }
+    }
+ends
+state merres3 ifspawnedby RESPAWN { sizeat 23 17 spritepal 3 } ends
+state merres2  ifspritepal 7 { ifrnd 4 { strength TURRETSTRENGTH spritepal 8 } }
+			 ifspritepal 8
+					{ ifhitweapon
+						 {
+						 	spritepal 7 strength 0
+						 	soundonce STEEL shoot FREEZEBLAST
+						  }
+					 }
+ends
+
+actor MERCURY MERCURYSTRENGTH fall
+	state merres3 state merres2
+	state mercurycode
+enda
+
+action ASANDMANWALK                20 3  1  1  50
+action ASANDMANRUN                  0  4  5  1  30
+action ASANDMANLOB                   20 3  1  1  30
+action ASANDMANLOBBING          30 2  5  1  15
+action ASANDMANDYING              40 10  1  1  20
+action SANDMANFLINTCH             40 1  1  1  1
+action ASANDMANDEAD                48
+action ASTONE10                         860 5 1 1 15
+action ASTONE40                          -2705 1 1 1 5
+
+move PALSANDMANSHRUNKRUNVELS 45
+move PALSANDMANRUNVELS 45
+move SANDMANWALKVELS 10
+move SANDMANRUNVELS 45
+move SANDMANSTOPPED
+move SANDMANDEAD -25
+move STONE
+move STONE10 0 50
+move STONE20 70 -100
+move STONE30 50 50
+
+ai AISANDMANSEEKENEMY ASANDMANWALK SANDMANWALKVELS faceplayer geth
+ai AISANDMANRUNENEMY ASANDMANRUN SANDMANRUNVELS faceplayerslow geth
+ai AISANDMANLOBENEMY ASANDMANLOB SANDMANSTOPPED faceplayer
+ai AISANDMANDYING ASANDMANDYING SANDMANSTOPPED geth
+ai AISANDMANPALSHRINK ASANDMANWALK PALSANDMANSHRUNKRUNVELS faceplayer
+ai AISTONE ASTONE10 STONE geth
+ai AISTONE10 ASTONE10 STONE10 geth
+ai AISTONE20 ASTONE10 STONE20 randomangle geth
+ai AISTONE30 ASTONE10 STONE30 randomangle geth
+
+state checksanmanseekstate
+    ai AISANDMANSEEKENEMY
+    ifspritepal 0 { } else move PALSANDMANRUNVELS seekplayer
+ends
+
+state sanmanrunenemystate
+    ifcansee
+    {
+    ifactioncount 3
+    	{
+    	ifcanshoottarget { soundonce SAMA_WALK resetactioncount }
+	    else ai AISANDMANSEEKENEMY
+	    }
+	}
+    else ai AISANDMANSEEKENEMY
+		ifai AISANDMANSEEKENEMY
+			{
+			ifrnd 96
+				{
+				ifspritepal 7 { spawn SNAKEMASK }
+				}
+			}
+ends
+
+state sanmanseekenemystate
+    ifrnd 2 soundonce SAMA_ROAM
+    else ifactioncount 4 { resetactioncount sound SAMA_WALK }
+
+    ifcansee ifcount 32 ifrnd 48 ifcanshoottarget
+    {
+            {
+                ai AISANDMANRUNENEMY
+                ifspritepal 0 break
+                move PALSANDMANRUNVELS seekplayer
+                break
+            }
+        ifp palive ai AISANDMANLOBENEMY
+    }
+ends
+
+state sanmandyingstate
+  ifaction ASANDMANDEAD
+      ifspritepal 7 { move 0 }
+      ifspritepal 0
+       { ifactioncount 9
+     		{
+     			spawn ORGANTIC spawn ORGANTIC
+      			spritepal 4 ifspritepal 4 { killit }
+      		}
+		}
+      ifspritepal 3
+      { ifactioncount 9
+     	{
+     		spawn SMOLSPIDER spawn SMOLSPIDER
+      		spritepal 4 ifspritepal 4 { killit } }
+		 }
+	ifactioncount 10 { iffloordistl 8 sound THUD action ASANDMANDEAD
+	{ killit } ifspritepal 26 endofgame 52 }
+ends
+
+state sanmanlobbedstate
+	ifcansee
+    {
+     ifrnd 96
+    	{
+        ifaction ASANDMANLOBBING ifactioncount 1
+		  	{
+				ifspritepal 7 { ifrnd 32 { spawn SNAKEMASK } }
+            	ifrnd 80 { ai AISANDMANSEEKENEMY }
+        	}
+        	ifactioncount 3 { action ASANDMANLOBBING }
+         }
+       ifactioncount 4 { state checksanmanseekstate }
+    }
+else state checksanmanseekstate
+ends
+
+state checksanmanhitstate
+	ifspritepal 7 ifrnd 96 { spawn SNAKEMASK }
+    ifdead
+    {
+	ifspritepal 5
+			{
+        addkills 1
+        ai AISANDMANDYING
+        move SANDMANDEAD geth
+        sound SAMA_DYING
+			}
+	ifspritepal 7
+			{
+        addkills 1
+        ai AISANDMANDYING
+        sound SAMA_DYING
+			}
+	ifspritepal 3
+			{
+        addkills 1
+        ai AISANDMANDYING
+        move SANDMANDEAD geth
+        sound SAMA_DYING
+			}
+	ifspritepal 0
+			{
+        addkills 1
+        ai AISANDMANDYING
+        move SANDMANDEAD geth
+        sound SAMA_DYING
+			}
+    }
+    else
+    {
+        ifrnd 32 { action SANDMANFLINTCH move 0 }
+        soundonce SAMA_PAIN
+    }
+
+ends
+state sanmancode
+    ifaction ASTONE40 { ifspritepal 0 ai AISANDMANRUNENEMY else { ai AISANDMANLOBENEMY } }
+    else ifai 0 { ifspritepal 0 ai AISANDMANRUNENEMY else { ai AISANDMANLOBENEMY } }
+    else ifaction SANDMANFLINTCH { ifactioncount 3 ai AISANDMANSEEKENEMY }
+    else ifai AISANDMANSEEKENEMY state sanmanseekenemystate
+    else ifai AISANDMANRUNENEMY state sanmanrunenemystate
+    else ifai AISANDMANLOBENEMY { ifactioncount 3 { state sanmanlobbedstate } }
+    ifai AISANDMANDYING state sanmandyingstate
+    else
+    {
+        ifhitweapon { state checksanmanhitstate }
+     }
+ends
+
+state bossmy10
+	ifpdistl 1024 { addphealth -1 palfrom 52 0 50 soundonce POISON }
+ends
+
+state stone10
+	ifaction ASTONE40 { cstat 32768 ai AISTONE }
+	ifai AISTONE { sound STEAM_HISSING ifactioncount 2 { cstat 257 ai AISTONE10 } }
+	ifai AISTONE10 { iffloordistl 16 { stopsound THUD ai AISTONE20 } }
+	ifai AISTONE20 { ifactioncount 3 { ai AISTONE30 } }
+	ifai AISTONE30 { iffloordistl 10 stopsound THUD ifrnd 16 { killit } }
+ends
+
+actor SANDMAN SANDMANSTRENGTH ASTONE40 fall sizeat 15 15
+		ifspawnedby FORAUTO { spritepal 9 }
+		ifspritepal 0 { cstat 257 state sanmancode state bossmy10 }
+		ifspritepal 7 { cstat 257 state sanmancode state bossmy10 }
+		ifspritepal 3 { cstat 257 state sanmancode state bossmy10 }
+		ifspritepal 5 { cstat 257 state sanmancode state bossmy10 }
+		ifspritepal 9 { state stone10 }
+		ifspritepal 6
+			{
+			sizeat 15 15 sizeat 15 15 sizeat 15 15 sizeat 15 15
+			ifactioncount 0 { cstat 32768 }
+			ifactioncount 5 { cstat 257 spawn GREENDEMON ifrnd 256 { killit } }
+			}
+enda
+
+action AFEMMGO       2169 3 1 1 15
+action AFEMMSTO      2177
+action AFEMMAN       2167 10 1 1 15
+
+move FEMMGO  50
+move FEMMSTO 0
+move FEMMAN  20
+move FEMMGO1 5
+
+ai AIFEMMGO AFEMMGO FEMMGO faceplayerslow
+ai AIFEMMSTO AFEMMSTO FEMMSTO dodgebullet
+ai AIFEMMAN AFEMMAN FEMMAN faceplayerslow
+
+state fem79
+	ifspritepal 0 { cstat 32768 ifrnd 0 { spritepal 3 } }
+	ifspritepal 3 { cstat 257 }
+ends
+state fem80 ifpdistl 2048 ifhitspace ai AIFEMMGO else ifmove FEMMGO soundonce STRAUS1 
+	ifmove FEMMGO ifpdistl 1024 { addphealth -1 soundonce HERO_LONGTERM_PAIN5 palfrom 48 5 resetactioncount }
+ends
+state fem81 ifpdistl 3300 ifpdistl 3049 ai AIFEMMSTO ends
+state fem82 ifpdistl 35000 ifpdistl 3501 ai AIFEMMAN ends
+state fem83 ifcansee ifpdistl 35000 move FEMMGO1 geth ends
+
+state fem84 ifhitweapon
+ { 
+     { ifwasweapon SHOTSPARK1 soundonce LADY_SCREAM guts JIBS4 15 guts JIBS1 1 }
+     { ifwasweapon KNEE soundonce LADY_SCREAM guts JIBS4 13 guts JIBS1 1 }
+     { ifwasweapon RPG guts JIBS4 50 guts JIBS1 1 { killit } }
+ }
+ends
+
+actor OSTRICH TOUGH fall sizeat 10 10
+	state fem79
+	ifspritepal 3 { state fem80 state fem81 state fem82 state fem83 state fem84 }
+
+enda
+
+action AHOLO   1548 6 1 1 5
+action AHOLO10  -13 1 1 1 5
+action AHOLO20 486 5 1 1 5
+action ADOCLOAD 0 1 1 1 10
+
+move HOLO  		   	 30
+move HOLUP  		10
+move HOLDOUN  	 70  70
+move HOLOPR        70 50
+move HOLOPR2      120
+move HOLOMER10 70
+move HOLUP1  		-10
+move HOLDOUN1  	 -70  50
+
+ai AIWNORMA ADOCLOAD HOLO faceplayer
+
+ai AIWUP2 AHOLO HOLUP jumptoplayer
+ai AIWUP21 AHOLO HOLUP1 jumptoplayer
+ai AIWNORMA2 AHOLO HOLOPR2 faceplayerslow
+
+ai AIWUP3 AHOLO10 HOLUP jumptoplayer
+ai AIWUP31 AHOLO10 HOLUP1 jumptoplayer
+ai AIWDOUN3 AHOLO10 HOLDOUN faceplayer
+ai AIWDOUN31 AHOLO10 HOLDOUN1 faceplayer
+ai AIWNORMA3 AHOLO10 HOLOPR faceplayer
+
+ai AIWUP AHOLO20 HOLUP jumptoplayer
+ai AIWUP1 AHOLO20 HOLUP1 jumptoplayer
+ai AIWDOUN AHOLO20 HOLDOUN faceplayer
+ai AIWDOUN1 AHOLO20 HOLDOUN1 faceplayer
+ai AIWNORMA1 AHOLO20 HOLOPR faceplayer
+
+state holo9
+	ifspawnedby RESPAWN
+		{
+		spritepal 3
+		ifai 0 { ai AIWNORMA }
+			{
+			sizeat 15 15 sizeat 15 15 sizeat 15 15
+			ifactioncount 5	{ fall ai AIWNORMA2 soundonce LBALL_ATTACK2 }
+			}
+		}
+	ifspawnedby MERCURY
+		{
+		spritepal 5
+		ifai 0 { ai AIWNORMA }
+			{
+			sizeat 5 5 sizeat 5 5 sizeat 5 5
+			ifactioncount 5	{ ai AIWNORMA1 soundonce MER_BOMBFLY }
+			}
+		}
+	ifspritepal 11
+		{
+			action AHOLO20
+			sizeat 10 10 sizeat 10 10 sizeat 10 10 sizeat 10 10
+			move HOLOMER10 faceplayerslow
+			ifnotmoving { ifrnd 4 { strength 0 spritepal 20 } }
+			ifhitweapon
+				{
+				addkills 1
+				ifdead
+					{
+					strength 0 spritepal 20
+					addkills 1
+					}
+				}
+		}
+ends
+
+state holo11
+ifspritepal 5
+{
+	ifai AIWNORMA1
+	{
+		soundonce MER_BOMBFLY
+		ifceilingdistl 90 { ai AIWDOUN soundonce MER_BOMBFLY }
+		iffloordistl 70 { ai AIWUP soundonce MER_BOMBFLY }
+	}
+	ifai AIWDOUN { iffloordistl 30 { ai AIWUP soundonce MER_BOMBFLY } }
+	ifai AIWUP { ifceilingdistl 90 { ai AIWDOUN soundonce MER_BOMBFLY } }
+
+	ifnotmoving
+			{
+				soundonce MER_BOMBFLY
+				ifceilingdistl 90 { ai AIWDOUN1 }
+				iffloordistl 30 { ai AIWUP1 }
+				ifrnd 4 { killit }
+			}
+}
+ifspritepal 3
+{
+	ifai AIWNORMA2
+	{
+		ai AIWNORMA2
+		sizeat 30 30 
+		ifpdistl 20000 ifpdistl 1500 { shoot KNEE }
+	}
+	ifnotmoving
+			{
+				soundonce LBALL_ATTACK2
+				ifceilingdistl 90 { ai AIWNORMA2 }
+				iffloordistl 70 { ai AIWUP21 }
+				ifrnd 4 { killit }
+			}
+}
+ends
+state holo12
+	ifpdistl 800 ifcansee
+		{
+			iffloordistl 80
+			{
+				ifspritepal 3 { stopsound LBALL_ATTACK2 addphealth 50 palfrom 52 0 50 soundonce HEALTH killit }
+				ifspritepal 5 { addphealth -10 palfrom 52 0 50 soundonce HERO_LONGTERM_PAIN4 killit }
+				ifspritepal 11 { addphealth -10 palfrom 52 0 50 soundonce HERO_LONGTERM_PAIN8 killit }
+			}
+		}
+ends
+state steWWW
+	ifhitweapon
+	{
+	   	addkills 1
+    	ifstrength 0
+    	{
+    		sound SQUISHED spawn TRASH spawn TRASH spawn TRASH spawn TRASH ifrnd 256 { killit }
+		}
+	}
+	ifpdistl 1024 iffloordistl 30 { move WEAMFLY jumptoplayer }
+ends
+state holo13
+		ifspritepal 3 { state holo11 }
+		ifspritepal 5 { state steWWW state holo11 }
+		ifspritepal 20 { cstat 0 spawn FRAMEEFFECT1 spawn TRASH sizeat 0 0 sizeat 0 0 sizeat 0 0 ifrnd 64 { killit } }
+ends
+
+actor DOCTOR 20 fall cstat 257
+	state holo9 state holo12 state holo13
+enda
+
+action AHEAT  -1056
+
+state heat10 action AHEAT ends
+state heat12 cactor FORPITCHER4 ends
+
+actor REDPOISON fall cstat 257
+      state heat10
+      state heat12
+enda
+
+state heat11
+      ifcansee ifpdistl 1024 ifhitspace
+    { tip { addphealth -20 palfrom 52 0 50 soundonce POISON quote 107 killit } }
+ends
+
+actor  FORPITCHER4  fall sizeat 10 10 cstat 257
+state heat11
+enda
+
+action TOM  -1062
+state atom11 cactor FORPITCHER3 ends
+state atom12 action TOM ends
+
+actor BLUEHEALTH fall
+state atom11
+state atom12
+enda
+
+state atom10 fall
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifcanseetarget
+        ifphealthl MAXPLAYERBLUEHEALTH
+		ifcansee ifhitspace ifpdistl 1024
+    { tip
+        { addphealth 100 palfrom 52 0 50 quote 19
+        ifspawnedby BLUEHEALTH state getcode soundonce HEALTH
+        killit }
+    }
+ends
+
+actor FORPITCHER3  fall sizeat 10 10 cstat 257
+state atom10
+enda
+
+action AFREEZ -1081
+action AWATERDRIP  2343 9 1 1 6
+
+state freez10 action AFREEZ ends
+state freez12 cactor FORPITCHER2 ends
+state watdrip
+			ifaction 0 { action AWATERDRIP }
+			ifaction AWATERDRIP ifactioncount 9 { killit }
+ends
+
+move SWATF10 0 250
+state sendwat10
+		ifaction 0 { action AWATERDRIP }
+		ifaction AWATERDRIP
+		{
+			move SWATF10 geth
+			ifactioncount 0 { cstat 32768 }
+			ifactioncount 7 { cstat 128 }
+			ifactioncount 9 { killit }
+		}
+ends
+actor REDHIELD
+	ifspawnedby RESPAWN { cstat 257 state freez10 state freez12 }
+	ifspawnedby SHOTSPARK1 { fall cstat 386 state watdrip }
+	ifspawnedby EGG { fall cstat 386 state watdrip spritepal 1 }
+	ifspawnedby FECES { sizeat 20 20 state sendwat10 }
+enda
+
+state freez11
+	fall
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifp palive ifcount 6 ifpdistl RETRIEVEDISTANCE ifpinventory GET_SHIELD SHIELD_AMOUNT
+        ifcansee ifhitspace ifpdistl 1024
+    { tip
+       { addinventory GET_SHIELD SHIELD_AMOUNT palfrom 52 0 50 quote 38
+        soundonce HEALTH
+        ifspawnedby SHIELD state getcode
+        killit }
+    }
+ends
+
+actor  FORPITCHER2  fall sizeat 10 10 cstat 257
+state freez11
+enda
+
+action ABLUEPOISON  -1046
+state boot11 action ABLUEPOISON ends
+state boot12 cactor FORPITCHER1 ends
+actor BLUEPOISON fall cstat 257
+	state boot11
+	state boot12
+enda
+
+state boot10 ifcansee ifpdistl 1024 ifhitspace
+  { tip { addphealth -20 palfrom 52 0 50 soundonce POISON quote 106 killit } }
+ends
+
+actor  FORPITCHER1 fall sizeat 10 10 cstat 257
+state boot10
+enda
+
+action ASK              677  4  5  1
+action ASK10
+move SK 0
+ai AISK ASK SK geth
+state ske10 ai AISK ends
+state ske20 ifpdistl 1024 ifhitspace { cstat 257 action ASK10 cactor GNAWER } ends
+actor STRAW4 fall cstat 0 sizeat 7 5 state ske10 state ske20 enda
+
+action AMYBOMB        329 5 1 1 20
+action AMYBOMB10    329 5 1 1 10
+
+move ME10
+move ME20
+
+state mer11
+	ifspritepal 7 ifaction 0 { cstat 32768 action AMYBOMB move ME10 geth sizeat 8 8 }
+	ifmove ME10 ifaction AMYBOMB ifactioncount 100
+	{
+		cstat 257
+		action AMYBOMB10 move ME20 geth
+		strength 30
+	}
+	ifmove ME20 ifpdistl 3500 { soundonce BOMBSPAWN }
+	ifaction AMYBOMB10 ifpdistl 1024
+	{
+		hitradius 3072 WEAK MEDIUMSTRENGTH TOUGH HBOMBTOUGH spawn EXPLOSION2
+		soundonce RPG_EXPLODE ifrnd 256 { killit }
+	}
+ends
+state mer12
+    ifhitweapon
+    {
+    addkills 1
+    ifstrength 0 { spawn EXPLOSION2 soundonce RPG_EXPLODE killit }
+    	{
+        	ifwasweapon RADIUSEXPLOSION { soundonce RPG_EXPLODE killit }
+        	ifwasweapon RPG { soundonce RPG_EXPLODE killit }
+    	}
+    }
+ends
+actor NEWBOMB state mer11 state mer12 enda
+
+
+action AFISH30  0 1 1 1 30
+action AFISH10  2007 4 1 1 15
+action AFISH20  2038 4 1 1 15
+
+move FISH10  35  -10
+move FISH20  35   10
+move FISHST1 0   10
+move FISHST2 0   -10
+
+state inwat ifinwater { sizeat 2 2 ifcansee ifrnd 2 spawn WATERBUBBLE } ends
+state fish10
+	ifaction AFISH30 { cstat 32768 ifactioncount 8 { action AFISH10 } }
+	ifaction AFISH10 { cstat 257 move FISHST1 dodgebullet }
+	ifmove FISHST1 ifactioncount 8 { action AFISH20 move FISHST2 faceplayerslow }
+	ifmove FISHST2 ifactioncount 8 { action AFISH10 move FISHST1 faceplayerslow }
+	ifmove FISH10 ifactioncount 4 { action AFISH20 move FISH20 faceplayerslow }
+	ifmove FISH20 ifactioncount 4 { action AFISH10 move FISH10 faceplayerslow }
+ends
+state fish20
+	ifnotmoving { action AFISH10 move FISHST1 dodgebullet }
+	ifpdistl 900 ifmove FISH20 { addphealth -1 soundonce HERO_LONGTERM_PAIN2 }
+	else ifspritepal 2 ifpdistl 1200 { move FISH20 faceplayerslow }
+ends
+
+state newfish10
+	ifhitweapon
+			{
+				move FISH10 dodgebullet
+    			addkills 1
+    			soundonce SQUISHED
+    			ifstrength 0 { debris SCRAP3 2 killit }
+	ifdead
+        				{
+            				addkills 1
+            				ifwasweapon RADIUSEXPLOSION { sound SQUISHED state delete_enemy }
+            				else ifwasweapon RPG { sound SQUISHED state delete_enemy }
+							sound SQUISHED
+        				}
+			}
+ends
+
+actor ALLFISH FISHSTRENGTH AFISH30
+	state inwat
+	ifspritepal 2 { state fish10 state fish20 state newfish10 }
+	ifspritepal 3 { state fish10 state fish20 state newfish10 }
+	ifspritepal 7 { state fish10 state fish20 state newfish10 }
+	ifspritepal 8 { state fish10 state fish20 state newfish10 }
+enda
+
+move CARPET1 1 -30
+move CARPET2 30
+move CARPET3 1 30
+move CARPET4 -50
+
+state mic1 ifpdistl 512 { move CARPET1 geth soundonce ORIENTAL } ends
+state mic2
+	ifpdistl 1024 ifpdistl 512 { move CARPET3  geth soundonce BONGO } break
+	else ifceilingdistl 16 fall
+ends
+actor CARPET sizeat 40 55
+	state mic1
+	state mic2
+enda
+
+action ACARP10 0 1 1 0 30
+action ACARP20 0 1 1 0 30
+action ACARP30 0 1 1 0 30
+
+state carcar
+	ifspritepal 3
+	{
+		ifaction ACARP10 ifactioncount 0 { cstat 32768 }
+		ifaction ACARP10
+			{
+				ifpdistl 2800 { action ACARP20 }
+			}
+
+		ifaction ACARP20
+			{
+			cstat 417
+			ifpdistl 10000 ifpdistl 2800 { cstat 32768 }
+			ifactioncount 20 { action ACARP10 }
+			}
+	}
+	ifspritepal 9
+	{
+		ifaction ACARP10 ifactioncount 0 { cstat 32768 }
+		ifaction ACARP10
+			{
+				ifpdistl 2800 { action ACARP20 }
+			}
+
+		ifaction ACARP20
+			{
+			cstat 416
+			ifpdistl 10000 ifpdistl 2800 { cstat 32768 }
+			ifactioncount 20 { action ACARP10 }
+			}
+	}
+
+ends
+state cosoun
+	ifspritepal 9 { ifpdistl 800 { soundonce NOTSOME } }
+ends
+actor FEM9 0 ACARP10 sizeat 20 20 state carcar state cosoun enda
+
+action ACARP14 0 1 1 1 30
+action ACARP11 -856 1 1 0 30
+action ACARP12  2678 4 1 1 30
+action ACARP13  2683
+
+move bla10 30
+move bla20 150
+move bla30 70
+move bla40 15
+state blackw1
+	ifspritepal 0
+	{
+		ifcansee
+		{
+			ifactioncount 0 { cstat 275 }
+			ifactioncount 4 { spritepal 3 }
+		}
+	}
+ends
+state blackw
+		ifspritepal 3
+			{
+				cstat 275
+				ifpdistl 2500 { soundonce SHDWWALK }
+				action ACARP12
+				move bla10 geth
+				ifnotmoving { move bla20 randomangle }
+			}
+ends
+state blackw3
+	ifaction ACARP11
+		{
+			ifrnd 0 { sizeat 20 40 }
+			ifrnd 8 { sizeat 5 75 sizeat 5 75 sizeat 5 75 sizeat 5 75 }
+		}
+ends
+state blackw2
+	ifhitweapon
+		{
+				strength 150
+				spritepal 5 cstat 418
+				ifwasweapon RPG { killit }
+				ifwasweapon RADIUSEXPLOSION { killit }
+		}
+	ifspritepal 5 { action ACARP11 move bla30 geth }
+	ifaction ACARP11 { ifnotmoving { move bla40 faceplayer { spritepal 9 } } }
+	ifspritepal 9
+		{
+			cstat 258
+			action ACARP13
+			ifrnd 64 { shoot SPIT }
+			ifrnd 8 { spritepal 3 }
+			soundonce SHDWATT
+		}
+ends
+actor SHADOWNET 150 ACARP14 sizeat 18 13 fall
+	state blackw state blackw1 state blackw2 state blackw3
+enda
+
+action STEAMFRAMES 550 1 1 1 60
+action GETSNA 550 3 1 1 10
+
+state steamcode
+	ifspritepal 0
+       {
+       	soundonce STEAM_HISSING
+       	ifactioncount 0 { killit }
+		}
+ends
+state gsnake10
+		ifcansee ifpdistl 10000
+			{
+			ifspritepal 3
+					{
+						ifaction STEAMFRAMES { ifactioncount 10 { action GETSNA } }
+						ifaction GETSNA
+							{
+							ifactioncount 2 { soundonce KAMORA }
+							ifactioncount 3
+								{
+									spawn SNAKEMASK
+									action STEAMFRAMES
+								}
+							}
+					}
+			}
+ends
+
+actor MASK 0 STEAMFRAMES
+cstat 80 state steamcode state gsnake10
+enda
+
+action ASNADAN0
+action ASNADAN1 463     9 1 1 16
+action ASNADAN2 3275 11 1 1 16
+action ASNADAN3 3287 11 1 1 16
+action ASNADAN4 3465 20 1 1 16
+action ASNADAN5 3482   3 1 1 16
+action ASNADAN6 3465 20 1 1 10
+
+move SNADAN1
+
+ai AISNADAN1 ASNADAN1 SNADAN1 geth
+ai AISNADAN2 ASNADAN2 SNADAN1 geth
+ai AISNADAN3 ASNADAN3 SNADAN1 geth
+ai AISNADAN4 ASNADAN4 SNADAN1 geth
+	
+state ste8 ifpdistl 6500 soundonce OST_D ends
+state ste9 ifcount SHRUNKCOUNT { action ASNADAN0 } ends
+state ste10 ifaction ASNADAN0 { ai AISNADAN4 } ends
+state ste11 ifai AISNADAN4 ifhitspace {  ifpdistl 6000 ifactioncount 15 ai AISNADAN2 } ends
+state ste12 ifai AISNADAN2 { ifactioncount 11 ai AISNADAN1 } ends
+state ste13 ifai AISNADAN1 { ifactioncount 32 ai AISNADAN3 } ends
+state ste14 ifai AISNADAN3 { ifactioncount 11 action ASNADAN5 } ends
+state ste15 ifaction ASNADAN5 { ifactioncount 3 ai AISNADAN4 } ends
+state ste7
+	ifspawnedby RESPAWN { fall }
+	state ste8 state ste9 state ste10 state ste11 state ste12 state ste13 state ste14 state ste15
+ends
+
+actor SNAKE sizeat 10 10 state ste7 enda
+
+action ASNEMA10 -1689 1 1 1 1
+action ASNEMA20 1776 20 1 1 15
+action ASNEMA30 1776 20 1 1 15
+
+move MASKUP  		10  50
+move MASKDOUN  	 60  160
+move MASKD10       60 60
+move MASKU20       60 -70
+move MASKMID       60
+
+state masksna30
+	ifaction ASNEMA10
+	{
+	cstat 0
+	ifspritepal 0 { move 0 }
+	ifcansee { ifactioncount 30 { spritepal 9 action ASNEMA20 } }
+	else { spritepal 2 sound SQUISHED debris SCRAP3 5 ifrnd 256 { killit } }
+	}
+ends
+
+state masksna10
+stopsound PRED_RECOG
+ifcansee ifpdistl 15000 ifpdistl 3000
+{
+	soundonce OST_D
+	ifspritepal 9
+	{
+		ifaction ASNEMA20
+		{
+			ifactioncount 0 { cstat 0 }
+			ifactioncount 8 { cstat 257 }
+			ifmove 0 { move MASKMID faceplayerslow }
+			ifmove MASKUP { move MASKU20 faceplayerslow }
+			ifmove MASKMID { iffloordistl 10 { move MASKU20 faceplayerslow } }
+			ifmove MASKU20
+			{
+			ifceilingdistl 100 { action ASNEMA30 move MASKDOUN faceplayerslow }
+			ifactioncount 20 { action ASNEMA30 move MASKDOUN faceplayerslow }
+			}
+		}
+		ifaction ASNEMA30
+		{
+			ifactioncount 0 { cstat 257 }
+			ifmove 0 { move MASKMID faceplayerslow }
+			ifmove MASKMID { ifceilingdistl 100 { move MASKDOUN faceplayerslow } }
+			ifmove MASKDOUN
+			{
+			iffloordistl 10 { action ASNEMA20 move MASKUP jumptoplayer faceplayerslow }
+			}
+		}
+		ifnotmoving { ifrnd 32 { spritepal 3 } }
+	}
+	ifspritepal 3
+		{
+		ifceilingdistl 100 { action ASNEMA20 spritepal 9 }
+		iffloordistl 10 { action ASNEMA30 spritepal 9 }
+		else { move MASKMID randomangle faceplayerslow }
+		}
+	ifpdistl 3000 { action ASNEMA20 spritepal 9 }
+}
+ifnotmoving { ifrnd 4 { spritepal 4 } }
+ifspritepal 4 { spritepal 2 sound SQUISHED debris SCRAP3 5 ifrnd 256 { killit } }
+ends
+
+state masksna20
+	ifhitweapon
+	{
+	   	addkills 1
+    	ifstrength 0 { spritepal 2 sound SQUISHED debris SCRAP3 5 ifrnd 256 { killit } }
+	}
+	ifpdistl 1024
+		{
+			iffloordistl 100
+			{
+				addphealth -10 palfrom 52 0 50 soundonce HERO_LONGTERM_PAIN4 killit
+			}
+		}
+ends
+
+actor SNAKEMASK 30 ASNEMA10
+	state masksna10 state masksna20 state masksna30 sizeat 7 7
+enda
+
+
+actor CRYSTALBULLET sizeat 15 15 cstat 257
+    fall
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifcanseetarget
+    {
+        addammo SHRINKER_WEAPON CRYSTALBULLETAMOUNT quote 78
+        ifspawnedby CRYSTALBULLET state getcode
+        else state quikget
+    }
+state vz10
+enda
+
+
+action APOD      -366
+action APOD1 	-148 8 1 1 25
+action APOD2 	 306
+action APOD3 0
+action APOD4 0
+
+move POD1       -100
+move POD2        100
+move POD3        50
+move POD4        -50
+move POD5         0 150
+
+state pod9  ifrnd 4 cstat 257 ends
+state pod10 ifmove 0 { action APOD soundonce GULLS02 move POD2 faceplayerslow } ends
+state pod11 ifaction APOD ifpdistl 2500 { action APOD1 move POD3 getv ifrnd 32 { spawn FECES } } ends
+state pod12 ifmove POD3 ifaction APOD1 ifactioncount 8 { action APOD2 soundonce GULLS02 move POD1 faceplayerslow } ends
+state pod13 ifaction APOD2 ifpdistl 10000 { action APOD1 move POD4 getv } ends
+state pod14 ifmove POD4 ifaction APOD1  ifactioncount 8 { action APOD soundonce GULLS02 move POD2 faceplayerslow } ends
+state wea10 ifhitweapon
+	{
+		{
+		ifwasweapon SHOTSPARK1
+		{
+			soundonce LADY_SCREAM guts JIBS4 25
+			cstat 265 action APOD move POD5 geth break
+		}
+		else ifwasweapon SHRINKSPARK soundonce LADY_SCREAM guts JIBS4 15 ifrnd 256 { killit }
+		else ifwasweapon RPG { killit }
+		}
+	}
+ends
+state pod15
+		ifawayfromwall ifcansee
+	{
+		state pod10 state pod11 state pod12 state pod13 state pod14
+	}
+ends
+state pod16 iffloordistl 8 { cstat 257 action APOD4 { strength 0 move 0 cactor BIRDDIE } } ends
+state notfl10 ifnotmoving
+			{
+				ifpdistl 2500 { action APOD1 move POD3 getv }
+				action APOD1 ifaction APOD1 { action APOD move POD2 faceplayerslow }
+			}
+ends
+
+actor BIRDFECES 50 sizeat 10 10 state pod9 state wea10 state pod15 state pod16 state notfl10 enda
+
+move LAVA 60
+state dymokmake iffloordistl 60
+	{
+	ifpdistl 8000
+		{
+			ifspritepal 0 ifrnd 16 { spawn BIGSMOKE }
+			ifspritepal 9 ifrnd 2 { spawn BIGSMOKE }
+			ifspritepal 2
+			{
+				move LAVA spin
+				ifrnd 4 { soundonce BUBBY spawn SMALLSMOKE }
+			}
+		}
+	}
+ends
+
+state sandmake ifspritepal 5 { ifpdistl 6000 ifrnd 24 { spawn FECES } } ends
+
+actor PUFFSMOKE cstat 32768 ifcansee { state dymokmake state sandmake } enda
+
+action ASM 1 4 1 1 22
+action ASMM 2 3 1 1 5
+move SM 50 -50
+move SMM 50
+
+state dymok ifrnd SWEARFREQUENCY action ASM move SM randomangle geth ends
+state dymok1 ifceilingdistl 60 { killit } ends
+state dymok2 ifaction ASM
+{
+	ifactioncount 0 sizeat 100 80
+	ifactioncount 4 sizeat 400 300
+	ifactioncount 8 sizeat 600 800
+	ifactioncount 12 sizeat 30 100
+	ifactioncount 13 { killit }
+}
+ends
+
+state dymok5 ifspawnedby PUFFSMOKE { cstat 2 state dymok state dymok1 state dymok2 }
+					   else cstat 2 state dymok state dymok1 state dymok2
+ends
+actor BIGSMOKE state dymok5 enda
+
+action ALUZA10 1362 8 -1 1 15
+state newmer10
+ifspritepal 0
+	{
+		sizeat 11 15 sizeat 11 15 sizeat 11 15
+		ifcansee ifpdistl 5000 ifaction 0
+		ifcount 96
+			{
+				action ALUZA10 cstat 257 spritepal 8
+				ifactioncount 1 { soundonce MEMA_RECOG }
+			}
+	}
+
+ifspritepal 2
+	{ 
+		sizeat 11 15 sizeat 11 15 sizeat 11 15
+		ifcansee ifpdistl 5000 ifaction 0
+		ifcount 96
+							{
+								strength MERCURYSTRENGTH
+								action ALUZA10 cstat 257 spritepal 2
+								ifactioncount 1 { soundonce MEMA_RECOG }
+							}
+	}
+
+	ifactioncount 3 ifrnd 16 ifspritepal 2 { addphealth -2 spawn APPLE soundonce SHORT_CIRCUIT }
+	ifactioncount 8	{ cactor MERCURY }
+ends
+state newmerdead10
+				ifhitweapon
+			{
+    			addkills 1
+    			soundonce SQUISHED
+    			ifstrength 0
+    				{
+    					ifspritepal 2 { debris SCRAP3 5 killit }
+    					ifspritepal 0 { spritepal 7 debris SCRAP3 5 killit }
+    				}
+					ifdead
+        				{
+            				addkills 1
+            				ifwasweapon RADIUSEXPLOSION { sound SQUISHED state delete_enemy }
+            				else ifwasweapon RPG { sound SQUISHED state delete_enemy }
+							sound SQUISHED
+        				}
+			}
+ends
+actor PUDDLE TURRETSTRENGTH state newmer10 state newmerdead10 enda
+
+
+state palfall
+	ifspritepal 21 { fall }
+	ifspritepal 23 { fall }
+ends
+
+actor BLUEKEY state palfall sizeat 5 5
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifcanseetarget
+    ifhitspace
+    {
+        ifpinventory GET_ACCESS 0 break
+        addinventory GET_ACCESS 1
+        quote 43
+        state getcode
+    }
+enda
+
+action AGOR10 980
+action ARESHANG 3263
+move GOR10 200
+move GOR20 5 70
+move GOR30 250
+move GOR40 5 15
+
+state acc21 ifspawnedby RESPAWN { spritepal 21 sizeat 5 5 cactor BLUEKEY } ends
+state acc22 ifspawnedby GORGUL1 { cstat 32768 sizeat 30 30 spritepal 3 action AGOR10 } ends
+state acc25 ifspawnedby GORGUL2 { cstat 32768 sizeat 30 30 spritepal 3 action AGOR10 } ends
+state acc30 ifspawnedby HANGMAN	{ cstat 32768 sizeat 9 8 spritepal 9 action ARESHANG } ends
+
+state shuttle60 ifspritepal 3
+	{ ifpdistl 1024 { addphealth -20 palfrom 48 52 soundonce HERO_LONGTERM_PAIN ifrnd 256 { killit } } }
+	ifspritepal 9
+	{
+	ifpdistl 1024
+		{
+		soundonce AXEINBODY
+		addphealth -20 palfrom 48 52 soundonce HERO_LONGTERM_PAIN ifrnd 256 { killit }
+		}
+	}
+ends
+state acc24 ifspritepal 3 { ifnotmoving { killit } } ends
+state acc32 ifspritepal 9
+	{
+	ifnotmoving
+		{
+		soundonce AXEINWALL debris SCRAP6 2 debris SCRAP2 4 ifrnd 256 { killit }
+		}
+	}
+ends
+state acc26 ifspritepal 3 { move GOR20 faceplayer iffloordistl 25 { cstat 257 move GOR10 geth } } ends
+state acc31 ifspritepal 9
+	{
+	move GOR40 faceplayerslow iffloordistl 30
+		{
+		soundonce AXEINFLY
+		cstat 257 move GOR30 geth
+		}
+	}
+ends
+
+actor REDKEY
+	state acc21 state acc22 state acc24
+	state acc25 state acc26 state shuttle60
+	state acc30 state acc31 state acc32
+enda
+
+state acc23 spritepal 23 sizeat 5 5 cactor BLUEKEY ends
+actor YELLOWKEY state acc23 enda
+
+action ASHUT10 0
+action ASHUT20 1
+
+state shuttle10 cstat 16 action ASHUT10 ends
+state shuttle20 ifcansee ifpdistl 4000 ifpdistl 2000 { soundonce GORGUL } ends
+state shuttle30 ifcansee ifpdistl 1500 { cstat 273 action ASHUT20 } ends
+state shuttle40 ifhitweapon	{ soundonce VENT_BUST debris SCRAP5 50 { killit } } ends
+state shuttle50 ifaction ASHUT20 { ifrnd 8 { spawn REDKEY } } ends
+
+actor GORGUL1 TOUGH
+	state shuttle10
+	state shuttle20
+	state shuttle30
+	state shuttle40
+	state shuttle50
+enda
+
+actor GORGUL2 TOUGH
+	state shuttle10
+	state shuttle20
+	state shuttle30
+	state shuttle40
+	state shuttle50
+enda
+
+state notammo10 ifcansee tip ends
+actor KILLWEAPON cstat 32768 state notammo10 enda
+
+action AQUEBALL -513
+state fall20 ifcansee { soundonce HERO_SCREAM { killit } } ends
+actor QUEBALL cstat 16 state fall20 enda
+
+action ADYMM           0 3 1 1 12
+action ADYMUP         9 3 1 1 12
+action ADYMDKISS    5 2 1 1 12
+action ABATS 			 0 1 1 1 1
+action ADYMFLY        0 3 1 1 12
+
+move STOP
+move STOPNEW
+move STOPWALL    0 -100
+move BATFLY10  700 150
+move BATKISS     40
+move BATJUM      50
+move BATWEA   -200
+
+state bat9 ifawayfromwall { ifmove 0 { action ADYMM move STOP getv } } ends
+state bat12 ifpdistl 2000
+			{
+				   ifnotmoving ifrnd 0 { spritepal 3 }
+				   ifspritepal 3 { operate { cactor BATSTAYPUT } }
+			}
+ends
+state bat10
+	ifmove STOP { action ADYMM move BATFLY10 faceplayer soundonce FLYBAT cstat 257 }
+	ifmove BATFLY10 { iffloordistl 50 { action ADYMUP move BATJUM jumptoplayer soundonce FLYBAT } }
+	ifactioncount 12 { ifmove BATJUM { action ADYMM move BATFLY10 faceplayer soundonce FLYBAT } }
+ends
+state bat13
+	ifnotmoving
+	{
+		ifcansee ifpdistl 3000 ifpdistl 1024
+		{
+			iffloordistl 50 { action ADYMUP move BATJUM jumptoplayer soundonce BATSOUND }
+			ifceilingdistl 50 { action ADYMM fall soundonce BATSOUND }
+		}
+	}
+ends
+state bat11
+	ifnotmoving
+	{
+		iffloordistl 50 { action ADYMUP move BATJUM jumptoplayer soundonce FLYBAT }
+		ifceilingdistl 50 { action ADYMM move BATFLY10 faceplayer soundonce FLYBAT }
+	}
+		iffloordistl 50 ifactioncount 3 { action ADYMUP move BATJUM jumptoplayer soundonce FLYBAT }
+		ifceilingdistl 50 { action ADYMM move BATFLY10 faceplayer soundonce FLYBAT }
+ends
+state bat14
+	ifpdistl 1024
+	{
+		ifmove BATFLY10	{ action ADYMDKISS move BATKISS jumptoplayer
+			addphealth -1 palfrom 16 0 32 soundonce BATSOUND }
+		ifmove BATJUM { action ADYMDKISS move BATKISS jumptoplayer
+			addphealth -1 palfrom 16 0 32 soundonce BATSOUND }
+	}
+	ifmove BATKISS ifrnd 16 { state bat11 }
+	ifmove 0 { ifceilingdistl 50 { fall } }
+ends
+
+state bat17
+    ifhitweapon
+    {
+    	addkills 1
+    	ifstrength 0 { spritepal 2 debris SCRAP3 5 killit }
+        ifdead
+        {
+            addkills 1
+            ifwasweapon RADIUSEXPLOSION { sound SQUISHED state delete_enemy }
+            else ifwasweapon RPG { sound SQUISHED state delete_enemy }
+			sound COMM_DYING
+        }
+    }
+ends
+
+actor BAT BATSTRENGTH sizeat 10 10 fall
+								state bat9
+								state bat10
+								state bat12
+								state bat13
+								state bat14
+								state bat17
+enda
+
+state batst10
+	iffloordistl 70
+	{
+		move STOPWALL geth
+		ifmove STOPWALL ifceilingdistl 90
+		{
+			move 0
+			action ABATS
+		}
+	}
+	ifceilingdistl 90 { action ABATS move 0 }
+
+	ifmove 0 ifaction ABATS
+		{
+				ifpdistl 10000 ifcansee { fall cactor BAT }
+				ifhitweapon
+			{
+    			addkills 1
+    			soundonce BATSOUND
+    			ifstrength 0 { spritepal 2 debris SCRAP3 5 killit }
+        		else fall cactor BAT
+					ifdead
+        				{
+            				addkills 1
+            				ifwasweapon RADIUSEXPLOSION { sound SQUISHED state delete_enemy }
+            				else ifwasweapon RPG { sound SQUISHED state delete_enemy }
+							sound COMM_DYING
+        				}
+			}
+		}
+ends
+
+actor BATSTAYPUT BATSTRENGTH spritepal 0 sizeat 10 10 cstat 257 state batst10 enda
+
+actor EGG
+	fall cstat 32768
+	ifcansee { ifpdistl 4500 ifrnd 32 { spawn REDHIELD } }
+enda
+
+state flashup10
+	ifcansee ifpdistl 2000 { respawnhitag ifrnd 256 { killit } }
+ends
+action NETU -1766
+actor DEFISPAWN 0 NETU cstat 32768
+	ifspritepal 0 { state flashup10 }
+enda
+
+action AREPEATSPAWN -1297
+state toorespawn10
+	ifpdistl 1500 { spritepal 4 }
+	ifspritepal 4 ifcount 512 { spritepal 2 }
+	ifspritepal 2 { ifpdistl 1024 { respawnhitag ifrnd 256 { killit } } }
+ends
+
+actor REPEATSPAWN 0 AREPEATSPAWN cstat 32768 state toorespawn10 enda
+
+action AAIM -332
+state aim10
+		ifinwater
+			{
+				cstat 257 spritepal 5
+				ifhitweapon { stopsound LEVEL }
+			}
+		ifspritepal 3 { cstat 416 }
+ends
+state aim20
+	ifhitweapon
+	{
+		soundonce LEVEL
+		ifwasweapon SHOTSPARK1 { spritepal 3 }
+		ifwasweapon RPG { spritepal 4 debris SCRAP3 10 ifrnd 256 { killit } }
+		ifwasweapon SHRINKEREXPLOSION { spritepal 4 debris SCRAP3 10 ifrnd 256 { killit } }
+	}
+ends
+
+actor BABA 500 AAIM state aim10 state aim20 enda
+
+action ABL30  -3363 1 1 1 20
+action ABL10  -3363 1 1 1 20
+action ABL20  -3363 1 1 1 20
+action ABL40
+move BL10
+move BL20
+
+state bli10
+	ifaction ABL30
+	{
+	cstat 32768 ifpdistl 1500
+		{
+		ifspritepal 14 { globalsound NOTROUGH ifrnd 256 { killit } }
+		ifspritepal 12 { ifhitspace { quote 87 ifrnd 256 { killit } } }
+		else action ABL10 move BL10 geth
+		}
+	}
+	ifmove BL10
+		{
+			ifcount 1024
+			{
+			ifspritepal 12 { killit }
+			else action ABL20 move BL20 geth
+			}
+		}
+	ifaction ABL20 ifmove BL20
+		{
+		ifpdistl 1024               
+			{
+			ifspritepal 0 { globalsound COWARD ifrnd 256 { killit } }
+			ifspritepal 1 { globalsound NOSEE ifrnd 256 { killit } }
+			ifspritepal 2 { globalsound LETSGO ifrnd 256 { killit } }
+			ifspritepal 3 { globalsound NOTROUGH ifrnd 256 { killit } }
+         	ifspritepal 4 { quote 101 ifrnd 256 { killit } }
+           	ifspritepal 5 { quote 47 ifrnd 256 { killit } }
+        	ifspritepal 7 { quote 49 ifrnd 256 { killit } }
+        	ifspritepal 9 { quote 51 ifrnd 256 { killit } }
+           	ifspritepal 10 { quote 58 ifrnd 256 { killit } }
+          	ifspritepal 11 { quote 75 ifrnd 256 { killit } }
+			}
+		}
+ifaction ABL10
+	{
+	ifpdistl 1024
+		{
+		ifcansee
+			{
+         		ifspritepal 13 ifhitspace { quote 77 }
+         		ifspritepal 6 { quote 48 ifrnd 256 { killit } }
+	        	ifspritepal 8 { quote 50 ifrnd 256 { killit } }
+			}
+		}
+	}
+ends
+
+actor BLIMP 0 ABL30 state bli10 enda
+
+action ASHR              -1305
+action ASHR1            -1301
+action ASHR2            -1251 18 1 1 15
+
+move SHR 1
+move SHR1 30
+move SHR3
+
+state shr14
+	spawn APPLE sound TELEPORTER spawn TRANSPORTERBEAM  ifrnd 256 { killit }
+ends
+state shr10 ifmove 0 { action ASHR } ends
+state shr11 ifaction ASHR
+		{
+		ifcansee ifpdistl 4500
+					{
+					ifcount 32 { soundonce AGENT01 }
+					ifcount 64 { action ASHR1 move SHR1 faceplayerslow }
+					ifcount 96 { stopsound AGENT01 }
+					}
+		}
+					ifmove SHR1 { soundonce HERORUN }
+ends
+state shr12 ifaction ASHR1 { ifpdistl 1500 { move SHR3 action 0 } }
+				   ifaction 0 { action ASHR2 stopsound AGENT01 soundonce AGENT02 }
+				   ifaction ASHR2 { ifactioncount 18 { state shr14 } } ends
+state shr13 ifcansee { tip } ends
+state agall
+	sizeat 17 15 fall cstat 257
+	state shr10 state shr11 state shr12 state shr13
+ends
+
+actor AGENT state agall fall enda
+
+action ASHADOWWALKING       2096 4 5 1 15
+action ASHADOWRUNNING       2096 4 5 1 11
+action ASHADOWTHINK             2116 2 5 1 40
+action ASHADOWSCREAM         2126 1 5 1 2
+action ASHADOWJUMP              2121 3 5 1 10
+action ASHADOWFALL                2131
+action ASHADOWSHOOTING      2166 2 5 1 17
+action ASHADOWDYING             2056 8 1 1 20
+action ASHADOWDY10               2156 6 1 1 20
+action ASHADOWLYINGDEAD    2161 1
+action ASHADOWNONGO           1681 4 1 1 15
+action SHADOWNNGO                1681 4 1 1 15
+
+move SHADOWWALKVEL 50
+move SHADOWRUNVEL 90
+move SHADOWJUMPVEL 100
+move SHADOW10 150
+move SHADOWSTOP
+move SHADOWSTART 0 500
+move SHADOW20 0 100
+
+ai AISHADOWGETENEMY ASHADOWWALKING SHADOWWALKVEL seekplayer
+ai AISHADOWDODGE ASHADOWRUNNING SHADOWRUNVEL dodgebullet
+ai AISHADOWCHARGEENEMY ASHADOWRUNNING SHADOWRUNVEL seekplayer
+ai AISHADOWFLEENEMY ASHADOWWALKING SHADOWWALKVEL fleeenemy
+ai AISHADOWSHOOTENEMY ASHADOWSHOOTING SHADOWSTOP faceplayer
+ai AISHADOWJUMPENEMY ASHADOWJUMP SHADOWJUMPVEL jumptoplayer
+ai AISHADOWTHINK ASHADOWTHINK SHADOWSTOP faceplayerslow
+ai AISHADOWSHRUNK ASHADOWWALKING SHRUNKVELS fleeenemy
+ai AISHADOWSPIT ASHADOWSCREAM SHADOWSTOP faceplayerslow
+ai AISHADOWDYING ASHADOWDYING SHADOWSTOP faceplayer
+ai AISHADOWSTART ASHADOWWALKING SHADOWSTART geth
+
+state mononseekstate
+    ifmove 0
+    {
+        ifcansee ifp palive ifpdistl 2048 ifcount 16 ifcanshoottarget
+		{ ai AISHADOWSHOOTENEMY break }
+        ifai AISHADOWCHARGEENEMY
+        {
+            ifcount 72 ifpdistl 3000 { ai AISHADOWSHOOTENEMY break }
+            ifp phigher ifpdistl 2048 ifrnd 6 { ai AISHADOWJUMPENEMY break }
+        }
+        else ifpdistl 3000
+        {
+        	ifrnd 92
+        		{
+        			ifcount 48 ifcanshoottarget { ai AISHADOWSHOOTENEMY }
+         		}
+         }
+        else ifcount 24 { ai AISHADOWCHARGEENEMY break }
+        iffloordistl 16 { ifcount 48 ifnotmoving ifcansee { ai AISHADOWJUMPENEMY break } }
+        else { ifpdistl 1280 ai AISHADOWJUMPENEMY break }
+
+        ifrnd 4 ifnotmoving operate
+        else ifrnd 0 ifbulletnear
+        {
+            ifgapzl 128 ai AISHADOWDODGE
+            else ifmove 0 { ifrnd 32 ai AISHADOWJUMPENEMY else ai AISHADOWDODGE }
+        }
+    }
+    else
+    {
+        ifactioncount 16
+        {
+        	ifp palive ifrnd 32 ifcansee ifpdistl 3000 { ai AISHADOWSHOOTENEMY }
+        }
+        ifcount 16 ifrnd 32 move SHADOWWALKVEL randomangle geth
+    }
+ends
+
+state mononfleestate
+    ifcount 16 { ifrnd 48 ifp palive ifcansee ai AISHADOWSPIT }
+    else { iffloordistl 16 { } else ai AISHADOWGETENEMY break }
+ends
+
+state mononthinkstate
+    ifrnd 8 soundonce SHDWWALK
+    ifactioncount 3
+    {
+        ifrnd 32 ifp palive ifcansee ai AISHADOWJUMPENEMY
+        else ifrnd 96 ai AISHADOWGETENEMY
+    }
+    ifrnd 1 ifbulletnear
+    {
+        ifgapzl 96 ai AISHADOWDODGE
+        else { ifrnd 128 ai AISHADOWJUMPENEMY else ai AISHADOWDODGE }
+    }
+ends
+
+state mononshootstate
+    ifcount 20 ifrnd 8
+    {
+        ifcansee ifpdistl 2048 { ifrnd 128 ai AISHADOWFLEENEMY break }
+        ifrnd 80 { ai AISHADOWTHINK }
+        else ai AISHADOWGETENEMY
+    }
+    ifactioncount 2
+    {
+        ifcansee
+        {
+            ifpdistl 3000
+            {
+            	soundonce SHDWATT shoot SPIT resetactioncount
+            }
+            else { ai AISHADOWTHINK }
+        }
+        else ai AISHADOWGETENEMY
+    }
+ends
+
+state checkmononhit
+  	action ASHADOWNONGO
+	ifai AISHADOWSHRUNK
+        {
+        	addkills 1 soundonce SHDWWALK
+        	     	ifactioncount 8	{ iffloordistl 8 { soundonce SHDWWALK move SHADOWSTOP geth ifrnd 256 { killit } } }
+        }
+	    ifdead
+    		{
+        		addkills 1
+       			ifwasweapon RPG
+       			{
+        			ifactioncount 8	{ iffloordistl 8 { soundonce SHDWATT move SHADOWSTOP geth ifrnd 256 { killit } } }
+       			}
+       			else ifwasweapon RADIUSEXPLOSION
+       			    	ifactioncount 8	{ iffloordistl 8 { soundonce SHDWATT move SHADOWSTOP geth ifrnd 256 { killit } } }
+       			else { ai AISHADOWDYING soundonce SHDWATT }
+  			}
+    else
+    {
+        soundonce SHDWATT
+        ifp palive ifcansee ifpdistl 3000 { ai AISHADOWSHOOTENEMY break }
+    }
+ends
+
+state mononjumpstate
+    ifaction ASHADOWFALL
+    	{
+    	iffloordistl 16 { stopsound THUD soundonce HOOFS ai AISHADOWGETENEMY }
+    	}
+    else ifactioncount 3 action ASHADOWFALL
+ends
+
+state monondyingstate
+    ifaction ASHADOWLYINGDEAD
+    {
+        strength 0
+        ifhitweapon
+        {
+        ifwasweapon RADIUSEXPLOSION
+        	{
+    	ifactioncount 8	{ iffloordistl 8 { soundonce SHDWATT move SHADOWSTOP ifrnd 256 { killit } } }
+			}
+		}
+    }
+    else ifai AISHADOWDYING
+    	ifactioncount 8	{ iffloordistl 8 { soundonce SHDWATT move SHADOWSTOP ifrnd 256 { killit } } }
+ends
+
+state monondodgestate
+    ifcount 13 ai AISHADOWGETENEMY
+ends
+
+actor SHADOW 100
+ifspawnedby DEMON
+	{
+	spritepal 4 sizeat 19 15 sizeat 19 15 sizeat 19 15 sizeat 19 15
+	ifai 0 { ai AISHADOWSTART }
+	}
+ifspritepal 4
+{
+	fall cstat 275
+	ifai AISHADOWSTART { ifactioncount 4 { ai AISHADOWGETENEMY } }
+    else ifaction ASHADOWLYINGDEAD { fall state monondyingstate break }
+    else ifai AISHADOWJUMPENEMY state mononjumpstate
+    else
+    {
+        fall
+        ifai AISHADOWGETENEMY state mononseekstate
+        else ifai AISHADOWCHARGEENEMY state mononseekstate
+        else ifai AISHADOWDODGE state monondodgestate
+        else ifai AISHADOWSHOOTENEMY state mononshootstate
+        else ifai AISHADOWFLEENEMY state mononfleestate
+        else ifai AISHADOWTHINK state mononthinkstate
+        else ifai AISHADOWDYING state monondyingstate
+        else ifai AISHADOWSPIT { ifcount 26 ai AISHADOWGETENEMY }
+		ifbulletnear { move SHADOW10 geth }
+    }
+	else ifaction SHADOWNNGO
+	    	{
+	    		cstat 418 break
+	    		ifnotmoving { cstat 275 ai AISHADOWGETENEMY }
+	    	}
+		else { ifai AISHADOWSHRUNK break }
+	    ifhitweapon { state checkmononhit }
+	    ifmove SHADOW10
+	    	{
+	    		cstat 418 action SHADOWNNGO
+	    		ifnotmoving { cstat 275 ai AISHADOWGETENEMY }
+	    		ifstrength 0 { cstat 275 ai AISHADOWDYING }
+	    	}
+}
+enda
+
+action ASHMOR -739
+move smorh
+state shmort
+	ifcansee { ifpdistl 8000 { ifrnd 3 { shoot MORTER } } }
+ends
+actor IDOL 0 ASHMOR smorh faceplayer cstat 0 state shmort sizeat 20 14 enda
+
+action ALIM -715
+actor LIMON
+	action ALIM
+	sizeat 5 5 cstat 0
+    fall
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifpdistl RETRIEVEDISTANCE ifcount 6 ifphealthl MAXPLAYERHEALTH
+    {
+        addphealth 25 quote 6
+        ifspawnedby LIMON state getcode
+        else state quikget
+    }
+enda
+
+action AKIWI -724
+actor KIWI
+	action AKIWI
+	sizeat 8 5 cstat 0
+    fall
+    ifmove RESPAWN_ACTOR_FLAG
+    ifp pshrunk { } else ifpdistl RETRIEVEDISTANCE ifcount 6 ifphealthl MAXPLAYERHEALTH
+    {
+        addphealth 15 quote 37
+        ifspawnedby KIWI state getcode
+        else state quikget
+    }
+enda
+
+action APER -1006 1 1 1 30
+action APER1 -679 1 1 1 30
+
+actor PEPER 0 APER sizeat 1 3 fall
+	ifaction APER { cstat 32768 ifactioncount 5 { action APER1 } }
+	ifaction APER1
+	{
+		cstat 0
+		ifmove RESPAWN_ACTOR_FLAG
+   		ifp pshrunk { } else ifpdistl RETRIEVEDISTANCE ifcount 96 ifphealthl MAXPLAYERHEALTH
+    			{
+        		addphealth 20 quote 88
+       			ifspawnedby PEPER state getcode
+        		else state quikget
+    			}
+    }
+enda
+
+action ASMSKWALK        			 -165  4 5 1 20
+action ASMSKRUN          			  -165  4 5 1 11
+action ASMSKSHOOT     				-135 2 5 1 58
+action ASMSKCOCK         			  -140 1 5 1 16
+action ASMSKSTAND       			 -2110 3 1 1 20
+action ASMSKDIVE          				-125 2 5 1 40
+action ASMSKDIVESHOOT   		 -120 2 5 1 58
+action ASMSKDYING       			 -110 5 1 1 25
+action ASMSKHIT         				 -110 1 1 1 10
+action ASMSKDEAD      				  -105 1 0 0 1
+
+move SMSKWALKVELS 72
+move SMSKRUNVELS  108
+move SMSKSTOPPED
+move SMSKS0 30
+
+ai AISMSKSEEKENEMY ASMSKWALK SMSKWALKVELS seekplayer
+ai AISMSKSHOOTENEMY ASMSKSHOOT SMSKSTOPPED faceplayer
+ai AISMSKFLEEENEMY ASMSKWALK SMSKWALKVELS fleeenemy
+ai AISMSKSHOOT ASMSKSHOOT SMSKSTOPPED faceplayer
+ai AISMSKDODGE ASMSKRUN SMSKRUNVELS dodgebullet
+ai AISMSKCHARGE ASMSKRUN SMSKRUNVELS seekplayer
+ai AISMSKDIVING ASMSKDIVE SMSKSTOPPED faceplayer
+ai AISMSKDYING ASMSKDYING SMSKSTOPPED faceplayer
+ai AISMSKSHRINK ASMSKWALK SHRUNKVELS fleeenemy
+ai AISMSKHIT ASMSKHIT SMSKSTOPPED faceplayer
+
+state vic10 guts HEADJIB1 2 guts LEGJIB1 2 guts ARMJIB1 2 ends
+state smskseekenemystate
+    ifai AISMSKCHARGE
+    {
+        ifcansee ifpdistl 3084
+        {
+            ifnotmoving ai AISMSKSEEKENEMY
+            else ai AISMSKDIVING
+        }
+        break
+    }
+    else iffloordistl 32
+    {
+        ifpdistl 4096 { ifmove 0 ai AISMSKCHARGE }
+        ifrnd 8 { ifbulletnear ai AISMSKDODGE }
+    }
+
+    ifrnd 128 ifcansee
+    {
+        ifai AISMSKDODGE { ifcount 32 ai AISMSKCHARGE break }
+        iffloordistl 32
+        {
+            ifpdistl 1024 ifp palive ifcanshoottarget
+                { ai AISMSKSHOOTENEMY break }
+            ifcount 48
+            {
+            	ifrnd 8 ifp palive ifcanshoottarget { ifrnd 192 ai AISMSKSHOOTENEMY else ai AISMSKDIVING break }
+            }
+        }
+    }
+ends
+
+state smskshootenemystate
+    {
+        ifcount 12 { } else ifcount 11
+        {
+            ifcanshoottarget { sound SKEL_ATTACK shoot SHOTSPARK1 }
+            else ai AISMSKSEEKENEMY
+        }
+        ifcount 25 { } else ifcount 24 { action ASMSKCOCK }  sound BONES03
+        ifcount 48 { } else ifcount 47
+        {
+            ifcanshoottarget { sound SKEL_ATTACK shoot SHOTSPARK1 }
+            else ai AISMSKSEEKENEMY
+        }
+        ifcount 60 { } else ifcount 59 { action ASMSKCOCK } sound BONES03
+        ifcount 72
+        {
+            ifrnd 64 resetcount
+            else
+            {
+                ifpdistl 768 ai AISMSKFLEEENEMY
+                else ai AISMSKSEEKENEMY
+            }
+        }
+        ifaction ASMSKCOCK ifactioncount 2 action ASMSKSHOOT
+    }
+    else ai AISMSKSEEKENEMY
+ends
+
+state smskfleeenemystate
+    ifactioncount 8 ai AISMSKSEEKENEMY
+    else ifnotmoving ai AISMSKSEEKENEMY
+ends
+
+state smskdivestate
+    ifaction ASMSKDIVESHOOT
+    {
+        ifcansee
+        {
+            ifcount 12 { } else ifcount 11
+            {
+                ifcanshoottarget { sound SKEL_ATTACK shoot SHOTSPARK1 }
+                else ai AISMSKSEEKENEMY
+            }
+            ifcount 25 { } else ifcount 24 { sound BONES03 }
+            ifcount 48 { } else ifcount 47
+            {
+                ifcanshoottarget { sound SKEL_ATTACK shoot SHOTSPARK1 }
+                else ai AISMSKSEEKENEMY
+            }
+            ifcount 60 { } else ifcount 59
+            {
+                sound BONES03
+                ifgapzl 32 ai AISMSKDIVING
+                else
+                {
+                    ifpdistl 4096 ai AISMSKFLEEENEMY
+                    else ai AISMSKSEEKENEMY
+                }
+            }
+        }
+        else ifgapzl 32 ai AISMSKDIVING else ai AISMSKSEEKENEMY
+    }
+    else ifactioncount 2 ifp palive { resetcount action ASMSKDIVESHOOT }
+ends
+
+state checksmskhitstate
+	addkills 1 guts JIBS2 5 guts JIBS1 1
+    ifdead
+    {
+        addkills 1
+        ifspritepal 0
+        {
+        	ifwasweapon RADIUSEXPLOSION { sound SQUISHED guts JIBS2 5 guts JIBS1 1
+        	state demon_body_jibs state delete_enemy }
+        }
+        ifspritepal 21
+        {
+		ifwasweapon SHOTSPARK1
+				{
+					state demon_body_jibs
+       		 		ifrnd 256 { killit }
+       		 	}
+
+		ifwasweapon RADIUSEXPLOSION { sound SQUISHED guts JIBS2 5 guts JIBS1 1
+																												 state demon_body_jibs state delete_enemy }
+        ifwasweapon RPG { sound SQUISHED guts JIBS2 5 guts JIBS1 1 state demon_body_jibs state delete_enemy }
+        }
+        ifspritepal 0 { ai AISMSKDYING cstat 0 sound SKEL_DYING }
+    }
+    else
+    {
+        sound SKEL_PAIN
+    }
+ends
+
+state smskdyingstate
+	ifactioncount 0
+	ifactioncount 5	{ sound SQUISHED guts JIBS2 5 guts JIBS1 1 state demon_body_jibs state delete_enemy }
+ends
+
+actor FORWIZZ TURRETSTRENGTH ASMSKSTAND sizeat 10 7 fall
+    ifaction ASMSKSTAND
+    	{
+    	stopsound MEMA_RECOG
+    	cstat 32768 move SMSKS0 faceplayer ifactioncount 6 { cstat 257 ai AISMSKSEEKENEMY }
+    	}
+    else ifai AISMSKDYING state smskdyingstate
+    else ifai AISMSKHIT { ifactioncount 3 ai AISMSKSEEKENEMY }
+    else
+    {
+        ifai AISMSKSEEKENEMY state smskseekenemystate
+        else ifai AISMSKDODGE state smskseekenemystate
+        else ifai AISMSKSHOOTENEMY state smskshootenemystate
+        else ifai AISMSKFLEEENEMY state smskfleeenemystate
+        else ifai AISMSKDIVING state smskdivestate
+        else ifai AISMSKCHARGE state smskseekenemystate
+        ifhitweapon state checksmskhitstate
+        ifrnd 1
+        {
+            ifrnd 32 soundonce SKEL_ROAM
+            else ifrnd 64 soundonce SKEL_ROAM2
+            else soundonce SKEL_ROAM3
+        }
+    }
+enda
+
+action ASTART  -1946 1 1 1 10
+action A01 918 1 1 1 50
+action A02 919 1 1 1 50
+action A03 920 1 1 1 50
+action A04 921 1 1 1 50
+action A05 922 1 1 1 50
+action A06 923 1 1 1 50
+action A07 924 1 1 1 50
+action A08 925 1 1 1 50
+action A09 926 1 1 1 50
+action A10 917 1 1 1 50
+action A11 927 1 1 1 50
+
+state giveme
+	ifaction ASTART { ifactioncount 3 { action A09 } }
+	ifpdistl 1500 ifphealthl MAXPLAYERHEALTH
+	{
+		ifaction A09 { ifhitspace ifactioncount 7 { soundonce SWITCH_ON spawn PEPER action A08 } }
+		ifaction A08 { ifhitspace ifactioncount 7 { soundonce SWITCH_ON spawn PEPER action A07 } }
+		ifaction A07 { ifhitspace ifactioncount 7 { soundonce SWITCH_ON spawn PEPER action A06 } }
+		ifaction A06 { ifhitspace ifactioncount 7 { soundonce SWITCH_ON spawn PEPER action A05 } }
+		ifaction A05 { ifhitspace ifactioncount 7 { soundonce SWITCH_ON spawn PEPER action A04 } }
+		ifaction A04 { ifhitspace ifactioncount 7 { soundonce SWITCH_ON spawn PEPER action A03 } }
+		ifaction A03 { ifhitspace ifactioncount 7 { soundonce SWITCH_ON spawn PEPER action A02 } }
+		ifaction A02 { ifhitspace ifactioncount 7 { soundonce SWITCH_ON spawn PEPER action A01 } }
+		ifaction A01 { ifhitspace ifactioncount 7 { soundonce SWITCH_ON spawn PEPER action A10 } }
+	}
+ends
+state givemebach
+		ifaction ASTART ifcansee { ifactioncount 3 { action A11 } }
+		ifaction A11 { ifpdistl 1000 { ifhitspace { soundonce LASERTRIP_ARMING ifactioncount 3 { action A09 } } } }
+		ifaction A09 { ifactioncount 3 { soundonce LASERTRIP_ARMING action A08 } }
+		ifaction A08 { ifactioncount 3 { soundonce LASERTRIP_ARMING action A07 } }
+		ifaction A07 { ifactioncount 3 { soundonce LASERTRIP_ARMING action A06 } }
+		ifaction A06 { ifactioncount 3 { soundonce LASERTRIP_ARMING action A05 } }
+		ifaction A05 { ifactioncount 3 { soundonce LASERTRIP_ARMING action A04 } }
+		ifaction A04 { ifactioncount 3 { soundonce LASERTRIP_ARMING action A03 } }
+		ifaction A03 { ifactioncount 3 { soundonce LASERTRIP_ARMING action A02 } }
+		ifaction A02 { ifactioncount 3 { soundonce LASERTRIP_ARMING action A01 } }
+		ifaction A01 { ifactioncount 3 { soundonce LASERTRIP_ARMING action A10 } }
+		ifaction A10
+		{
+			ifactioncount 1
+			{
+			hitradius 5000 HBOMBTOUGH HBOMBTOUGH HBOMBTOUGH HBOMBTOUGH
+			spawn EXPLOSION2 soundonce PIPEBOMB_EXPLODE ifrnd 256 { killit }
+			}
+		}
+ends
+
+actor FORAUTO 100 ASTART sizeat 4 4 sizeat 4 4 sizeat 4 4 sizeat 4 4
+			ifspawnedby RESPAWN { spritepal 9 }
+			ifspritepal 9
+				{
+				cstat 32768
+				ifrnd 8 { spawn SANDMAN }
+				ifactioncount 20 { killit }
+				}
+			ifspritepal 8 { cstat 80 ifcansee { state giveme } }
+			ifspritepal 2 { cstat 80 state givemebach }
+enda
+
+action NONFIR -241
+actor FIREEXT 100 NONFIR enda
+
+action AWEB10 0
+action AWEB20 1
+action AWEB40 657
+action AWEB30 659 5 1 1 5
+action AWEB60 658 1 1 1 4
+action AWEB50 664
+
+move DOWNGLASS 500
+move DOWNGLASS10
+
+state web10
+		ifaction 0 { action AWEB10 }
+		ifaction AWEB10 { cstat 16 ifpdistl 700 { soundonce PRED_PAIN } }
+		ifpdistl 700 { action AWEB20 }
+ends
+
+state webglass10
+	ifaction 0 { action AWEB40 }
+	ifaction AWEB40
+	{
+	cstat 275
+	ifhitweapon
+		{
+			ifpdistl 1500 { addphealth -10 soundonce HERO_LONGTERM_PAIN5 }
+			soundonce GLASS_HEAVYBREAK action AWEB60
+		}
+	}
+	ifaction AWEB60
+	{
+	ifactioncount 0 { lotsofglass 3 move DOWNGLASS geth }
+	ifactioncount 1 { move DOWNGLASS10 geth }
+	ifactioncount 2
+		{
+		fall
+		iffloordistl 20 { action AWEB30 }
+		}
+	}
+	ifaction AWEB30 { fall ifactioncount 5 { lotsofglass 30 spritepal 5 } }
+	ifwasweapon RPG { spritepal 20 }
+	ifwasweapon RADIUSEXPLOSION { spritepal 20 }
+	ifspritepal 20 { cstat 257 soundonce GLASS_HEAVYBREAK lotsofglass 50 ifrnd 256 { killit } }
+ends
+
+state webglass20
+action AWEB50 cstat 418 sizeat 24 19 iffloordistl 20 { move 0 }
+	ifpdistl 900
+		{
+		soundonce STEPONGLASS
+		ifrnd 8 { addphealth -1 soundonce HERO_LONGTERM_PAIN lotsofglass 1 }
+		}
+ends
+actor WEBMOON 50
+	ifspritepal 5 { state webglass20 }
+	ifspritepal 0 { state web10 }
+	ifspritepal 3 { state webglass10 }
+enda
+
+action ALIFT0 -1476 1 1 1 5
+action ALIFT1 -1476 1 1 1 5
+action ALIFT2 -1476 1 1 1 5
+action ALIFT3 -1476 1 1 1 5
+action ALIFT4 -1476 1 1 1 5
+action ALIFT5 -1476 1 1 1 5
+action ALIFT6 -1476 1 1 1 5
+action ALIFT7 -1476 1 1 1 5
+
+move STOPLIFT 0
+move UPLIFT 0 -20
+move DOWNLIFT 0 20
+
+state lift10
+	ifaction ALIFT0 { move STOPLIFT geth }
+	ifaction ALIFT1 { move UPLIFT geth }
+	ifaction ALIFT2 { move STOPLIFT geth }
+	ifaction ALIFT3 { move DOWNLIFT geth }
+	ifaction ALIFT6 { move 0 }
+	ifmove STOPLIFT { stopsound OLDLIFT }
+	ifmove UPLIFT { soundonce OLDLIFT }
+	ifmove DOWNLIFT { soundonce OLDLIFT }
+ends	
+
+actor MAXLIFT 0 ALIFT6 cstat 417 state lift10 sizeat 30 30
+
+ifpdistl 1000
+{
+ 	ifaction ALIFT6 { action ALIFT0 }
+	ifaction ALIFT0
+	{
+	ifactioncount 10
+		{
+		ifhitspace { action ALIFT1 }
+		}
+	}
+	ifaction ALIFT1 { ifactioncount 10 { ifhitspace { action ALIFT2 soundonce CSTL_S } } }
+	ifaction ALIFT2	{ ifactioncount 10 { ifhitspace { action ALIFT3 } } }
+	ifaction ALIFT3 { ifactioncount 10 { ifhitspace { action ALIFT0 soundonce CSTL_S } } }
+}
+	ifaction ALIFT4
+		{
+		ifactioncount 1 { move DOWNLIFT geth }
+		ifactioncount 5 { soundonce CSTL_S action ALIFT2 }
+		}
+	ifaction ALIFT5
+		{
+		ifactioncount 1 { move UPLIFT geth }
+		ifactioncount 5 { soundonce CSTL_S action ALIFT0 }
+		}
+	ifceilingdistl 60 { action ALIFT4 }
+	iffloordistl 16 { action ALIFT5 }
+	ifpdistl 5000 ifpdistl 1100 { action ALIFT6 }
+	ifpdistl 4000 ifpdistl 1300 { stopsound OLDLIFT }
+enda
+
+action AHANGSTOP          1210 4 5 1 15
+action AHANGGO              1210 4 5 1 15
+action AHANGWALK1       1210 4 5 1 15
+action AHANGHAND         1950 7 1 1 15
+action AHANGATTACK      2015 4 1 1 20
+action AHANGDYINNG     1240 8 1 1 20
+action AHANGDANDNO    1350 8 1 1 25
+action AHANGDEADYES  1358 8 1 1 30
+action AHANGDEAD         1248
+action AHANGDEAD2       1366
+action AHANGDEAD3       1230 10 1 1 20
+
+move HANGWALK1 20
+move HANGGO 140
+move HANGGO1 180
+move HANGSTOP
+
+ai AIHANGWALK1 AHANGWALK1 HANGWALK1 faceplayerslow
+ai AIHANGGO AHANGGO HANGGO faceplayerslow
+ai AIHANGHAND AHANGHAND HANGSTOP geth
+ai AIHANGATTACK AHANGATTACK HANGSTOP geth
+ai AIHANGWALK2 AHANGWALK1 HANGGO1 dodgebullet
+
+state noseemy
+	ifaction AHANGSTOP
+		{
+		cstat 32768 sizeat 25 22 sizeat 25 22 sizeat 25 22 sizeat 25 22
+		ifcansee { ifactioncount 2 { ai AIHANGWALK1 cstat 257 soundonce HMANSONG } }
+		else action AHANGSTOP
+		}
+ends
+state hangwalkhand
+	ifai AIHANGWALK1 { ifactioncount 4 { ai AIHANGHAND } }
+	ifai AIHANGHAND { ifactioncount 7 { ai AIHANGGO } }
+	ifai AIHANGGO { soundonce HMANSTEP ifpdistl 1024 { ai AIHANGATTACK } }
+	ifai AIHANGATTACK
+		{
+		ifactioncount 0 { soundonce HMANATTACK }
+		ifactioncount 3 { soundonce AXEINBODY addphealth -3 palfrom 48 52 soundonce HERO_LONGTERM_PAIN }
+		ifactioncount 4 { ai AIHANGHAND }
+		ifpdistl 2500 ifpdistl 1300 { ai AIHANGGO }
+		}
+	ifai AIHANGWALK2 { ifactioncount 4 { cstat 257 spritepal 0 ai AIHANGGO } }
+ends
+state hangdying
+	ifaction AHANGDYINNG { spritepal 3 ifactioncount 8 { cstat 0 iffloordistl 8 sound THUD action AHANGDEAD } }
+	ifaction AHANGDANDNO
+		{
+		spritepal 3 ifactioncount 8
+			{
+			cstat 0 iffloordistl 8 spawn REDKEY action AHANGDEADYES
+			}
+		}
+	ifaction AHANGDEADYES { cstat 0 spritepal 3 ifactioncount 8 { sound THUD action AHANGDEAD2 } }
+ends
+state hanghitweapon
+	ifhitweapon
+	{
+		addkills 1 soundonce HMANPAIN
+		spritepal 2
+		ifspritepal 2 { debris SCRAP3 1 ifrnd 256 { spritepal 0 } }
+		ifdead
+	    {
+	    	spritepal 3
+    	    addkills 1
+    	    ifwasweapon RPG { spritepal 2 sound SQUISHED debris SCRAP3 15 state delete_enemy }
+		    else ifwasweapon RADIUSEXPLOSION { spritepal 2 sound SQUISHED debris SCRAP3 15 state delete_enemy }
+    	    strength 0 move 0 cstat 0
+    	    ifpdistl 20000 ifpdistl 8000 { cstat 0 action AHANGDYINNG sizeat 14 14 }
+			ifpdistl 8000 ifpdistl 2000 { cstat 0 action AHANGDANDNO sizeat 14 14 }
+			ifpdistl 2000 { cstat 0 action AHANGDYINNG sizeat 14 14 }
+	    }
+	}
+	ifspritepal 0
+		{
+			ifai AIHANGGO
+			{
+				ifpdistl 20000 ifpdistl 3000
+				{
+				 ifbulletnear { cstat 0 ai AIHANGWALK2 }
+				}
+			}
+		}
+ifaction AHANGDEAD { soundonce THUD action AHANGDEAD3 }
+ifaction AHANGDEAD2 { soundonce THUD action AHANGDEAD3 }
+ifaction AHANGDEAD3 { soundonce ZEFIR ifactioncount 10 { killit } }
+ends
+
+actor HANGMAN 160 AHANGSTOP fall
+	state noseemy
+	ifspritepal 0 { state hangwalkhand }
+	state hangdying
+	state hanghitweapon
+enda
+
+action AMOON 1542
+state moon
+	ifspawnedby RESPAWN
+	{
+		ifcansee { cstat 0 }
+		action AMOON
+		ifpdistl 50000 ifpdistl 20000 sizeat 17 16
+		ifpdistl 20000 ifpdistl 17500 sizeat 15 14
+		ifpdistl 17500 ifpdistl 15000 sizeat 14 13
+		ifpdistl 15000 ifpdistl 12000 sizeat 13 12
+		ifpdistl 12000 ifpdistl 11000 sizeat 12 11
+		ifpdistl 11000 ifpdistl 10000 sizeat 11 10
+		ifpdistl 10000 ifpdistl 9000 sizeat 10 9
+		ifpdistl 9000 ifpdistl 8000 sizeat 9 8
+		ifpdistl 8000 ifpdistl 7000 sizeat 8 7
+		ifpdistl 7000 ifpdistl 6000 sizeat 7 6
+		ifpdistl 6000 ifpdistl 5000 sizeat 6 5
+	}
+ends
+actor MOONDISTL state moon enda
+
+action ANGRDWALKING      -40 4 5 1 15
+action ANGRDRUNNING      -40 4 5 1 11
+action ANGRDTHINK            -20 2 5 1 40
+action ANGRDSCREAM        -10 1 5 1 2
+action ANGRDJUMP              5 2 5 1 10
+action ANGRDFALL               15 3 1 1 15
+action ANGRDSHOOTING     30 2 5 1 17
+action ANGRDDYING            20 6 1 1 20
+
+move NGRDWALKVEL 72
+move NGRDRUNVEL 192
+move NGRDJUMPVEL 184
+move NGRDSTOP
+
+ai AINGRDGETENEMY ANGRDWALKING NGRDWALKVEL seekplayer
+ai AINGRDDODGE ANGRDRUNNING NGRDRUNVEL dodgebullet
+ai AINGRDCHARGEENEMY ANGRDRUNNING NGRDRUNVEL seekplayer
+ai AINGRDFLEENEMY ANGRDWALKING NGRDWALKVEL fleeenemy
+ai AINGRDSHOOTENEMY ANGRDSHOOTING NGRDSTOP faceplayer
+ai AINGRDJUMPENEMY ANGRDJUMP NGRDJUMPVEL jumptoplayer
+ai AINGRDSHRUNK ANGRDWALKING SHRUNKVELS fleeenemy
+ai AINGRDDYING ANGRDDYING NGRDSTOP faceplayer
+
+state ngrdseekstate
+    ifmove 0
+    {
+        ifcansee ifp palive ifpdistl 2048 ifcount 16 ifcanshoottarget { ai AINGRDSHOOTENEMY break }
+        ifai AINGRDCHARGEENEMY
+        {
+            ifcount 72 ifcanshoottarget { ai AINGRDSHOOTENEMY break }
+            ifp phigher ifpdistl 2048 ifrnd 6 { ai AINGRDJUMPENEMY break }
+        }
+        else ifpdistl 4096
+        {
+        	ifrnd 92
+        		{
+        			ifcount 48 ifcanshoottarget	{ ai AINGRDSHOOTENEMY }
+         		}
+         }
+        else ifcount 24 { ai AINGRDCHARGEENEMY break }
+        iffloordistl 16 { ifcount 48 ifnotmoving ifcansee { ai AINGRDJUMPENEMY break } }
+        else { ifpdistl 1280 ai AINGRDJUMPENEMY break }
+
+        ifrnd 4 ifnotmoving operate
+        else ifrnd 1 ifbulletnear
+        {
+            ifgapzl 128 ai AINGRDDODGE
+            else ifmove 0 { ifrnd 32 ai AINGRDJUMPENEMY else ai AINGRDDODGE }
+        }
+    }
+    else
+    {
+        ifactioncount 16
+        {
+        	ifp palive ifrnd 32 ifcansee ifcanshoottarget { ai AINGRDSHOOTENEMY }
+        }
+        ifcount 16 ifrnd 32 move NGRDWALKVEL randomangle geth
+    }
+
+ends
+
+state ngrdfleestate
+    ifcount 16 { ifrnd 48 ifp palive ifcansee ai AINGRDJUMPENEMY }
+    else { iffloordistl 16 { } else ai AINGRDGETENEMY break }
+ends
+
+state ngrdthinkstate
+    ifrnd 8 soundonce CAPT_ROAM
+    ifactioncount 3
+    {
+        ifrnd 32 ifp palive ifcansee ai AINGRDJUMPENEMY
+        else ifrnd 96 ai AINGRDGETENEMY
+    }
+    else ifactioncount 2 ifrnd 16 ifspritepal 0 { shoot MORTER }
+
+    ifrnd 1 ifbulletnear
+    {
+        ifgapzl 96 ai AINGRDDODGE
+        else { ifrnd 128 ai AINGRDJUMPENEMY else ai AINGRDDODGE }
+    }
+ends
+
+state ngrdshootstate
+    ifcount 20 ifrnd 8
+    {
+        ifcansee ifpdistl 2048 { ifrnd 128 ai AINGRDFLEENEMY break }
+        ifrnd 80 { ai AINGRDJUMPENEMY }
+        else ai AINGRDGETENEMY
+    }
+    ifactioncount 2
+    {
+        ifcansee
+        {
+            ifpdistl 4000
+            {
+            sound CAPT_ATTACK shoot SPIT resetactioncount
+            }
+            else ai AINGRDJUMPENEMY
+        }
+        else ai AINGRDGETENEMY
+    }
+ends
+
+state checkngrdhit
+		debris SCRAP3 1
+        ifai AINGRDSHRUNK
+        { addkills 1 sound SQUISHED debris SCRAP3 15 state delete_enemy }
+    ifdead
+    {
+        addkills 1
+        ifwasweapon RPG { sound SQUISHED debris SCRAP3 15 state delete_enemy }
+        else ifwasweapon RADIUSEXPLOSION { sound SQUISHED debris SCRAP3 15 state delete_enemy }
+        else { ai AINGRDDYING ifrnd 64 { debris SCRAP3 1 } }
+        sound CAPT_DYING
+    }
+    else
+    {
+        sound CAPT_PAIN
+        ifp palive ifcansee ifcanshoottarget { ai AINGRDSHOOTENEMY break }
+    }
+ends
+
+state ngrdjumpstate
+    ifaction ANGRDFALL { iffloordistl 16 ai AINGRDGETENEMY }
+    else ifactioncount 8 action ANGRDFALL
+ends
+
+state ngrddyingstate
+	    ifactioncount 6 { sound THUD debris SCRAP3 15 ifrnd 256 { killit } }
+ends
+
+state ngrddodgestate
+    ifcount 13 ai AINGRDGETENEMY
+ends
+
+actor GREENDEMON 100 fall
+	sizeat 19 15
+	ifspawnedby RESPAWN { spritepal 8 }
+	ifspawnedby SANDMAN { spritepal 1 }
+    ifai 0 { ai AINGRDGETENEMY }
+    else ifai AINGRDJUMPENEMY state ngrdjumpstate
+    else
+    {
+        fall
+        ifai AINGRDGETENEMY state ngrdseekstate
+        else ifai AINGRDCHARGEENEMY state ngrdseekstate
+        else ifai AINGRDDODGE state ngrddodgestate
+        else ifai AINGRDSHOOTENEMY state ngrdshootstate
+        else ifai AINGRDFLEENEMY state ngrdfleestate
+        else ifai AINGRDDYING state ngrddyingstate
+    }
+    ifai AINGRDSHRUNK break
+    ifhitweapon state checkngrdhit
+enda
+
+
+
+
