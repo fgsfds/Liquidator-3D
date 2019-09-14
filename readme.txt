@@ -2,7 +2,7 @@
 Liquidator
 ==========================================================================
 
-Version:                   1.1
+Version:                   1.2
 Release Date:              13.09.2019
 Author:                    fgsfds (https://twitter.com/fgsfds228)
 
@@ -21,7 +21,7 @@ The game includes all-new graphics, sounds, and 3 campaigns with total of 6 maps
   
   This pack provides modified files and CONs to make it possible to run the
 game using modern ports. The game is also translated to English and includes
-widescreen-compatible HUD sprites.
+widescreen compatible HUD sprites.
 
 
 ==========================================================================
@@ -52,6 +52,11 @@ LINKS
 ==========================================================================
 CHANGELOG
 ==========================================================================
+
+Version 1.2 (13.09.2019)
+---------------------------
++ Shotgun widescreen sprites by Dzierzan
+
 
 Version 1.1 (13.09.2019)
 ---------------------------
