@@ -2,20 +2,20 @@
 Liquidator
 ==========================================================================
 
-Version:         1.0
-Release Date:    13.09.2019
-Author:          fgsfds (https://twitter.com/fgsfds228)
+Version:                   1.1
+Release Date:              13.09.2019
+Author:                    fgsfds (https://twitter.com/fgsfds228)
 
-Original developer:      А.В.Т., Partizan Software
-Publisher:               Акелла / Akella Company
-Original release date:   1998
+Original developer:        А.В.Т., Partizan Software
+Publisher:                 Акелла / Akella Company
+Original release date:     1998
 
 
 ==========================================================================
 ABOUT
 ==========================================================================
 
-  Liquidator is an obscure Russian game illegaly made using Build Engine and
+  Liquidator is an obscure Russian game illegally made using Build Engine and
 published in 1998 by Akella Company, who will later make an infamous Postal 3.
 The game includes all-new graphics, sounds, and 3 campaigns with total of 6 maps.
   
@@ -28,7 +28,7 @@ widescreen-compatible HUD sprites.
 HOW TO USE
 ==========================================================================
 
-BuildGDX:
+BuildGDX (1.04 and later):
 - put liquidator.zip into any folder
 - run DukeGDX, navigate to NEW GAME -> USER CONTENT
 - find liquidator.zip in the file browser
@@ -52,6 +52,11 @@ LINKS
 ==========================================================================
 CHANGELOG
 ==========================================================================
+
+Version 1.1 (13.09.2019)
+---------------------------
++ RPG widescreen sprite
+
 
 Version 1.0 (13.09.2019)
 ---------------------------
