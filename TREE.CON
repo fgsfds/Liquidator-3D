@@ -1,4 +1,3 @@
-
 define SECTOREFFECTOR 1
 define ACTIVATOR 2
 define TOUCHPLATE 3
@@ -13,34 +12,34 @@ define ARROW 20
 define REVOLVER 21
 define UZISPRITE 22
 define RPGSPRITE 23
-define SHADOW 24 									
-define FLAMETHROWER 25                   
+define SHADOW 24
+define FLAMETHROWER 25
 define HEAVYHBOMB 26
-define VERYHOT 27                               
+define VERYHOT 27
 define SHOTGUNSPRITE 28
-define SMOLSPIDER 29                          
+define SMOLSPIDER 29
 define HEALTHBOX 30
 define BULLETBOX 31
 define INVENTORYBOX 33
-define REDHIELD 37 											
+define REDHIELD 37
 define BULLET 40
 define BATTERYBULLET 41
-define DOCTOR 42                     
+define DOCTOR 42
 define RPGBULLET 44
 define CRYSTALBULLET 46
 define HBOMBBULLET 47
 define BULLETLOTS 48
 define SHOTGUNBULLET 49
-define GRAPES 51													
-define APPLE 52                                                        
+define GRAPES 51
+define APPLE 52
 define MEDICINE 53
 define SHIELD 54
-define SNAKE 55                                                  
+define SNAKE 55
 define AIRTANK 56
-define REDKEY 57 													
-define REDPOISON 59											
-define BLUEKEY 60   											
-define BLUEPOISON 61									
+define REDKEY 57
+define REDPOISON 59
+define BLUEKEY 60
+define BLUEPOISON 61
 define MIRRORBROKE 70
 define MOONSKY1 80
 define MOONSKY2 81
@@ -52,7 +51,7 @@ define BIGORBIT3 86
 define BIGORBIT4 87
 define BIGORBIT5 88
 define LA 89
-define BLUEHEALTH 100										
+define BLUEHEALTH 100
 define TECHLIGHT2 120
 define TECHLIGHTBUST2 121
 define TECHLIGHT4 122
@@ -117,7 +116,7 @@ define MASKWALL11 391
 // define DOORTILE22 395
 define FANSPRITE 407
 define FANSPRITEBROKE 411
-define GORGUL1 487										
+define GORGUL1 487
 define VIEWSCREEN2 499
 define VIEWSCREENBROKE 501
 define VIEWSCREEN 502
@@ -195,12 +194,12 @@ define DOORTILE14 717
 define STATUE 753
 define CARPET 762
 define VASE 765
-define VASE1 768                 
+define VASE1 768
 define VASE2 769
 define VASE3 774
 define VASE4 779
 define DOORTILE16 781
-define SKULL 792                               
+define SKULL 792
 define OJ 806
 define MASKWALL13 830
 define HURTRAIL 859
@@ -211,10 +210,10 @@ define ATM 867
 define STATUEFLASH 869
 define ATMBROKE 888
 define BIGHOLE2 893
-define KILLWEAPON 901  												
+define KILLWEAPON 901
 define QUEBALL 902
 define POCKET 903
-define PUFFSMOKE 904 											
+define PUFFSMOKE 904
 define TREE1 908
 define TREE2 910
 define CACTUS 911
@@ -264,8 +263,8 @@ define BOTTLE8 1014
 define SPOTLITE 1020
 define HANGOOZ 1022
 define MASKWALL15 1024
-define VASE5 1025                                                                           
-define BIGSMOKE 1026 													
+define VASE5 1025
+define BIGSMOKE 1026
 define GLASSPIECES 1031
 define HORSELITE 1034
 define NEON6 1046
@@ -290,9 +289,9 @@ define ALIENSWITCH 1142
 // define DOORTILE21 1144
 define HANDPRINTSWITCH 1155
 define BOTTLE10 1157
-define VASE6 1158                                                             
+define VASE6 1158
 define BOTTLE12 1159
-define FORPITCHER1 1160                                                 
+define FORPITCHER1 1160
 define FORPITCHER2 1161
 define FORPITCHER3 1162
 define FORPITCHER4 1163
@@ -308,8 +307,8 @@ define VENDMACHINE 1212
 define VENDMACHINEBROKE 1214
 define COLAMACHINE 1215
 define COLAMACHINEBROKE 1217
-define WEB 1221                                                     			 
-define BIGSPIDER 1222                                                             
+define WEB 1221
+define BIGSPIDER 1222
 // define BARBROKE 1225
 define BLOODPOOL 1226
 define NUKEBARREL 1227
@@ -330,25 +329,25 @@ define TRANSPORTERBEAM 1261
 define RAT 1267
 define TRASH 1272
 define BLANKSCREEN 1293
-define BIRDFECES 1294                                                  
+define BIRDFECES 1294
 define FEMPIC3 1298
 define FEMPIC4 1306
 define BABA 1312
 define ALLFISH 1317
 define NEWBOMB 1321
 define STRAW4 1323
-define GORGUL2 1325            									     
+define GORGUL2 1325
 define REPEATSPAWN 1334
 define FEM6PAD 1335
-define OSTRICH 1336    												
+define OSTRICH 1336
 define HELECOPT 1346
 define FETUSJIB 1347
-define YELLOWKEY 1348                                            
-define DIESKELETON 1353   										
+define YELLOWKEY 1348
+define DIESKELETON 1353
 define INDY 1355
 define FETUS 1358
 define FETUSBROKE 1359
-define BIRDDIE 1352  													
+define BIRDDIE 1352
 define LUKE 1354
 define COOLEXPLOSION1 1360
 define WATERSPLASH2 1380
@@ -377,7 +376,7 @@ define MORTER 1650
 define SHRINKEREXPLOSION 1656
 define RADIUSEXPLOSION 1670
 define FORCERIPPLE 1671
-define SPECTRAL 1680                                          
+define SPECTRAL 1680
 define PEPER 1681
 define IDOL 1682
 define SPECTRALTOP 1705
@@ -398,13 +397,13 @@ define LBALLE 1880
 define EXPLOSION2 1890
 define BATSTAYPUT 1920
 define BAT 1921
-define SPECTRAL2 1960                             
-define SKELETON 2000                         
+define SPECTRAL2 1960
+define SKELETON 2000
 define FORAUTO 2001
 define MOONDISTL 2045
 define SKELETONDEADSPRITE 2060
 define SKELETTOP 2061
-define DEMON 2120                               
+define DEMON 2120
 define AGENT 2121
 define FORMORFING 2150
 define GREENDEMON 2160
@@ -440,8 +439,8 @@ define CRACKKNUCKLES 2324
 define SMALLSMOKE 2329
 define SMALLSMOKEMAKER 2330
 define FLOORFLAME 2333
-define FLOWER 2360									
-define GNAWER 2370                       
+define FLOWER 2360
+define GNAWER 2370
 define WATERDRIPSPLASH 2380
 define SCRAP6 2390
 define SCRAP1 2400
@@ -528,8 +527,8 @@ define MAXLIFT 2631
 define WIZZSHOOT 2660
 define WIZZLOB 2670
 define BOSSTOP 2696
-define MERCURY 2710														
-define SANDMAN 2760                                                          
+define MERCURY 2710
+define SANDMAN 2760
 define SPINNINGNUKEICON 2813
 define BIGFNTCURSOR 2820
 define SMALLFNTCURSOR 2821
@@ -668,12 +667,12 @@ define HERO_WALKINDUCTS               43
 define DEVIL2                                        44          //  Смех нездоровый ( пугалка зацикленная )
 define HERO_YES                                 45
 define SHORTING                                  46          //  Короткое замыкание ( окружение )
-define STEPONGLASS                           47          //  Хождение по стеклам  
+define STEPONGLASS                           47          //  Хождение по стеклам
 define HERO_UNDERWATER                48
 define NOTFOR                                      49                    //        Кабина занята  ( оператор )
 define HMANSONG                                 50                    //       Активация ( палач поет )
 define HMANSTEP                                  51                    //       Палач шагает
-define DANGOR                                      52                    //        Осторожно горгул  ( оператор )              
+define DANGOR                                      52                    //        Осторожно горгул  ( оператор )
 define NOTROUGH                                 53                    //        Здесь не пролезть ( оператор )
 define KEROSENE                                  54                    //        Керосин
 define TOSEE                                          55                   //        Тебя засекли ( оператор )
@@ -856,7 +855,7 @@ define BONES03                                              231
 define  MER_BOMBFLY                                  232                 //     Летающая бомба Меркуримана
 define OST_D                                                  233
 define CARDINAL                                             234                 //     Ее Высочество ( клавесин кардинала )
-define DINNER                                                235                    
+define DINNER                                                235
 define SANDSOUND                                        236                  //    Пересыпающийся песок
 define FIRE_F                                                  237                 //    Огонь  ( колонны в Пирамиде )
 define REMEMBER                                         238                  //    Диктор
@@ -895,8 +894,8 @@ define HERO_KILLED4                                   270
 define HERO_KILLED5                                   271
 define PREZIDENT                                         272                     //      президент
 define HERO_STEPONFECES                         273
-define HERO_LONGTERM_PAIN2                   274            
-define HERO_LONGTERM_PAIN3                   275      
+define HERO_LONGTERM_PAIN2                   274
+define HERO_LONGTERM_PAIN3                   275
 define HERO_LONGTERM_PAIN4                   276
 define COMPANB2                                          277
 define KTIT                                                      278
@@ -934,7 +933,7 @@ define MAT                                                       309            
 define SLADE                                                   310
 define KAMORA                                                311              //    Маска змееплюйка
 define METDOOR                                             312              //   Падающая решетка
-define BOMBSPAWN                                       313              //  Вращающаяся мина ( порождаемая )                   
+define BOMBSPAWN                                       313              //  Вращающаяся мина ( порождаемая )
 define SHARKSOUND                                      314               //   Акула
 define OFNOISE                                               315               //    Офисный шум
 define WATCIRC                                               316              //   Льющаяся вода ( обычно )

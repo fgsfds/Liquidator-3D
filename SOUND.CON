@@ -1,25 +1,23 @@
-
-
 define CAMERASDESTRUCTABLE      NO                //   YES
 define FREEZERHURTOWNER         YES               //    NO
 
 define MAXPLAYERHEALTH                   100           //    Макc. кол-во  жизни игрока
-define MAXWATERFOUNTAINHEALTH    50             //  
+define MAXWATERFOUNTAINHEALTH    50             //
 
-define YELLHURTSOUNDSTRENGTH        40        
-define YELLHURTSOUNDSTRENGTHMP   50        
+define YELLHURTSOUNDSTRENGTH        40
+define YELLHURTSOUNDSTRENGTHMP   50
 
-define MAXPLAYERBLUEHEALTH    200               
+define MAXPLAYERBLUEHEALTH    200
 define DOUBLEMAXPLAYERHEALTH    MAXPLAYERBLUEHEALTH
 define STARTARMORHEALTH         0                     //    Изначальная Защита
 define STARTARHEALTH                 10
-define RETRIEVEDISTANCE           1024                //   Дистанция возврата 
+define RETRIEVEDISTANCE           1024                //   Дистанция возврата
 define SQUISHABLEDISTANCE        512                //   Только для актеров !
 define DEFAULTVISIBILITY              512                //    Видимость по умолчанию
 define FROZENQUICKKICKDIST      980                //    Дистанция разбивания замороженного
 
 define GENERICIMPACTDAMAGE      10                //   Воздействия общих повреждений
-define SWEARFREQUENCY              42          
+define SWEARFREQUENCY              42
 
 define MAXPISTOLBULLET               200                 //   Макс. колл-во патронов для пистолета                  ( 3 знака )
 define MAXSHOTGUNBULLET           50                  //   Макс. колл-во патронов для винтовки                    ( 2 знака )
@@ -31,7 +29,7 @@ define MAXSHRINKERBULLET          50                  //    Макс. колл-во зарядо
 define MAXDEVISTATORAMMO        99
 define MAXFREEZEAMMO            100
 define MAXTRIPBOMBAMMO          5
-define TRIPBOMBLASERMODE        0 
+define TRIPBOMBLASERMODE        0
 
 
 
@@ -50,17 +48,17 @@ define PLAYDEADTIME                  120                                        
 define SHRUNKCOUNT 270
 define SHRUNKDONECOUNT 304
 
-define FROZENDRIPTIME 90                                                                  
+define FROZENDRIPTIME 90
 define THAWTIME 138                                                                //   Время оттаивания
 
 
 //     РАДИУС ПОРАЖЕНИЯ
 
 define RPGBLASTRADIUS               1780                            //   Базука
-define PIPEBOMBRADIUS                     2500                            //  Дистанционная взрывалка 
+define PIPEBOMBRADIUS                     2500                            //  Дистанционная взрывалка
 define SHRINKERBLASTRADIUS            650
 define TRIPBOMBBLASTRADIUS          3880
-define MORTERBLASTRADIUS             2500                             //   Мортер 
+define MORTERBLASTRADIUS             2500                             //   Мортер
 define BOUNCEMINEBLASTRADIUS     2500
 define SEENINEBLASTRADIUS             2048
 
@@ -83,12 +81,12 @@ define RPG_WEAPON_STRENGTH                    140                               
 
 define SHRINKER_WEAPON_STRENGTH                    0
 define SHOTGUN_WEAPON_STRENGTH                   10                                  //   Винтовка
-define CHAINGUN_WEAPON_STRENGTH                    9                                  //   Автомат 
+define CHAINGUN_WEAPON_STRENGTH                    9                                  //   Автомат
 define FREEZETHROWER_WEAPON_STRENGTH     16
 define COOL_EXPLOSION_STRENGTH                      38
 define TRIPBOMB_STRENGTH                                 100
 define FIRELASER_WEAPON_STRENGTH                   7
-define MORTER_WEAPON_STRENGTH                     50                                   //   Мортер 
+define MORTER_WEAPON_STRENGTH                     50                                   //   Мортер
 define BOUNCEMINE_WEAPON_STRENGTH           150
 define SPIT_WEAPON_STRENGTH                              2
 define BULLET_WEAPON_STRENGTH                       30
@@ -102,12 +100,12 @@ define SKEL_SHIELD_AMOUNT2                        50
 define DEMSTRENGTH                                       100                      //   Красный Бес
 define DEMGETTINGDAZEDAT                           15
 define DEMEATINGPLAYER                                -2
-define OCTASTRENGTH                                      175                        
+define OCTASTRENGTH                                      175
 define OCTASCRATCHINGPLAYER                    -11
-define SPECTRAL2STRENGTH                           50                    
+define SPECTRAL2STRENGTH                           50
 define TURRETSTRENGTH                                 30
 define ROTTURRETSTRENGTH                          40
-define LBALLESTRENGTH                                 150                   //    Огненный шар 
+define LBALLESTRENGTH                                 150                   //    Огненный шар
 define CAPTAINSTRENGTH                                50
 define CAPTSPINNINGPLAYER                         -11
 define BATSTRENGTH                                       20                     //    Летучая Мышь
@@ -163,7 +161,7 @@ definequote  4        LOCKED
 // ЗАКРЫТО
 definequote  5        GIVING EVERYTHING!
 definequote  6        LEMON: HEALTH +25
-// ЛИМОН: ЖИЗНЬ +25   
+// ЛИМОН: ЖИЗНЬ +25
 definequote  7        WASTED!
 definequote  8        UNLOCKED
 // ОТКРЫТО
@@ -171,13 +169,13 @@ definequote  9        * * *  SECRET  * * *
 definequote 10        HEARTBREAKING SIGHT
 // ДУШЕРАЗДИРАЮЩЕЕ ЗРЕЛИЩЕ
 definequote 11        ALL DOORS UNLOCKED
-definequote 12        
+definequote 12
 definequote 13        PRESS SPACE TO RESTART LEVEL
 // ДЛЯ ПРОДОЛЖЕНИЯ ИГРЫ НАЖМИТЕ ПРОБЕЛ
-definequote 14        
+definequote 14
 definequote 15        DEACTIVATED
 // ОСТАНОВЛЕНО
-definequote 16        
+definequote 16
 definequote 17        GOD MODE: ON
 definequote 18        GOD MODE: OFF
 definequote 19        * HEALTH *
@@ -199,7 +197,7 @@ definequote 34        SOUND: ON
 definequote 35        SOUND: OFF
 definequote 36        SCREEN CAPTURED
 definequote 37        KIWI: HEALTH +15
-definequote 38        * ARMOR * 
+definequote 38        * ARMOR *
 definequote 39        SCUBA GEAR
 definequote 40        Press F1 for Help
 definequote 41        JETPACK
@@ -215,11 +213,11 @@ definequote 48        ONE WRONG STEP AND YOU ARE DEAD
 definequote 49        YOU HAVE WEIRD INCLINATIONS...
 // У ВАС СТРАННЫЕ НАКЛОННОСТИ...
 definequote 50        SLEEPING GORGUL IS IMMORTAL
-// СПЯЩИЙ ГОРГУЛ БЕССМЕРТЕН       
+// СПЯЩИЙ ГОРГУЛ БЕССМЕРТЕН
 definequote 51        BREATHE DEEPER
-// ДЫШИ ГЛУБЖЕ      
-definequote 52        
-definequote 53        
+// ДЫШИ ГЛУБЖЕ
+definequote 52
+definequote 53
 definequote 54        UZI
 // АВТОМАТ
 definequote 55        EXPLOSIVE DEVICE
@@ -247,7 +245,7 @@ definequote 66
 definequote 67        BULLETPROOF VEST
 // БРОНЕЖИЛЕТ
 definequote 68        REVOLVER
-// РЕВОЛЬВЕР 
+// РЕВОЛЬВЕР
 definequote 69        BUCKSHOT
 // КАРТЕЧЬ
 definequote 70        FIND THE BLUE KEY
@@ -261,12 +259,12 @@ definequote 74        WEAPON RAISED
 definequote 75        WATCH OUT!
 // БЕРЕГИСЬ !
 definequote 76        AUTOMATIC CONTROL
-// АВТОМАТИЧЕСКОЕ УПРАВЛЕНИЕ 
+// АВТОМАТИЧЕСКОЕ УПРАВЛЕНИЕ
 definequote 77        ACCESS DENIED
 // ДОСТУП ЗАКРЫТ
 definequote 78        NAPALM FUEL
 // ТОПЛИВО ДЛЯ НАПАЛМА
-definequote 79       
+definequote 79
 definequote 80        SECRET MOVE
 // СЕКРЕТНЫЙ ПРИЕМ
 definequote 81        WEAPON MODE ON
@@ -283,8 +281,8 @@ definequote 88        PILL: HEALTH +20
 // ТАБЛЕТКА : ЖИЗНЬ +20
 definequote 89        AIRTANK
 // КИСЛОРОДНЫЙ БАЛОН
-definequote 90        
-definequote 91        
+definequote 90
+definequote 91
 definequote 92        MUSIC: ON
 definequote 93        MUSIC: OFF
 definequote 94        SCROLL MODE: ON
@@ -292,15 +290,15 @@ definequote 95        SCROLL MODE: OFF
 definequote 96        BRIGHTNESS LEVEL: SIX
 definequote 97        BRIGHTNESS LEVEL: SEVEN
 definequote 98        BRIGHTNESS LEVEL: EIGHT
-definequote 99        
-definequote 100       
+definequote 99
+definequote 100
 definequote 101       WE'VE ALREADY BEEN HERE
 // ЗДЕСЬ МЫ УЖЕ БЫЛИ
-definequote 102       
+definequote 102
 definequote 103       * MEMORIAL PHOTO *
 // * ПАМЯТНОЕ ФОТО *
-definequote 104       
-definequote 105       
+definequote 104
+definequote 105
 definequote 106       BLUE POISON: HEALTH -20
 // СИНИЙ ЯД: ЖИЗНЬ - 20
 definequote 107       RED POISON: HEALTH -20
@@ -324,7 +322,7 @@ definequote 119       GOT ALL WEAPONS/AMMO
 definequote 120       GOT ALL INVENTORY
 definequote 121       GOT ALL KEYS
 definequote 122       <Please Leave Blank>
-definequote 123       
+definequote 123
 definequote 124       MAP HAS A DIFFERENT NUMBER OF PLAYERS
 
 //  Volume titles cannot excede 32 characters.
@@ -383,7 +381,7 @@ definesound BONUSMUSIC        bonus.voc    0   0   255  1  0         //    Викто
 //      ЗВУКИ СИСТЕМНЫЕ  ( Загрузка  уровней  )
 
 definesound SUCCESS                   irina02.voc         0      0    255   4   0          //     Желаем успеха
-definesound SUCCESS2                 irina02.voc         0      0    255   4   0          //     Желаем успеха 
+definesound SUCCESS2                 irina02.voc         0      0    255   4   0          //     Желаем успеха
 definesound AGENT02                    irina02.voc         0      0    255   4   0          //     Желаем успеха ( 197 )
 definesound LEVEL                            level.voc         0      0    255   0   0          //      О кей  ( 199 )
 definesound SUCCESS3                 irina02.voc          0      0   255    4   0          //     Желаем успеха  ( 1 уровень )
@@ -419,7 +417,7 @@ definesound AUTOBUS                                      auto.voc       0   0   
 definesound PREZIDENT                                 prezz.voc      0   0    3   0    0          //      президент            ( 272 )
 
 //  ------------------------------------------------------------
-//     АКТЕРЫ 
+//     АКТЕРЫ
 //  ------------------------------------------------------------
 
 //       БЕЗЛИКИЙ БРАТ
@@ -433,9 +431,9 @@ definesound PRED_ATTACK       lit_mat.voc          256  256    3   0   7680     
 definesound PRED_PAIN         shbrokn.voc           -200 500    3   0   0                  //  Попадание ( тряпка рвется )
 definesound PRED_DYING          falling.voc            0   400     3   0   0                  //  Умирает
 definesound LIZARD_BEG        chokn12.voc            0   300    3   0   0                  //  Предвозрождение
-//    definesound PRED_ROAM3      vooo.voc             0   300    3   0   0                  //  Завывание  ( не задействован )   
-                                             
-//      БЕС                                                                  
+//    definesound PRED_ROAM3      vooo.voc             0   300    3   0   0                  //  Завывание  ( не задействован )
+
+//      БЕС
 
 definesound CAPT_ROAM       bes_act.voc          0      0       3   0   0             //   Бесовский смех
 definesound CAPT_ROAM2         meee.voc          0      0       3   0   0             //   Меее ...
@@ -453,13 +451,13 @@ definesound SKEL_ROAM      bones05.voc                     -200 400   3   0   0 
 definesound SKEL_ROAM2    bones02.voc                     -200 400   3   0   0      //   Кости
 definesound SKEL_ROAM3    bones01.voc                     -200 400   3   0   0      //   Кости
 definesound SKEL_RECOG     bonplus.voc                     -200 600   3   0   0      //   Активация ( кости + скрип )
-definesound SKEL_ATTACK          whip.voc                     -256  256  4   0   0      //   Атака 
+definesound SKEL_ATTACK          whip.voc                     -256  256  4   0   0      //   Атака
 definesound SKEL_PAIN        bones03.voc                      100 800   3   0   0      //   Попадание
 definesound SKEL_DYING    crashcan.voc                     -800 100   3   0   0      //   Падает сломанный
 definesound BONES03        bon_dop1.voc                          0  200   3   0   0      //   Кости дополнительные ( перезаряд )
 
 
-//    МАРШРУТНИК 
+//    МАРШРУТНИК
 
 definesound RECO_ROAM        reflying.voc           -400   400   3   0   0                 //    Летает
 definesound RECO_RECOG        recact.voc                     0   0   3   0   0                 //    Активация
@@ -481,7 +479,7 @@ definesound LBALL_JETSND          l_shhh.voc    1300 1300 0   0   0        //   
 definesound FLYBAT                          batfly.voc            0   0   3   0   0               //      Шелест кожанных крыльев
 definesound BATSOUND              batwamp.voc            0   0   3   0   0               //      Летучая мыша пищит
 
-//     ГОЛОВОГРЫЗЬ 
+//     ГОЛОВОГРЫЗЬ
 
 definesound SLIM_HATCH    slhtch01.voc             0   0      3   0   0             //    Вылезает
 definesound SLIM_ROAM     sliroa02.voc              0  200   3   0   0             //    Движение
@@ -499,7 +497,7 @@ definesound MEMA_DYING          merdead.voc                 0   0   3   0   0   
 definesound MER_BOMBFLY     merbomb.voc                 0   0   3   0   0              //       Летающая бомба Меркуримана
 definesound WHIPYOURASS       WHIPYU01.VOC           0   0   255 4   0             //       Явление меркуримана
 
-//    ПЕСОЧНИК                                                                                
+//    ПЕСОЧНИК
 
 definesound SAMA_ROAM        sandact.voc              0   0   3   0   0          //     Настораживающий звук
 definesound SAMA_RECOG      skaven.voc           0   200   3   0   0          //     Пустил пар ( активация )
@@ -507,7 +505,7 @@ definesound SAMA_ATTACK1   hitman01.voc             0   0   3   0   0         //
 definesound SAMA_ATTACK2  sandman.voc              0   0   3   0   0         //     смеется при топтании
 definesound SAMA_PAIN        sandman.voc           200   0   3   0   0         //     смеется ( По фигу мне ваши пульки )
 definesound SAMA_DYING       putsand.voc               0   0   3   0   0          //    рассыпающийся песок
-definesound SAMA_WALK      bogmanw.voc         -400   0   3   0   0          //      Ходьба      
+definesound SAMA_WALK      bogmanw.voc         -400   0   3   0   0          //      Ходьба
 
 definesound RIPHEADNECK        empty.voc              0   0    0    0  0         //      пустышка
 
@@ -515,7 +513,7 @@ definesound RIPHEADNECK        empty.voc              0   0    0    0  0        
 
 definesound WIZ1_ROAM                wiz01.voc                  0   0   3   0   0         //    Циферус альтернафолиус
 definesound WIZ1_ATTACK2          wiz_att.voc                  0   0   3   0   0         //    Некрос транзитус
-       
+
 //       ПАЛАЧ
 
 definesound AXEINFLY             axeinfly.voc       100    100   1   2   0               //      Топор в полете
@@ -527,7 +525,7 @@ definesound HMANPAIN         hmanpain.voc         0     200    3   0   0        
 definesound HMANATTACK       hmanatt.voc         0     100     3   0   0              //       работа !
 
 //  ------------------------------------
-//  ЗВУКИ ОРУЖИЯ                                                                       
+//  ЗВУКИ ОРУЖИЯ
 //  ------------------------------------
 
 definesound KICK_HIT                             foot_hit.voc       0     0     4   0   0                  //    Удар ногой
@@ -540,7 +538,7 @@ definesound CHAINGUN_FIRE              chaingun.voc     -204 -204  254   0   512
 definesound SHOTGUN_FIRE               shotgun7.voc      0    500    254 0   0                //    Дробовик ( выстрел )
 definesound SHOTGUN_COCK               shotgnck.voc      96    192   3   0   0                //    Дробовик ( перезаряд )
 definesound RPG_SHOOT                    rpgfire.voc        -32    0    4   0   0                //    Базука ( выстрел )
-definesound FLY_BY                                    flyby.voc       -256  256   3   0   0              //     Полет реактивной гранаты  
+definesound FLY_BY                                    flyby.voc       -256  256   3   0   0              //     Полет реактивной гранаты
 definesound RPG_EXPLODE          bombexpl.voc   -1024 1024  254 0   0              //     Большой Взрыв
 definesound CAT_FIRE                               catfire.voc           0   768   3   0   0               //    Огнемет  ( авто с FLOORFLAME  2333 )
 definesound SHRINKER_FIRE                    catfire.voc          0     0     3   0   0                //    Напалм
@@ -551,7 +549,7 @@ definesound LASERTRIP_ARMING        lsrbmbwn.voc            0    0     3   0   0
 definesound LASERTRIP_EXPLODE     bombexpl.voc      -512      0     4   0   0              //    Большой взрыв ( от лазера )
 definesound SELECT_WEAPON         WPNSEL21.VOC       128   128   3   0   0              //    Выбор оружия ( Базука )
 
-//   ЗВУКИ ОКРУЖЕНИЯ   ( циклические )                                                    
+//   ЗВУКИ ОКРУЖЕНИЯ   ( циклические )
 
 definesound BOMBSPAWN                  mort.voc      0     0     1   2   0              //   Вращение порождаемой мины
 definesound WATCIRC                     watcirc.voc      0     0     1   2   0               //   Вода льющаяся                 ( 316 )
@@ -599,7 +597,7 @@ definesound CSTL_P                                cstl_p.voc        0     0   2 
 definesound SLADE                                  slade.voc      -256  0    2   0   0              //    Малый каменный лифт,дверь ( движение )
 definesound METDOOR                       metdoor.voc         0     0    2   0   0             //   Падающая металическая решетка
 definesound SHARKSOUND                     shark.voc         0     0    2   0   0             //    Акула
-definesound TIME                                        time.voc        0     0   3   0   0             //   Часы ( динь-длинь )        
+definesound TIME                                        time.voc        0     0   3   0   0             //   Часы ( динь-длинь )
 definesound SQUEAKY                         squeaky.voc        0     0    2   0   0             //   Каменный стоп
 definesound ST_MACH                         st_mach.voc        0     0    2   0   0             //   Большой каменный лифт,стена ( движение )
 definesound UFO_STOP                       ufo_stop.voc        0     0    2   0   0             //   НЛО - стоп
@@ -607,8 +605,8 @@ definesound SH_DOOR                         sh_door.voc        0     0    2   0 
 definesound SKAVEN                              skaven.voc        0     0    2   0   0             //   Стоп для OLD_MASH ( шипун )
 definesound PUTSH                                   shell.voc         0     0    3   0   0             //    Упавшая гильза
 definesound CSTL_S                                 cstl_s.voc        0     0    2   0   0             //    Стоп для решетки
-definesound SOMETHINGFROZE             freeze.voc       0    200  3   0   0             //    Позвякивание бубенцов  
-definesound RING                                        ring.voc        0     0    3   0   0             //    Колокольчик ( стоп для ENIGMA ) 
+definesound SOMETHINGFROZE             freeze.voc       0    200  3   0   0             //    Позвякивание бубенцов
+definesound RING                                        ring.voc        0     0    3   0   0             //    Колокольчик ( стоп для ENIGMA )
 definesound GEARS_GRINDING          geargrnd.voc        0     0    0   2   0             //   Механизм ?
 definesound BUBBLE_AMBIENCE     bubblamb.voc    -256    0    0   2   0             //    Бульканье
 definesound CRESCENDO                   crescend.voc        0     0    2   0   0             //   Крещендо ( тарелка по нарастающей )
@@ -643,14 +641,14 @@ definesound TURNDOOR                                 turnd.voc       0   0    2 
 definesound KEYDOOR                                twinkle.voc        0   0    2    0    0      //     Двеь открываемая ключем
 definesound HERO_STEPONFECES               feces.voc        0   0    3    0    0      //     Наступил на какашку ( Ай-яй )
 definesound POOLBALLHIT                       poolbal1.voc        0   0    2    0    0      //     Столкновение бильярдных шариков
-definesound SHUTTLE                                  shuttle.voc        0   0    2    0    0      //      шатл   
+definesound SHUTTLE                                  shuttle.voc        0   0    2    0    0      //      шатл
 
 
-//     Звуки Издаваемые Игроком                                                                  
+//     Звуки Издаваемые Игроком
 
 definesound HERO_LONGTERM_PAIN               hot.voc       -192   0   255 4   0           //    Тяжелое дыхание ( раненый )
 definesound HERO_LONGTERM_PAIN2       pain54.voc          0   0   255  4   0            //     Ближе к концу
-definesound HERO_LONGTERM_PAIN3       pain75.voc           0   0   255  4   0           //     Хорошо попали  
+definesound HERO_LONGTERM_PAIN3       pain75.voc           0   0   255  4   0           //     Хорошо попали
 definesound HERO_LONGTERM_PAIN4    hitman01.voc          0   0   255  4   0           //     Короткое попадание ( крик )
 definesound HERO_LONGTERM_PAIN5      pain54.voc            0   0   255   4   0          //     Крик при ранении
 definesound HERO_LONGTERM_PAIN6      pain75.voc            0   0   255   4   0          //     Крик при ранении
@@ -659,12 +657,12 @@ definesound HERO_LONGTERM_PAIN8      pain75.voc            0   0   255   4   0  
 definesound HERO_USEMEDKIT                      aaa.voc            0   0   255   4   0          //     Употребил аптечку
 definesound POISON                                   poison.voc             0   0   255   4   0         //      Хряпнул  ядку
 definesound HERO_GRUNT                             exert.voc           0   0    2   4    0           //      Ой! ( когда спрыгнул и т.п. )
-definesound HERO_DEAD                         DEATH2.VOC        -64  64   255 4  0            //      Умирает ( нажмите спейс ) 
+definesound HERO_DEAD                         DEATH2.VOC        -64  64   255 4  0            //      Умирает ( нажмите спейс )
 definesound HERO_HARTBEAT                 hartbeat.voc           0   0   255  4   0           //      Сердце
-definesound HERO_SCREAM               DSCREM04.voc           0   0   255   0   0          //      Падение в пропасть  
+definesound HERO_SCREAM               DSCREM04.voc           0   0   255   0   0          //      Падение в пропасть
 definesound HERO_ONWATER                   wetfeet.voc           0   0     4     0   0          //      Плавание и хождение по воде
-definesound HERO_LAND                           land02.voc            0   0    2      0   0          //      Приземление ( стук ) 
-definesound HERO_LAND_HURT                pain39.voc            0   0    255 4   0          //      Приземление при прыжке ( У ! 
+definesound HERO_LAND                           land02.voc            0   0    2      0   0          //      Приземление ( стук )
+definesound HERO_LAND_HURT                pain39.voc            0   0    255 4   0          //      Приземление при прыжке ( У !
 definesound HERO_UNDERWATER             scuba.voc             0   0    2     0   0          //     Подводный звук
 definesound HERO_WALKINDUCTS          ductwlk.voc           -64   128  2   0   0          //     Глухой Бульк
 definesound HEROWALK                                step.voc             0    0   3    0   0            //    Звук шагов
@@ -688,11 +686,11 @@ definesound HERO_KILLED5              woopss.voc              0   0   255 12  0 
 
 definesound REMEMBER                        dictor.voc              0   0   255   4   0            //       Диктор
 definesound AGENT01                           irina01.voc              0   0   255   4   0            //       Агенство нашло возможность помочь ( агент )
-definesound TOSEE                                 tosee.voc              0   0   255   4   0            //       Тебя засекли 
+definesound TOSEE                                 tosee.voc              0   0   255   4   0            //       Тебя засекли
 definesound HERO_SEARCH2             advice1.voc              0   0   255   4   0            //       Попробуйте влево ...
 definesound HERO_CRACK2              makrame.voc             0   0   255   4   0            //       Макраме
 definesound NOWAY                                 stop.VOC             0   0   254   4   0            //       Дальше дороги нет
-definesound NOSEE                                nosee.voc             0   0   255   4   0             //       Не вижу тебя 
+definesound NOSEE                                nosee.voc             0   0   255   4   0             //       Не вижу тебя
 definesound NOTROUGH                       noslim.voc              0   0   255   4   0            //       Здесь не пролезть
 definesound KEROSENE                          keros.voc              0   0   255   4   0            //        Керосин
 definesound DENRA                                 denra.voc              0   0   255  4   0             //        Осторожно справа
@@ -703,14 +701,14 @@ definesound HERO_CRACK                      alarm.voc              0   0   255  
 definesound TAPLAP                               taplap.voc               0   0   255  4   0             //       Вляпался по крупному
 definesound SILENCE                           silence.voc               0   0  255   4   0              //      Слишком тихо
 definesound LETSGO                              letsgo.voc               0   0  255   4   0              //      Ну,давай еще немножко
-definesound SUPER2                             super2.voc               0  0  255    4   0             //       О кей ,супермен !  
+definesound SUPER2                             super2.voc               0  0  255    4   0             //       О кей ,супермен !
 definesound HERO_KILLED4                   client.voc               0   0   255  12   0            //       Клиент готов !
 definesound HERO_KILLED3                   ready.voc               0   0   255  12  0             //      Отигрался , голубчик
 definesound FORSPIDER                       forspid.voc               0   0   255   4   0             //      Тихо,здесь кто то есть
 definesound EXIT                                        exit.voc               0   0   255   12  0             //      Для выхода  нажмите ESC
 definesound MIND                                     mind.voc               0   0   255   4    0             //     Думай
-definesound NOTFOR                               notfor.voc               0   0   255   4    0            //      Кабина занята 
-definesound NOTSOME                             nono.voc               0   0    3   0    0               //      Не угадал  ( ошибочка ! ) 
+definesound NOTFOR                               notfor.voc               0   0   255   4    0            //      Кабина занята
+definesound NOTSOME                             nono.voc               0   0    3   0    0               //      Не угадал  ( ошибочка ! )
 
 definesound PROBLEM2                   problem2.voc                0   0   255   4   0              //     Нету их ( Тетя Клава )
 definesound KLAVA                                  klava.voc                0   0    1     2     0             //     Монолог уборщицы
@@ -721,7 +719,7 @@ definesound FLESH_BURNING       fire09.voc      -256   0   0   0   6100         
 definesound THUD                             thud.voc           0   0   0   0   0                                //    Падение тела
 definesound SQUISHED                 squish.voc           0   0   3   0   0                                //    Последний Чвяк
 
-//  Звуки Оборудования                                                                   
+//  Звуки Оборудования
 
 
 definesound ELEVATOR_ON            gbelev01.voc       0   0    2   0   0               //      Лифт          ( телепортируемый)
@@ -729,7 +727,7 @@ definesound ELEVATOR_OFF           gbelev02.voc       0   0   2   0   0         
 definesound SWITCH_ON                    switch.voc        0   0   2   0   0                //      Выключатель ( default )
 definesound HEALTH                            health.voc        0   0   255    4   0           //     Получение жизни или защиты
 definesound SHRINKER_HIT                naphit.voc        0   0   3    0   0                //      Попадание из напалма
-        
+
 //   АКТЕРЫ
 
 definesound KAMORA                         kamora.voc       0    0   3   0    0              //     Маска змееплюйка
@@ -750,4 +748,4 @@ definesound STRAUS1              straus1.voc         0     0    2    0    0     
 
 //    ГОЛОВАСТИК
 
-definesound HEADER_WALK         hdrwalk.voc                 0   0   3   0   0          //     передвижение 
+definesound HEADER_WALK         hdrwalk.voc                 0   0   3   0   0          //     передвижение

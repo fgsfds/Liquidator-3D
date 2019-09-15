@@ -1,4 +1,3 @@
-
 include TREE.CON
 include SOUND.CON
 
@@ -8,7 +7,7 @@ move WEAMFLY 60
 
 state vz10
 	ifhitweapon
-	{ 
+	{
 		ifactor RPGBULLET { shoot RPG }
 		else
 			spawn  BURNING
@@ -112,7 +111,7 @@ actor SHARK SHARKSTRENGTH ASHARKCRUZING	SHARKVELS randomangle geth
 enda
 
 action BURNING_FLAME    0   12   1   1   2
-move BURNING_VELS 
+move BURNING_VELS
 
 state burningstate
     ifcount 128 { sizeat 8 8 sizeat 8 8 ifactioncount 36 killit }
@@ -554,7 +553,7 @@ state vz10
 enda
 
 actor SHOTGUNBULLET cstat 257
-    fall sizeat 15 15 
+    fall sizeat 15 15
     ifmove RESPAWN_ACTOR_FLAG
     ifp pshrunk { } else ifp palive ifcount 6 ifpdistl RETRIEVEDISTANCE ifcanseetarget
     {
@@ -1196,7 +1195,7 @@ enda
 move NEWSANMY
 state del10
 ifspawnedby SANDMAN
-	{	
+	{
 	ifmove 0 { cstat 0 }
 	sizeat 15 15 spritepal 3
 	ifcount 16 ifrnd 1 { move NEWSANMY geth cstat 257 cactor SANDMAN }
@@ -1209,7 +1208,7 @@ actor ORGANTIC state del10 enda
 
 state del11
 ifspawnedby SANDMAN
-	{	
+	{
 	ifmove 0 { cstat 0 }
 	sizeat 15 15 spritepal 5
 	ifcount 16 ifrnd 1 { move NEWSANMY geth cstat 257 cactor SANDMAN }
@@ -1252,7 +1251,7 @@ state big300
 	{
 	ifawayfromwall { action ABIGSPIDER10 move BIGSP10 jumptoplayer ifrnd 128 { spritepal 9 } }
 	ifceilingdistl 70 { spritepal 9 ifrnd 128 { action ABIGSPIDER move BIGSP faceplayer } }
-	iffloordistl 8 
+	iffloordistl 8
 		{
 			ifmove BIGSP
 			{
@@ -2046,7 +2045,7 @@ state skeldyingstate
       {
           ifcount 64 { action EGGWAIT move 0 }
         {
-            ifrnd 128 { action EGGWAIT move 0 }            
+            ifrnd 128 { action EGGWAIT move 0 }
             else
             {
                 sound SLIM_HATCH
@@ -2056,7 +2055,7 @@ state skeldyingstate
     } }
     ifaction EGGOPEN1 { ifactioncount 2 action EGGOPEN2 }
     ifaction EGGOPEN2
-    { 
+    {
      ifactioncount 0
      	{
      	action EGGOPEN3
@@ -2672,7 +2671,7 @@ state fem79
 	ifspritepal 0 { cstat 32768 ifrnd 0 { spritepal 3 } }
 	ifspritepal 3 { cstat 257 }
 ends
-state fem80 ifpdistl 2048 ifhitspace ai AIFEMMGO else ifmove FEMMGO soundonce STRAUS1 
+state fem80 ifpdistl 2048 ifhitspace ai AIFEMMGO else ifmove FEMMGO soundonce STRAUS1
 	ifmove FEMMGO ifpdistl 1024 { addphealth -1 soundonce HERO_LONGTERM_PAIN5 palfrom 48 5 resetactioncount }
 ends
 state fem81 ifpdistl 3300 ifpdistl 3049 ai AIFEMMSTO ends
@@ -2680,7 +2679,7 @@ state fem82 ifpdistl 35000 ifpdistl 3501 ai AIFEMMAN ends
 state fem83 ifcansee ifpdistl 35000 move FEMMGO1 geth ends
 
 state fem84 ifhitweapon
- { 
+ {
      { ifwasweapon SHOTSPARK1 soundonce LADY_SCREAM guts JIBS4 15 guts JIBS1 1 }
      { ifwasweapon KNEE soundonce LADY_SCREAM guts JIBS4 13 guts JIBS1 1 }
      { ifwasweapon RPG guts JIBS4 50 guts JIBS1 1 { killit } }
@@ -2787,7 +2786,7 @@ ifspritepal 3
 	ifai AIWNORMA2
 	{
 		ai AIWNORMA2
-		sizeat 30 30 
+		sizeat 30 30
 		ifpdistl 20000 ifpdistl 1500 { shoot KNEE }
 	}
 	ifnotmoving
@@ -3191,7 +3190,7 @@ ai AISNADAN1 ASNADAN1 SNADAN1 geth
 ai AISNADAN2 ASNADAN2 SNADAN1 geth
 ai AISNADAN3 ASNADAN3 SNADAN1 geth
 ai AISNADAN4 ASNADAN4 SNADAN1 geth
-	
+
 state ste8 ifpdistl 6500 soundonce OST_D ends
 state ste9 ifcount SHRUNKCOUNT { action ASNADAN0 } ends
 state ste10 ifaction ASNADAN0 { ai AISNADAN4 } ends
@@ -3407,7 +3406,7 @@ ifspritepal 0
 	}
 
 ifspritepal 2
-	{ 
+	{
 		sizeat 11 15 sizeat 11 15 sizeat 11 15
 		ifcansee ifpdistl 5000 ifaction 0
 		ifcount 96
@@ -3729,7 +3728,7 @@ state bli10
 		}
 	ifaction ABL20 ifmove BL20
 		{
-		ifpdistl 1024               
+		ifpdistl 1024
 			{
 			ifspritepal 0 { globalsound COWARD ifrnd 256 { killit } }
 			ifspritepal 1 { globalsound NOSEE ifrnd 256 { killit } }
@@ -4380,7 +4379,7 @@ state lift10
 	ifmove STOPLIFT { stopsound OLDLIFT }
 	ifmove UPLIFT { soundonce OLDLIFT }
 	ifmove DOWNLIFT { soundonce OLDLIFT }
-ends	
+ends
 
 actor MAXLIFT 0 ALIFT6 cstat 417 state lift10 sizeat 30 30
 
