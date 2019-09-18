@@ -2,8 +2,8 @@
 Liquidator
 ==========================================================================
 
-Version:                   1.2
-Release Date:              13.09.2019
+Version:                   1.3
+Release Date:              15.09.2019
 Author:                    fgsfds (https://twitter.com/fgsfds228)
 
 Original developer:        А.В.Т., Partizan Software
@@ -28,7 +28,7 @@ widescreen compatible HUD sprites.
 HOW TO USE
 ==========================================================================
 
-BuildGDX (1.04 and later):
+BuildGDX (1.05 and later):
 - put liquidator.zip into any folder
 - run DukeGDX, navigate to NEW GAME -> USER CONTENT
 - find liquidator.zip in the file browser
@@ -52,6 +52,13 @@ LINKS
 ==========================================================================
 CHANGELOG
 ==========================================================================
+
+Version 1.3 (15.09.2019)
+---------------------------
+* Main menu music in EDuke32
+* Removed explosion intro animation
+* Changed Napalm lighting color in Polymer
+
 
 Version 1.2 (13.09.2019)
 ---------------------------
