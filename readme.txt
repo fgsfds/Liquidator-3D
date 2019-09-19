@@ -2,8 +2,8 @@
 Liquidator
 ==========================================================================
 
-Version:                   1.3
-Release Date:              15.09.2019
+Version:                   1.4
+Release Date:              19.09.2019
 Author:                    fgsfds (https://twitter.com/fgsfds228)
 
 Original developer:        А.В.Т., Partizan Software
@@ -52,6 +52,12 @@ LINKS
 ==========================================================================
 CHANGELOG
 ==========================================================================
+
+Version 1.4 (19.09.2019)
+---------------------------
++ English translation for in-game textures
++ Story summary added to the help screen
+
 
 Version 1.3 (15.09.2019)
 ---------------------------
