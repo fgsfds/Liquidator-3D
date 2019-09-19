@@ -25,6 +25,23 @@ widescreen compatible HUD sprites.
 
 
 ==========================================================================
+THE STORY
+==========================================================================
+
+  As you know, after Professor Silverman created the first teleportation
+system in 1993, seekers of adventures rushed into the virtual world.
+  However, the unexpected happened. The creatures inhabiting lower realms
+of the virtual reality responded with a powerful repulse.
+  A number of aggressive-minded groups managed to capture teleportation
+devices and, according to the latest information, at the moment are
+preparing to capture our reality.
+  The Liquidator’s mission is to find fuel depots for the teleportation
+devices and destroy them.
+  For the duration of this mission, the Liquidator, assigned by the
+Worldwide Virtual Teleportation Agency, is endowed with unlimited authority.
+
+
+==========================================================================
 HOW TO USE
 ==========================================================================
 
@@ -57,6 +74,8 @@ Version 1.4 (19.09.2019)
 ---------------------------
 + English translation for in-game textures
 + Story summary added to the help screen
+* EDuke32 main menu background
+* Menu fonts fixes
 
 
 Version 1.3 (15.09.2019)
