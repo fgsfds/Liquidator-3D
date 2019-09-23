@@ -74,6 +74,7 @@ Version 1.4 (19.09.2019)
 ---------------------------
 + English translation for in-game textures
 + Story summary added to the help screen
+* Small key sprite fix by phredreeke
 * EDuke32 main menu background
 * Menu fonts fixes
 
