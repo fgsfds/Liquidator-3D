@@ -1,4 +1,1 @@
 music { id "intro" file "MENU.MID" }
-
-// Big Key
-tilefromtexture 60 { file "tiles/60bigkey.png" yoffset 10 ifcrc 1774381082 } 

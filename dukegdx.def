@@ -3,6 +3,3 @@ tilefromtexture 9220 { file "tiles/9220.png" }
 
 // Armor
 tilefromtexture 9221 { file "tiles/9221.png" }
-
-// Big Key
-tilefromtexture 60 { file "tiles/60bigkey.png" yoffset 10 ifcrc 1774381082 } 
