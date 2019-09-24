@@ -77,6 +77,7 @@ Version 1.4 (24.09.2019)
 * Small key sprite fix by phredreeke
 * EDuke32 main menu background
 * Menu fonts fixes
+* Fix stray pink pixels on the fuel barrel
 
 
 Version 1.3 (15.09.2019)
