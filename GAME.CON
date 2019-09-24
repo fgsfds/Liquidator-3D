@@ -103,7 +103,7 @@ state shark10
        			addkills -1
 				ifstrength 0 { spritepal 2 sound SQUISHED debris SCRAP3 10 ifrnd 256 { killit } }
     	}
-sizeat 15 15
+sizeto 15 15
 ends
 
 actor SHARK SHARKSTRENGTH ASHARKCRUZING	SHARKVELS randomangle geth
@@ -114,21 +114,21 @@ action BURNING_FLAME    0   12   1   1   2
 move BURNING_VELS
 
 state burningstate
-    ifcount 128 { sizeat 8 8 sizeat 8 8 ifactioncount 36 killit }
+    ifcount 128 { sizeto 8 8 sizeto 8 8 ifactioncount 36 killit }
     else
     {
         ifmove 0 move BURNING_VELS
-        else { ifspawnedby 3 { sizeat 40 40 sizeat 40 40 } }
-		else sizeat 52 52
+        else { ifspawnedby 3 { sizeto 40 40 sizeto 40 40 } }
+		else sizeto 52 52
         ifp palive ifpdistl 844 ifrnd 32 ifcansee { soundonce HERO_LONGTERM_PAIN addphealth -1 palfrom 48 52 }
         else
-	        ifcansee ifpdistl 5000 sizeat 40 40
-			ifactioncount 4 { sizeat 30 30 }
+	        ifcansee ifpdistl 5000 sizeto 40 40
+			ifactioncount 4 { sizeto 30 30 }
 		else ifspawnedby MORTER { fall ifactioncount 12 { killit } }
 		else ifspawnedby DEMON
 			{
 			fall
-				ifactioncount 24 sizeat 16 16
+				ifactioncount 24 sizeto 16 16
 				ifactioncount 48 { killit }
 			}
     }
@@ -149,8 +149,8 @@ action ACRYSTAL40  0 4 1 1 40
 move CRYFACE 30 -52
 
 state crystal20
-			ifspawnedby WATERFOUNTAINBROKE sizeat 5 5
-	else ifspawnedby CRYSTALALL { } else sizeat 5 5 cstat 258
+			ifspawnedby WATERFOUNTAINBROKE sizeto 5 5
+	else ifspawnedby CRYSTALALL { } else sizeto 5 5 cstat 258
 			ifpdistl RETRIEVEDISTANCE ifcansee
 {
 	ifhitspace { addphealth 100 soundonce HEALTH }
@@ -258,13 +258,13 @@ actor NUKEBARREL 50
     ifsquished
     {
     	addphealth 5 cstat 416 spritepal 1 strength 0
-    	sizeat 30 30 sizeat 30 30 sizeat 30 30 sizeat 30 30 cactor PUDDLE
+    	sizeto 30 30 sizeto 30 30 sizeto 30 30 sizeto 30 30 cactor PUDDLE
     }
     fall
     ifaction BARREL_DENTING
     {
     	ifactioncount 1 { debris SCRAP2 1 }
-		ifactioncount 2 { strength 0 sizeat 30 30 sizeat 30 30 sizeat 30 30 sizeat 30 30 }
+		ifactioncount 2 { strength 0 sizeto 30 30 sizeto 30 30 sizeto 30 30 sizeto 30 30 }
         ifactioncount 3 { cstat 416 addphealth 5 spritepal 1 cactor PUDDLE }
     }
     else ifhitweapon
@@ -407,7 +407,7 @@ actor EXPLOSION2
 		ifspritepal 5 { state exdron1 }
 		ifspritepal 9
 			{
-			sizeat 30 30 sizeat 30 30 sizeat 30 30 sizeat 30 30 state expl10 iffloordistl 48 { move EXPL4 geth }
+			sizeto 30 30 sizeto 30 30 sizeto 30 30 sizeto 30 30 state expl10 iffloordistl 48 { move EXPL4 geth }
 			}
 		ifspritepal 11 { state exdron3 }
 			ifpdistl 2500 { move 0 }
@@ -426,7 +426,7 @@ action FFLAME
 move FFF 200
 move FFF1
 
-state fff1  ifpdistl 5000 { sizeat 30 30 action FFLAME_FR } ends
+state fff1  ifpdistl 5000 { sizeto 30 30 action FFLAME_FR } ends
 state fff2 ifaction FFLAME_FR {  move FFF1 getv }
 			   ifactioncount 1 { soundonce CAT_FIRE }
 			   ifactioncount 16 { action FFLAME move FFF spin }
@@ -445,7 +445,7 @@ action ASATWAIT 0 1 5 1 10
 move TURRVEL
 
 state flower10
-	fall sizeat 15 15
+	fall sizeto 15 15
     ifaction 0 ifpdistl 5000
     {
         action ASATSHOOTING
@@ -483,7 +483,7 @@ enda
 action BEAMFOWARD  0  6  1  1  25
 actor TRANSPORTERBEAM 0 BEAMFOWARD
 	cstat 128
-	sizeat 5 5 sizeat 5 5 sizeat 5 5
+	sizeto 5 5 sizeto 5 5 sizeto 5 5
     ifactioncount 6 { killit }
 enda
 
@@ -515,7 +515,7 @@ state quikweaponget
     killit
 ends
 
-actor SHIELD sizeat 25 20
+actor SHIELD sizeto 25 20
     fall
     ifmove RESPAWN_ACTOR_FLAG
     ifp pshrunk { } else ifp palive ifhitspace ifpdistl 900
@@ -528,7 +528,7 @@ actor SHIELD sizeat 25 20
     }
 enda
 
-actor AIRTANK sizeat 9 7
+actor AIRTANK sizeto 9 7
     fall
     ifmove RESPAWN_ACTOR_FLAG
     ifp pshrunk { } else ifp palive ifhitspace ifpdistl 900 ifpinventory GET_SCUBA SCUBA_AMOUNT
@@ -540,7 +540,7 @@ actor AIRTANK sizeat 9 7
     }
 enda
 
-actor BULLET cstat 257 sizeat 10 10
+actor BULLET cstat 257 sizeto 10 10
     fall
     ifmove RESPAWN_ACTOR_FLAG
     ifp pshrunk { } else ifp palive ifcount 6 ifpdistl RETRIEVEDISTANCE ifcanseetarget
@@ -553,7 +553,7 @@ state vz10
 enda
 
 actor SHOTGUNBULLET cstat 257
-    fall sizeat 15 15
+    fall sizeto 15 15
     ifmove RESPAWN_ACTOR_FLAG
     ifp pshrunk { } else ifp palive ifcount 6 ifpdistl RETRIEVEDISTANCE ifcanseetarget
     {
@@ -575,7 +575,7 @@ actor BULLETLOTS
     }
 enda
 
-actor BATTERYBULLET cstat 257 sizeat 15 15
+actor BATTERYBULLET cstat 257 sizeto 15 15
     fall
     ifmove RESPAWN_ACTOR_FLAG
     ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifcanseetarget
@@ -587,7 +587,7 @@ actor BATTERYBULLET cstat 257 sizeat 15 15
 state vz10
 enda
 
-actor RPGBULLET cstat 257 sizeat 18 18
+actor RPGBULLET cstat 257 sizeto 18 18
     fall
     ifmove RESPAWN_ACTOR_FLAG
     ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifcanseetarget
@@ -599,7 +599,7 @@ actor RPGBULLET cstat 257 sizeat 18 18
 state vz10
 enda
 
-actor HBOMBBULLET cstat 257 sizeat 15 15
+actor HBOMBBULLET cstat 257 sizeto 15 15
     fall
     ifmove RESPAWN_ACTOR_FLAG
     ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifcanseetarget
@@ -615,7 +615,7 @@ actor HBOMBBULLET cstat 257 sizeat 15 15
 state vz10
 enda
 
-actor RPGSPRITE cstat 257 sizeat 13 13
+actor RPGSPRITE cstat 257 sizeto 13 13
     fall
     ifmove RESPAWN_ACTOR_FLAG
     ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifcanseetarget
@@ -630,7 +630,7 @@ state vzsp10
 enda
 
 actor SHOTGUNSPRITE cstat 257
-    fall sizeat 12 12
+    fall sizeto 12 12
     ifmove RESPAWN_ACTOR_FLAG
     ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifcanseetarget
     {
@@ -668,7 +668,7 @@ move FLASHDOUN 0 100
 
 state agentget
 	ifspawnedby AGENT ifspritepal 0 { cstat 32768 fall spritepal 11 }
-	ifspritepal 11 { sizeat 5 5 sizeat 5 5 sizeat 5 5 sizeat 5 5 }
+	ifspritepal 11 { sizeto 5 5 sizeto 5 5 sizeto 5 5 sizeto 5 5 }
 	iffloordistl 40 ifspritepal 11 ifcount 48 { cstat 384 action AAPSHADOW }
 	ifspritepal 11 ifcansee ifhitspace ifpdistl 1024
     { tip
@@ -682,7 +682,7 @@ actor APPLE
 ifspawnedby RESPAWN
 {
 	action AAPGR
-	sizeat 2 2
+	sizeto 2 2
     fall
     ifmove RESPAWN_ACTOR_FLAG
     ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifphealthl MAXPLAYERHEALTH
@@ -695,14 +695,14 @@ ifspawnedby RESPAWN
 ifspritepal 3 ifactioncount 5 { killit }
 ifspawnedby PUDDLE
 	{
-		sizeat 5 5
+		sizeto 5 5
 		ifmove 0 { cstat 32768 action ANEWFLASHAP1 ifactioncount 3 { move FLASHDOUN geth } }
 		ifmove FLASHDOUN iffloordistl 50 { move FLASHFLASH geth action ANEWFLASHAP2 cstat 128 }
 		ifactioncount 3 { killit }
 	}
 ifspawnedby MERCURY
 	{
-		sizeat 5 5
+		sizeto 5 5
 		ifmove 0 { cstat 32768 action ANEWFLASHAP1 move FLASHDOUN randomangle }
 		ifmove FLASHDOUN iffloordistl 50 { move FLASHFLASH geth action ANEWFLASHAP2 cstat 128 }
 		ifactioncount 3 { killit }
@@ -714,7 +714,7 @@ actor GRAPES
 ifspawnedby RESPAWN
 {
 	action AAPGR
-	sizeat 3 3
+	sizeto 3 3
     fall
     ifmove RESPAWN_ACTOR_FLAG
     ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifphealthl MAXPLAYERHEALTH
@@ -727,7 +727,7 @@ ifspawnedby RESPAWN
 ifspritepal 3 { ifactioncount 9 { killit } }
 enda
 
-actor MEDICINE sizeat 5 4
+actor MEDICINE sizeto 5 4
     fall
     ifmove RESPAWN_ACTOR_FLAG
     ifp pshrunk { } else ifp palive ifhitspace ifpdistl 900
@@ -740,7 +740,7 @@ actor MEDICINE sizeat 5 4
     }
 enda
 
-actor REVOLVER cstat 257 sizeat 3 3
+actor REVOLVER cstat 257 sizeto 3 3
     fall
     ifmove RESPAWN_ACTOR_FLAG
     ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifcanseetarget
@@ -759,13 +759,13 @@ enda
 action ACANDLE 463
 state fire9
 	ifspritepal 0 { cstat 32768 }
-	ifspritepal 5 { strength 0 sizeat 10 1 }
+	ifspritepal 5 { strength 0 sizeto 10 1 }
 	ifhitspace { ifpdistl 900 { addphealth -1 quote 108 palfrom 48 52 soundonce HERO_LONGTERM_PAIN } }
 ends
 state fire10
 ifspritepal 0 { ifpdistl 900 { addphealth -1 quote 108 palfrom 48 52 soundonce HERO_LONGTERM_PAIN } }
 ends
-state fire20 ifspawnedby RESPAWN { spritepal 3 sizeat 10 5 action ACANDLE cstat 385 } ends
+state fire20 ifspawnedby RESPAWN { spritepal 3 sizeto 10 5 action ACANDLE cstat 385 } ends
 state fire30
 	ifspritepal 3
 		{ ifhitweapon
@@ -778,7 +778,7 @@ ends
 actor VERYHOT BOMBTOUGH fall state fire9 state fire10 state fire20 state fire30 enda
 
 actor UZISPRITE cstat 257
-	sizeat 10 10
+	sizeto 10 10
     fall
     ifmove RESPAWN_ACTOR_FLAG
     ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifcanseetarget
@@ -792,7 +792,7 @@ actor UZISPRITE cstat 257
 state vzsp10
 enda
 
-actor FLAMETHROWER cstat 257 sizeat 12 12
+actor FLAMETHROWER cstat 257 sizeto 12 12
    fall
     ifmove RESPAWN_ACTOR_FLAG
     ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifcanseetarget
@@ -813,7 +813,7 @@ state firestate
     else ifactor FIRE2 ifspawnedby FIRE2 break
     iffloordistl 128
     {
-        ifcount 32 sizeat 8 8
+        ifcount 32 sizeto 8 8
         ifcount 64 killit
     }
     else killit
@@ -827,7 +827,7 @@ actor FIRE2 WEAK FIRE_FRAMES FIREVELS state firestate enda
 action AFEC10 2
 action AFEC20  -1356
 
-state fec10  ifspawnedby BIRDFECES { action AFEC10 spritepal 8 sizeat 10 10 }
+state fec10  ifspawnedby BIRDFECES { action AFEC10 spritepal 8 sizeto 10 10 }
 					ifspritepal 8
 						{
 							iffloordistl 50 { soundonce HERO_STEPONFECES sound STEPNIT }
@@ -844,9 +844,9 @@ state fec11
             killit
         }
     }
-    else sizeat 32 32
+    else sizeto 32 32
 ends
-state fec12 ifspawnedby PUFFSMOKE { action AFEC20 sizeat 50 50 }
+state fec12 ifspawnedby PUFFSMOKE { action AFEC20 sizeto 50 50 }
 	ifaction AFEC20 { iffloordistl 4 { ifonwater { spawn REDHIELD ifrnd 256 { killit } }
 	else ifrnd 256 { killit } } }
 ends
@@ -873,7 +873,7 @@ move BL10DOUN 0 450
 move BL10STOP
 
 actor BLOOD 0 BLOODFRAMES
-    sizeat 50 50 sizeat 50 50 sizeat 50 50
+    sizeto 50 50 sizeto 50 50 sizeto 50 50
 	move BL10DOUN geth
 	ifmove BL10DOUN { cstat 32768 }
 	ifactioncount 1 { move BL10STOP }
@@ -1050,7 +1050,7 @@ actor APLAYER 100 PSTAND 0 0 cstat 258
             ifcount SHRUNKDONECOUNT move 0
             else ifcount SHRUNKCOUNT
             {
-                sizeat 42 36
+                sizeto 42 36
                 ifgapzl 24
                 {
                     strength 0
@@ -1063,7 +1063,7 @@ actor APLAYER 100 PSTAND 0 0 cstat 258
         else
         {
             ifp ponsteroids count SHRUNKCOUNT
-            else { sizeat 8 9 spawn FRAMEEFFECT1 }
+            else { sizeto 8 9 spawn FRAMEEFFECT1 }
         }
     }
     else ifhitweapon
@@ -1197,10 +1197,10 @@ state del10
 ifspawnedby SANDMAN
 	{
 	ifmove 0 { cstat 0 }
-	sizeat 15 15 spritepal 3
+	sizeto 15 15 spritepal 3
 	ifcount 16 ifrnd 1 { move NEWSANMY geth cstat 257 cactor SANDMAN }
 	}
-	ifspawnedby RESPAWN { cstat 258 spritepal 0 sizeat 15 15 strength SPECTSTRENGTH }
+	ifspawnedby RESPAWN { cstat 258 spritepal 0 sizeto 15 15 strength SPECTSTRENGTH }
 	ifstrength SPECTSTRENGTH ifspritepal 0 { ifcount 32 ifrnd 16 { spritepal 21 cactor SPECTRAL2 } }
 ends
 
@@ -1210,7 +1210,7 @@ state del11
 ifspawnedby SANDMAN
 	{
 	ifmove 0 { cstat 0 }
-	sizeat 15 15 spritepal 5
+	sizeto 15 15 spritepal 5
 	ifcount 16 ifrnd 1 { move NEWSANMY geth cstat 257 cactor SANDMAN }
 	}
 	ifspawnedby RESPAWN { spritepal 9 strength SMOLSPIDERSTRENGTH cactor BIGSPIDER }
@@ -1264,7 +1264,7 @@ state big300
 ends
 state big400 ifhitweapon { { cstat 258 spritepal 4 debris SCRAP3 5 sound SQUISHED { killit } } } ends
 
-actor BIGSPIDER SMOLSPIDERSTRENGTH sizeat 7 7
+actor BIGSPIDER SMOLSPIDERSTRENGTH sizeto 7 7
 	state big100 state big200 state big300 state big400
 enda
 
@@ -1313,7 +1313,7 @@ state specthidestate
     ifaction ASPECTREAPPEAR
     {
         ifactioncount 2 { sound AM_HERE ai AISPECTSHOOTING cstat 258 }
-        else { sizeat 15 15 sizeat 15 15 sizeat 15 15 sizeat 15 15 spawn FRAMEEFFECT1 }
+        else { sizeto 15 15 sizeto 15 15 sizeto 15 15 sizeto 15 15 spawn FRAMEEFFECT1 }
     }
     else ifaction ASPECTWALKING
     {
@@ -1336,10 +1336,10 @@ state specthidestate
         }
         else
         {
-            sizeat 0 15
-            sizeat 0 15
-            sizeat 0 15
-            sizeat 0 15
+            sizeto 0 15
+            sizeto 0 15
+            sizeto 0 15
+            sizeto 0 15
             spawn FRAMEEFFECT1
         }
     }
@@ -1554,14 +1554,14 @@ state spectcode fall
     ifhitweapon state checkspecthit
 ends
 state specmy10 ifstrength TOUGH { soundonce CAPT_ROAM ifcount 16 { stopsound CAPT_ROAM } } ends
-state specmy20 ifspawnedby RESPAWN { sizeat 15 15 } ends
+state specmy20 ifspawnedby RESPAWN { sizeto 15 15 } ends
 
-actor SPECTRAL SPECTSTRENGTH ASPECTSTAND state spectcode spritepal 21 sizeat 15 15 enda
+actor SPECTRAL SPECTSTRENGTH ASPECTSTAND state spectcode spritepal 21 sizeto 15 15 enda
 
 action ASPBOT10  -1627
 
 actor SPECTRALONTOILET SPECTSTRENGTH cstat 257
-	ifspawnedby RESPAWN { action ASPBOT10 spritepal 11 sizeat 10 10
+	ifspawnedby RESPAWN { action ASPBOT10 spritepal 11 sizeto 10 10
 	ifpdistl 1500 ifhitspace { tip operate ai AISPECTSEEKPLAYER cactor SPECTRAL } }
 	ifhitweapon { lotsofglass 20 killit }
 enda
@@ -1725,7 +1725,7 @@ state demondodgestate
 ends
 
 actor DEMON DEMSTRENGTH fall
-	sizeat 19 15
+	sizeto 19 15
 	ifai 0 ai AIDEMGETENEMY
     else ifaction ADEMLYINGDEAD { fall state demondyingstate break }
     else ifai AIDEMJUMPENEMY state demonjumpstate
@@ -1838,7 +1838,7 @@ state linballdodgestate
     }
 ends
 
-actor LBALLE LBALLESTRENGTH sizeat 17 12
+actor LBALLE LBALLESTRENGTH sizeto 17 12
     state checklinballnearplayer
     ifrnd 2 fall
     else soundonce LBALL_JETSND
@@ -2102,7 +2102,7 @@ state spspec10
         		} } }
 ends
 actor SKELETON SKELETONSTRENGTH ASKELSTAND state spspec10
-	sizeat 16 13 fall
+	sizeto 16 13 fall
     ifaction ASKELSTAND
     {
     	ifspritepal 21 { action ANEWSKELET10 move WQW10 geth }
@@ -2200,7 +2200,7 @@ ends
 state wizzadyingstate
   ifaction AWIZZDEAD
 	ifactioncount 0 { cstat 0 }
-	ifactioncount 19 { iffloordistl 8 { soundonce RING action AWIZZDEAD cstat 0 sizeat 0 0  ifrnd 256 { killit } }
+	ifactioncount 19 { iffloordistl 8 { soundonce RING action AWIZZDEAD cstat 0 sizeto 0 0  ifrnd 256 { killit } }
   	ifspritepal 26 endofgame 52 }
 ends
 
@@ -2264,7 +2264,7 @@ state wizzacode
     ifbulletnear { spritepal 3 }
 ends
 
-actor WIZZ WIZZSTRENGTH fall state wizzacode sizeat 15 15 enda
+actor WIZZ WIZZSTRENGTH fall state wizzacode sizeto 15 15 enda
 
 action AMERCURYWALK               0  4  5  1  20
 action AMERCURYNONGO
@@ -2333,7 +2333,7 @@ state mercurydyingstate
 	ifpdistl RETRIEVEDISTANCE
 		{
 	  		 getlastpal { ifrnd 48 spawn FOOTPRINTS soundonce STEPNIT
-	  		 sizeat 0 0 sizeat 0 0 sizeat 0 0
+	  		 sizeto 0 0 sizeto 0 0 sizeto 0 0
 	  		 move PALMERCURY faceplayer spritepal 9 }
 	         ifspritepal 9 { ifrnd 12 { killit } }
 		}
@@ -2348,18 +2348,18 @@ state mercurydyingstate
 	{
 		ifspritepal 7
 	 	{
- 			iffloordistl 8 action AMERCURYDEAD sizeat 10 10 sizeat 10 10 sizeat 10 10 cstat 416
+ 			iffloordistl 8 action AMERCURYDEAD sizeto 10 10 sizeto 10 10 sizeto 10 10 cstat 416
  		}
  		ifspritepal 8
 	 	{
- 			iffloordistl 8 action AMERCURYDEAD sizeat 10 10 sizeat 10 10 sizeat 10 10 cstat 416
+ 			iffloordistl 8 action AMERCURYDEAD sizeto 10 10 sizeto 10 10 sizeto 10 10 cstat 416
  		}
- 		ifspritepal 2 {	action AMERCURYHEALTH move MERKILUP geth sizeat 10 10 }
+ 		ifspritepal 2 {	action AMERCURYHEALTH move MERKILUP geth sizeto 10 10 }
  		ifspritepal 3
 		{
 		iffloordistl 8 action AMERCURYNONGO
 			{
-			sizeat 10 10 sizeat 10 10 sizeat 10 10 sizeat 10 10
+			sizeto 10 10 sizeto 10 10 sizeto 10 10 sizeto 10 10
 			spritepal 11 cstat 257 strength 40 cactor DOCTOR
 			}
 		}
@@ -2368,9 +2368,9 @@ state mercurydyingstate
 	ifmove MERKILUP ifaction AMERCURYHEALTH ifactioncount 7 { action AMERCURYXY move MERSTOPP geth }
 	ifmove MERSTOPP ifaction AMERCURYXY
 	{
-		ifactioncount 0 { sizeat 10 13 }
-		ifactioncount 3 { sizeat 15 10 }
-		ifactioncount 6 { sizeat 30 7 }
+		ifactioncount 0 { sizeto 10 13 }
+		ifactioncount 3 { sizeto 15 10 }
+		ifactioncount 6 { sizeto 30 7 }
 		ifactioncount 7 { spawn BOUNCEMINE ifrnd 256 { killit } }
 	}
 ends
@@ -2430,7 +2430,7 @@ state checkmercuryhitstate
         }
         ifspritepal 0 { }
 		soundonce MEMA_PAIN
-        ifspritepal 3 { sizeat 10 10 spawn TRASH }
+        ifspritepal 3 { sizeto 10 10 spawn TRASH }
 	}
 ends
 
@@ -2450,7 +2450,7 @@ state mercurycode
         ifwasweapon FREEZEBLAST { spritepal 7 }
     }
 ends
-state merres3 ifspawnedby RESPAWN { sizeat 23 17 spritepal 3 } ends
+state merres3 ifspawnedby RESPAWN { sizeto 23 17 spritepal 3 } ends
 state merres2  ifspritepal 7 { ifrnd 4 { strength TURRETSTRENGTH spritepal 8 } }
 			 ifspritepal 8
 					{ ifhitweapon
@@ -2639,7 +2639,7 @@ state stone10
 	ifai AISTONE30 { iffloordistl 10 stopsound THUD ifrnd 16 { killit } }
 ends
 
-actor SANDMAN SANDMANSTRENGTH ASTONE40 fall sizeat 15 15
+actor SANDMAN SANDMANSTRENGTH ASTONE40 fall sizeto 15 15
 		ifspawnedby FORAUTO { spritepal 9 }
 		ifspritepal 0 { cstat 257 state sanmancode state bossmy10 }
 		ifspritepal 7 { cstat 257 state sanmancode state bossmy10 }
@@ -2648,7 +2648,7 @@ actor SANDMAN SANDMANSTRENGTH ASTONE40 fall sizeat 15 15
 		ifspritepal 9 { state stone10 }
 		ifspritepal 6
 			{
-			sizeat 15 15 sizeat 15 15 sizeat 15 15 sizeat 15 15
+			sizeto 15 15 sizeto 15 15 sizeto 15 15 sizeto 15 15
 			ifactioncount 0 { cstat 32768 }
 			ifactioncount 5 { cstat 257 spawn GREENDEMON ifrnd 256 { killit } }
 			}
@@ -2686,7 +2686,7 @@ state fem84 ifhitweapon
  }
 ends
 
-actor OSTRICH TOUGH fall sizeat 10 10
+actor OSTRICH TOUGH fall sizeto 10 10
 	state fem79
 	ifspritepal 3 { state fem80 state fem81 state fem82 state fem83 state fem84 }
 
@@ -2730,7 +2730,7 @@ state holo9
 		spritepal 3
 		ifai 0 { ai AIWNORMA }
 			{
-			sizeat 15 15 sizeat 15 15 sizeat 15 15
+			sizeto 15 15 sizeto 15 15 sizeto 15 15
 			ifactioncount 5	{ fall ai AIWNORMA2 soundonce LBALL_ATTACK2 }
 			}
 		}
@@ -2739,14 +2739,14 @@ state holo9
 		spritepal 5
 		ifai 0 { ai AIWNORMA }
 			{
-			sizeat 5 5 sizeat 5 5 sizeat 5 5
+			sizeto 5 5 sizeto 5 5 sizeto 5 5
 			ifactioncount 5	{ ai AIWNORMA1 soundonce MER_BOMBFLY }
 			}
 		}
 	ifspritepal 11
 		{
 			action AHOLO20
-			sizeat 10 10 sizeat 10 10 sizeat 10 10 sizeat 10 10
+			sizeto 10 10 sizeto 10 10 sizeto 10 10 sizeto 10 10
 			move HOLOMER10 faceplayerslow
 			ifnotmoving { ifrnd 4 { strength 0 spritepal 20 } }
 			ifhitweapon
@@ -2786,7 +2786,7 @@ ifspritepal 3
 	ifai AIWNORMA2
 	{
 		ai AIWNORMA2
-		sizeat 30 30
+		sizeto 30 30
 		ifpdistl 20000 ifpdistl 1500 { shoot KNEE }
 	}
 	ifnotmoving
@@ -2823,7 +2823,7 @@ ends
 state holo13
 		ifspritepal 3 { state holo11 }
 		ifspritepal 5 { state steWWW state holo11 }
-		ifspritepal 20 { cstat 0 spawn FRAMEEFFECT1 spawn TRASH sizeat 0 0 sizeat 0 0 sizeat 0 0 ifrnd 64 { killit } }
+		ifspritepal 20 { cstat 0 spawn FRAMEEFFECT1 spawn TRASH sizeto 0 0 sizeto 0 0 sizeto 0 0 ifrnd 64 { killit } }
 ends
 
 actor DOCTOR 20 fall cstat 257
@@ -2845,7 +2845,7 @@ state heat11
     { tip { addphealth -20 palfrom 52 0 50 soundonce POISON quote 107 killit } }
 ends
 
-actor  FORPITCHER4  fall sizeat 10 10 cstat 257
+actor  FORPITCHER4  fall sizeto 10 10 cstat 257
 state heat11
 enda
 
@@ -2870,7 +2870,7 @@ state atom10 fall
     }
 ends
 
-actor FORPITCHER3  fall sizeat 10 10 cstat 257
+actor FORPITCHER3  fall sizeto 10 10 cstat 257
 state atom10
 enda
 
@@ -2899,7 +2899,7 @@ actor REDHIELD
 	ifspawnedby RESPAWN { cstat 257 state freez10 state freez12 }
 	ifspawnedby SHOTSPARK1 { fall cstat 386 state watdrip }
 	ifspawnedby EGG { fall cstat 386 state watdrip spritepal 1 }
-	ifspawnedby FECES { sizeat 20 20 state sendwat10 }
+	ifspawnedby FECES { sizeto 20 20 state sendwat10 }
 enda
 
 state freez11
@@ -2915,7 +2915,7 @@ state freez11
     }
 ends
 
-actor  FORPITCHER2  fall sizeat 10 10 cstat 257
+actor  FORPITCHER2  fall sizeto 10 10 cstat 257
 state freez11
 enda
 
@@ -2931,7 +2931,7 @@ state boot10 ifcansee ifpdistl 1024 ifhitspace
   { tip { addphealth -20 palfrom 52 0 50 soundonce POISON quote 106 killit } }
 ends
 
-actor  FORPITCHER1 fall sizeat 10 10 cstat 257
+actor  FORPITCHER1 fall sizeto 10 10 cstat 257
 state boot10
 enda
 
@@ -2941,7 +2941,7 @@ move SK 0
 ai AISK ASK SK geth
 state ske10 ai AISK ends
 state ske20 ifpdistl 1024 ifhitspace { cstat 257 action ASK10 cactor GNAWER } ends
-actor STRAW4 fall cstat 0 sizeat 7 5 state ske10 state ske20 enda
+actor STRAW4 fall cstat 0 sizeto 7 5 state ske10 state ske20 enda
 
 action AMYBOMB        329 5 1 1 20
 action AMYBOMB10    329 5 1 1 10
@@ -2950,7 +2950,7 @@ move ME10
 move ME20
 
 state mer11
-	ifspritepal 7 ifaction 0 { cstat 32768 action AMYBOMB move ME10 geth sizeat 8 8 }
+	ifspritepal 7 ifaction 0 { cstat 32768 action AMYBOMB move ME10 geth sizeto 8 8 }
 	ifmove ME10 ifaction AMYBOMB ifactioncount 100
 	{
 		cstat 257
@@ -2987,7 +2987,7 @@ move FISH20  35   10
 move FISHST1 0   10
 move FISHST2 0   -10
 
-state inwat ifinwater { sizeat 2 2 ifcansee ifrnd 2 spawn WATERBUBBLE } ends
+state inwat ifinwater { sizeto 2 2 ifcansee ifrnd 2 spawn WATERBUBBLE } ends
 state fish10
 	ifaction AFISH30 { cstat 32768 ifactioncount 8 { action AFISH10 } }
 	ifaction AFISH10 { cstat 257 move FISHST1 dodgebullet }
@@ -3037,7 +3037,7 @@ state mic2
 	ifpdistl 1024 ifpdistl 512 { move CARPET3  geth soundonce BONGO } break
 	else ifceilingdistl 16 fall
 ends
-actor CARPET sizeat 40 55
+actor CARPET sizeto 40 55
 	state mic1
 	state mic2
 enda
@@ -3082,7 +3082,7 @@ ends
 state cosoun
 	ifspritepal 9 { ifpdistl 800 { soundonce NOTSOME } }
 ends
-actor FEM9 0 ACARP10 sizeat 20 20 state carcar state cosoun enda
+actor FEM9 0 ACARP10 sizeto 20 20 state carcar state cosoun enda
 
 action ACARP14 0 1 1 1 30
 action ACARP11 -856 1 1 0 30
@@ -3116,8 +3116,8 @@ ends
 state blackw3
 	ifaction ACARP11
 		{
-			ifrnd 0 { sizeat 20 40 }
-			ifrnd 8 { sizeat 5 75 sizeat 5 75 sizeat 5 75 sizeat 5 75 }
+			ifrnd 0 { sizeto 20 40 }
+			ifrnd 8 { sizeto 5 75 sizeto 5 75 sizeto 5 75 sizeto 5 75 }
 		}
 ends
 state blackw2
@@ -3139,7 +3139,7 @@ state blackw2
 			soundonce SHDWATT
 		}
 ends
-actor SHADOWNET 150 ACARP14 sizeat 18 13 fall
+actor SHADOWNET 150 ACARP14 sizeto 18 13 fall
 	state blackw state blackw1 state blackw2 state blackw3
 enda
 
@@ -3204,7 +3204,7 @@ state ste7
 	state ste8 state ste9 state ste10 state ste11 state ste12 state ste13 state ste14 state ste15
 ends
 
-actor SNAKE sizeat 10 10 state ste7 enda
+actor SNAKE sizeto 10 10 state ste7 enda
 
 action ASNEMA10 -1689 1 1 1 1
 action ASNEMA20 1776 20 1 1 15
@@ -3286,11 +3286,11 @@ state masksna20
 ends
 
 actor SNAKEMASK 30 ASNEMA10
-	state masksna10 state masksna20 state masksna30 sizeat 7 7
+	state masksna10 state masksna20 state masksna30 sizeto 7 7
 enda
 
 
-actor CRYSTALBULLET sizeat 15 15 cstat 257
+actor CRYSTALBULLET sizeto 15 15 cstat 257
     fall
     ifmove RESPAWN_ACTOR_FLAG
     ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifcanseetarget
@@ -3348,7 +3348,7 @@ state notfl10 ifnotmoving
 			}
 ends
 
-actor BIRDFECES 50 sizeat 10 10 state pod9 state wea10 state pod15 state pod16 state notfl10 enda
+actor BIRDFECES 50 sizeto 10 10 state pod9 state wea10 state pod15 state pod16 state notfl10 enda
 
 move LAVA 60
 state dymokmake iffloordistl 60
@@ -3379,10 +3379,10 @@ state dymok ifrnd SWEARFREQUENCY action ASM move SM randomangle geth ends
 state dymok1 ifceilingdistl 60 { killit } ends
 state dymok2 ifaction ASM
 {
-	ifactioncount 0 sizeat 100 80
-	ifactioncount 4 sizeat 400 300
-	ifactioncount 8 sizeat 600 800
-	ifactioncount 12 sizeat 30 100
+	ifactioncount 0 sizeto 100 80
+	ifactioncount 4 sizeto 400 300
+	ifactioncount 8 sizeto 600 800
+	ifactioncount 12 sizeto 30 100
 	ifactioncount 13 { killit }
 }
 ends
@@ -3396,7 +3396,7 @@ action ALUZA10 1362 8 -1 1 15
 state newmer10
 ifspritepal 0
 	{
-		sizeat 11 15 sizeat 11 15 sizeat 11 15
+		sizeto 11 15 sizeto 11 15 sizeto 11 15
 		ifcansee ifpdistl 5000 ifaction 0
 		ifcount 96
 			{
@@ -3407,7 +3407,7 @@ ifspritepal 0
 
 ifspritepal 2
 	{
-		sizeat 11 15 sizeat 11 15 sizeat 11 15
+		sizeto 11 15 sizeto 11 15 sizeto 11 15
 		ifcansee ifpdistl 5000 ifaction 0
 		ifcount 96
 							{
@@ -3447,7 +3447,7 @@ state palfall
 	ifspritepal 23 { fall }
 ends
 
-actor BLUEKEY state palfall sizeat 5 5
+actor BLUEKEY state palfall sizeto 5 5
     ifmove RESPAWN_ACTOR_FLAG
     ifp pshrunk { } else ifp palive ifpdistl RETRIEVEDISTANCE ifcount 6 ifcanseetarget
     ifhitspace
@@ -3466,10 +3466,10 @@ move GOR20 5 70
 move GOR30 250
 move GOR40 5 15
 
-state acc21 ifspawnedby RESPAWN { spritepal 21 sizeat 5 5 cactor BLUEKEY } ends
-state acc22 ifspawnedby GORGUL1 { cstat 32768 sizeat 30 30 spritepal 3 action AGOR10 } ends
-state acc25 ifspawnedby GORGUL2 { cstat 32768 sizeat 30 30 spritepal 3 action AGOR10 } ends
-state acc30 ifspawnedby HANGMAN	{ cstat 32768 sizeat 9 8 spritepal 9 action ARESHANG } ends
+state acc21 ifspawnedby RESPAWN { spritepal 21 sizeto 5 5 cactor BLUEKEY } ends
+state acc22 ifspawnedby GORGUL1 { cstat 32768 sizeto 30 30 spritepal 3 action AGOR10 } ends
+state acc25 ifspawnedby GORGUL2 { cstat 32768 sizeto 30 30 spritepal 3 action AGOR10 } ends
+state acc30 ifspawnedby HANGMAN	{ cstat 32768 sizeto 9 8 spritepal 9 action ARESHANG } ends
 
 state shuttle60 ifspritepal 3
 	{ ifpdistl 1024 { addphealth -20 palfrom 48 52 soundonce HERO_LONGTERM_PAIN ifrnd 256 { killit } } }
@@ -3508,7 +3508,7 @@ actor REDKEY
 	state acc30 state acc31 state acc32
 enda
 
-state acc23 spritepal 23 sizeat 5 5 cactor BLUEKEY ends
+state acc23 spritepal 23 sizeto 5 5 cactor BLUEKEY ends
 actor YELLOWKEY state acc23 enda
 
 action ASHUT10 0
@@ -3615,7 +3615,7 @@ state bat17
     }
 ends
 
-actor BAT BATSTRENGTH sizeat 10 10 fall
+actor BAT BATSTRENGTH sizeto 10 10 fall
 								state bat9
 								state bat10
 								state bat12
@@ -3656,7 +3656,7 @@ state batst10
 		}
 ends
 
-actor BATSTAYPUT BATSTRENGTH spritepal 0 sizeat 10 10 cstat 257 state batst10 enda
+actor BATSTAYPUT BATSTRENGTH spritepal 0 sizeto 10 10 cstat 257 state batst10 enda
 
 actor EGG
 	fall cstat 32768
@@ -3786,7 +3786,7 @@ state shr12 ifaction ASHR1 { ifpdistl 1500 { move SHR3 action 0 } }
 				   ifaction ASHR2 { ifactioncount 18 { state shr14 } } ends
 state shr13 ifcansee { tip } ends
 state agall
-	sizeat 17 15 fall cstat 257
+	sizeto 17 15 fall cstat 257
 	state shr10 state shr11 state shr12 state shr13
 ends
 
@@ -3959,7 +3959,7 @@ ends
 actor SHADOW 100
 ifspawnedby DEMON
 	{
-	spritepal 4 sizeat 19 15 sizeat 19 15 sizeat 19 15 sizeat 19 15
+	spritepal 4 sizeto 19 15 sizeto 19 15 sizeto 19 15 sizeto 19 15
 	ifai 0 { ai AISHADOWSTART }
 	}
 ifspritepal 4
@@ -4002,12 +4002,12 @@ move smorh
 state shmort
 	ifcansee { ifpdistl 8000 { ifrnd 3 { shoot MORTER } } }
 ends
-actor IDOL 0 ASHMOR smorh faceplayer cstat 0 state shmort sizeat 20 14 enda
+actor IDOL 0 ASHMOR smorh faceplayer cstat 0 state shmort sizeto 20 14 enda
 
 action ALIM -715
 actor LIMON
 	action ALIM
-	sizeat 5 5 cstat 0
+	sizeto 5 5 cstat 0
     fall
     ifmove RESPAWN_ACTOR_FLAG
     ifp pshrunk { } else ifpdistl RETRIEVEDISTANCE ifcount 6 ifphealthl MAXPLAYERHEALTH
@@ -4021,7 +4021,7 @@ enda
 action AKIWI -724
 actor KIWI
 	action AKIWI
-	sizeat 8 5 cstat 0
+	sizeto 8 5 cstat 0
     fall
     ifmove RESPAWN_ACTOR_FLAG
     ifp pshrunk { } else ifpdistl RETRIEVEDISTANCE ifcount 6 ifphealthl MAXPLAYERHEALTH
@@ -4035,7 +4035,7 @@ enda
 action APER -1006 1 1 1 30
 action APER1 -679 1 1 1 30
 
-actor PEPER 0 APER sizeat 1 3 fall
+actor PEPER 0 APER sizeto 1 3 fall
 	ifaction APER { cstat 32768 ifactioncount 5 { action APER1 } }
 	ifaction APER1
 	{
@@ -4209,7 +4209,7 @@ state smskdyingstate
 	ifactioncount 5	{ sound SQUISHED guts JIBS2 5 guts JIBS1 1 state demon_body_jibs state delete_enemy }
 ends
 
-actor FORWIZZ TURRETSTRENGTH ASMSKSTAND sizeat 10 7 fall
+actor FORWIZZ TURRETSTRENGTH ASMSKSTAND sizeto 10 7 fall
     ifaction ASMSKSTAND
     	{
     	stopsound MEMA_RECOG
@@ -4285,7 +4285,7 @@ state givemebach
 		}
 ends
 
-actor FORAUTO 100 ASTART sizeat 4 4 sizeat 4 4 sizeat 4 4 sizeat 4 4
+actor FORAUTO 100 ASTART sizeto 4 4 sizeto 4 4 sizeto 4 4 sizeto 4 4
 			ifspawnedby RESPAWN { spritepal 9 }
 			ifspritepal 9
 				{
@@ -4344,7 +4344,7 @@ state webglass10
 ends
 
 state webglass20
-action AWEB50 cstat 418 sizeat 24 19 iffloordistl 20 { move 0 }
+action AWEB50 cstat 418 sizeto 24 19 iffloordistl 20 { move 0 }
 	ifpdistl 900
 		{
 		soundonce STEPONGLASS
@@ -4381,7 +4381,7 @@ state lift10
 	ifmove DOWNLIFT { soundonce OLDLIFT }
 ends
 
-actor MAXLIFT 0 ALIFT6 cstat 417 state lift10 sizeat 30 30
+actor MAXLIFT 0 ALIFT6 cstat 417 state lift10 sizeto 30 30
 
 ifpdistl 1000
 {
@@ -4439,7 +4439,7 @@ ai AIHANGWALK2 AHANGWALK1 HANGGO1 dodgebullet
 state noseemy
 	ifaction AHANGSTOP
 		{
-		cstat 32768 sizeat 25 22 sizeat 25 22 sizeat 25 22 sizeat 25 22
+		cstat 32768 sizeto 25 22 sizeto 25 22 sizeto 25 22 sizeto 25 22
 		ifcansee { ifactioncount 2 { ai AIHANGWALK1 cstat 257 soundonce HMANSONG } }
 		else action AHANGSTOP
 		}
@@ -4481,9 +4481,9 @@ state hanghitweapon
     	    ifwasweapon RPG { spritepal 2 sound SQUISHED debris SCRAP3 15 state delete_enemy }
 		    else ifwasweapon RADIUSEXPLOSION { spritepal 2 sound SQUISHED debris SCRAP3 15 state delete_enemy }
     	    strength 0 move 0 cstat 0
-    	    ifpdistl 20000 ifpdistl 8000 { cstat 0 action AHANGDYINNG sizeat 14 14 }
-			ifpdistl 8000 ifpdistl 2000 { cstat 0 action AHANGDANDNO sizeat 14 14 }
-			ifpdistl 2000 { cstat 0 action AHANGDYINNG sizeat 14 14 }
+    	    ifpdistl 20000 ifpdistl 8000 { cstat 0 action AHANGDYINNG sizeto 14 14 }
+			ifpdistl 8000 ifpdistl 2000 { cstat 0 action AHANGDANDNO sizeto 14 14 }
+			ifpdistl 2000 { cstat 0 action AHANGDYINNG sizeto 14 14 }
 	    }
 	}
 	ifspritepal 0
@@ -4514,17 +4514,17 @@ state moon
 	{
 		ifcansee { cstat 0 }
 		action AMOON
-		ifpdistl 50000 ifpdistl 20000 sizeat 17 16
-		ifpdistl 20000 ifpdistl 17500 sizeat 15 14
-		ifpdistl 17500 ifpdistl 15000 sizeat 14 13
-		ifpdistl 15000 ifpdistl 12000 sizeat 13 12
-		ifpdistl 12000 ifpdistl 11000 sizeat 12 11
-		ifpdistl 11000 ifpdistl 10000 sizeat 11 10
-		ifpdistl 10000 ifpdistl 9000 sizeat 10 9
-		ifpdistl 9000 ifpdistl 8000 sizeat 9 8
-		ifpdistl 8000 ifpdistl 7000 sizeat 8 7
-		ifpdistl 7000 ifpdistl 6000 sizeat 7 6
-		ifpdistl 6000 ifpdistl 5000 sizeat 6 5
+		ifpdistl 50000 ifpdistl 20000 sizeto 17 16
+		ifpdistl 20000 ifpdistl 17500 sizeto 15 14
+		ifpdistl 17500 ifpdistl 15000 sizeto 14 13
+		ifpdistl 15000 ifpdistl 12000 sizeto 13 12
+		ifpdistl 12000 ifpdistl 11000 sizeto 12 11
+		ifpdistl 11000 ifpdistl 10000 sizeto 11 10
+		ifpdistl 10000 ifpdistl 9000 sizeto 10 9
+		ifpdistl 9000 ifpdistl 8000 sizeto 9 8
+		ifpdistl 8000 ifpdistl 7000 sizeto 8 7
+		ifpdistl 7000 ifpdistl 6000 sizeto 7 6
+		ifpdistl 6000 ifpdistl 5000 sizeto 6 5
 	}
 ends
 actor MOONDISTL state moon enda
@@ -4665,7 +4665,7 @@ state ngrddodgestate
 ends
 
 actor GREENDEMON 100 fall
-	sizeat 19 15
+	sizeto 19 15
 	ifspawnedby RESPAWN { spritepal 8 }
 	ifspawnedby SANDMAN { spritepal 1 }
     ifai 0 { ai AINGRDGETENEMY }
