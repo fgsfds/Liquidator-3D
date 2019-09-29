@@ -76,11 +76,13 @@ Version 1.4 beta 2 (29.09.2019)
 + Story summary added to the help screen
 + Added correct FM patch
 * Fixed bug in GAME.COM that was making the game unfinishable
+* Replaced sizeat with sizeto in GAME.CON
+* Red Crystal's explosion no longer resets the game
+* Altered the chess puzzle at LEV31
 * Small key sprite fix by phredreeke
 * EDuke32 main menu background
 * Menu fonts fixes
-* Fix stray pink pixels on the fuel barrel
-* Replaced sizeat with sizeto in GAME.CON
+* Fixed stray pink pixels on the fuel barrel
 
 
 Version 1.3 (15.09.2019)
