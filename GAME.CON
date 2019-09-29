@@ -7,7 +7,7 @@ move WEAMFLY 60
 
 state vz10
 	ifhitweapon
-	{
+	{ 
 		ifactor RPGBULLET { shoot RPG }
 		else
 			spawn  BURNING
@@ -111,7 +111,7 @@ actor SHARK SHARKSTRENGTH ASHARKCRUZING	SHARKVELS randomangle geth
 enda
 
 action BURNING_FLAME    0   12   1   1   2
-move BURNING_VELS
+move BURNING_VELS 
 
 state burningstate
     ifcount 128 { sizeto 8 8 sizeto 8 8 ifactioncount 36 killit }
@@ -426,7 +426,7 @@ action FFLAME
 move FFF 200
 move FFF1
 
-state fff1  ifpdistl 5000 { sizeto 30 30 action FFLAME_FR } ends
+state fff1  ifpdistg 5000 { sizeto 30 30 action FFLAME_FR } ends
 state fff2 ifaction FFLAME_FR {  move FFF1 getv }
 			   ifactioncount 1 { soundonce CAT_FIRE }
 			   ifactioncount 16 { action FFLAME move FFF spin }
@@ -928,7 +928,7 @@ state handle_dead_dukes
         move HERONOTMOVING
     }
     ifsquished { sound SQUISHED killit }
-    else ifcount 1024 ifpdistl 4096 killit
+    else ifcount 1024 ifpdistg 4096 killit
     else { strength 0 ifhitweapon ifwasweapon RADIUSEXPLOSION { killit } }
 ends
 action PLYINGFRAMES 0 1 0 1 1
@@ -1195,7 +1195,7 @@ enda
 move NEWSANMY
 state del10
 ifspawnedby SANDMAN
-	{
+	{	
 	ifmove 0 { cstat 0 }
 	sizeto 15 15 spritepal 3
 	ifcount 16 ifrnd 1 { move NEWSANMY geth cstat 257 cactor SANDMAN }
@@ -1208,7 +1208,7 @@ actor ORGANTIC state del10 enda
 
 state del11
 ifspawnedby SANDMAN
-	{
+	{	
 	ifmove 0 { cstat 0 }
 	sizeto 15 15 spritepal 5
 	ifcount 16 ifrnd 1 { move NEWSANMY geth cstat 257 cactor SANDMAN }
@@ -1231,7 +1231,7 @@ state big100 ifmove 0 { ifrnd 256 { action ABIGSPIDER ifcansee { move BIGSP40 ju
 ends
 state big200
 	ifspritepal 9 { fall }
-	iffloordistl 50 ifpdistl 1024 { spritepal 9 }
+	iffloordistl 50 ifpdistg 1024 { spritepal 9 }
 	ifspritepal 9 ifpdistl 1024 { spritepal 3 }
 	ifpdistl 900
 		{
@@ -1251,7 +1251,7 @@ state big300
 	{
 	ifawayfromwall { action ABIGSPIDER10 move BIGSP10 jumptoplayer ifrnd 128 { spritepal 9 } }
 	ifceilingdistl 70 { spritepal 9 ifrnd 128 { action ABIGSPIDER move BIGSP faceplayer } }
-	iffloordistl 8
+	iffloordistl 8 
 		{
 			ifmove BIGSP
 			{
@@ -1317,7 +1317,7 @@ state specthidestate
     }
     else ifaction ASPECTWALKING
     {
-        ifpdistl 2448 ifpdistl 1024
+        ifpdistl 2448 ifpdistg 1024
         {
             ifceilingdistl 48 break
             ifp pfacing break
@@ -1350,11 +1350,11 @@ state spectgunnashoot cstat 258
     ifp palive
     {
         ifpdistl 1024 ai AISPECTSHOOTING
-        else ifmove 0
+        else ifactornotstayput
         {
             ifactioncount 12 ifrnd 16 ifcanshoottarget
             {
-                ifspritepal 21 ifrnd 4 ifpdistl 4096 ai AISPECTHIDE
+                ifspritepal 21 ifrnd 4 ifpdistg 4096 ai AISPECTHIDE
                 else
                 {
                     ifpdistl 1100 ai AISPECTFLEEING
@@ -1376,10 +1376,10 @@ state spectseekstate
     ifcansee
     {
         ifmove SPECTRUNVELS ifpdistl 1596 ai AISPECTDUCKING
-        ifp phigher { ifceilingdistl 128 { } else ifmove 0 ai AISPECTJETPACK break }
+        ifp phigher { ifceilingdistl 128 { } else ifactornotstayput ai AISPECTJETPACK break }
         else ifrnd 2
         {
-            ifspritepal 21 ifpdistl 1596 { ai AISPECTHIDE break }
+            ifspritepal 21 ifpdistg 1596 { ai AISPECTHIDE break }
             ifbulletnear { ifrnd 128 ai AISPECTDODGE else ai AISPECTDUCKING break }
         }
     }
@@ -1422,10 +1422,10 @@ state spectshootstate
             ifrnd 128 ai AISPECTSEEKPLAYER
             ifcount 24
             {
-                ifrnd 96 ifpdistl 2048 ai AISPECTSEEKPLAYER
+                ifrnd 96 ifpdistg 2048 ai AISPECTSEEKPLAYER
                 else
                 {
-                    ifpdistl 1596 ai AISPECTFLEEING
+                    ifpdistg 1596 ai AISPECTFLEEING
                     else ai AISPECTFLEEINGBACK
                 }
             }
@@ -1437,7 +1437,7 @@ ends
 state spectfleestate
     ifactioncount 7
     {
-        ifpdistl 3084 { ai AISPECTSEEKPLAYER break }
+        ifpdistg 3084 { ai AISPECTSEEKPLAYER break }
         else ifrnd 32 ifp palive ifcansee ifcanshoottarget { ifrnd 128 ai AISPECTDUCKING else ai AISPECTSHOOTING break }
     }
     ifnotmoving
@@ -1593,15 +1593,15 @@ ai AIDEMDYING ADEMDYING DEMSTOP faceplayer
 
 state demonseekstate
 
-    ifmove 0
+    ifactornotstayput
     {
         ifcansee ifp palive ifpdistl 2048 ifcount 16 ifcanshoottarget { ai AIDEMSHOOTENEMY break }
         ifai AIDEMCHARGEENEMY
         {
             ifcount 72 ifcanshoottarget { ai AIDEMSHOOTENEMY break }
-            ifp phigher ifpdistl 2048 ifrnd 6 { ai AIDEMJUMPENEMY break }
+            ifp phigher ifpdistg 2048 ifrnd 6 { ai AIDEMJUMPENEMY break }
         }
-        else ifpdistl 4096
+        else ifpdistg 4096
         {
         	ifrnd 92
         		{
@@ -1610,13 +1610,13 @@ state demonseekstate
          }
         else ifcount 24 { ai AIDEMCHARGEENEMY break }
         iffloordistl 16 { ifcount 48 ifnotmoving ifcansee { ai AIDEMJUMPENEMY break } }
-        else { ifpdistl 1280 ai AIDEMJUMPENEMY break }
+        else { ifpdistg 1280 ai AIDEMJUMPENEMY break }
 
         ifrnd 4 ifnotmoving operate
         else ifrnd 1 ifbulletnear
         {
             ifgapzl 128 ai AIDEMDODGE
-            else ifmove 0 { ifrnd 32 ai AIDEMJUMPENEMY else ai AIDEMDODGE }
+            else ifactornotstayput { ifrnd 32 ai AIDEMJUMPENEMY else ai AIDEMDODGE }
         }
     }
     else
@@ -1918,7 +1918,7 @@ state skelseekenemystate
     }
     else iffloordistl 32
     {
-        ifpdistl 4096 { ifmove 0 ai AISKELCHARGE }
+        ifpdistg 4096 { ifactornotstayput ai AISKELCHARGE }
         ifrnd 8 { ifbulletnear ai AISKELDODGE }
     }
     ifrnd 128 ifcansee
@@ -2045,7 +2045,7 @@ state skeldyingstate
       {
           ifcount 64 { action EGGWAIT move 0 }
         {
-            ifrnd 128 { action EGGWAIT move 0 }
+            ifrnd 128 { action EGGWAIT move 0 }            
             else
             {
                 sound SLIM_HATCH
@@ -2055,7 +2055,7 @@ state skeldyingstate
     } }
     ifaction EGGOPEN1 { ifactioncount 2 action EGGOPEN2 }
     ifaction EGGOPEN2
-    {
+    { 
      ifactioncount 0
      	{
      	action EGGOPEN3
@@ -2184,7 +2184,7 @@ state wizzaseekenemystate
     ifcansee ifcount 32
     {
         ifrnd 64 { ifp palive ifcanshoottarget ai AIWIZZSHOOTENEMY }
-        else ifpdistl 2548 ifrnd 192
+        else ifpdistg 2548 ifrnd 192
             ifcanshoottarget
             {
                 ifrnd 64
@@ -2313,7 +2313,7 @@ state mercuryseekenemystate
     else ifactioncount 3 { resetactioncount }
     ifcansee ifcount 32 ifp palive ifrnd 48 ifcanshoottarget
     {
-        ifrnd 64 ifpdistl 4096
+        ifrnd 64 ifpdistg 4096
         {
             ai AIMERCURYRUNENEMY
             ifspritepal 0 { }
@@ -2671,15 +2671,15 @@ state fem79
 	ifspritepal 0 { cstat 32768 ifrnd 0 { spritepal 3 } }
 	ifspritepal 3 { cstat 257 }
 ends
-state fem80 ifpdistl 2048 ifhitspace ai AIFEMMGO else ifmove FEMMGO soundonce STRAUS1
+state fem80 ifpdistl 2048 ifhitspace ai AIFEMMGO else ifmove FEMMGO soundonce STRAUS1 
 	ifmove FEMMGO ifpdistl 1024 { addphealth -1 soundonce HERO_LONGTERM_PAIN5 palfrom 48 5 resetactioncount }
 ends
-state fem81 ifpdistl 3300 ifpdistl 3049 ai AIFEMMSTO ends
-state fem82 ifpdistl 35000 ifpdistl 3501 ai AIFEMMAN ends
-state fem83 ifcansee ifpdistl 35000 move FEMMGO1 geth ends
+state fem81 ifpdistl 3300 ifpdistg 3049 ai AIFEMMSTO ends
+state fem82 ifpdistl 35000 ifpdistg 3501 ai AIFEMMAN ends
+state fem83 ifcansee ifpdistg 35000 move FEMMGO1 geth ends
 
 state fem84 ifhitweapon
- {
+ { 
      { ifwasweapon SHOTSPARK1 soundonce LADY_SCREAM guts JIBS4 15 guts JIBS1 1 }
      { ifwasweapon KNEE soundonce LADY_SCREAM guts JIBS4 13 guts JIBS1 1 }
      { ifwasweapon RPG guts JIBS4 50 guts JIBS1 1 { killit } }
@@ -2786,8 +2786,8 @@ ifspritepal 3
 	ifai AIWNORMA2
 	{
 		ai AIWNORMA2
-		sizeto 30 30
-		ifpdistl 20000 ifpdistl 1500 { shoot KNEE }
+		sizeto 30 30 
+		ifpdistg 20000 ifpdistl 1500 { shoot KNEE }
 	}
 	ifnotmoving
 			{
@@ -3034,7 +3034,7 @@ move CARPET4 -50
 
 state mic1 ifpdistl 512 { move CARPET1 geth soundonce ORIENTAL } ends
 state mic2
-	ifpdistl 1024 ifpdistl 512 { move CARPET3  geth soundonce BONGO } break
+	ifpdistl 1024 ifpdistg 512 { move CARPET3  geth soundonce BONGO } break
 	else ifceilingdistl 16 fall
 ends
 actor CARPET sizeto 40 55
@@ -3058,7 +3058,7 @@ state carcar
 		ifaction ACARP20
 			{
 			cstat 417
-			ifpdistl 10000 ifpdistl 2800 { cstat 32768 }
+			ifpdistl 10000 ifpdistg 2800 { cstat 32768 }
 			ifactioncount 20 { action ACARP10 }
 			}
 	}
@@ -3073,7 +3073,7 @@ state carcar
 		ifaction ACARP20
 			{
 			cstat 416
-			ifpdistl 10000 ifpdistl 2800 { cstat 32768 }
+			ifpdistl 10000 ifpdistg 2800 { cstat 32768 }
 			ifactioncount 20 { action ACARP10 }
 			}
 	}
@@ -3190,7 +3190,7 @@ ai AISNADAN1 ASNADAN1 SNADAN1 geth
 ai AISNADAN2 ASNADAN2 SNADAN1 geth
 ai AISNADAN3 ASNADAN3 SNADAN1 geth
 ai AISNADAN4 ASNADAN4 SNADAN1 geth
-
+	
 state ste8 ifpdistl 6500 soundonce OST_D ends
 state ste9 ifcount SHRUNKCOUNT { action ASNADAN0 } ends
 state ste10 ifaction ASNADAN0 { ai AISNADAN4 } ends
@@ -3228,7 +3228,7 @@ ends
 
 state masksna10
 stopsound PRED_RECOG
-ifcansee ifpdistl 15000 ifpdistl 3000
+ifcansee ifpdistl 15000 ifpdistg 3000
 {
 	soundonce OST_D
 	ifspritepal 9
@@ -3319,7 +3319,7 @@ state pod9  ifrnd 4 cstat 257 ends
 state pod10 ifmove 0 { action APOD soundonce GULLS02 move POD2 faceplayerslow } ends
 state pod11 ifaction APOD ifpdistl 2500 { action APOD1 move POD3 getv ifrnd 32 { spawn FECES } } ends
 state pod12 ifmove POD3 ifaction APOD1 ifactioncount 8 { action APOD2 soundonce GULLS02 move POD1 faceplayerslow } ends
-state pod13 ifaction APOD2 ifpdistl 10000 { action APOD1 move POD4 getv } ends
+state pod13 ifaction APOD2 ifpdistg 10000 { action APOD1 move POD4 getv } ends
 state pod14 ifmove POD4 ifaction APOD1  ifactioncount 8 { action APOD soundonce GULLS02 move POD2 faceplayerslow } ends
 state wea10 ifhitweapon
 	{
@@ -3368,7 +3368,7 @@ ends
 
 state sandmake ifspritepal 5 { ifpdistl 6000 ifrnd 24 { spawn FECES } } ends
 
-actor PUFFSMOKE cstat 32768 ifcansee { state dymokmake state sandmake } enda
+actor PUFFSMOKE cstat 2 ifcansee { state dymokmake state sandmake } enda
 
 action ASM 1 4 1 1 22
 action ASMM 2 3 1 1 5
@@ -3406,7 +3406,7 @@ ifspritepal 0
 	}
 
 ifspritepal 2
-	{
+	{ 
 		sizeto 11 15 sizeto 11 15 sizeto 11 15
 		ifcansee ifpdistl 5000 ifaction 0
 		ifcount 96
@@ -3515,7 +3515,7 @@ action ASHUT10 0
 action ASHUT20 1
 
 state shuttle10 cstat 16 action ASHUT10 ends
-state shuttle20 ifcansee ifpdistl 4000 ifpdistl 2000 { soundonce GORGUL } ends
+state shuttle20 ifcansee ifpdistl 4000 ifpdistg 2000 { soundonce GORGUL } ends
 state shuttle30 ifcansee ifpdistl 1500 { cstat 273 action ASHUT20 } ends
 state shuttle40 ifhitweapon	{ soundonce VENT_BUST debris SCRAP5 50 { killit } } ends
 state shuttle50 ifaction ASHUT20 { ifrnd 8 { spawn REDKEY } } ends
@@ -3558,7 +3558,7 @@ move BATJUM      50
 move BATWEA   -200
 
 state bat9 ifawayfromwall { ifmove 0 { action ADYMM move STOP getv } } ends
-state bat12 ifpdistl 2000
+state bat12 ifpdistg 2000
 			{
 				   ifnotmoving ifrnd 0 { spritepal 3 }
 				   ifspritepal 3 { operate { cactor BATSTAYPUT } }
@@ -3572,7 +3572,7 @@ ends
 state bat13
 	ifnotmoving
 	{
-		ifcansee ifpdistl 3000 ifpdistl 1024
+		ifcansee ifpdistl 3000 ifpdistg 1024
 		{
 			iffloordistl 50 { action ADYMUP move BATJUM jumptoplayer soundonce BATSOUND }
 			ifceilingdistl 50 { action ADYMM fall soundonce BATSOUND }
@@ -3728,7 +3728,7 @@ state bli10
 		}
 	ifaction ABL20 ifmove BL20
 		{
-		ifpdistl 1024
+		ifpdistl 1024               
 			{
 			ifspritepal 0 { globalsound COWARD ifrnd 256 { killit } }
 			ifspritepal 1 { globalsound NOSEE ifrnd 256 { killit } }
@@ -3826,16 +3826,16 @@ ai AISHADOWDYING ASHADOWDYING SHADOWSTOP faceplayer
 ai AISHADOWSTART ASHADOWWALKING SHADOWSTART geth
 
 state mononseekstate
-    ifmove 0
+    ifactornotstayput
     {
         ifcansee ifp palive ifpdistl 2048 ifcount 16 ifcanshoottarget
 		{ ai AISHADOWSHOOTENEMY break }
         ifai AISHADOWCHARGEENEMY
         {
             ifcount 72 ifpdistl 3000 { ai AISHADOWSHOOTENEMY break }
-            ifp phigher ifpdistl 2048 ifrnd 6 { ai AISHADOWJUMPENEMY break }
+            ifp phigher ifpdistg 2048 ifrnd 6 { ai AISHADOWJUMPENEMY break }
         }
-        else ifpdistl 3000
+        else ifpdistg 3000
         {
         	ifrnd 92
         		{
@@ -3844,13 +3844,13 @@ state mononseekstate
          }
         else ifcount 24 { ai AISHADOWCHARGEENEMY break }
         iffloordistl 16 { ifcount 48 ifnotmoving ifcansee { ai AISHADOWJUMPENEMY break } }
-        else { ifpdistl 1280 ai AISHADOWJUMPENEMY break }
+        else { ifpdistg 1280 ai AISHADOWJUMPENEMY break }
 
         ifrnd 4 ifnotmoving operate
         else ifrnd 0 ifbulletnear
         {
             ifgapzl 128 ai AISHADOWDODGE
-            else ifmove 0 { ifrnd 32 ai AISHADOWJUMPENEMY else ai AISHADOWDODGE }
+            else ifactornotstayput { ifrnd 32 ai AISHADOWJUMPENEMY else ai AISHADOWDODGE }
         }
     }
     else
@@ -4090,7 +4090,7 @@ state smskseekenemystate
     }
     else iffloordistl 32
     {
-        ifpdistl 4096 { ifmove 0 ai AISMSKCHARGE }
+        ifpdistg 4096 { ifactornotstayput ai AISMSKCHARGE }
         ifrnd 8 { ifbulletnear ai AISMSKDODGE }
     }
 
@@ -4379,7 +4379,7 @@ state lift10
 	ifmove STOPLIFT { stopsound OLDLIFT }
 	ifmove UPLIFT { soundonce OLDLIFT }
 	ifmove DOWNLIFT { soundonce OLDLIFT }
-ends
+ends	
 
 actor MAXLIFT 0 ALIFT6 cstat 417 state lift10 sizeto 30 30
 
@@ -4409,8 +4409,8 @@ ifpdistl 1000
 		}
 	ifceilingdistl 60 { action ALIFT4 }
 	iffloordistl 16 { action ALIFT5 }
-	ifpdistl 5000 ifpdistl 1100 { action ALIFT6 }
-	ifpdistl 4000 ifpdistl 1300 { stopsound OLDLIFT }
+	ifpdistl 5000 ifpdistg 1100 { action ALIFT6 }
+	ifpdistl 4000 ifpdistg 1300 { stopsound OLDLIFT }
 enda
 
 action AHANGSTOP          1210 4 5 1 15
@@ -4453,7 +4453,7 @@ state hangwalkhand
 		ifactioncount 0 { soundonce HMANATTACK }
 		ifactioncount 3 { soundonce AXEINBODY addphealth -3 palfrom 48 52 soundonce HERO_LONGTERM_PAIN }
 		ifactioncount 4 { ai AIHANGHAND }
-		ifpdistl 2500 ifpdistl 1300 { ai AIHANGGO }
+		ifpdistl 2500 ifpdistg 1300 { ai AIHANGGO }
 		}
 	ifai AIHANGWALK2 { ifactioncount 4 { cstat 257 spritepal 0 ai AIHANGGO } }
 ends
@@ -4481,8 +4481,8 @@ state hanghitweapon
     	    ifwasweapon RPG { spritepal 2 sound SQUISHED debris SCRAP3 15 state delete_enemy }
 		    else ifwasweapon RADIUSEXPLOSION { spritepal 2 sound SQUISHED debris SCRAP3 15 state delete_enemy }
     	    strength 0 move 0 cstat 0
-    	    ifpdistl 20000 ifpdistl 8000 { cstat 0 action AHANGDYINNG sizeto 14 14 }
-			ifpdistl 8000 ifpdistl 2000 { cstat 0 action AHANGDANDNO sizeto 14 14 }
+    	    ifpdistl 20000 ifpdistg 8000 { cstat 0 action AHANGDYINNG sizeto 14 14 }
+			ifpdistl 8000 ifpdistg 2000 { cstat 0 action AHANGDANDNO sizeto 14 14 }
 			ifpdistl 2000 { cstat 0 action AHANGDYINNG sizeto 14 14 }
 	    }
 	}
@@ -4490,7 +4490,7 @@ state hanghitweapon
 		{
 			ifai AIHANGGO
 			{
-				ifpdistl 20000 ifpdistl 3000
+				ifpdistl 20000 ifpdistg 3000
 				{
 				 ifbulletnear { cstat 0 ai AIHANGWALK2 }
 				}
@@ -4514,17 +4514,17 @@ state moon
 	{
 		ifcansee { cstat 0 }
 		action AMOON
-		ifpdistl 50000 ifpdistl 20000 sizeto 17 16
-		ifpdistl 20000 ifpdistl 17500 sizeto 15 14
-		ifpdistl 17500 ifpdistl 15000 sizeto 14 13
-		ifpdistl 15000 ifpdistl 12000 sizeto 13 12
-		ifpdistl 12000 ifpdistl 11000 sizeto 12 11
-		ifpdistl 11000 ifpdistl 10000 sizeto 11 10
-		ifpdistl 10000 ifpdistl 9000 sizeto 10 9
-		ifpdistl 9000 ifpdistl 8000 sizeto 9 8
-		ifpdistl 8000 ifpdistl 7000 sizeto 8 7
-		ifpdistl 7000 ifpdistl 6000 sizeto 7 6
-		ifpdistl 6000 ifpdistl 5000 sizeto 6 5
+		ifpdistl 50000 ifpdistg 20000 sizeto 17 16
+		ifpdistl 20000 ifpdistg 17500 sizeto 15 14
+		ifpdistl 17500 ifpdistg 15000 sizeto 14 13
+		ifpdistl 15000 ifpdistg 12000 sizeto 13 12
+		ifpdistl 12000 ifpdistg 11000 sizeto 12 11
+		ifpdistl 11000 ifpdistg 10000 sizeto 11 10
+		ifpdistl 10000 ifpdistg 9000 sizeto 10 9
+		ifpdistl 9000 ifpdistg 8000 sizeto 9 8
+		ifpdistl 8000 ifpdistg 7000 sizeto 8 7
+		ifpdistl 7000 ifpdistg 6000 sizeto 7 6
+		ifpdistl 6000 ifpdistg 5000 sizeto 6 5
 	}
 ends
 actor MOONDISTL state moon enda
@@ -4553,15 +4553,15 @@ ai AINGRDSHRUNK ANGRDWALKING SHRUNKVELS fleeenemy
 ai AINGRDDYING ANGRDDYING NGRDSTOP faceplayer
 
 state ngrdseekstate
-    ifmove 0
+    ifactornotstayput
     {
         ifcansee ifp palive ifpdistl 2048 ifcount 16 ifcanshoottarget { ai AINGRDSHOOTENEMY break }
         ifai AINGRDCHARGEENEMY
         {
             ifcount 72 ifcanshoottarget { ai AINGRDSHOOTENEMY break }
-            ifp phigher ifpdistl 2048 ifrnd 6 { ai AINGRDJUMPENEMY break }
+            ifp phigher ifpdistg 2048 ifrnd 6 { ai AINGRDJUMPENEMY break }
         }
-        else ifpdistl 4096
+        else ifpdistg 4096
         {
         	ifrnd 92
         		{
@@ -4570,13 +4570,13 @@ state ngrdseekstate
          }
         else ifcount 24 { ai AINGRDCHARGEENEMY break }
         iffloordistl 16 { ifcount 48 ifnotmoving ifcansee { ai AINGRDJUMPENEMY break } }
-        else { ifpdistl 1280 ai AINGRDJUMPENEMY break }
+        else { ifpdistg 1280 ai AINGRDJUMPENEMY break }
 
         ifrnd 4 ifnotmoving operate
         else ifrnd 1 ifbulletnear
         {
             ifgapzl 128 ai AINGRDDODGE
-            else ifmove 0 { ifrnd 32 ai AINGRDJUMPENEMY else ai AINGRDDODGE }
+            else ifactornotstayput { ifrnd 32 ai AINGRDJUMPENEMY else ai AINGRDDODGE }
         }
     }
     else

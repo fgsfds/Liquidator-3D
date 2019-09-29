@@ -2,8 +2,8 @@
 Liquidator
 ==========================================================================
 
-Version:                   1.4 beta
-Release Date:              24.09.2019
+Version:                   1.4 beta 2
+Release Date:              29.09.2019
 Author:                    fgsfds (https://twitter.com/fgsfds228)
 
 Original developer:        А.В.Т., Partizan Software
@@ -70,14 +70,17 @@ LINKS
 CHANGELOG
 ==========================================================================
 
-Version 1.4 (24.09.2019)
+Version 1.4 beta 2 (29.09.2019)
 ---------------------------
 + English translation for in-game textures
 + Story summary added to the help screen
++ Added correct FM patch
+* Fixed bug in GAME.COM that was making the game unfinishable
 * Small key sprite fix by phredreeke
 * EDuke32 main menu background
 * Menu fonts fixes
 * Fix stray pink pixels on the fuel barrel
+* Replaced sizeat with sizeto in GAME.CON
 
 
 Version 1.3 (15.09.2019)
