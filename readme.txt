@@ -1,9 +1,9 @@
-==========================================================================
+﻿==========================================================================
 Liquidator
 ==========================================================================
 
-Version:                   1.4 beta 2
-Release Date:              29.09.2019
+Version:                   1.4
+Release Date:              10.02.2020
 Author:                    fgsfds (https://twitter.com/fgsfds228)
 
 Original developer:        А.В.Т., Partizan Software
@@ -45,7 +45,7 @@ Worldwide Virtual Teleportation Agency, is endowed with unlimited authority.
 HOW TO USE
 ==========================================================================
 
-BuildGDX (1.05 and later):
+BuildGDX (1.06 and later):
 - put liquidator.zip into any folder
 - run DukeGDX, navigate to NEW GAME -> USER CONTENT
 - find liquidator.zip in the file browser
@@ -70,7 +70,7 @@ LINKS
 CHANGELOG
 ==========================================================================
 
-Version 1.4 beta 2 (29.09.2019)
+Version 1.4 (10.02.2020)
 ---------------------------
 + English translation for in-game textures
 + Story summary added to the help screen
