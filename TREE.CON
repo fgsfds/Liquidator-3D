@@ -819,7 +819,7 @@ define SUCCESS                                          195              //     
 define SUCCESS2                                        196              //     Желаем успеха ( агент )
 define AGENT02                                           197              //     Желаем успеха ( агент )
 define SKEL_CAPTURE_HERO                    198
-define LEVEL                                                199              //     Звук при перезагрузке уровня
+define LEVELSND                                             199              //     Звук при перезагрузке уровня
 define HERO_LAND_HURT                          200
 define HERO_HIT_STRIPPER1                    201
 define COWARD                                           202               //    Ну как прогулка  ( оператор )

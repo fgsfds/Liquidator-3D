@@ -383,7 +383,7 @@ definesound BONUSMUSIC        bonus.voc    0   0   255  1  0         //    Викто
 definesound SUCCESS                   irina02.voc         0      0    255   4   0          //     Желаем успеха
 definesound SUCCESS2                 irina02.voc         0      0    255   4   0          //     Желаем успеха
 definesound AGENT02                    irina02.voc         0      0    255   4   0          //     Желаем успеха ( 197 )
-definesound LEVEL                            level.voc         0      0    255   0   0          //      О кей  ( 199 )
+definesound LEVELSND                         level.voc         0      0    255   0   0          //      О кей  ( 199 )
 definesound SUCCESS3                 irina02.voc          0      0   255    4   0          //     Желаем успеха  ( 1 уровень )
 definesound SUPERLEVEL               amba.voc          0      0    255   4   0          //      4 уровнь  - Амба
 

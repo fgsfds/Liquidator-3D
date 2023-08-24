@@ -3685,14 +3685,14 @@ state aim10
 		ifinwater
 			{
 				cstat 257 spritepal 5
-				ifhitweapon { stopsound LEVEL }
+				ifhitweapon { stopsound LEVELSND }
 			}
 		ifspritepal 3 { cstat 416 }
 ends
 state aim20
 	ifhitweapon
 	{
-		soundonce LEVEL
+		soundonce LEVELSND
 		ifwasweapon SHOTSPARK1 { spritepal 3 }
 		ifwasweapon RPG { spritepal 4 debris SCRAP3 10 ifrnd 256 { killit } }
 		ifwasweapon SHRINKEREXPLOSION { spritepal 4 debris SCRAP3 10 ifrnd 256 { killit } }
