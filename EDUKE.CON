@@ -3,4 +3,4 @@ setvar WEAPON6_FLASHCOLOR 6073584
 
 gamevar LOGO_FLAGS 253
 
-include GAME.CON
+include LIQUID.CON
