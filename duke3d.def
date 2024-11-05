@@ -1,1 +1,4 @@
 music { id "intro" file "MENU.MID" }
+
+// Voxel
+voxel "voxels/0060.KVX"	{ tile 60 scale 6 rotate } // KEY
