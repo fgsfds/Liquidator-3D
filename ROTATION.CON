@@ -1,0 +1,29 @@
+// Hendricks266's voxel rotation code
+
+var temp1 0 0
+var temp2 0 0
+var spriterotate 0 2
+
+onevent EVENT_SPAWN
+    switch sprite[].picnum
+        case REDKEY
+        case BLUEKEY
+        case YELLOWKEY
+            or spriterotate 1
+            geta[].mdflags temp1
+            or temp1 16
+            seta[].mdflags temp1
+        break
+    endswitch
+endevent
+
+onevent EVENT_ANIMATESPRITES
+    ifand spriterotate 1
+    {
+        geta[].ang temp1
+        set temp2 totalclock
+        shiftl temp2 2
+        add temp1 temp2
+        settspr[].tsprang temp1
+    }
+endevent
