@@ -2,10 +2,8 @@
 Liquidator
 ==========================================================================
 
-Version:                   1.4
-Release Date:              10.02.2020
-Author:                    fgsfds (https://twitter.com/fgsfds228)
-
+Version:                   1.5
+Release Date:              TBA
 Original developer:        А.В.Т., Partizan Software
 Publisher:                 Акелла / Akella Company
 Original release date:     1998
@@ -54,21 +52,54 @@ EDuke32:
 - drag and drop liquidator.zip on eduke32.exe
 - or launch EDuke32 with "/g liquidator.zip" parameter
 
+Raze:
+- drag and drop liquidator.zip on raze.exe
+- or launch EDuke32 with "-g liquidator.zip" parameter
+
+BuildLauncher:
+- put liquidator.zip into Data\Addons\Duke3D\Campaigns folder
+- launch from the Duke Nukem 3D Campaigns menu
+
 
 ==========================================================================
 LINKS
 ==========================================================================
+   
+> GitHub repo:
+   https://github.com/fgsfds/Liquidator-3D
+
+> BuildLauncher:
+   https://github.com/fgsfds/BuildLauncher
+
+> EDuke32 port:
+  https://www.eduke32.com/
+
+> Raze port
+   https://github.com/coelckers/Raze/releases
 
 > BuildGDX port:
   https://m210.duke4.net/
 
-> EDuke32 port:
-  https://www.eduke32.com/
+
+==========================================================================
+CREDITS
+==========================================================================
+
+fgsfds (https://github.com/fgsfds)
+
+Dzierzan (https://twitter.com/Dzierzan23)
 
 
 ==========================================================================
 CHANGELOG
 ==========================================================================
+
+Version 1.5 (TBA)
+---------------------------
++ Added voxel key
++ Added original high resolution tiles for pickups
+* Improved shotgun animation
+
 
 Version 1.4 (10.02.2020)
 ---------------------------
