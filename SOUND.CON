@@ -1,7 +1,7 @@
 define CAMERASDESTRUCTABLE      NO                //   YES
 define FREEZERHURTOWNER         YES               //    NO
 
-define MAXPLAYERHEALTH                   100           //    å†™c. ™Æ´-¢Æ  ¶®ß≠® ®£‡Æ™†
+define MAXPLAYERHEALTH                   100           //    –ú–∞–∫c. –∫–æ–ª-–≤–æ  –∂–∏–∑–Ω–∏ –∏–≥—Ä–æ–∫–∞
 define MAXWATERFOUNTAINHEALTH    50             //
 
 define YELLHURTSOUNDSTRENGTH        40
@@ -9,22 +9,22 @@ define YELLHURTSOUNDSTRENGTHMP   50
 
 define MAXPLAYERBLUEHEALTH    200
 define DOUBLEMAXPLAYERHEALTH    MAXPLAYERBLUEHEALTH
-define STARTARMORHEALTH         0                     //    àß≠†Á†´Ï≠†Ô á†È®‚†
+define STARTARMORHEALTH         0                     //    –ò–∑–Ω–∞—á–∞–ª—å–Ω–∞—è –ó–∞—â–∏—Ç–∞
 define STARTARHEALTH                 10
-define RETRIEVEDISTANCE           1024                //   Ñ®·‚†≠Ê®Ô ¢Æß¢‡†‚†
-define SQUISHABLEDISTANCE        512                //   íÆ´Ï™Æ §´Ô †™‚•‡Æ¢ !
-define DEFAULTVISIBILITY              512                //    Ç®§®¨Æ·‚Ï ØÆ „¨Æ´Á†≠®Ó
-define FROZENQUICKKICKDIST      980                //    Ñ®·‚†≠Ê®Ô ‡†ß°®¢†≠®Ô ß†¨Æ‡Æ¶•≠≠Æ£Æ
+define RETRIEVEDISTANCE           1024                //   –î–∏—Å—Ç–∞–Ω—Ü–∏—è –≤–æ–∑–≤—Ä–∞—Ç–∞
+define SQUISHABLEDISTANCE        512                //   –¢–æ–ª—å–∫–æ –¥–ª—è –∞–∫—Ç–µ—Ä–æ–≤ !
+define DEFAULTVISIBILITY              512                //    –í–∏–¥–∏–º–æ—Å—Ç—å –ø–æ —É–º–æ–ª—á–∞–Ω–∏—é
+define FROZENQUICKKICKDIST      980                //    –î–∏—Å—Ç–∞–Ω—Ü–∏—è —Ä–∞–∑–±–∏–≤–∞–Ω–∏—è –∑–∞–º–æ—Ä–æ–∂–µ–Ω–Ω–æ–≥–æ
 
-define GENERICIMPACTDAMAGE      10                //   ÇÆß§•©·‚¢®Ô Æ°È®Â ØÆ¢‡•¶§•≠®©
+define GENERICIMPACTDAMAGE      10                //   –í–æ–∑–¥–µ–π—Å—Ç–≤–∏—è –æ–±—â–∏—Ö –ø–æ–≤—Ä–µ–∂–¥–µ–Ω–∏–π
 define SWEARFREQUENCY              42
 
-define MAXPISTOLBULLET               200                 //   å†™·. ™Æ´´-¢Æ Ø†‚‡Æ≠Æ¢ §´Ô Ø®·‚Æ´•‚†                  ( 3 ß≠†™† )
-define MAXSHOTGUNBULLET           50                  //   å†™·. ™Æ´´-¢Æ Ø†‚‡Æ≠Æ¢ §´Ô ¢®≠‚Æ¢™®                    ( 2 ß≠†™† )
-define MAXCHAINGUNBULLET         500                 //   å†™·. ™Æ´´-¢Æ Ø†‚‡Æ≠Æ¢ §´Ô ‡„Á≠Æ£Æ Ø„´•¨•‚†     ( 3 ß≠†™† )
-define MAXRPGBULLET               20                  //   å†™·. ™Æ´´-¢Æ Ø†‚‡Æ≠Æ¢ §´Ô °†ß„™®                       ( 2 ß≠†™† )
-define MAXHANDBOMBBULLET        20                  //    å†™·. ™Æ´´-¢Æ ‡„Á≠ÎÂ £‡†≠†‚                                  ( 2 ß≠†™† )
-define MAXSHRINKERBULLET          50                  //    å†™·. ™Æ´´-¢Æ ß†‡Ô§Æ¢ §´Ô ≠†Ø†´¨†                      ( 2 ß≠†™† )
+define MAXPISTOLBULLET               200                 //   –ú–∞–∫—Å. –∫–æ–ª–ª-–≤–æ –ø–∞—Ç—Ä–æ–Ω–æ–≤ –¥–ª—è –ø–∏—Å—Ç–æ–ª–µ—Ç–∞                  ( 3 –∑–Ω–∞–∫–∞ )
+define MAXSHOTGUNBULLET           50                  //   –ú–∞–∫—Å. –∫–æ–ª–ª-–≤–æ –ø–∞—Ç—Ä–æ–Ω–æ–≤ –¥–ª—è –≤–∏–Ω—Ç–æ–≤–∫–∏                    ( 2 –∑–Ω–∞–∫–∞ )
+define MAXCHAINGUNBULLET         500                 //   –ú–∞–∫—Å. –∫–æ–ª–ª-–≤–æ –ø–∞—Ç—Ä–æ–Ω–æ–≤ –¥–ª—è —Ä—É—á–Ω–æ–≥–æ –ø—É–ª–µ–º–µ—Ç–∞     ( 3 –∑–Ω–∞–∫–∞ )
+define MAXRPGBULLET               20                  //   –ú–∞–∫—Å. –∫–æ–ª–ª-–≤–æ –ø–∞—Ç—Ä–æ–Ω–æ–≤ –¥–ª—è –±–∞–∑—É–∫–∏                       ( 2 –∑–Ω–∞–∫–∞ )
+define MAXHANDBOMBBULLET        20                  //    –ú–∞–∫—Å. –∫–æ–ª–ª-–≤–æ —Ä—É—á–Ω—ã—Ö –≥—Ä–∞–Ω–∞—Ç                                  ( 2 –∑–Ω–∞–∫–∞ )
+define MAXSHRINKERBULLET          50                  //    –ú–∞–∫—Å. –∫–æ–ª–ª-–≤–æ –∑–∞—Ä—è–¥–æ–≤ –¥–ª—è –Ω–∞–ø–∞–ª–º–∞                      ( 2 –∑–Ω–∞–∫–∞ )
 
 define MAXDEVISTATORAMMO        99
 define MAXFREEZEAMMO            100
@@ -33,32 +33,32 @@ define TRIPBOMBLASERMODE        0
 
 
 
-define RESPAWNACTORTIME        768                  //    Ç‡•¨Ô ØÆ‡Æ¶§•≠®Ô †™‚•‡†
-define RESPAWNITEMTIME           768                  //    Ç‡•¨Ô ØÆ‡Æ¶§•≠®Ô Ø‡•§¨•‚Æ¢
+define RESPAWNACTORTIME        768                  //    –í—Ä–µ–º—è –ø–æ—Ä–æ–∂–¥–µ–Ω–∏—è –∞–∫—Ç–µ—Ä–∞
+define RESPAWNITEMTIME           768                  //    –í—Ä–µ–º—è –ø–æ—Ä–æ–∂–¥–µ–Ω–∏—è –ø—Ä–µ–¥–º–µ—Ç–æ–≤
 
-define BLIMPRESPAWNTIME        2048                 //   Ç‡•¨Ô ØÆ‡Æ¶§•≠®Ô BLIMP
+define BLIMPRESPAWNTIME        2048                 //   –í—Ä–µ–º—è –ø–æ—Ä–æ–∂–¥–µ–Ω–∏—è BLIMP
 
 define NUMFREEZEBOUNCES          3  //  0 - 255
 
 
-define RUNNINGSPEED             53200                                                       //   ë™Æ‡Æ·‚Ï °•£† ®£‡Æ™†
+define RUNNINGSPEED             53200                                                       //   –°–∫–æ—Ä–æ—Å—Ç—å –±–µ–≥–∞ –∏–≥—Ä–æ–∫–∞
 
-define PLAYDEADTIME                  120                                                       //   Ç‡•¨Ô „¨®‡†≠®Ô ®£‡Æ™†
+define PLAYDEADTIME                  120                                                       //   –í—Ä–µ–º—è —É–º–∏—Ä–∞–Ω–∏—è –∏–≥—Ä–æ–∫–∞
 
 define SHRUNKCOUNT 270
 define SHRUNKDONECOUNT 304
 
 define FROZENDRIPTIME 90
-define THAWTIME 138                                                                //   Ç‡•¨Ô Æ‚‚†®¢†≠®Ô
+define THAWTIME 138                                                                //   –í—Ä–µ–º—è –æ—Ç—Ç–∞–∏–≤–∞–Ω–∏—è
 
 
-//     êÄÑàìë èéêÄÜÖçàü
+//     –†–ê–î–ò–£–° –ü–û–†–ê–ñ–ï–ù–ò–Ø
 
-define RPGBLASTRADIUS               1780                            //   Å†ß„™†
-define PIPEBOMBRADIUS                     2500                            //  Ñ®·‚†≠Ê®Æ≠≠†Ô ¢ß‡Î¢†´™†
+define RPGBLASTRADIUS               1780                            //   –ë–∞–∑—É–∫–∞
+define PIPEBOMBRADIUS                     2500                            //  –î–∏—Å—Ç–∞–Ω—Ü–∏–æ–Ω–Ω–∞—è –≤–∑—Ä—ã–≤–∞–ª–∫–∞
 define SHRINKERBLASTRADIUS            650
 define TRIPBOMBBLASTRADIUS          3880
-define MORTERBLASTRADIUS             2500                             //   åÆ‡‚•‡
+define MORTERBLASTRADIUS             2500                             //   –ú–æ—Ä—Ç–µ—Ä
 define BOUNCEMINEBLASTRADIUS     2500
 define SEENINEBLASTRADIUS             2048
 
@@ -71,33 +71,33 @@ gamestartup     DEFAULTVISIBILITY GENERICIMPACTDAMAGE MAXPLAYERHEALTH
                 MAXDEVISTATORAMMO MAXTRIPBOMBAMMO MAXFREEZEAMMO
                 CAMERASDESTRUCTABLE NUMFREEZEBOUNCES FREEZERHURTOWNER
 
-//      ëàãÄ éêìÜàü
+//      –°–ò–õ–ê –û–†–£–ñ–ò–Ø
 
-define KNEE_WEAPON_STRENGTH                     10                                                   //   ä„´†™
-define PISTOL_WEAPON_STRENGTH                    6         // Adds rand()%5 (0 to 5)    //   è®·‚Æ´•‚
-define HANDBOMB_WEAPON_STRENGTH          140                                                 //   Ñ®·‚†≠Ê®Æ≠≠†Ô ¢ß‡Î¢†´™†
+define KNEE_WEAPON_STRENGTH                     10                                                   //   –ö—É–ª–∞–∫
+define PISTOL_WEAPON_STRENGTH                    6         // Adds rand()%5 (0 to 5)    //   –ü–∏—Å—Ç–æ–ª–µ—Ç
+define HANDBOMB_WEAPON_STRENGTH          140                                                 //   –î–∏—Å—Ç–∞–Ω—Ü–∏–æ–Ω–Ω–∞—è –≤–∑—Ä—ã–≤–∞–ª–∫–∞
 
-define RPG_WEAPON_STRENGTH                    140                                 //   Å†ß„™†
+define RPG_WEAPON_STRENGTH                    140                                 //   –ë–∞–∑—É–∫–∞
 
 define SHRINKER_WEAPON_STRENGTH                    0
-define SHOTGUN_WEAPON_STRENGTH                   10                                  //   Ç®≠‚Æ¢™†
-define CHAINGUN_WEAPON_STRENGTH                    9                                  //   Ä¢‚Æ¨†‚
+define SHOTGUN_WEAPON_STRENGTH                   10                                  //   –í–∏–Ω—Ç–æ–≤–∫–∞
+define CHAINGUN_WEAPON_STRENGTH                    9                                  //   –ê–≤—Ç–æ–º–∞—Ç
 define FREEZETHROWER_WEAPON_STRENGTH     16
 define COOL_EXPLOSION_STRENGTH                      38
 define TRIPBOMB_STRENGTH                                 100
 define FIRELASER_WEAPON_STRENGTH                   7
-define MORTER_WEAPON_STRENGTH                     50                                   //   åÆ‡‚•‡
+define MORTER_WEAPON_STRENGTH                     50                                   //   –ú–æ—Ä—Ç–µ—Ä
 define BOUNCEMINE_WEAPON_STRENGTH           150
 define SPIT_WEAPON_STRENGTH                              2
 define BULLET_WEAPON_STRENGTH                       30
 
-//   èêéóçéëíú
+//   –ü–†–û–ß–ù–û–°–¢–¨
 
-define SPECTSTRENGTH                                    40                       //   Å•ß´®™®© Å‡†‚
-define SKELETONSTRENGTH                             100                     //   ë™•´•‚
+define SPECTSTRENGTH                                    40                       //   –ë–µ–∑–ª–∏–∫–∏–π –ë—Ä–∞—Ç
+define SKELETONSTRENGTH                             100                     //   –°–∫–µ–ª–µ—Ç
 define SKEL_SHIELD_AMOUNT1                        75
 define SKEL_SHIELD_AMOUNT2                        50
-define DEMSTRENGTH                                       100                      //   ä‡†·≠Î© Å•·
+define DEMSTRENGTH                                       100                      //   –ö—Ä–∞—Å–Ω—ã–π –ë–µ—Å
 define DEMGETTINGDAZEDAT                           15
 define DEMEATINGPLAYER                                -2
 define OCTASTRENGTH                                      175
@@ -105,76 +105,76 @@ define OCTASCRATCHINGPLAYER                    -11
 define SPECTRAL2STRENGTH                           50
 define TURRETSTRENGTH                                 30
 define ROTTURRETSTRENGTH                          40
-define LBALLESTRENGTH                                 150                   //    é£≠•≠≠Î© Ë†‡
+define LBALLESTRENGTH                                 150                   //    –û–≥–Ω–µ–Ω–Ω—ã–π —à–∞—Ä
 define CAPTAINSTRENGTH                                50
 define CAPTSPINNINGPLAYER                         -11
-define BATSTRENGTH                                       20                     //    ã•‚„Á†Ô åÎËÏ
+define BATSTRENGTH                                       20                     //    –õ–µ—Ç—É—á–∞—è –ú—ã—à—å
 define SHARKSTRENGTH                                  80
 define SHARKBITESTRENGTH                         -9
-define SMOLSPIDERSTRENGTH                      40                       //   å†´•≠Ï™®© è†„™
-define FISHSTRENGTH                                     20                       //    êÎ°† ß´Æ·‚≠†Ô ( ¨•´™†Ô )
-define WIZZSTRENGTH                                   200                      //    ñ®‰•‡„·
-define WIZZPALSTRENGTH                             200                      //    ñ®‰•‡„·
+define SMOLSPIDERSTRENGTH                      40                       //   –ú–∞–ª–µ–Ω—å–∫–∏–π –ü–∞—É–∫
+define FISHSTRENGTH                                     20                       //    –†—ã–±–∞ –∑–ª–æ—Å—Ç–Ω–∞—è ( –º–µ–ª–∫–∞—è )
+define WIZZSTRENGTH                                   200                      //    –¶–∏—Ñ–µ—Ä—É—Å
+define WIZZPALSTRENGTH                             200                      //    –¶–∏—Ñ–µ—Ä—É—Å
 define MERCURYSTRENGTH                           100
 define SANDMANSTRENGTH                            100
-define WEAPONSTRENGTH                              110                       //   Ñ´Ô ≠†Ø†´¨† ® ·™•´•‚†
-define DEMGREENSTRENGTH                         100                       //   á•´•≠Î© Å•·
+define WEAPONSTRENGTH                              110                       //   –î–ª—è –Ω–∞–ø–∞–ª–º–∞ –∏ —Å–∫–µ–ª–µ—Ç–∞
+define DEMGREENSTRENGTH                         100                       //   –ó–µ–ª–µ–Ω—ã–π –ë–µ—Å
 
-//   ÅéÖèêàèÄëõ
+//   –ë–û–ï–ü–†–ò–ü–ê–°–´
 
-define PISTOLBULLETAMOUNT             12                           //   äÆ´-¢Æ Ø†‚‡Æ≠Æ¢ §´Ô Ø®·‚Æ´•‚† ¢ 1 ™Æ‡Æ°™•
-define SHOTGUNBULLETAMOUNT        10                           //   äÆ´-¢Æ Ø†‚‡Æ≠Æ¢ §´Ô ¢®≠‚Æ¢™®  ¢ 1 ™Æ‡Æ°™•
-define CHAINGUNBULLETAMOUNT       50                           //   äÆ´-¢Æ Ø†‚‡Æ≠Æ¢ §´Ô Ø„´•¨•‚†  ¢ 1 ÔÈ®™•
-define RPGBULLETBOX                   5                            //   äÆ´-¢Æ £‡†≠†‚  §´Ô °†ß„™®  ¢ 1 ÔÈ®™•
+define PISTOLBULLETAMOUNT             12                           //   –ö–æ–ª-–≤–æ –ø–∞—Ç—Ä–æ–Ω–æ–≤ –¥–ª—è –ø–∏—Å—Ç–æ–ª–µ—Ç–∞ –≤ 1 –∫–æ—Ä–æ–±–∫–µ
+define SHOTGUNBULLETAMOUNT        10                           //   –ö–æ–ª-–≤–æ –ø–∞—Ç—Ä–æ–Ω–æ–≤ –¥–ª—è –≤–∏–Ω—Ç–æ–≤–∫–∏  –≤ 1 –∫–æ—Ä–æ–±–∫–µ
+define CHAINGUNBULLETAMOUNT       50                           //   –ö–æ–ª-–≤–æ –ø–∞—Ç—Ä–æ–Ω–æ–≤ –¥–ª—è –ø—É–ª–µ–º–µ—Ç–∞  –≤ 1 —è—â–∏–∫–µ
+define RPGBULLETBOX                   5                            //   –ö–æ–ª-–≤–æ –≥—Ä–∞–Ω–∞—Ç  –¥–ª—è –±–∞–∑—É–∫–∏  –≤ 1 —è—â–∏–∫–µ
 define CRYSTALBULLETAMOUNT          25
-define HANDBOMBBOX                          5                            //   äÆ´-¢Æ §®·‚. ¢ß‡Î¢†´Æ™  ¢ 1 ÔÈ®™•
+define HANDBOMBBOX                          5                            //   –ö–æ–ª-–≤–æ –¥–∏—Å—Ç. –≤–∑—Ä—ã–≤–∞–ª–æ–∫  –≤ 1 —è—â–∏–∫–µ
 
-//   ë®´Î.
+//   –°–∏–ª—ã.
 
-define WEAKEST                                1            //   é·´†°´Ô‚Ï
-define WEAK                                      5             //    ë´†°Æ·‚Ï
-define MEDIUMSTRENGTH             10             //    ë‡•§≠ÔÔ ™‡•Ø™Æ·‚Ï
-define TOUGH                                  20             //    è‡®™Æ·≠Æ¢•≠®•
-define REALLYTOUGH                     30             //    ê•†´Ï≠Æ• è‡®™Æ·≠Æ¢•≠®•
-define HBOMBTOUGH                   100             //    èÆ¢‡•¶§•≠®• Æ‚ ¢ß‡Î¢†´™®
+define WEAKEST                                1            //   –û—Å–ª–∞–±–ª—è—Ç—å
+define WEAK                                      5             //    –°–ª–∞–±–æ—Å—Ç—å
+define MEDIUMSTRENGTH             10             //    –°—Ä–µ–¥–Ω—è—è –∫—Ä–µ–ø–∫–æ—Å—Ç—å
+define TOUGH                                  20             //    –ü—Ä–∏–∫–æ—Å–Ω–æ–≤–µ–Ω–∏–µ
+define REALLYTOUGH                     30             //    –†–µ–∞–ª—å–Ω–æ–µ –ü—Ä–∏–∫–æ—Å–Ω–æ–≤–µ–Ω–∏–µ
+define HBOMBTOUGH                   100             //    –ü–æ–≤—Ä–µ–∂–¥–µ–Ω–∏–µ –æ—Ç –≤–∑—Ä—ã–≤–∞–ª–∫–∏
 define GOTTASMART                       90
-define BOMBTOUGH                      100             //    èÆ¢‡•¶§•≠®• Æ‚ °†ß„™®
+define BOMBTOUGH                      100             //    –ü–æ–≤—Ä–µ–∂–¥–µ–Ω–∏–µ –æ—Ç –±–∞–∑—É–∫–∏
 
-//   äÆ´´®Á•·‚¢Æ §´Ô ®·ØÆ´ÏßÆ¢†≠®Ô .
+//   –ö–æ–ª–ª–∏—á–µ—Å—Ç–≤–æ –¥–ª—è –∏—Å–ø–æ–ª—å–∑–æ–≤–∞–Ω–∏—è .
 
 define SHIELD_AMOUNT                100
 define SCUBA_AMOUNT                 6400
 define YELLOWKEY_AMOUNT       2400
 define REDKEY_AMOUNT              1600
 define MEDICINE_AMOUNT          MAXPLAYERHEALTH
-define SPAWNBULLETODDS         96                //    èÆ‡Æ¶§•≠®• Ø†‚‡Æ≠Æ¢
+define SPAWNBULLETODDS         96                //    –ü–æ—Ä–æ–∂–¥–µ–Ω–∏–µ –ø–∞—Ç—Ä–æ–Ω–æ–≤
 
 definequote  0        AUTO AIMING
-// ÄÇíé çÄÇéÑäÄ
+// –ê–í–¢–û –ù–ê–í–û–î–ö–ê
 definequote  1        SHOW MAP: OFF
-// äÄêíÄ ÇõäãûóÖçÄ
+// –ö–ê–†–¢–ê –í–´–ö–õ–Æ–ß–ï–ù–ê
 definequote  2        ACTIVATED
-// ÄäíàÇàêéÇÄççé
+// –ê–ö–¢–ò–í–ò–†–û–í–ê–ù–ù–û
 definequote  3        PORTABLE MEDKIT
-// èéêíÄíàÇçÄü ÄèíÖóäÄ
+// –ü–û–†–¢–ê–¢–ò–í–ù–ê–Ø –ê–ü–¢–ï–ß–ö–ê
 definequote  4        LOCKED
-// áÄäêõíé
+// –ó–ê–ö–†–´–¢–û
 definequote  5        GIVING EVERYTHING!
 definequote  6        LEMON: HEALTH +25
-// ãàåéç: Üàáçú +25
+// –õ–ò–ú–û–ù: –ñ–ò–ó–ù–¨ +25
 definequote  7        WASTED!
 definequote  8        UNLOCKED
-// éíäêõíé
+// –û–¢–ö–†–´–¢–û
 definequote  9        * * *  SECRET  * * *
 definequote 10        HEARTBREAKING SIGHT
-// ÑìòÖêÄáÑàêÄûôÖÖ áêÖãàôÖ
+// –î–£–®–ï–†–ê–ó–î–ò–†–ê–Æ–©–ï–ï –ó–†–ï–õ–ò–©–ï
 definequote 11        ALL DOORS UNLOCKED
 definequote 12
 definequote 13        PRESS SPACE TO RESTART LEVEL
-// Ñãü èêéÑéãÜÖçàü àÉêõ çÄÜåàíÖ èêéÅÖã
+// –î–õ–Ø –ü–†–û–î–û–õ–ñ–ï–ù–ò–Ø –ò–ì–†–´ –ù–ê–ñ–ú–ò–¢–ï –ü–†–û–ë–ï–õ
 definequote 14
 definequote 15        DEACTIVATED
-// éëíÄçéÇãÖçé
+// –û–°–¢–ê–ù–û–í–õ–ï–ù–û
 definequote 16
 definequote 17        GOD MODE: ON
 definequote 18        GOD MODE: OFF
@@ -207,80 +207,80 @@ definequote 44        MOUSE AIMING OFF
 definequote 45        MOUSE AIMING ON
 definequote 46        CHEAT CODE:  UNRECOGNIZED
 definequote 47        WHERE ARE WE GOING?
-// äìÑÄ èéâÑÖå?
+// –ö–£–î–ê –ü–û–ô–î–ï–ú?
 definequote 48        ONE WRONG STEP AND YOU ARE DEAD
-// òÄÉ Ç ëíéêéçì à íõ èéäéâçàä
+// –®–ê–ì –í –°–¢–û–†–û–ù–£ –ò –¢–´ –ü–û–ö–û–ô–ù–ò–ö
 definequote 49        YOU HAVE WEIRD INCLINATIONS...
-// ì ÇÄë ëíêÄççõÖ çÄäãéççéëíà...
+// –£ –í–ê–° –°–¢–†–ê–ù–ù–´–ï –ù–ê–ö–õ–û–ù–ù–û–°–¢–ò...
 definequote 50        SLEEPING GORGUL IS IMMORTAL
-// ëèüôàâ ÉéêÉìã ÅÖëëåÖêíÖç
+// –°–ü–Ø–©–ò–ô –ì–û–†–ì–£–õ –ë–ï–°–°–ú–ï–†–¢–ï–ù
 definequote 51        BREATHE DEEPER
-// Ñõòà ÉãìÅÜÖ
+// –î–´–®–ò –ì–õ–£–ë–ñ–ï
 definequote 52
 definequote 53
 definequote 54        UZI
-// ÄÇíéåÄí
+// –ê–í–¢–û–ú–ê–¢
 definequote 55        EXPLOSIVE DEVICE
-// ÇáêõÇçéÖ ìëíêéâëíÇé
+// –í–ó–†–´–í–ù–û–ï –£–°–¢–†–û–ô–°–¢–í–û
 definequote 56        BAZOOKA
-// ÅÄáìäÄ
+// –ë–ê–ó–£–ö–ê
 definequote 57        SHOTGUN
-// ÑêéÅéÇàä
+// –î–†–û–ë–û–í–ò–ö
 definequote 58        HAVEN'T WE FORGOTTEN SOMETHING?
-// åõ çàóÖÉé çÖ èêéèìëíàãà?
+// –ú–´ –ù–ò–ß–ï–ì–û –ù–ï –ü–†–û–ü–£–°–¢–ò–õ–ò?
 definequote 59
 definequote 60        NAPALM
-// çÄèÄãå
+// –ù–ê–ü–ê–õ–ú
 definequote 61        GRAPE: HEALTH +10
-// ÇàçéÉêÄÑ: Üàáçú +10
+// –í–ò–ù–û–ì–†–ê–î: –ñ–ò–ó–ù–¨ +10
 definequote 62        APPLE: HEALTH +30
-// üÅãéäé: Üàáçú +30
+// –Ø–ë–õ–û–ö–û: –ñ–ò–ó–ù–¨ +30
 definequote 63        UZI AMMO
-// èÄíêéçõ Ñãü ÄÇíéåÄíÄ
+// –ü–ê–¢–†–û–ù–´ –î–õ–Ø –ê–í–¢–û–ú–ê–¢–ê
 definequote 64        BAZOOKA ROCKET
-// ÉêÄçÄíõ Ñãü ÅÄáìäà
+// –ì–†–ê–ù–ê–¢–´ –î–õ–Ø –ë–ê–ó–£–ö–ò
 definequote 65        REVOLVER AMMO
-// èÄíêéçõ Ñãü êÖÇéãúÇÖêÄ
+// –ü–ê–¢–†–û–ù–´ –î–õ–Ø –†–ï–í–û–õ–¨–í–ï–†–ê
 definequote 66
 definequote 67        BULLETPROOF VEST
-// ÅêéçÖÜàãÖí
+// –ë–†–û–ù–ï–ñ–ò–õ–ï–¢
 definequote 68        REVOLVER
-// êÖÇéãúÇÖê
+// –†–ï–í–û–õ–¨–í–ï–†
 definequote 69        BUCKSHOT
-// äÄêíÖóú
+// –ö–ê–†–¢–ï–ß–¨
 definequote 70        FIND THE BLUE KEY
-// àôàíÖ ëàçàâ äãûó
+// –ò–©–ò–¢–ï –°–ò–ù–ò–ô –ö–õ–Æ–ß
 definequote 71        FIND THE RED KEY
-// àôàíÖ äêÄëçõâ äãûó
+// –ò–©–ò–¢–ï –ö–†–ê–°–ù–´–ô –ö–õ–Æ–ß
 definequote 72        FIND THE YELLOW KEY
-// àôàíÖ ÜÖãíõâ äãûó
+// –ò–©–ò–¢–ï –ñ–ï–õ–¢–´–ô –ö–õ–Æ–ß
 definequote 73        WEAPON LOWERED
 definequote 74        WEAPON RAISED
 definequote 75        WATCH OUT!
-// ÅÖêÖÉàëú !
+// –ë–ï–†–ï–ì–ò–°–¨ !
 definequote 76        AUTOMATIC CONTROL
-// ÄÇíéåÄíàóÖëäéÖ ìèêÄÇãÖçàÖ
+// –ê–í–¢–û–ú–ê–¢–ò–ß–ï–°–ö–û–ï –£–ü–†–ê–í–õ–ï–ù–ò–ï
 definequote 77        ACCESS DENIED
-// Ñéëíìè áÄäêõí
+// –î–û–°–¢–£–ü –ó–ê–ö–†–´–¢
 definequote 78        NAPALM FUEL
-// íéèãàÇé Ñãü çÄèÄãåÄ
+// –¢–û–ü–õ–ò–í–û –î–õ–Ø –ù–ê–ü–ê–õ–ú–ê
 definequote 79
 definequote 80        SECRET MOVE
-// ëÖäêÖíçõâ èêàÖå
+// –°–ï–ö–†–ï–¢–ù–´–ô –ü–†–ò–ï–ú
 definequote 81        WEAPON MODE ON
 definequote 82        WEAPON MODE OFF
 definequote 83        FOLLOW MODE OFF
 definequote 84        FOLLOW MODE ON
 definequote 85        WALK
-// ïéÑúÅÄ
+// –•–û–î–¨–ë–ê
 definequote 86        RUN
-// ÅÖÉ
+// –ë–ï–ì
 definequote 87        THIS DOOR OPENS ELSEWHERE
-// ùíÄ ÑÇÖêú éíäêõÇÄÖíëü àçÄóÖ
+// –≠–¢–ê –î–í–ï–†–¨ –û–¢–ö–†–´–í–ê–ï–¢–°–Ø –ò–ù–ê–ß–ï
 definequote 88        PILL: HEALTH +20
-// íÄÅãÖíäÄ : Üàáçú +20
+// –¢–ê–ë–õ–ï–¢–ö–ê : –ñ–ò–ó–ù–¨ +20
 definequote 89        AIRTANK
-// äàëãéêéÑçõâ ÅÄãéç
+// –ö–ò–°–õ–û–†–û–î–ù–´–ô –ë–ê–õ–û–ù
 definequote 90
 definequote 91
 definequote 92        MUSIC: ON
@@ -293,22 +293,22 @@ definequote 98        BRIGHTNESS LEVEL: EIGHT
 definequote 99
 definequote 100
 definequote 101       WE'VE ALREADY BEEN HERE
-// áÑÖëú åõ ìÜÖ Åõãà
+// –ó–î–ï–°–¨ –ú–´ –£–ñ–ï –ë–´–õ–ò
 definequote 102
 definequote 103       * MEMORIAL PHOTO *
-// * èÄåüíçéÖ îéíé *
+// * –ü–ê–ú–Ø–¢–ù–û–ï –§–û–¢–û *
 definequote 104
 definequote 105
 definequote 106       BLUE POISON: HEALTH -20
-// ëàçàâ üÑ: Üàáçú - 20
+// –°–ò–ù–ò–ô –Ø–î: –ñ–ò–ó–ù–¨ - 20
 definequote 107       RED POISON: HEALTH -20
-// äêÄëçõâ üÑ: Üàáçú - 20
+// –ö–†–ê–°–ù–´–ô –Ø–î: –ñ–ò–ó–ù–¨ - 20
 definequote 108       TOO HOT!
-// ÜÄêäéÇÄíé !
+// –ñ–ê–†–ö–û–í–ê–¢–û !
 definequote 109       VIEW MODE OFF
-// ÇàÑ ëé ëíéêéçõ Ü Çõäã
+// –í–ò–î –°–û –°–¢–û–†–û–ù–´ –ñ –í–´–ö–õ
 definequote 110       VIEW MODE ON
-// ÇàÑ ëé ëíéêéçõ Ü Çäã
+// –í–ò–î –°–û –°–¢–û–†–û–ù–´ –ñ –í–ö–õ
 definequote 111       SHOW MAP: ON
 definequote 112       CLIPPING: ON
 definequote 113       CLIPPING: OFF
@@ -317,7 +317,7 @@ definequote 115       <Please Leave Blank>
 definequote 116       <Please Leave Blank>
 definequote 117       <Please Leave Blank>
 definequote 118       CAN SAVE ONLY WHEN ALIVE
-// ëéïêÄçüÖå íéãúäé ÜàÇõï
+// –°–û–•–†–ê–ù–Ø–ï–ú –¢–û–õ–¨–ö–û –ñ–ò–í–´–•
 definequote 119       GOT ALL WEAPONS/AMMO
 definequote 120       GOT ALL INVENTORY
 definequote 121       GOT ALL KEYS
@@ -328,424 +328,424 @@ definequote 124       MAP HAS A DIFFERENT NUMBER OF PLAYERS
 //  Volume titles cannot excede 32 characters.
 
 definevolumename 0 THE SWAMPS
-// ÅéãéíÄ
+// –ë–û–õ–û–¢–ê
 definevolumename 1 HELL GROUNDS
-// áÖåãà ÄÑÄ
+// –ó–ï–ú–õ–ò –ê–î–ê
 definevolumename 2 THE LOST CITY
-// èéíÖêüççõâ ÉéêéÜ
+// –ü–û–¢–ï–†–Ø–ù–ù–´–ô –ì–û–†–û–ñ
 
 
 //  Skill titles cannot excede 32 characters.
 
 defineskillname 0 VOLUNTEER
-// ÑéÅêéÇéãÖñ
+// –î–û–ë–†–û–í–û–õ–ï–¶
 defineskillname 1 COMBATANT
-// ÅéÖñ
+// –ë–û–ï–¶
 defineskillname 2 SKILLED
-// åÄëíÖê
+// –ú–ê–°–¢–ï–†
 defineskillname 3 SUPERMAN
-// ëìèÖêåÖç
+// –°–£–ü–ï–†–ú–ï–ù
 
-//       ùèàáéÑõ  ( ç†ß¢†≠®• ™†‡‚Î ¢Î¢Æ§®‚·Ô ≠† Ì™‡†≠ ™‡†·≠Î¨ Ë‡®‰‚Æ¨ )
+//       –≠–ü–ò–ó–û–î–´  ( –ù–∞–∑–≤–∞–Ω–∏–µ –∫–∞—Ä—Ç—ã –≤—ã–≤–æ–¥–∏—Ç—Å—è –Ω–∞ —ç–∫—Ä–∞–Ω –∫—Ä–∞—Å–Ω—ã–º —à—Ä–∏—Ñ—Ç–æ–º )
 
 definelevelname 0 0 OFFICE.map 00:00 00:00 WELCOME
-// ÑéÅêé èéÜÄãéÇÄíú
+// –î–û–ë–†–û –ü–û–ñ–ê–õ–û–í–ê–¢–¨
 definelevelname 0 1 LEV10.map 10:16 40:00 REMOTE SETTLEMENT
-// ÑÄãúçàâ èéCÖãéä
+// –î–ê–õ–¨–ù–ò–ô –ü–ûC–ï–õ–û–ö
 definelevelname 0 2 LEV11.map 28:10 50:00 GUARDIANS OF THE SWAMP GODS
-// CíêÄÜà Åéãéíçõï ÅéÉéÇ
+// C–¢–†–ê–ñ–ò –ë–û–õ–û–¢–ù–´–• –ë–û–ì–û–í
 
 definelevelname 1 0 LEV20.map 21:08 45:00 RED DEMONS
-// äêÄCçõÖ ÅÖCõ
+// –ö–†–êC–ù–´–ï –ë–ïC–´
 definelevelname 1 1 LEV21.map 39:12 59:00 HELLISH GRINDER
-// ÄÑCäÄü åÖãúçàñÄ
+// –ê–îC–ö–ê–Ø –ú–ï–õ–¨–ù–ò–¶–ê
 
 definelevelname 2 0 LEV30.map 08:37 40:00 THE FACELESS BROTHERS
-// ÅÖáãàäàÖ ÅêÄíúü
+// –ë–ï–ó–õ–ò–ö–ò–ï –ë–†–ê–¢–¨–Ø
 definelevelname 2 1 LEV31.map 25:52 55:00 NIGHT OF A THOUSAND HORRORS
-// çéóú íõCüóà ìÜÄCéÇ
+// –ù–û–ß–¨ –¢–´C–Ø–ß–ò –£–ñ–êC–û–í
 
-//        å„ßÎ™†
+//        –ú—É–∑—ã–∫–∞
 
-music 0 mid/GRABBAG.MID mid/VICTORIA.MID                   //   ã®™¢®§†‚Æ‡ , Ç®™‚Æ‡®Ô
+music 0 mid/GRABBAG.MID mid/VICTORIA.MID                   //   –õ–∏–∫–≤–∏–¥–∞—Ç–æ—Ä , –í–∏–∫—Ç–æ—Ä–∏—è
 
-music 1 mid/office.mid  mid/frogsong.mid mid/guards.mid        //     é‰‰®· , ãÔ£„Ë†ÁÏÔ Ø•·≠Ô , ë‚‡†¶® °Æ´Æ‚
+music 1 mid/office.mid  mid/frogsong.mid mid/guards.mid        //     –û—Ñ—Ñ–∏—Å , –õ—è–≥—É—à–∞—á—å—è –ø–µ—Å–Ω—è , –°—Ç—Ä–∞–∂–∏ –±–æ–ª–æ—Ç
 
-music 2 mid/fireland.mid mid/himera.mid                            //   é£≠•≠≠†Ô ß•¨´Ô , ï®¨•‡†
+music 2 mid/fireland.mid mid/himera.mid                            //   –û–≥–Ω–µ–Ω–Ω–∞—è –∑–µ–º–ª—è , –•–∏–º–µ—Ä–∞
 
-music 3 mid/goblin.mid mid/town.mid                                  //   ÉÆ°´®≠ , çÆÁÏ ‚Î·ÔÁ® „¶†·Æ¢
+music 3 mid/goblin.mid mid/town.mid                                  //   –ì–æ–±–ª–∏–Ω , –ù–æ—á—å —Ç—ã—Å—è—á–∏ —É–∂–∞—Å–æ–≤
 
-definesound BONUSMUSIC        voc/bonus.voc    0   0   255  1  0         //    Ç®™‚Æ‡®Ô ( ¨•¶§„ „‡Æ¢≠Ô¨® ( 249 ¢ Defin )
+definesound BONUSMUSIC        voc/bonus.voc    0   0   255  1  0         //    –í–∏–∫—Ç–æ—Ä–∏—è ( –º–µ–∂–¥—É —É—Ä–æ–≤–Ω—è–º–∏ ( 249 –≤ Defin )
 
 
-//      áÇìäà ëàëíÖåçõÖ  ( á†£‡„ß™†  „‡Æ¢≠•©  )
+//      –ó–í–£–ö–ò –°–ò–°–¢–ï–ú–ù–´–ï  ( –ó–∞–≥—Ä—É–∑–∫–∞  —É—Ä–æ–≤–Ω–µ–π  )
 
-definesound SUCCESS                   voc/irina02.voc         0      0    255   4   0          //     Ü•´†•¨ „·Ø•Â†
-definesound SUCCESS2                 voc/irina02.voc         0      0    255   4   0          //     Ü•´†•¨ „·Ø•Â†
-definesound AGENT02                    voc/irina02.voc         0      0    255   4   0          //     Ü•´†•¨ „·Ø•Â† ( 197 )
-definesound LEVELSND                         voc/level.voc         0      0    255   0   0          //      é ™•©  ( 199 )
-definesound SUCCESS3                 voc/irina02.voc          0      0   255    4   0          //     Ü•´†•¨ „·Ø•Â†  ( 1 „‡Æ¢•≠Ï )
-definesound SUPERLEVEL               voc/amba.voc          0      0    255   4   0          //      4 „‡Æ¢≠Ï  - Ä¨°†
+definesound SUCCESS                   voc/irina02.voc         0      0    255   4   0          //     –ñ–µ–ª–∞–µ–º —É—Å–ø–µ—Ö–∞
+definesound SUCCESS2                 voc/irina02.voc         0      0    255   4   0          //     –ñ–µ–ª–∞–µ–º —É—Å–ø–µ—Ö–∞
+definesound AGENT02                    voc/irina02.voc         0      0    255   4   0          //     –ñ–µ–ª–∞–µ–º —É—Å–ø–µ—Ö–∞ ( 197 )
+definesound LEVELSND                         voc/level.voc         0      0    255   0   0          //      –û –∫–µ–π  ( 199 )
+definesound SUCCESS3                 voc/irina02.voc          0      0   255    4   0          //     –ñ–µ–ª–∞–µ–º —É—Å–ø–µ—Ö–∞  ( 1 —É—Ä–æ–≤–µ–Ω—å )
+definesound SUPERLEVEL               voc/amba.voc          0      0    255   4   0          //      4 —É—Ä–æ–≤–Ω—å  - –ê–º–±–∞
 
-//      åÖçû
+//      –ú–ï–ù–Æ
 
-definesound EXITMENUSOUND              voc/kickhit.voc      0     0    255     4    0      //     ÇÎÂÆ§ ®ß ¨•≠Ó
-definesound INTO_MENU                       voc/bulithit.voc      0     0    255     4    0      //     ÇÎ°Æ‡ ¢ ¨•≠Ó
-definesound ARIA                                   voc/teleport.voc      0     0    255     4    0      //    ( ™Æ≠•Ê „‡Æ¢≠Ô )
-definesound END_OF_LEVEL_WARN    voc/monitor.voc      0     0    255     4    0      //      äÆ≠•Ê „‡Æ¢≠Ô ( Ø‡•§Æ·‚•‡•¶•≠®• )
+definesound EXITMENUSOUND              voc/kickhit.voc      0     0    255     4    0      //     –í—ã—Ö–æ–¥ –∏–∑ –º–µ–Ω—é
+definesound INTO_MENU                       voc/bulithit.voc      0     0    255     4    0      //     –í—ã–±–æ—Ä –≤ –º–µ–Ω—é
+definesound ARIA                                   voc/teleport.voc      0     0    255     4    0      //    ( –∫–æ–Ω–µ—Ü —É—Ä–æ–≤–Ω—è )
+definesound END_OF_LEVEL_WARN    voc/monitor.voc      0     0    255     4    0      //      –ö–æ–Ω–µ—Ü —É—Ä–æ–≤–Ω—è ( –ø—Ä–µ–¥–æ—Å—Ç–µ—Ä–µ–∂–µ–Ω–∏–µ )
 
-//   ÄÉÖçíëíÇé
+//   –ê–ì–ï–ù–¢–°–¢–í–û
 
-definesound TELEPORTER                   voc/teleport.voc       0   0   3   0   0                 //     í•´•ØÆ‡‚†Ê®Ô ( Ä£•≠·‚¢Æ )
-definesound NITEVISION_ONOFF         voc/camera.voc       0   0    2   0   0                 //     ä†¨•‡† ( ‰Æ‚Æ )
-definesound TUNELL                                voc/tunel.voc        0   0   2   0   0                 //     í„≠•´Ï ¢‡•¨•≠® Æ‚™‡Î¢†•‚·Ô
-definesound MONITOR_ACTIVE           voc/monitor.voc         0   0   2   0   0                 //     Ä™‚®¢†Ê®Ô ¨Æ≠®‚Æ‡†
-definesound OFFICE1                          voc/office_d.voc         0   0   3   0   0                 //     Ñ¢•‡Ï Æ‰®·† ( §¢®¶•≠®• )
-definesound OFFICE2                          voc/office_s.voc         0   0   3   0   0                 //     Ñ¢•‡Ï Æ‰®·† ( ·‚ÆØ )
-definesound GARDIN                             voc/gardin.voc         0   0    2   0   0                 //     É†‡§®≠†  ( 222 )
+definesound TELEPORTER                   voc/teleport.voc       0   0   3   0   0                 //     –¢–µ–ª–µ–ø–æ—Ä—Ç–∞—Ü–∏—è ( –ê–≥–µ–Ω—Å—Ç–≤–æ )
+definesound NITEVISION_ONOFF         voc/camera.voc       0   0    2   0   0                 //     –ö–∞–º–µ—Ä–∞ ( —Ñ–æ—Ç–æ )
+definesound TUNELL                                voc/tunel.voc        0   0   2   0   0                 //     –¢—É–Ω–µ–ª—å –≤—Ä–µ–º–µ–Ω–∏ –æ—Ç–∫—Ä—ã–≤–∞–µ—Ç—Å—è
+definesound MONITOR_ACTIVE           voc/monitor.voc         0   0   2   0   0                 //     –ê–∫—Ç–∏–≤–∞—Ü–∏—è –º–æ–Ω–∏—Ç–æ—Ä–∞
+definesound OFFICE1                          voc/office_d.voc         0   0   3   0   0                 //     –î–≤–µ—Ä—å –æ—Ñ–∏—Å–∞ ( –¥–≤–∏–∂–µ–Ω–∏–µ )
+definesound OFFICE2                          voc/office_s.voc         0   0   3   0   0                 //     –î–≤–µ—Ä—å –æ—Ñ–∏—Å–∞ ( —Å—Ç–æ–ø )
+definesound GARDIN                             voc/gardin.voc         0   0    2   0   0                 //     –ì–∞—Ä–¥–∏–Ω–∞  ( 222 )
 
-definesound OFNOISE                                  voc/noise.voc         0   0    1   2   0           //     é‰®·≠Î© Ë„¨  ( 315 )
-definesound MODERN                                voc/modern.voc        0   0   1   2    0           //     í•´•‰Æ≠ ( Æ‰®·≠Î© )
-definesound CASH                                           voc/cash.voc       0   0    1   2    0           //     ä†··Æ¢Î© †ØØ†‡†‚ ( Æ‰®· )
-definesound VIRTUAL                                  voc/virtual2.voc       0   0    1   2    0          //     Å•·™Æ≠•Á≠Î© ØÆ´•‚
-definesound T_FAN                                         voc/t_fan.voc        0   0    1   2    0          //     Ç•≠‚®´Ô‚Æ‡   ( 262 )
-definesound OPERATORS4                         voc/operat4.voc        0   0    1   2    0          //     ò„¨•´™† ÆØ•‡†‚Æ‡·™†Ô  ( 259 )
-definesound OPERATORS                             voc/operat.voc        0   0    1   2    0          //     Å®™®-¶¨Ô™® ™Æ¨ØÏÓ‚•‡≠Î•  ( 261 )
-definesound OPERATORS2                          voc/operat2.voc       0   0    1   2    0          //     É„§•´™† ™Æ¨ØÏÓ‚•‡≠†Ô        ( 286 )
-definesound OPERATORS3                          voc/operat3.voc       0   0    1   2    0          //     ÅÆ´‚†´™† ÆØ•‡†‚Æ‡·™†Ô       ( 287 )
-definesound AUTOBUS                                      voc/auto.voc       0   0    2   0    0          //     Ä¢‚Æ°„·
-definesound PREZIDENT                                 voc/prezz.voc      0   0    3   0    0          //      Ø‡•ß®§•≠‚            ( 272 )
+definesound OFNOISE                                  voc/noise.voc         0   0    1   2   0           //     –û—Ñ–∏—Å–Ω—ã–π —à—É–º  ( 315 )
+definesound MODERN                                voc/modern.voc        0   0   1   2    0           //     –¢–µ–ª–µ—Ñ–æ–Ω ( –æ—Ñ–∏—Å–Ω—ã–π )
+definesound CASH                                           voc/cash.voc       0   0    1   2    0           //     –ö–∞—Å—Å–æ–≤—ã–π –∞–ø–ø–∞—Ä–∞—Ç ( –æ—Ñ–∏—Å )
+definesound VIRTUAL                                  voc/virtual2.voc       0   0    1   2    0          //     –ë–µ—Å–∫–æ–Ω–µ—á–Ω—ã–π –ø–æ–ª–µ—Ç
+definesound T_FAN                                         voc/t_fan.voc        0   0    1   2    0          //     –í–µ–Ω—Ç–∏–ª—è—Ç–æ—Ä   ( 262 )
+definesound OPERATORS4                         voc/operat4.voc        0   0    1   2    0          //     –®—É–º–µ–ª–∫–∞ –æ–ø–µ—Ä–∞—Ç–æ—Ä—Å–∫–∞—è  ( 259 )
+definesound OPERATORS                             voc/operat.voc        0   0    1   2    0          //     –ë–∏–∫–∏-–∂–º—è–∫–∏ –∫–æ–º–ø—å—é—Ç–µ—Ä–Ω—ã–µ  ( 261 )
+definesound OPERATORS2                          voc/operat2.voc       0   0    1   2    0          //     –ì—É–¥–µ–ª–∫–∞ –∫–æ–º–ø—å—é—Ç–µ—Ä–Ω–∞—è        ( 286 )
+definesound OPERATORS3                          voc/operat3.voc       0   0    1   2    0          //     –ë–æ–ª—Ç–∞–ª–∫–∞ –æ–ø–µ—Ä–∞—Ç–æ—Ä—Å–∫–∞—è       ( 287 )
+definesound AUTOBUS                                      voc/auto.voc       0   0    2   0    0          //     –ê–≤—Ç–æ–±—É—Å
+definesound PREZIDENT                                 voc/prezz.voc      0   0    3   0    0          //      –ø—Ä–µ–∑–∏–¥–µ–Ω—Ç            ( 272 )
 
 //  ------------------------------------------------------------
-//     ÄäíÖêõ
+//     –ê–ö–¢–ï–†–´
 //  ------------------------------------------------------------
 
-//       ÅÖáãàäàâ ÅêÄí
+//       –ë–ï–ó–õ–ò–ö–ò–ô –ë–†–ê–¢
 
-definesound MYSTIFIE             voc/mystifie.voc            0     0       2  0    0                 //   å®·‚®‰®™†Ê®Ô ( Ø‡® ®·Á•ß≠Æ¢•≠®® )
-definesound PRED_ROAM          voc/ha-ha.voc          -200   400   3   0   0                  //  ë¨•Â
-definesound PRED_ROAM2        voc/go_to.voc          -200   400   3   0   0                  //  à§„!
-definesound AM_HERE          voc/am_here.voc          -200   400   3   0   0                  //  ü ß§•·Ï...
-definesound PRED_RECOG           voc/man.voc         -200   400   3   0   0                  //  Ä™‚®¢†Ê®Ô ( Á•´Æ¢•™ )
-definesound PRED_ATTACK       voc/lit_mat.voc          256  256    3   0   7680            //  Ä‚†™„•‚
-definesound PRED_PAIN         voc/shbrokn.voc           -200 500    3   0   0                  //  èÆØ†§†≠®• ( ‚‡ÔØ™† ‡¢•‚·Ô )
-definesound PRED_DYING          voc/falling.voc            0   400     3   0   0                  //  ì¨®‡†•‚
-definesound LIZARD_BEG        voc/chokn12.voc            0   300    3   0   0                  //  è‡•§¢Æß‡Æ¶§•≠®•
-//    definesound PRED_ROAM3      voc/vooo.voc             0   300    3   0   0                  //  á†¢Î¢†≠®•  ( ≠• ß†§•©·‚¢Æ¢†≠ )
+definesound MYSTIFIE             voc/mystifie.voc            0     0       2  0    0                 //   –ú–∏—Å—Ç–∏—Ñ–∏–∫–∞—Ü–∏—è ( –ø—Ä–∏ –∏—Å—á–µ–∑–Ω–æ–≤–µ–Ω–∏–∏ )
+definesound PRED_ROAM          voc/ha-ha.voc          -200   400   3   0   0                  //  –°–º–µ—Ö
+definesound PRED_ROAM2        voc/go_to.voc          -200   400   3   0   0                  //  –ò–¥—É!
+definesound AM_HERE          voc/am_here.voc          -200   400   3   0   0                  //  –Ø –∑–¥–µ—Å—å...
+definesound PRED_RECOG           voc/man.voc         -200   400   3   0   0                  //  –ê–∫—Ç–∏–≤–∞—Ü–∏—è ( —á–µ–ª–æ–≤–µ–∫ )
+definesound PRED_ATTACK       voc/lit_mat.voc          256  256    3   0   7680            //  –ê—Ç–∞–∫—É–µ—Ç
+definesound PRED_PAIN         voc/shbrokn.voc           -200 500    3   0   0                  //  –ü–æ–ø–∞–¥–∞–Ω–∏–µ ( —Ç—Ä—è–ø–∫–∞ —Ä–≤–µ—Ç—Å—è )
+definesound PRED_DYING          voc/falling.voc            0   400     3   0   0                  //  –£–º–∏—Ä–∞–µ—Ç
+definesound LIZARD_BEG        voc/chokn12.voc            0   300    3   0   0                  //  –ü—Ä–µ–¥–≤–æ–∑—Ä–æ–∂–¥–µ–Ω–∏–µ
+//    definesound PRED_ROAM3      voc/vooo.voc             0   300    3   0   0                  //  –ó–∞–≤—ã–≤–∞–Ω–∏–µ  ( –Ω–µ –∑–∞–¥–µ–π—Å—Ç–≤–æ–≤–∞–Ω )
 
-//      ÅÖë
+//      –ë–ï–°
 
-definesound CAPT_ROAM       voc/bes_act.voc          0      0       3   0   0             //   Å•·Æ¢·™®© ·¨•Â
-definesound CAPT_ROAM2         voc/meee.voc          0      0       3   0   0             //   å••• ...
-definesound CAPT_RECOG        voc/bes01.voc        -400  200    3   0   0             //   Ä™‚®¢†Ê®Ô  ( ï‡„-† ®† )
-definesound CAPT_ATTACK    voc/b_attack.voc        -200  200    3   0   0             //   Ä‚†™„•‚
-definesound CAPT_PAIN             voc/meee.voc          0     100    3   0   0             //   èÆØ†§†≠®• ( é•© )  oey.voc
-definesound CAPT_DYING         voc/bes02.voc        -200  100    3   0   0             //   ì¨®‡†•‚   ( ì††† !!! )
-definesound LIZARD_SPIT       voc/navaha.voc          0       0      3   0   0             //   ä®§†•‚·Ô ( à„Â„ !!! )
-definesound BHAHA2                   voc/bha2.voc          0   200     3    0   0             //   Å•· Ø‡®™†´Î¢†•‚·Ô
-definesound HOOFS                    voc/hoofs.voc          0   200     3    0   0             //   ™ÆØÎ‚†
+definesound CAPT_ROAM       voc/bes_act.voc          0      0       3   0   0             //   –ë–µ—Å–æ–≤—Å–∫–∏–π —Å–º–µ—Ö
+definesound CAPT_ROAM2         voc/meee.voc          0      0       3   0   0             //   –ú–µ–µ–µ ...
+definesound CAPT_RECOG        voc/bes01.voc        -400  200    3   0   0             //   –ê–∫—Ç–∏–≤–∞—Ü–∏—è  ( –•—Ä—É-–∞ –∏–∞ )
+definesound CAPT_ATTACK    voc/b_attack.voc        -200  200    3   0   0             //   –ê—Ç–∞–∫—É–µ—Ç
+definesound CAPT_PAIN             voc/meee.voc          0     100    3   0   0             //   –ü–æ–ø–∞–¥–∞–Ω–∏–µ ( –û–µ–π )  oey.voc
+definesound CAPT_DYING         voc/bes02.voc        -200  100    3   0   0             //   –£–º–∏—Ä–∞–µ—Ç   ( –£–∞–∞–∞ !!! )
+definesound LIZARD_SPIT       voc/navaha.voc          0       0      3   0   0             //   –ö–∏–¥–∞–µ—Ç—Å—è ( –ò—É—Ö—É !!! )
+definesound BHAHA2                   voc/bha2.voc          0   200     3    0   0             //   –ë–µ—Å –ø—Ä–∏–∫–∞–ª—ã–≤–∞–µ—Ç—Å—è
+definesound HOOFS                    voc/hoofs.voc          0   200     3    0   0             //   –∫–æ–ø—ã—Ç–∞
 
-//      ëäÖãÖí
+//      –°–ö–ï–õ–ï–¢
 
-definesound SKEL_ROAM      voc/bones05.voc                     -200 400   3   0   0      //   äÆ·‚®
-definesound SKEL_ROAM2    voc/bones02.voc                     -200 400   3   0   0      //   äÆ·‚®
-definesound SKEL_ROAM3    voc/bones01.voc                     -200 400   3   0   0      //   äÆ·‚®
-definesound SKEL_RECOG     voc/bonplus.voc                     -200 600   3   0   0      //   Ä™‚®¢†Ê®Ô ( ™Æ·‚® + ·™‡®Ø )
-definesound SKEL_ATTACK          voc/whip.voc                     -256  256  4   0   0      //   Ä‚†™†
-definesound SKEL_PAIN        voc/bones03.voc                      100 800   3   0   0      //   èÆØ†§†≠®•
-definesound SKEL_DYING    voc/crashcan.voc                     -800 100   3   0   0      //   è†§†•‚ ·´Æ¨†≠≠Î©
-definesound BONES03        voc/bon_dop1.voc                          0  200   3   0   0      //   äÆ·‚® §ÆØÆ´≠®‚•´Ï≠Î• ( Ø•‡•ß†‡Ô§ )
+definesound SKEL_ROAM      voc/bones05.voc                     -200 400   3   0   0      //   –ö–æ—Å—Ç–∏
+definesound SKEL_ROAM2    voc/bones02.voc                     -200 400   3   0   0      //   –ö–æ—Å—Ç–∏
+definesound SKEL_ROAM3    voc/bones01.voc                     -200 400   3   0   0      //   –ö–æ—Å—Ç–∏
+definesound SKEL_RECOG     voc/bonplus.voc                     -200 600   3   0   0      //   –ê–∫—Ç–∏–≤–∞—Ü–∏—è ( –∫–æ—Å—Ç–∏ + —Å–∫—Ä–∏–ø )
+definesound SKEL_ATTACK          voc/whip.voc                     -256  256  4   0   0      //   –ê—Ç–∞–∫–∞
+definesound SKEL_PAIN        voc/bones03.voc                      100 800   3   0   0      //   –ü–æ–ø–∞–¥–∞–Ω–∏–µ
+definesound SKEL_DYING    voc/crashcan.voc                     -800 100   3   0   0      //   –ü–∞–¥–∞–µ—Ç —Å–ª–æ–º–∞–Ω–Ω—ã–π
+definesound BONES03        voc/bon_dop1.voc                          0  200   3   0   0      //   –ö–æ—Å—Ç–∏ –¥–æ–ø–æ–ª–Ω–∏—Ç–µ–ª—å–Ω—ã–µ ( –ø–µ—Ä–µ–∑–∞—Ä—è–¥ )
 
 
-//    åÄêòêìíçàä
+//    –ú–ê–†–®–†–£–¢–ù–ò–ö
 
-definesound RECO_ROAM        voc/reflying.voc           -400   400   3   0   0                 //    ã•‚†•‚
-definesound RECO_RECOG        voc/recact.voc                     0   0   3   0   0                 //    Ä™‚®¢†Ê®Ô
-definesound RECO_ATTACK       voc/da_att.voc          -200  200  3  0   7680                //    Ä‚†™†
-definesound RECO_PAIN         voc/shbrokn.voc            -200   500   3   0   0                 //    èÆØ†§†≠®• ( ‚‡ÔØ™† ‡¢•‚·Ô )
+definesound RECO_ROAM        voc/reflying.voc           -400   400   3   0   0                 //    –õ–µ—Ç–∞–µ—Ç
+definesound RECO_RECOG        voc/recact.voc                     0   0   3   0   0                 //    –ê–∫—Ç–∏–≤–∞—Ü–∏—è
+definesound RECO_ATTACK       voc/da_att.voc          -200  200  3  0   7680                //    –ê—Ç–∞–∫–∞
+definesound RECO_PAIN         voc/shbrokn.voc            -200   500   3   0   0                 //    –ü–æ–ø–∞–¥–∞–Ω–∏–µ ( —Ç—Ä—è–ø–∫–∞ —Ä–≤–µ—Ç—Å—è )
 
-//   éÉçÖççõâ òÄê
+//   –û–ì–ù–ï–ù–ù–´–ô –®–ê–†
 
-definesound LBALL_ROAM                voc/l_fly.voc             0   0   3   0   0         //  á†Ø„£®¢†•‚
-definesound LBALL_RECOG          voc/l_activ.voc             0   0   3   0   0         //   Ä™‚®¢†Ê®Ô
-definesound LBALL_ATTACK1          voc/l_fly2.voc            0   0   3   0   0         //   è‡•§ †‚†™†
-definesound LBALL_ATTACK2       voc/l_attack.voc            0   0   3   0   0         //   ÇÎ°‡Æ· Ì≠•‡£®®
-definesound LBALL_PAIN                 voc/l_pss.voc            0   0   3   0   0         //   Ç·ØÎË™† Ø‡® ØÆØ†§†≠®®
-definesound LBALL_DYING       voc/ENGHUM.voc             0   0   3   0   0        //   ÑÆ¢•·Æ™  ™ ¢Î°‡Æ·„ Ì≠•‡£®®
-definesound LBALL_JETSND         voc/l_shhh.voc    1300 1300 0   0   0        //   ã•‚®‚
+definesound LBALL_ROAM                voc/l_fly.voc             0   0   3   0   0         //  –ó–∞–ø—É–≥–∏–≤–∞–µ—Ç
+definesound LBALL_RECOG          voc/l_activ.voc             0   0   3   0   0         //   –ê–∫—Ç–∏–≤–∞—Ü–∏—è
+definesound LBALL_ATTACK1          voc/l_fly2.voc            0   0   3   0   0         //   –ü—Ä–µ–¥ –∞—Ç–∞–∫–∞
+definesound LBALL_ATTACK2       voc/l_attack.voc            0   0   3   0   0         //   –í—ã–±—Ä–æ—Å —ç–Ω–µ—Ä–≥–∏–∏
+definesound LBALL_PAIN                 voc/l_pss.voc            0   0   3   0   0         //   –í—Å–ø—ã—à–∫–∞ –ø—Ä–∏ –ø–æ–ø–∞–¥–∞–Ω–∏–∏
+definesound LBALL_DYING       voc/ENGHUM.voc             0   0   3   0   0        //   –î–æ–≤–µ—Å–æ–∫  –∫ –≤—ã–±—Ä–æ—Å—É —ç–Ω–µ—Ä–≥–∏–∏
+definesound LBALL_JETSND         voc/l_shhh.voc    1300 1300 0   0   0        //   –õ–µ—Ç–∏—Ç
 
-//   ãÖíìóàâ åõòú
+//   –õ–ï–¢–£–ß–ò–ô –ú–´–®–¨
 
-definesound FLYBAT                          voc/batfly.voc            0   0   3   0   0               //      ò•´•·‚ ™Æ¶†≠≠ÎÂ ™‡Î´Ï•¢
-definesound BATSOUND              voc/batwamp.voc            0   0   3   0   0               //      ã•‚„Á†Ô ¨ÎË† Ø®È®‚
+definesound FLYBAT                          voc/batfly.voc            0   0   3   0   0               //      –®–µ–ª–µ—Å—Ç –∫–æ–∂–∞–Ω–Ω—ã—Ö –∫—Ä—ã–ª—å–µ–≤
+definesound BATSOUND              voc/batwamp.voc            0   0   3   0   0               //      –õ–µ—Ç—É—á–∞—è –º—ã—à–∞ –ø–∏—â–∏—Ç
 
-//     ÉéãéÇéÉêõáú
+//     –ì–û–õ–û–í–û–ì–†–´–ó–¨
 
-definesound SLIM_HATCH    voc/slhtch01.voc             0   0      3   0   0             //    ÇÎ´•ß†•‚
-definesound SLIM_ROAM     voc/sliroa02.voc              0  200   3   0   0             //    Ñ¢®¶•≠®•
-definesound SLIM_RECOG         voc/meat.voc            100  600   3   0   0          //    åÔ·Æ !
-definesound SLIM_ATTACK      voc/slimat.voc              0   0      3   0   0             //    É‡Îß•‚
-definesound SLIM_DYING     voc/slidie03.voc              0   0      3   0   0            //    ê†ß´•‚†•‚·Ô
+definesound SLIM_HATCH    voc/slhtch01.voc             0   0      3   0   0             //    –í—ã–ª–µ–∑–∞–µ—Ç
+definesound SLIM_ROAM     voc/sliroa02.voc              0  200   3   0   0             //    –î–≤–∏–∂–µ–Ω–∏–µ
+definesound SLIM_RECOG         voc/meat.voc            100  600   3   0   0          //    –ú—è—Å–æ !
+definesound SLIM_ATTACK      voc/slimat.voc              0   0      3   0   0             //    –ì—Ä—ã–∑–µ—Ç
+definesound SLIM_DYING     voc/slidie03.voc              0   0      3   0   0            //    –†–∞–∑–ª–µ—Ç–∞–µ—Ç—Å—è
 
-//     åÖêäìêàåÄç
+//     –ú–ï–†–ö–£–†–ò–ú–ê–ù
 
-definesound MEMA_ROAM                 voc/amba.voc                0   0   3   0   0              //      ë•‡§®‚·Ô Æ§≠†™Æ ( Ä¨°† )
-definesound MEMA_RECOG          voc/meractiv.voc                0   0   3   0   0              //      Ä™‚®¢†Ê®Ô
-definesound MEMA_ATTACK             voc/meratt.voc           -100   0   3   0   0              //      á†Ø„·™†•‚ °Æ¨°„  ( ãÆ¢® )
-definesound MEMA_PAIN               voc/merpain.voc                0   0   3   0   0              //      ó¢Ô™ §´Ô Æ‚´•‚†ÓÈ•£Æ ™„·ÆÁ™†
-definesound MEMA_DYING          voc/merdead.voc                 0   0   3   0   0              //      í†•‚ ® ‡†·‚•™†•‚·Ô
-definesound MER_BOMBFLY     voc/merbomb.voc                 0   0   3   0   0              //       ã•‚†ÓÈ†Ô °Æ¨°† å•‡™„‡®¨†≠†
-definesound WHIPYOURASS       voc/WHIPYU01.VOC           0   0   255 4   0             //       ü¢´•≠®• ¨•‡™„‡®¨†≠†
+definesound MEMA_ROAM                 voc/amba.voc                0   0   3   0   0              //      –°–µ—Ä–¥–∏—Ç—Å—è –æ–¥–Ω–∞–∫–æ ( –ê–º–±–∞ )
+definesound MEMA_RECOG          voc/meractiv.voc                0   0   3   0   0              //      –ê–∫—Ç–∏–≤–∞—Ü–∏—è
+definesound MEMA_ATTACK             voc/meratt.voc           -100   0   3   0   0              //      –ó–∞–ø—É—Å–∫–∞–µ—Ç –±–æ–º–±—É  ( –õ–æ–≤–∏ )
+definesound MEMA_PAIN               voc/merpain.voc                0   0   3   0   0              //      –ß–≤—è–∫ –¥–ª—è –æ—Ç–ª–µ—Ç–∞—é—â–µ–≥–æ –∫—É—Å–æ—á–∫–∞
+definesound MEMA_DYING          voc/merdead.voc                 0   0   3   0   0              //      –¢–∞–µ—Ç –∏ —Ä–∞—Å—Ç–µ–∫–∞–µ—Ç—Å—è
+definesound MER_BOMBFLY     voc/merbomb.voc                 0   0   3   0   0              //       –õ–µ—Ç–∞—é—â–∞—è –±–æ–º–±–∞ –ú–µ—Ä–∫—É—Ä–∏–º–∞–Ω–∞
+definesound WHIPYOURASS       voc/WHIPYU01.VOC           0   0   255 4   0             //       –Ø–≤–ª–µ–Ω–∏–µ –º–µ—Ä–∫—É—Ä–∏–º–∞–Ω–∞
 
-//    èÖëéóçàä
+//    –ü–ï–°–û–ß–ù–ò–ö
 
-definesound SAMA_ROAM        voc/sandact.voc              0   0   3   0   0          //     ç†·‚Æ‡†¶®¢†ÓÈ®© ß¢„™
-definesound SAMA_RECOG      voc/skaven.voc           0   200   3   0   0          //     è„·‚®´ Ø†‡ ( †™‚®¢†Ê®Ô )
-definesound SAMA_ATTACK1   voc/hitman01.voc             0   0   3   0   0         //     ä‡®™ ‚ÆØ‚„•¨Æ£Æ
-definesound SAMA_ATTACK2  voc/sandman.voc              0   0   3   0   0         //     ·¨••‚·Ô Ø‡® ‚ÆØ‚†≠®®
-definesound SAMA_PAIN        voc/sandman.voc           200   0   3   0   0         //     ·¨••‚·Ô ( èÆ ‰®£„ ¨≠• ¢†Ë® Ø„´Ï™® )
-definesound SAMA_DYING       voc/putsand.voc               0   0   3   0   0          //    ‡†··ÎØ†ÓÈ®©·Ô Ø•·Æ™
-definesound SAMA_WALK      voc/bogmanw.voc         -400   0   3   0   0          //      ïÆ§Ï°†
+definesound SAMA_ROAM        voc/sandact.voc              0   0   3   0   0          //     –ù–∞—Å—Ç–æ—Ä–∞–∂–∏–≤–∞—é—â–∏–π –∑–≤—É–∫
+definesound SAMA_RECOG      voc/skaven.voc           0   200   3   0   0          //     –ü—É—Å—Ç–∏–ª –ø–∞—Ä ( –∞–∫—Ç–∏–≤–∞—Ü–∏—è )
+definesound SAMA_ATTACK1   voc/hitman01.voc             0   0   3   0   0         //     –ö—Ä–∏–∫ —Ç–æ–ø—Ç—É–µ–º–æ–≥–æ
+definesound SAMA_ATTACK2  voc/sandman.voc              0   0   3   0   0         //     —Å–º–µ–µ—Ç—Å—è –ø—Ä–∏ —Ç–æ–ø—Ç–∞–Ω–∏–∏
+definesound SAMA_PAIN        voc/sandman.voc           200   0   3   0   0         //     —Å–º–µ–µ—Ç—Å—è ( –ü–æ —Ñ–∏–≥—É –º–Ω–µ –≤–∞—à–∏ –ø—É–ª—å–∫–∏ )
+definesound SAMA_DYING       voc/putsand.voc               0   0   3   0   0          //    —Ä–∞—Å—Å—ã–ø–∞—é—â–∏–π—Å—è –ø–µ—Å–æ–∫
+definesound SAMA_WALK      voc/bogmanw.voc         -400   0   3   0   0          //      –•–æ–¥—å–±–∞
 
-definesound RIPHEADNECK        voc/empty.voc              0   0    0    0  0         //      Ø„·‚ÎË™†
+definesound RIPHEADNECK        voc/empty.voc              0   0    0    0  0         //      –ø—É—Å—Ç—ã—à–∫–∞
 
-//   ñàîÖêìë
+//   –¶–ò–§–ï–†–£–°
 
-definesound WIZ1_ROAM                voc/wiz01.voc                  0   0   3   0   0         //    ñ®‰•‡„· †´Ï‚•‡≠†‰Æ´®„·
-definesound WIZ1_ATTACK2          voc/wiz_att.voc                  0   0   3   0   0         //    ç•™‡Æ· ‚‡†≠ß®‚„·
+definesound WIZ1_ROAM                voc/wiz01.voc                  0   0   3   0   0         //    –¶–∏—Ñ–µ—Ä—É—Å –∞–ª—å—Ç–µ—Ä–Ω–∞—Ñ–æ–ª–∏—É—Å
+definesound WIZ1_ATTACK2          voc/wiz_att.voc                  0   0   3   0   0         //    –ù–µ–∫—Ä–æ—Å —Ç—Ä–∞–Ω–∑–∏—Ç—É—Å
 
-//       èÄãÄó
+//       –ü–ê–õ–ê–ß
 
-definesound AXEINFLY             voc/axeinfly.voc       100    100   1   2   0               //      íÆØÆ‡ ¢ ØÆ´•‚•
-definesound AXEINBODY        voc/axetouch.voc         0      100   3   0   0               //      èÆØ†§†≠®• ‚ÆØÆ‡† ¢ £•‡ÆÔ
-definesound AXEINWALL           voc/axewall.voc      100    100    3   0   0               //      èÆØ†§†≠®• ‚ÆØÆ‡† ¢ ·‚•≠„
-definesound HMANSONG         voc/hmanrec.voc         0       0      3   0   0               //      Ø•·≠Ô Æ ‚ÆØÆ‡•
-definesound HMANSTEP          voc/hmanstp.voc     -100    100    1   2   0               //      Ë†£®
-definesound HMANPAIN         voc/hmanpain.voc         0     200    3   0   0               //      èÆ§†≠®• ( ™Æ‡Æ‚™®© ·¨•ËÆ™ )
-definesound HMANATTACK       voc/hmanatt.voc         0     100     3   0   0              //       ‡†°Æ‚† !
+definesound AXEINFLY             voc/axeinfly.voc       100    100   1   2   0               //      –¢–æ–ø–æ—Ä –≤ –ø–æ–ª–µ—Ç–µ
+definesound AXEINBODY        voc/axetouch.voc         0      100   3   0   0               //      –ü–æ–ø–∞–¥–∞–Ω–∏–µ —Ç–æ–ø–æ—Ä–∞ –≤ –≥–µ—Ä–æ—è
+definesound AXEINWALL           voc/axewall.voc      100    100    3   0   0               //      –ü–æ–ø–∞–¥–∞–Ω–∏–µ —Ç–æ–ø–æ—Ä–∞ –≤ —Å—Ç–µ–Ω—É
+definesound HMANSONG         voc/hmanrec.voc         0       0      3   0   0               //      –ø–µ—Å–Ω—è –æ —Ç–æ–ø–æ—Ä–µ
+definesound HMANSTEP          voc/hmanstp.voc     -100    100    1   2   0               //      —à–∞–≥–∏
+definesound HMANPAIN         voc/hmanpain.voc         0     200    3   0   0               //      –ü–æ–¥–∞–Ω–∏–µ ( –∫–æ—Ä–æ—Ç–∫–∏–π —Å–º–µ—à–æ–∫ )
+definesound HMANATTACK       voc/hmanatt.voc         0     100     3   0   0              //       —Ä–∞–±–æ—Ç–∞ !
 
 //  ------------------------------------
-//  áÇìäà éêìÜàü
+//  –ó–í–£–ö–ò –û–†–£–ñ–ò–Ø
 //  ------------------------------------
 
-definesound KICK_HIT                             voc/foot_hit.voc       0     0     4   0   0                  //    ì§†‡ ≠Æ£Æ©
-definesound PISTOL_BODYHIT              voc/in_body.voc       0     0     0   0   0                  //    è‡Ô¨Æ• ØÆØ†§†≠®•
-definesound PISTOL_RICOCHET            voc/ricochet.voc        0     0     0   0 4096             //     ê®™ÆË•‚
-definesound PISTOL_FIRE                         voc/pistol.voc    -64     0   254   0   0                 //    è®·‚Æ´•‚ ( ¢Î·‚‡•´ )
-definesound EJECT_CLIP                         voc/clipout.voc         0     0     3   0   0                 //    è®·‚Æ´•‚ ( ¢Î≠„‚Ï Æ°Æ©¨„ )
-definesound INSERT_CLIP                         voc/clipin.voc     512   512   3   0   0                 //    è®·‚Æ´•‚ ( ¢·‚†¢®‚Ï Æ°Æ©¨„ )
-definesound CHAINGUN_FIRE              voc/chaingun.voc     -204 -204  254   0   512          //    Ä¢‚Æ¨†‚  ( ¢Î·‚‡•´ )
-definesound SHOTGUN_FIRE               voc/shotgun7.voc      0    500    254 0   0                //    Ñ‡Æ°Æ¢®™ ( ¢Î·‚‡•´ )
-definesound SHOTGUN_COCK               voc/shotgnck.voc      96    192   3   0   0                //    Ñ‡Æ°Æ¢®™ ( Ø•‡•ß†‡Ô§ )
-definesound RPG_SHOOT                    voc/rpgfire.voc        -32    0    4   0   0                //    Å†ß„™† ( ¢Î·‚‡•´ )
-definesound FLY_BY                                    voc/flyby.voc       -256  256   3   0   0              //     èÆ´•‚ ‡•†™‚®¢≠Æ© £‡†≠†‚Î
-definesound RPG_EXPLODE          voc/bombexpl.voc   -1024 1024  254 0   0              //     ÅÆ´ÏËÆ© Çß‡Î¢
-definesound CAT_FIRE                               voc/catfire.voc           0   768   3   0   0               //    é£≠•¨•‚  ( †¢‚Æ · FLOORFLAME  2333 )
-definesound SHRINKER_FIRE                    voc/catfire.voc          0     0     3   0   0                //    ç†Ø†´¨
-definesound PIPEBOMB_BOUNCE      voc/pbombbnc.voc           0   0     2   0 6144             //    É‡†≠†‚† „Ø†¢Ë†Ô ≠† ØÆ´
-definesound PIPEBOMB_EXPLODE     voc/bombexpl.voc    -512     0     128 0   0               //    ÅÆ´ÏËÆ© ¢ß‡Î¢ ( · §‡„£®¨® Ø•‡•¨•≠≠Î¨® )
-definesound LASERTRIP_ONWALL         voc/lsrbmbpt.voc           0    0     3   0   0               //    ì·‚†≠Æ¢™† ´†ß•‡† ≠† ·‚•≠„
-definesound LASERTRIP_ARMING        voc/lsrbmbwn.voc            0    0     3   0   0               //    ã†ß•‡ ( Ø®È®‚Ï )
-definesound LASERTRIP_EXPLODE     voc/bombexpl.voc      -512      0     4   0   0              //    ÅÆ´ÏËÆ© ¢ß‡Î¢ ( Æ‚ ´†ß•‡† )
-definesound SELECT_WEAPON         voc/WPNSEL21.VOC       128   128   3   0   0              //    ÇÎ°Æ‡ Æ‡„¶®Ô ( Å†ß„™† )
+definesound KICK_HIT                             voc/foot_hit.voc       0     0     4   0   0                  //    –£–¥–∞—Ä –Ω–æ–≥–æ–π
+definesound PISTOL_BODYHIT              voc/in_body.voc       0     0     0   0   0                  //    –ü—Ä—è–º–æ–µ –ø–æ–ø–∞–¥–∞–Ω–∏–µ
+definesound PISTOL_RICOCHET            voc/ricochet.voc        0     0     0   0 4096             //     –†–∏–∫–æ—à–µ—Ç
+definesound PISTOL_FIRE                         voc/pistol.voc    -64     0   254   0   0                 //    –ü–∏—Å—Ç–æ–ª–µ—Ç ( –≤—ã—Å—Ç—Ä–µ–ª )
+definesound EJECT_CLIP                         voc/clipout.voc         0     0     3   0   0                 //    –ü–∏—Å—Ç–æ–ª–µ—Ç ( –≤—ã–Ω—É—Ç—å –æ–±–æ–π–º—É )
+definesound INSERT_CLIP                         voc/clipin.voc     512   512   3   0   0                 //    –ü–∏—Å—Ç–æ–ª–µ—Ç ( –≤—Å—Ç–∞–≤–∏—Ç—å –æ–±–æ–π–º—É )
+definesound CHAINGUN_FIRE              voc/chaingun.voc     -204 -204  254   0   512          //    –ê–≤—Ç–æ–º–∞—Ç  ( –≤—ã—Å—Ç—Ä–µ–ª )
+definesound SHOTGUN_FIRE               voc/shotgun7.voc      0    500    254 0   0                //    –î—Ä–æ–±–æ–≤–∏–∫ ( –≤—ã—Å—Ç—Ä–µ–ª )
+definesound SHOTGUN_COCK               voc/shotgnck.voc      96    192   3   0   0                //    –î—Ä–æ–±–æ–≤–∏–∫ ( –ø–µ—Ä–µ–∑–∞—Ä—è–¥ )
+definesound RPG_SHOOT                    voc/rpgfire.voc        -32    0    4   0   0                //    –ë–∞–∑—É–∫–∞ ( –≤—ã—Å—Ç—Ä–µ–ª )
+definesound FLY_BY                                    voc/flyby.voc       -256  256   3   0   0              //     –ü–æ–ª–µ—Ç —Ä–µ–∞–∫—Ç–∏–≤–Ω–æ–π –≥—Ä–∞–Ω–∞—Ç—ã
+definesound RPG_EXPLODE          voc/bombexpl.voc   -1024 1024  254 0   0              //     –ë–æ–ª—å—à–æ–π –í–∑—Ä—ã–≤
+definesound CAT_FIRE                               voc/catfire.voc           0   768   3   0   0               //    –û–≥–Ω–µ–º–µ—Ç  ( –∞–≤—Ç–æ —Å FLOORFLAME  2333 )
+definesound SHRINKER_FIRE                    voc/catfire.voc          0     0     3   0   0                //    –ù–∞–ø–∞–ª–º
+definesound PIPEBOMB_BOUNCE      voc/pbombbnc.voc           0   0     2   0 6144             //    –ì—Ä–∞–Ω–∞—Ç–∞ —É–ø–∞–≤—à–∞—è –Ω–∞ –ø–æ–ª
+definesound PIPEBOMB_EXPLODE     voc/bombexpl.voc    -512     0     128 0   0               //    –ë–æ–ª—å—à–æ–π –≤–∑—Ä—ã–≤ ( —Å –¥—Ä—É–≥–∏–º–∏ –ø–µ—Ä–µ–º–µ–Ω–Ω—ã–º–∏ )
+definesound LASERTRIP_ONWALL         voc/lsrbmbpt.voc           0    0     3   0   0               //    –£—Å—Ç–∞–Ω–æ–≤–∫–∞ –ª–∞–∑–µ—Ä–∞ –Ω–∞ —Å—Ç–µ–Ω—É
+definesound LASERTRIP_ARMING        voc/lsrbmbwn.voc            0    0     3   0   0               //    –õ–∞–∑–µ—Ä ( –ø–∏—â–∏—Ç—å )
+definesound LASERTRIP_EXPLODE     voc/bombexpl.voc      -512      0     4   0   0              //    –ë–æ–ª—å—à–æ–π –≤–∑—Ä—ã–≤ ( –æ—Ç –ª–∞–∑–µ—Ä–∞ )
+definesound SELECT_WEAPON         voc/WPNSEL21.VOC       128   128   3   0   0              //    –í—ã–±–æ—Ä –æ—Ä—É–∂–∏—è ( –ë–∞–∑—É–∫–∞ )
 
-//   áÇìäà éäêìÜÖçàü   ( Ê®™´®Á•·™®• )
+//   –ó–í–£–ö–ò –û–ö–†–£–ñ–ï–ù–ò–Ø   ( —Ü–∏–∫–ª–∏—á–µ—Å–∫–∏–µ )
 
-definesound BOMBSPAWN                  voc/mort.voc      0     0     1   2   0              //   Ç‡†È•≠®• ØÆ‡Æ¶§†•¨Æ© ¨®≠Î
-definesound WATCIRC                     voc/watcirc.voc      0     0     1   2   0               //   ÇÆ§† ´ÏÓÈ†Ô·Ô                 ( 316 )
-definesound SOFTLAP                     voc/softlap.voc       0     0     1   2   1               //   ÇÆ§† - Ø´•·™
-definesound OIL2                                  voc/oil2.voc      0     0     1   2   0                //   é£Æ≠Ï ( ÉÆ‡•≠®• )                ( 319 )
-definesound ZEFIR                              voc/zefir.voc      0     0     1   2   0                //   ã•£™®© ¢•‚•‡ ( Å‡®ß )
-definesound THUNDER                   voc/thunder.voc      0     0     1   2   0               //   ç®ß™®© ‡Æ™Æ‚ ( Å„Â-°„Â )
-definesound CANE00                       voc/cane00.voc      0     0     1   2   0               //   ÅÆ´Æ‚≠Î• ·‚‡•™Æ‚†´™®  ( î†„≠† )  ( 324 )
-definesound DUCK                           voc/klaves.voc       0     0     1   2   0               //   ä´†¢•·®≠
-definesound BOG_P                         voc/bog_p.voc       0     0     1   2   0               //   ÅÆ´Æ‚Æ ( · Ø´ÓÂÆ¨ )    ( 326 )
-definesound BUBBY                        voc/bubby.voc       0     0     1   2   0               //   ó†¢™†´™† ( ¨†£¨† )
-definesound WIND_H                     voc/wind_h.voc       0     0     1   2   0               //   ë®´Ï≠Î© ¢•‚•‡
-definesound LONGBEL                  voc/longbel.voc       0     0     1   2   0                //   äÆ´Æ™Æ´
-definesound UFO_PLAY               voc/ufo_play.voc       0     0     1   2   0               //   çãé - §¢®¶•≠®•
-definesound SPIDER                       voc/spider.voc       0     0     1   2   0                //   è†„™®  ( Â‡„·Ï-Â‡„·Ï )      ( 339 )
-definesound THE_FLY                      voc/thefly.voc       0     0     1   2   0                //    å„Â† °•·™Æ≠•Á≠Æ ¶„ß¶†´Ï≠†Ô
-definesound SKY_TH                      voc/sky_th.voc    -256   0     1   2   0                //    É‡Æ¨ ≠•°•·≠Î©
-definesound WATER_GURGLE    voc/h2ogrgl2.voc       0     0     1   2   0                //    ãÏÓÈ†Ô·Ô ¢Æ§† ( ™Æ´Æ‡®‚≠Æ )
-definesound WOLF                              voc/wolf.voc       0     0     1   2   0                //    ÇÆ© ¢Æ´™†              ( 175 )
-definesound PRESSURI               voc/pressuri.voc       0     0     1   2    0               //    É•©ß•‡
-definesound  AMBIENCE10         voc/h2orush2.voc      0     0     1   2    0               //    ÇÆ§ÆØ†§ °Æ´ÏËÆ©
-definesound CHOISING                    voc/bclock.voc      0     0     1   2    0               //    Å†Ë•≠≠Î• Á†·Î
-definesound SANDSOUND                 voc/sand.voc       0     0     1   2   0               //     è•‡•·ÎØ†ÓÈ®©·Ô Ø•·Æ™
-definesound FIRE_F                       voc/catfire2.voc       0     0     1   2   0               //     é£Æ≠Ï ( ™Æ´Æ≠≠Î ¢ è®‡†¨®§• ) ( 237 )
-definesound TOWERFLAG                   voc/flag.voc       0     0     1   2    0               //     Å†Ë•≠≠Î© ‰´†£          ( 256 )
-definesound HOWOUT                       voc/sbird.voc       0     0     1   2    0               //     è•¢Á†Ô Ø‚®Ê† ( Æ™‡„¶•≠®• )
-definesound SIMPLY                     voc/dripamb.voc      0     0     1    2    0              //     ä†Ø†ÓÈ†Ô ¢Æ§† ( Æ™‡„¶•≠®• )
-definesound ENDSEQVOL3SND3   voc/CHEER.VOC      0     0     1    2    0              //    ã®™„ÓÈ†Ô ‚Æ´Ø† ( Æ™‡„¶•≠®• )
-definesound DEVIL2                          voc/devil2.voc      0     0     1    2    0              //    ë¨•Â ≠•ß§Æ‡Æ¢Î© ( Æ™‡„¶•≠®• )
-definesound SHORTING                  voc/elshort.voc       0     0     1    2    0              //    äÆ‡Æ‚™Æ• ß†¨Î™†≠®• ( Æ™‡„¶. )
-definesound FLUGER                        voc/fluger.voc       0     0     1    2    0              //    î´Ó£•‡
-definesound OLD_MASH            voc/old_mash.voc       0     0     1     2    0              //    Ñ‡•¢≠®© ¨•Â†≠®ß¨
-definesound PRESSING               voc/pressing.voc       0     0     1     2    0              //    è‡•··
-definesound BIGHART                     voc/bighart.voc       0     0     1     2    0              //    ç®ß™Æ• °„Â†≠Ï• ( Æ™‡„¶.)
-definesound SHUTTLEAMB             voc/shamb.voc       0     0     1     2    0              //    £„§•´™† Ø•™•´Ï≠†Ô
+definesound BOMBSPAWN                  voc/mort.voc      0     0     1   2   0              //   –í—Ä–∞—â–µ–Ω–∏–µ –ø–æ—Ä–æ–∂–¥–∞–µ–º–æ–π –º–∏–Ω—ã
+definesound WATCIRC                     voc/watcirc.voc      0     0     1   2   0               //   –í–æ–¥–∞ –ª—å—é—â–∞—è—Å—è                 ( 316 )
+definesound SOFTLAP                     voc/softlap.voc       0     0     1   2   1               //   –í–æ–¥–∞ - –ø–ª–µ—Å–∫
+definesound OIL2                                  voc/oil2.voc      0     0     1   2   0                //   –û–≥–æ–Ω—å ( –ì–æ—Ä–µ–Ω–∏–µ )                ( 319 )
+definesound ZEFIR                              voc/zefir.voc      0     0     1   2   0                //   –õ–µ–≥–∫–∏–π –≤–µ—Ç–µ—Ä ( –ë—Ä–∏–∑ )
+definesound THUNDER                   voc/thunder.voc      0     0     1   2   0               //   –ù–∏–∑–∫–∏–π —Ä–æ–∫–æ—Ç ( –ë—É—Ö-–±—É—Ö )
+definesound CANE00                       voc/cane00.voc      0     0     1   2   0               //   –ë–æ–ª–æ—Ç–Ω—ã–µ —Å—Ç—Ä–µ–∫–æ—Ç–∞–ª–∫–∏  ( –§–∞—É–Ω–∞ )  ( 324 )
+definesound DUCK                           voc/klaves.voc       0     0     1   2   0               //   –ö–ª–∞–≤–µ—Å–∏–Ω
+definesound BOG_P                         voc/bog_p.voc       0     0     1   2   0               //   –ë–æ–ª–æ—Ç–æ ( —Å –ø–ª—é—Ö–æ–º )    ( 326 )
+definesound BUBBY                        voc/bubby.voc       0     0     1   2   0               //   –ß–∞–≤–∫–∞–ª–∫–∞ ( –º–∞–≥–º–∞ )
+definesound WIND_H                     voc/wind_h.voc       0     0     1   2   0               //   –°–∏–ª—å–Ω—ã–π –≤–µ—Ç–µ—Ä
+definesound LONGBEL                  voc/longbel.voc       0     0     1   2   0                //   –ö–æ–ª–æ–∫–æ–ª
+definesound UFO_PLAY               voc/ufo_play.voc       0     0     1   2   0               //   –ù–õ–û - –¥–≤–∏–∂–µ–Ω–∏–µ
+definesound SPIDER                       voc/spider.voc       0     0     1   2   0                //   –ü–∞—É–∫–∏  ( —Ö—Ä—É—Å—å-—Ö—Ä—É—Å—å )      ( 339 )
+definesound THE_FLY                      voc/thefly.voc       0     0     1   2   0                //    –ú—É—Ö–∞ –±–µ—Å–∫–æ–Ω–µ—á–Ω–æ –∂—É–∑–∂–∞–ª—å–Ω–∞—è
+definesound SKY_TH                      voc/sky_th.voc    -256   0     1   2   0                //    –ì—Ä–æ–º –Ω–µ–±–µ—Å–Ω—ã–π
+definesound WATER_GURGLE    voc/h2ogrgl2.voc       0     0     1   2   0                //    –õ—å—é—â–∞—è—Å—è –≤–æ–¥–∞ ( –∫–æ–ª–æ—Ä–∏—Ç–Ω–æ )
+definesound WOLF                              voc/wolf.voc       0     0     1   2   0                //    –í–æ–π –≤–æ–ª–∫–∞              ( 175 )
+definesound PRESSURI               voc/pressuri.voc       0     0     1   2    0               //    –ì–µ–π–∑–µ—Ä
+definesound  AMBIENCE10         voc/h2orush2.voc      0     0     1   2    0               //    –í–æ–¥–æ–ø–∞–¥ –±–æ–ª—å—à–æ–π
+definesound CHOISING                    voc/bclock.voc      0     0     1   2    0               //    –ë–∞—à–µ–Ω–Ω—ã–µ —á–∞—Å—ã
+definesound SANDSOUND                 voc/sand.voc       0     0     1   2   0               //     –ü–µ—Ä–µ—Å—ã–ø–∞—é—â–∏–π—Å—è –ø–µ—Å–æ–∫
+definesound FIRE_F                       voc/catfire2.voc       0     0     1   2   0               //     –û–≥–æ–Ω—å ( –∫–æ–ª–æ–Ω–Ω—ã –≤ –ü–∏—Ä–∞–º–∏–¥–µ ) ( 237 )
+definesound TOWERFLAG                   voc/flag.voc       0     0     1   2    0               //     –ë–∞—à–µ–Ω–Ω—ã–π —Ñ–ª–∞–≥          ( 256 )
+definesound HOWOUT                       voc/sbird.voc       0     0     1   2    0               //     –ü–µ–≤—á–∞—è –ø—Ç–∏—Ü–∞ ( –æ–∫—Ä—É–∂–µ–Ω–∏–µ )
+definesound SIMPLY                     voc/dripamb.voc      0     0     1    2    0              //     –ö–∞–ø–∞—é—â–∞—è –≤–æ–¥–∞ ( –æ–∫—Ä—É–∂–µ–Ω–∏–µ )
+definesound ENDSEQVOL3SND3   voc/CHEER.VOC      0     0     1    2    0              //    –õ–∏–∫—É—é—â–∞—è —Ç–æ–ª–ø–∞ ( –æ–∫—Ä—É–∂–µ–Ω–∏–µ )
+definesound DEVIL2                          voc/devil2.voc      0     0     1    2    0              //    –°–º–µ—Ö –Ω–µ–∑–¥–æ—Ä–æ–≤—ã–π ( –æ–∫—Ä—É–∂–µ–Ω–∏–µ )
+definesound SHORTING                  voc/elshort.voc       0     0     1    2    0              //    –ö–æ—Ä–æ—Ç–∫–æ–µ –∑–∞–º—ã–∫–∞–Ω–∏–µ ( –æ–∫—Ä—É–∂. )
+definesound FLUGER                        voc/fluger.voc       0     0     1    2    0              //    –§–ª—é–≥–µ—Ä
+definesound OLD_MASH            voc/old_mash.voc       0     0     1     2    0              //    –î—Ä–µ–≤–Ω–∏–π –º–µ—Ö–∞–Ω–∏–∑–º
+definesound PRESSING               voc/pressing.voc       0     0     1     2    0              //    –ü—Ä–µ—Å—Å
+definesound BIGHART                     voc/bighart.voc       0     0     1     2    0              //    –ù–∏–∑–∫–æ–µ –±—É—Ö–∞–Ω—å–µ ( –æ–∫—Ä—É–∂.)
+definesound SHUTTLEAMB             voc/shamb.voc       0     0     1     2    0              //    –≥—É–¥–µ–ª–∫–∞ –ø–µ–∫–µ–ª—å–Ω–∞—è
 
-//   áÇìäà éäêìÜÖçàü ( ´Æ™†´Ï≠Î• )
+//   –ó–í–£–ö–ò –û–ö–†–£–ñ–ï–ù–ò–Ø ( –ª–æ–∫–∞–ª—å–Ω—ã–µ )
 
-definesound VENT_BUST                    voc/ventbust.voc      -100   100  3  0   0          //   Å†≠™® - ·™´Ô≠™® , ¢·• ‡†ß°®´Æ·Ï
-definesound GLASS_BREAKING               voc/glass.voc      -412  100   3   0  8192    //   ê†ß°®‚®• ·‚•™´†
-definesound GLASS_HEAVYBREAK    voc/glashevy.voc      -412  100   3   0  8192    //   ê†ß°®‚®• ·‚•™´† ( ÆÁ•≠Ï °Æ´ÏËÆ£Æ )
-definesound SHORT_CIRCUIT               voc/shorted.voc        0     0   0   0   6500        //   äÆ‡Æ‚™Æ• ß†¨Î™†≠®• ( Ì´•™‚‡®™ )
-definesound ITEM_SPLASH                    voc/splash.voc        0     0   2   0   0              //    Ç·Ø´•·™
-definesound CSTL_P                                voc/cstl_p.voc        0     0   2   0   0              //   Ñ¢®£†ÓÈ†Ô·Ô ‡•Ë•‚™†
-definesound SLADE                                  voc/slade.voc      -256  0    2   0   0              //    å†´Î© ™†¨•≠≠Î© ´®‰‚,§¢•‡Ï ( §¢®¶•≠®• )
-definesound METDOOR                       voc/metdoor.voc         0     0    2   0   0             //   è†§†ÓÈ†Ô ¨•‚†´®Á•·™†Ô ‡•Ë•‚™†
-definesound SHARKSOUND                     voc/shark.voc         0     0    2   0   0             //    Ä™„´†
-definesound TIME                                        voc/time.voc        0     0   3   0   0             //   ó†·Î ( §®≠Ï-§´®≠Ï )
-definesound SQUEAKY                         voc/squeaky.voc        0     0    2   0   0             //   ä†¨•≠≠Î© ·‚ÆØ
-definesound ST_MACH                         voc/st_mach.voc        0     0    2   0   0             //   ÅÆ´ÏËÆ© ™†¨•≠≠Î© ´®‰‚,·‚•≠† ( §¢®¶•≠®• )
-definesound UFO_STOP                       voc/ufo_stop.voc        0     0    2   0   0             //   çãé - ·‚ÆØ
-definesound SH_DOOR                         voc/sh_door.voc        0     0    2   0   0             //   ä†¨•≠≠†Ô §¢•‡Ï ( ™Æ‡Æ‚™®© )
-definesound SKAVEN                              voc/skaven.voc        0     0    2   0   0             //   ë‚ÆØ §´Ô OLD_MASH ( Ë®Ø„≠ )
-definesound PUTSH                                   voc/shell.voc         0     0    3   0   0             //    ìØ†¢Ë†Ô £®´Ïß†
-definesound CSTL_S                                 voc/cstl_s.voc        0     0    2   0   0             //    ë‚ÆØ §´Ô ‡•Ë•‚™®
-definesound SOMETHINGFROZE             voc/freeze.voc       0    200  3   0   0             //    èÆß¢Ô™®¢†≠®• °„°•≠ÊÆ¢
-definesound RING                                        voc/ring.voc        0     0    3   0   0             //    äÆ´Æ™Æ´ÏÁ®™ ( ·‚ÆØ §´Ô ENIGMA )
-definesound GEARS_GRINDING          voc/geargrnd.voc        0     0    0   2   0             //   å•Â†≠®ß¨ ?
-definesound BUBBLE_AMBIENCE     voc/bubblamb.voc    -256    0    0   2   0             //    Å„´Ï™†≠Ï•
-definesound CRESCENDO                   voc/crescend.voc        0     0    2   0   0             //   ä‡•È•≠§Æ ( ‚†‡•´™† ØÆ ≠†‡†·‚†ÓÈ•© )
-definesound SEWER_AMBIENCE             voc/drip3.voc         0     0    0   0   0             //    ÇÆ§† ™†Ø†•‚
-definesound PRESSS                        voc/presdown.voc         0     0    2   0   0             //    éØ„·™†ÓÈ®©·Ô ØÆ‚Æ´Æ™
-definesound SOMETHING_DRIPPING      voc/drip3.voc         0     0    0   0   9000        //    ÇÆ§† ™†Ø†•‚
-definesound STEAM_HISSING              voc/stbreak.voc       -50   50    3   0   0             //    è†§†ÓÈ®• ™†¨≠® ( °Î¢.Ø†‡ )
-definesound DOOR_OPERATE1             voc/slidoor.voc      -256   0    0   0   0             //    Ñ : ·™Æ´ÏßÔÈ†Ô §¢•‡Ï
-definesound ENIGMA                             voc/enigma.voc        0     0    2   0   0              //    á†£†§ÆÁ≠Æ• §•©·‚¢®• ( ™‡†‚™Æ )
-definesound OLDLIFT                                     voc/met04.voc      0    0    2   0   0        //    ê¶†¢Î© ØÆ§Í•¨≠®™
-definesound RATTY                                        voc/mice3.voc      0    0    2   0   0        //    ä‡Î·™® ØÆ°•¶†´®
-definesound EARTHQUAKE                            voc/quake.voc      0    0    2   0   0        //    á•¨´•‚‡•·•≠®•
-definesound DIAFRA                                      voc/diafrag.voc   -100   100  2   0   0     //   Ñ¢•‡Ï §®†‰‡†£¨†
-definesound GENERIC_AMBIENCE3             voc/lava06.voc      0    0    0   2   0       //   ç®ß™®© ‡Æ™Æ‚ ( ØÆ·‚ÆÔ≠≠Î© )
-definesound GENERIC_AMBIENCE4        voc/bubblamb.voc   -256   0   0   2   0       //   Å„´Ï™†≠Ï•
-definesound DEVIL                                           voc/devil.voc      0   0    3    0   0       //   ë¨•Â ≠•ß§Æ‡Æ¢Î© ( Ø„£†´™† )
-definesound BIGMETOP                            voc/bigmetop.voc      0   0    2    0   0       //    ÅÆ´ÏËÆ© ¨•‚†´ ( ·™‡•¶•‚ )
-definesound STEEL                                          voc/steel.voc      0   0    2    0   0       //    É®´ÏÆ‚®≠†
-definesound L_CREAK                                  voc/l_creak.voc      0   0    2    0   0       //   Ñ´®≠≠Î© ·™‡®Ø
-definesound BOGDOOR                              voc/bogdoor.voc      0   0    2    0   0       //   ë™Æ´ÏßÔÈ†Ô ‡¶†¢†Ô §¢•‡Ï
-definesound CARDINAL                               voc/cardinal.voc      0   0    3    0   0       //     é‡£†≠≠†Ô ¨•··†
-definesound RATTLE                                       voc/rattle.VOC      0   0     2   4   0       //     É‡•¨„Á†Ô ß¨•Ô            ( 239 )
-definesound BRIDGE                                     voc/bridge.voc       0   0    3    0   0       //    èÆ§Í•¨≠Î© ¨Æ·‚         ( 258 )
-definesound DOORPSS                              voc/doorpss.voc       0   0   2    0   0        //    èÆ¨ØÆ¢†Ô  §¢•‡Ï
-definesound FIRE_CRACKLE                         voc/fire09.voc        0   0   254  2   0      //    é£Æ≠Ï °Æ´ÏËÆ©    ( 194 )
-definesound SULTAN                                   voc/sultan2.voc       0   0   3    0   0        //    ÉÆ≠£
-definesound COMPANB2                         voc/pss_door.VOC       0    0   2    0   0       //    ì≠®¢•‡·†´Ï≠†Ô Ë®Ø„Á™†
-definesound MAGICRYSTALL                       voc/crystal.voc       0    0   3    0    0       //    å†£®Á•·™®© ™‡®·‚†´
-definesound STEPNIT                                      voc/boob.voc       0  0  254  12  0        //    ó¢Ô™     ( 280 )
-definesound AGAIN                                         voc/meat2.voc       0   0   255  4   0      //     Ä‡®Ô ,, åÔ·Æ  ,,
-definesound TURNDOOR                                 voc/turnd.voc       0   0    2    0    0       //     Ñ¢•‡Ï ØÆ¢Æ‡Æ‚≠†Ô
-definesound KEYDOOR                                voc/twinkle.voc        0   0    2    0    0      //     Ñ¢•Ï Æ‚™‡Î¢†•¨†Ô ™´ÓÁ•¨
-definesound HERO_STEPONFECES               voc/feces.voc        0   0    3    0    0      //     ç†·‚„Ø®´ ≠† ™†™†Ë™„ ( Ä©-Ô© )
-definesound POOLBALLHIT                       voc/poolbal1.voc        0   0    2    0    0      //     ë‚Æ´™≠Æ¢•≠®• °®´ÏÔ‡§≠ÎÂ Ë†‡®™Æ¢
-definesound SHUTTLE                                  voc/shuttle.voc        0   0    2    0    0      //      Ë†‚´
-
-
-//     á¢„™® àß§†¢†•¨Î• à£‡Æ™Æ¨
-
-definesound HERO_LONGTERM_PAIN               voc/hot.voc       -192   0   255 4   0           //    íÔ¶•´Æ• §ÎÂ†≠®• ( ‡†≠•≠Î© )
-definesound HERO_LONGTERM_PAIN2       voc/pain54.voc          0   0   255  4   0            //     Å´®¶• ™ ™Æ≠Ê„
-definesound HERO_LONGTERM_PAIN3       voc/pain75.voc           0   0   255  4   0           //     ïÆ‡ÆËÆ ØÆØ†´®
-definesound HERO_LONGTERM_PAIN4    voc/hitman01.voc          0   0   255  4   0           //     äÆ‡Æ‚™Æ• ØÆØ†§†≠®• ( ™‡®™ )
-definesound HERO_LONGTERM_PAIN5      voc/pain54.voc            0   0   255   4   0          //     ä‡®™ Ø‡® ‡†≠•≠®®
-definesound HERO_LONGTERM_PAIN6      voc/pain75.voc            0   0   255   4   0          //     ä‡®™ Ø‡® ‡†≠•≠®®
-definesound HERO_LONGTERM_PAIN7      voc/pain54.voc            0   0   255   4   0          //     ä‡®™ Ø‡® ‡†≠•≠®®
-definesound HERO_LONGTERM_PAIN8      voc/pain75.voc            0   0   255   4   0          //     ä‡®™ Ø‡® ‡†≠•≠®®
-definesound HERO_USEMEDKIT                      voc/aaa.voc            0   0   255   4   0          //     ìØÆ‚‡•°®´ †Ø‚•Á™„
-definesound POISON                                   voc/poison.voc             0   0   255   4   0         //      ï‡ÔØ≠„´  Ô§™„
-definesound HERO_GRUNT                             voc/exert.voc           0   0    2   4    0           //      é©! ( ™Æ£§† ·Ø‡Î£≠„´ ® ‚.Ø. )
-definesound HERO_DEAD                         voc/DEATH2.VOC        -64  64   255 4  0            //      ì¨®‡†•‚ ( ≠†¶¨®‚• ·Ø•©· )
-definesound HERO_HARTBEAT                 voc/hartbeat.voc           0   0   255  4   0           //      ë•‡§Ê•
-definesound HERO_SCREAM               voc/DSCREM04.voc           0   0   255   0   0          //      è†§•≠®• ¢ Ø‡ÆØ†·‚Ï
-definesound HERO_ONWATER                   voc/wetfeet.voc           0   0     4     0   0          //      è´†¢†≠®• ® ÂÆ¶§•≠®• ØÆ ¢Æ§•
-definesound HERO_LAND                           voc/land02.voc            0   0    2      0   0          //      è‡®ß•¨´•≠®• ( ·‚„™ )
-definesound HERO_LAND_HURT                voc/pain39.voc            0   0    255 4   0          //      è‡®ß•¨´•≠®• Ø‡® Ø‡Î¶™• ( ì !
-definesound HERO_UNDERWATER             voc/scuba.voc             0   0    2     0   0          //     èÆ§¢Æ§≠Î© ß¢„™
-definesound HERO_WALKINDUCTS          voc/ductwlk.voc           -64   128  2   0   0          //     É´„ÂÆ© Å„´Ï™
-definesound HEROWALK                                voc/step.voc             0    0   3    0   0            //    á¢„™ Ë†£Æ¢
-definesound HERORUN                                 voc/step2.voc            0    0    3    0    0          //    á¢„™ Ë†£Æ¢ Ø‡® °•£•
-definesound HERO_BREATHING                voc/hlminhal.voc          0    0   255  4   0          //    Ç§ÆÂ
-definesound HERO_EXHALING                  voc/hlmexhal.voc          0    0   255  4   0          //    ÇÎ§ÆÂ
-definesound HERO_GASP                                 voc/gasp.voc          0    0   255  4   0          //    Ç§ÆÂ - ¢Î§ÆÂ Ø‡® ¢Î≠Î‡®¢†≠®®
-definesound HERO_CRACK_FIRST               voc/camera.voc            0   0   3    0   0           //    ï‡„·‚ Ø†´ÏÊ•¢ ( °Î¢Ë®© )
-definesound HERO_GET                            voc/getitm19.voc        -64  64   255 0   0           //    ÇßÔ´ Á‚Æ „£Æ§≠Æ ( default )
-definesound HERO_SEARCH                         voc/wallhit.voc      -100  900   2   0   0           //    ì§†‡  ØÆ ·‚•≠• ( ØÆ®·™ )
-definesound STEPONGLASS                         voc/onglas.voc            0    0   3    0   0           //     ïÆ¶§•≠®• ØÆ ·‚•™´†¨
-
-//  á¢„™® á§Æ‡Æ¢ÏÔ
-
-definesound SOMETHINGHITFORCE   voc/teleport.voc             0   0    2   0   8192                //     ç•®ß¢•·‚≠†Ô ‰„≠™Ê®Ô ???
-definesound HERO_KILLED1              voc/woopss.voc              0   0   255 12  0                    //     ìØ·· !
-definesound HERO_KILLED2              voc/woopss.voc              0   0   255 12  0                    //     ìØ·· !
-definesound HERO_KILLED5              voc/woopss.voc              0   0   255 12  0                    //     ìØ·· !
-
-//    éØ•‡†‚Æ‡ ( ·Æ¢•‚Î , ™Æ¨¨•≠‚†‡®® )
-
-definesound REMEMBER                        voc/dictor.voc              0   0   255   4   0            //       Ñ®™‚Æ‡
-definesound AGENT01                           voc/irina01.voc              0   0   255   4   0            //       Ä£•≠·‚¢Æ ≠†Ë´Æ ¢Æß¨Æ¶≠Æ·‚Ï ØÆ¨ÆÁÏ ( †£•≠‚ )
-definesound TOSEE                                 voc/tosee.voc              0   0   255   4   0            //       í•°Ô ß†·•™´®
-definesound HERO_SEARCH2             voc/advice1.voc              0   0   255   4   0            //       èÆØ‡Æ°„©‚• ¢´•¢Æ ...
-definesound HERO_CRACK2              voc/makrame.voc             0   0   255   4   0            //       å†™‡†¨•
-definesound NOWAY                                 voc/stop.VOC             0   0   254   4   0            //       Ñ†´ÏË• §Æ‡Æ£® ≠•‚
-definesound NOSEE                                voc/nosee.voc             0   0   255   4   0             //       ç• ¢®¶„ ‚•°Ô
-definesound NOTROUGH                       voc/noslim.voc              0   0   255   4   0            //       á§•·Ï ≠• Ø‡Æ´•ß‚Ï
-definesound KEROSENE                          voc/keros.voc              0   0   255   4   0            //        ä•‡Æ·®≠
-definesound DENRA                                 voc/denra.voc              0   0   255  4   0             //        é·‚Æ‡Æ¶≠Æ ·Ø‡†¢†
-definesound DANGOR                          voc/dangorg.voc               0   0   255  4   0            //        é·‚Æ‡Æ¶≠Æ £Æ‡£„´
-definesound OPONLINE                      voc/oponline.voc               0   0   255  4   0             //       éØ•‡†‚Æ‡ ≠† ·¢Ôß®
-definesound COWARD                           voc/coward.voc               0   0   255  4   0             //       ç„ ™†™ Ø‡Æ£„´™†
-definesound HERO_CRACK                      voc/alarm.voc              0   0   255  4   0              //      CÁ•‚Á®™ ® °†Ó-Ó†©
-definesound TAPLAP                               voc/taplap.voc               0   0   255  4   0             //       Ç´ÔØ†´·Ô ØÆ ™‡„Ø≠Æ¨„
-definesound SILENCE                           voc/silence.voc               0   0  255   4   0              //      ë´®Ë™Æ¨ ‚®ÂÆ
-definesound LETSGO                              voc/letsgo.voc               0   0  255   4   0              //      ç„,§†¢†© •È• ≠•¨≠Æ¶™Æ
-definesound SUPER2                             voc/super2.voc               0  0  255    4   0             //       é ™•© ,·„Ø•‡¨•≠ !
-definesound HERO_KILLED4                   voc/client.voc               0   0   255  12   0            //       ä´®•≠‚ £Æ‚Æ¢ !
-definesound HERO_KILLED3                   voc/ready.voc               0   0   255  12  0             //      é‚®£‡†´·Ô , £Æ´„°Á®™
-definesound FORSPIDER                       voc/forspid.voc               0   0   255   4   0             //      í®ÂÆ,ß§•·Ï ™‚Æ ‚Æ •·‚Ï
-definesound EXIT                                        voc/exit.voc               0   0   255   12  0             //      Ñ´Ô ¢ÎÂÆ§†  ≠†¶¨®‚• ESC
-definesound MIND                                     voc/mind.voc               0   0   255   4    0             //     Ñ„¨†©
-definesound NOTFOR                               voc/notfor.voc               0   0   255   4    0            //      ä†°®≠† ß†≠Ô‚†
-definesound NOTSOME                             voc/nono.voc               0   0    3   0    0               //      ç• „£†§†´  ( ÆË®°ÆÁ™† ! )
-
-definesound PROBLEM2                   voc/problem2.voc                0   0   255   4   0              //     ç•‚„ ®Â ( í•‚Ô ä´†¢† )
-definesound KLAVA                                  voc/klava.voc                0   0    1     2     0             //     åÆ≠Æ´Æ£ „°Æ‡È®ÊÎ
-
-//  é°È®• á¢„™® ë¨•‡‚®
-
-definesound FLESH_BURNING       voc/fire09.voc      -256   0   0   0   6100                          //    ë£Æ‡†≠®•
-definesound THUD                             voc/thud.voc           0   0   0   0   0                                //    è†§•≠®• ‚•´†
-definesound SQUISHED                 voc/squish.voc           0   0   3   0   0                                //    èÆ·´•§≠®© ó¢Ô™
-
-//  á¢„™® é°Æ‡„§Æ¢†≠®Ô
+definesound VENT_BUST                    voc/ventbust.voc      -100   100  3  0   0          //   –ë–∞–Ω–∫–∏ - —Å–∫–ª—è–Ω–∫–∏ , –≤—Å–µ —Ä–∞–∑–±–∏–ª–æ—Å—å
+definesound GLASS_BREAKING               voc/glass.voc      -412  100   3   0  8192    //   –†–∞–∑–±–∏—Ç–∏–µ —Å—Ç–µ–∫–ª–∞
+definesound GLASS_HEAVYBREAK    voc/glashevy.voc      -412  100   3   0  8192    //   –†–∞–∑–±–∏—Ç–∏–µ —Å—Ç–µ–∫–ª–∞ ( –æ—á–µ–Ω—å –±–æ–ª—å—à–æ–≥–æ )
+definesound SHORT_CIRCUIT               voc/shorted.voc        0     0   0   0   6500        //   –ö–æ—Ä–æ—Ç–∫–æ–µ –∑–∞–º—ã–∫–∞–Ω–∏–µ ( —ç–ª–µ–∫—Ç—Ä–∏–∫ )
+definesound ITEM_SPLASH                    voc/splash.voc        0     0   2   0   0              //    –í—Å–ø–ª–µ—Å–∫
+definesound CSTL_P                                voc/cstl_p.voc        0     0   2   0   0              //   –î–≤–∏–≥–∞—é—â–∞—è—Å—è —Ä–µ—à–µ—Ç–∫–∞
+definesound SLADE                                  voc/slade.voc      -256  0    2   0   0              //    –ú–∞–ª—ã–π –∫–∞–º–µ–Ω–Ω—ã–π –ª–∏—Ñ—Ç,–¥–≤–µ—Ä—å ( –¥–≤–∏–∂–µ–Ω–∏–µ )
+definesound METDOOR                       voc/metdoor.voc         0     0    2   0   0             //   –ü–∞–¥–∞—é—â–∞—è –º–µ—Ç–∞–ª–∏—á–µ—Å–∫–∞—è —Ä–µ—à–µ—Ç–∫–∞
+definesound SHARKSOUND                     voc/shark.voc         0     0    2   0   0             //    –ê–∫—É–ª–∞
+definesound TIME                                        voc/time.voc        0     0   3   0   0             //   –ß–∞—Å—ã ( –¥–∏–Ω—å-–¥–ª–∏–Ω—å )
+definesound SQUEAKY                         voc/squeaky.voc        0     0    2   0   0             //   –ö–∞–º–µ–Ω–Ω—ã–π —Å—Ç–æ–ø
+definesound ST_MACH                         voc/st_mach.voc        0     0    2   0   0             //   –ë–æ–ª—å—à–æ–π –∫–∞–º–µ–Ω–Ω—ã–π –ª–∏—Ñ—Ç,—Å—Ç–µ–Ω–∞ ( –¥–≤–∏–∂–µ–Ω–∏–µ )
+definesound UFO_STOP                       voc/ufo_stop.voc        0     0    2   0   0             //   –ù–õ–û - —Å—Ç–æ–ø
+definesound SH_DOOR                         voc/sh_door.voc        0     0    2   0   0             //   –ö–∞–º–µ–Ω–Ω–∞—è –¥–≤–µ—Ä—å ( –∫–æ—Ä–æ—Ç–∫–∏–π )
+definesound SKAVEN                              voc/skaven.voc        0     0    2   0   0             //   –°—Ç–æ–ø –¥–ª—è OLD_MASH ( —à–∏–ø—É–Ω )
+definesound PUTSH                                   voc/shell.voc         0     0    3   0   0             //    –£–ø–∞–≤—à–∞—è –≥–∏–ª—å–∑–∞
+definesound CSTL_S                                 voc/cstl_s.voc        0     0    2   0   0             //    –°—Ç–æ–ø –¥–ª—è —Ä–µ—à–µ—Ç–∫–∏
+definesound SOMETHINGFROZE             voc/freeze.voc       0    200  3   0   0             //    –ü–æ–∑–≤—è–∫–∏–≤–∞–Ω–∏–µ –±—É–±–µ–Ω—Ü–æ–≤
+definesound RING                                        voc/ring.voc        0     0    3   0   0             //    –ö–æ–ª–æ–∫–æ–ª—å—á–∏–∫ ( —Å—Ç–æ–ø –¥–ª—è ENIGMA )
+definesound GEARS_GRINDING          voc/geargrnd.voc        0     0    0   2   0             //   –ú–µ—Ö–∞–Ω–∏–∑–º ?
+definesound BUBBLE_AMBIENCE     voc/bubblamb.voc    -256    0    0   2   0             //    –ë—É–ª—å–∫–∞–Ω—å–µ
+definesound CRESCENDO                   voc/crescend.voc        0     0    2   0   0             //   –ö—Ä–µ—â–µ–Ω–¥–æ ( —Ç–∞—Ä–µ–ª–∫–∞ –ø–æ –Ω–∞—Ä–∞—Å—Ç–∞—é—â–µ–π )
+definesound SEWER_AMBIENCE             voc/drip3.voc         0     0    0   0   0             //    –í–æ–¥–∞ –∫–∞–ø–∞–µ—Ç
+definesound PRESSS                        voc/presdown.voc         0     0    2   0   0             //    –û–ø—É—Å–∫–∞—é—â–∏–π—Å—è –ø–æ—Ç–æ–ª–æ–∫
+definesound SOMETHING_DRIPPING      voc/drip3.voc         0     0    0   0   9000        //    –í–æ–¥–∞ –∫–∞–ø–∞–µ—Ç
+definesound STEAM_HISSING              voc/stbreak.voc       -50   50    3   0   0             //    –ü–∞–¥–∞—é—â–∏–µ –∫–∞–º–Ω–∏ ( –±—ã–≤.–ø–∞—Ä )
+definesound DOOR_OPERATE1             voc/slidoor.voc      -256   0    0   0   0             //    –î : —Å–∫–æ–ª—å–∑—è—â–∞—è –¥–≤–µ—Ä—å
+definesound ENIGMA                             voc/enigma.voc        0     0    2   0   0              //    –ó–∞–≥–∞–¥–æ—á–Ω–æ–µ –¥–µ–π—Å—Ç–≤–∏–µ ( –∫—Ä–∞—Ç–∫–æ )
+definesound OLDLIFT                                     voc/met04.voc      0    0    2   0   0        //    –†–∂–∞–≤—ã–π –ø–æ–¥—ä–µ–º–Ω–∏–∫
+definesound RATTY                                        voc/mice3.voc      0    0    2   0   0        //    –ö—Ä—ã—Å–∫–∏ –ø–æ–±–µ–∂–∞–ª–∏
+definesound EARTHQUAKE                            voc/quake.voc      0    0    2   0   0        //    –ó–µ–º–ª–µ—Ç—Ä–µ—Å–µ–Ω–∏–µ
+definesound DIAFRA                                      voc/diafrag.voc   -100   100  2   0   0     //   –î–≤–µ—Ä—å –¥–∏–∞—Ñ—Ä–∞–≥–º–∞
+definesound GENERIC_AMBIENCE3             voc/lava06.voc      0    0    0   2   0       //   –ù–∏–∑–∫–∏–π —Ä–æ–∫–æ—Ç ( –ø–æ—Å—Ç–æ—è–Ω–Ω—ã–π )
+definesound GENERIC_AMBIENCE4        voc/bubblamb.voc   -256   0   0   2   0       //   –ë—É–ª—å–∫–∞–Ω—å–µ
+definesound DEVIL                                           voc/devil.voc      0   0    3    0   0       //   –°–º–µ—Ö –Ω–µ–∑–¥–æ—Ä–æ–≤—ã–π ( –ø—É–≥–∞–ª–∫–∞ )
+definesound BIGMETOP                            voc/bigmetop.voc      0   0    2    0   0       //    –ë–æ–ª—å—à–æ–π –º–µ—Ç–∞–ª ( —Å–∫—Ä–µ–∂–µ—Ç )
+definesound STEEL                                          voc/steel.voc      0   0    2    0   0       //    –ì–∏–ª—å–æ—Ç–∏–Ω–∞
+definesound L_CREAK                                  voc/l_creak.voc      0   0    2    0   0       //   –î–ª–∏–Ω–Ω—ã–π —Å–∫—Ä–∏–ø
+definesound BOGDOOR                              voc/bogdoor.voc      0   0    2    0   0       //   –°–∫–æ–ª—å–∑—è—â–∞—è —Ä–∂–∞–≤–∞—è –¥–≤–µ—Ä—å
+definesound CARDINAL                               voc/cardinal.voc      0   0    3    0   0       //     –û—Ä–≥–∞–Ω–Ω–∞—è –º–µ—Å—Å–∞
+definesound RATTLE                                       voc/rattle.VOC      0   0     2   4   0       //     –ì—Ä–µ–º—É—á–∞—è –∑–º–µ—è            ( 239 )
+definesound BRIDGE                                     voc/bridge.voc       0   0    3    0   0       //    –ü–æ–¥—ä–µ–º–Ω—ã–π –º–æ—Å—Ç         ( 258 )
+definesound DOORPSS                              voc/doorpss.voc       0   0   2    0   0        //    –ü–æ–º–ø–æ–≤–∞—è  –¥–≤–µ—Ä—å
+definesound FIRE_CRACKLE                         voc/fire09.voc        0   0   254  2   0      //    –û–≥–æ–Ω—å –±–æ–ª—å—à–æ–π    ( 194 )
+definesound SULTAN                                   voc/sultan2.voc       0   0   3    0   0        //    –ì–æ–Ω–≥
+definesound COMPANB2                         voc/pss_door.VOC       0    0   2    0   0       //    –£–Ω–∏–≤–µ—Ä—Å–∞–ª—å–Ω–∞—è —à–∏–ø—É—á–∫–∞
+definesound MAGICRYSTALL                       voc/crystal.voc       0    0   3    0    0       //    –ú–∞–≥–∏—á–µ—Å–∫–∏–π –∫—Ä–∏—Å—Ç–∞–ª
+definesound STEPNIT                                      voc/boob.voc       0  0  254  12  0        //    –ß–≤—è–∫     ( 280 )
+definesound AGAIN                                         voc/meat2.voc       0   0   255  4   0      //     –ê—Ä–∏—è ,, –ú—è—Å–æ  ,,
+definesound TURNDOOR                                 voc/turnd.voc       0   0    2    0    0       //     –î–≤–µ—Ä—å –ø–æ–≤–æ—Ä–æ—Ç–Ω–∞—è
+definesound KEYDOOR                                voc/twinkle.voc        0   0    2    0    0      //     –î–≤–µ—å –æ—Ç–∫—Ä—ã–≤–∞–µ–º–∞—è –∫–ª—é—á–µ–º
+definesound HERO_STEPONFECES               voc/feces.voc        0   0    3    0    0      //     –ù–∞—Å—Ç—É–ø–∏–ª –Ω–∞ –∫–∞–∫–∞—à–∫—É ( –ê–π-—è–π )
+definesound POOLBALLHIT                       voc/poolbal1.voc        0   0    2    0    0      //     –°—Ç–æ–ª–∫–Ω–æ–≤–µ–Ω–∏–µ –±–∏–ª—å—è—Ä–¥–Ω—ã—Ö —à–∞—Ä–∏–∫–æ–≤
+definesound SHUTTLE                                  voc/shuttle.voc        0   0    2    0    0      //      —à–∞—Ç–ª
 
 
-definesound ELEVATOR_ON            voc/gbelev01.voc       0   0    2   0   0               //      ã®‰‚          ( ‚•´•ØÆ‡‚®‡„•¨Î©)
-definesound ELEVATOR_OFF           voc/gbelev02.voc       0   0   2   0   0                //      ã®‰‚ ·‚ÆØ  ( ‚•´•ØÆ‡‚®‡„•¨Î©)
-definesound SWITCH_ON                    voc/switch.voc        0   0   2   0   0                //      ÇÎ™´ÓÁ†‚•´Ï ( default )
-definesound HEALTH                            voc/health.voc        0   0   255    4   0           //     èÆ´„Á•≠®• ¶®ß≠® ®´® ß†È®‚Î
-definesound SHRINKER_HIT                voc/naphit.voc        0   0   3    0   0                //      èÆØ†§†≠®• ®ß ≠†Ø†´¨†
+//     –ó–≤—É–∫–∏ –ò–∑–¥–∞–≤–∞–µ–º—ã–µ –ò–≥—Ä–æ–∫–æ–º
 
-//   ÄäíÖêõ
+definesound HERO_LONGTERM_PAIN               voc/hot.voc       -192   0   255 4   0           //    –¢—è–∂–µ–ª–æ–µ –¥—ã—Ö–∞–Ω–∏–µ ( —Ä–∞–Ω–µ–Ω—ã–π )
+definesound HERO_LONGTERM_PAIN2       voc/pain54.voc          0   0   255  4   0            //     –ë–ª–∏–∂–µ –∫ –∫–æ–Ω—Ü—É
+definesound HERO_LONGTERM_PAIN3       voc/pain75.voc           0   0   255  4   0           //     –•–æ—Ä–æ—à–æ –ø–æ–ø–∞–ª–∏
+definesound HERO_LONGTERM_PAIN4    voc/hitman01.voc          0   0   255  4   0           //     –ö–æ—Ä–æ—Ç–∫–æ–µ –ø–æ–ø–∞–¥–∞–Ω–∏–µ ( –∫—Ä–∏–∫ )
+definesound HERO_LONGTERM_PAIN5      voc/pain54.voc            0   0   255   4   0          //     –ö—Ä–∏–∫ –ø—Ä–∏ —Ä–∞–Ω–µ–Ω–∏–∏
+definesound HERO_LONGTERM_PAIN6      voc/pain75.voc            0   0   255   4   0          //     –ö—Ä–∏–∫ –ø—Ä–∏ —Ä–∞–Ω–µ–Ω–∏–∏
+definesound HERO_LONGTERM_PAIN7      voc/pain54.voc            0   0   255   4   0          //     –ö—Ä–∏–∫ –ø—Ä–∏ —Ä–∞–Ω–µ–Ω–∏–∏
+definesound HERO_LONGTERM_PAIN8      voc/pain75.voc            0   0   255   4   0          //     –ö—Ä–∏–∫ –ø—Ä–∏ —Ä–∞–Ω–µ–Ω–∏–∏
+definesound HERO_USEMEDKIT                      voc/aaa.voc            0   0   255   4   0          //     –£–ø–æ—Ç—Ä–µ–±–∏–ª –∞–ø—Ç–µ—á–∫—É
+definesound POISON                                   voc/poison.voc             0   0   255   4   0         //      –•—Ä—è–ø–Ω—É–ª  —è–¥–∫—É
+definesound HERO_GRUNT                             voc/exert.voc           0   0    2   4    0           //      –û–π! ( –∫–æ–≥–¥–∞ —Å–ø—Ä—ã–≥–Ω—É–ª –∏ —Ç.–ø. )
+definesound HERO_DEAD                         voc/DEATH2.VOC        -64  64   255 4  0            //      –£–º–∏—Ä–∞–µ—Ç ( –Ω–∞–∂–º–∏—Ç–µ —Å–ø–µ–π—Å )
+definesound HERO_HARTBEAT                 voc/hartbeat.voc           0   0   255  4   0           //      –°–µ—Ä–¥—Ü–µ
+definesound HERO_SCREAM               voc/DSCREM04.voc           0   0   255   0   0          //      –ü–∞–¥–µ–Ω–∏–µ –≤ –ø—Ä–æ–ø–∞—Å—Ç—å
+definesound HERO_ONWATER                   voc/wetfeet.voc           0   0     4     0   0          //      –ü–ª–∞–≤–∞–Ω–∏–µ –∏ —Ö–æ–∂–¥–µ–Ω–∏–µ –ø–æ –≤–æ–¥–µ
+definesound HERO_LAND                           voc/land02.voc            0   0    2      0   0          //      –ü—Ä–∏–∑–µ–º–ª–µ–Ω–∏–µ ( —Å—Ç—É–∫ )
+definesound HERO_LAND_HURT                voc/pain39.voc            0   0    255 4   0          //      –ü—Ä–∏–∑–µ–º–ª–µ–Ω–∏–µ –ø—Ä–∏ –ø—Ä—ã–∂–∫–µ ( –£ !
+definesound HERO_UNDERWATER             voc/scuba.voc             0   0    2     0   0          //     –ü–æ–¥–≤–æ–¥–Ω—ã–π –∑–≤—É–∫
+definesound HERO_WALKINDUCTS          voc/ductwlk.voc           -64   128  2   0   0          //     –ì–ª—É—Ö–æ–π –ë—É–ª—å–∫
+definesound HEROWALK                                voc/step.voc             0    0   3    0   0            //    –ó–≤—É–∫ —à–∞–≥–æ–≤
+definesound HERORUN                                 voc/step2.voc            0    0    3    0    0          //    –ó–≤—É–∫ —à–∞–≥–æ–≤ –ø—Ä–∏ –±–µ–≥–µ
+definesound HERO_BREATHING                voc/hlminhal.voc          0    0   255  4   0          //    –í–¥–æ—Ö
+definesound HERO_EXHALING                  voc/hlmexhal.voc          0    0   255  4   0          //    –í—ã–¥–æ—Ö
+definesound HERO_GASP                                 voc/gasp.voc          0    0   255  4   0          //    –í–¥–æ—Ö - –≤—ã–¥–æ—Ö –ø—Ä–∏ –≤—ã–Ω—ã—Ä–∏–≤–∞–Ω–∏–∏
+definesound HERO_CRACK_FIRST               voc/camera.voc            0   0   3    0   0           //    –•—Ä—É—Å—Ç –ø–∞–ª—å—Ü–µ–≤ ( –±—ã–≤—à–∏–π )
+definesound HERO_GET                            voc/getitm19.voc        -64  64   255 0   0           //    –í–∑—è–ª —á—Ç–æ —É–≥–æ–¥–Ω–æ ( default )
+definesound HERO_SEARCH                         voc/wallhit.voc      -100  900   2   0   0           //    –£–¥–∞—Ä  –ø–æ —Å—Ç–µ–Ω–µ ( –ø–æ–∏—Å–∫ )
+definesound STEPONGLASS                         voc/onglas.voc            0    0   3    0   0           //     –•–æ–∂–¥–µ–Ω–∏–µ –ø–æ —Å—Ç–µ–∫–ª–∞–º
 
-definesound KAMORA                         voc/kamora.voc       0    0   3   0    0              //     å†·™† ß¨••Ø´Ó©™†
+//  –ó–≤—É–∫–∏ –ó–¥–æ—Ä–æ–≤—å—è
 
-definesound SHDWWALK                  voc/shadow.voc       0    0   3   0    0              //      í•≠Ï  ( ÂÆ§®‚ - °‡Æ§®‚ )
-definesound SHDWATT                    voc/shadow2.voc       0    0   3   0    0              //      í•≠Ï §•‡•‚·Ô
-definesound MAT                                  voc/noend.voc       0    0   1    2   0              //      Ü‚Æ •È• ≠• ¢·•...
+definesound SOMETHINGHITFORCE   voc/teleport.voc             0   0    2   0   8192                //     –ù–µ–∏–∑–≤–µ—Å—Ç–Ω–∞—è —Ñ—É–Ω–∫—Ü–∏—è ???
+definesound HERO_KILLED1              voc/woopss.voc              0   0   255 12  0                    //     –£–ø—Å—Å !
+definesound HERO_KILLED2              voc/woopss.voc              0   0   255 12  0                    //     –£–ø—Å—Å !
+definesound HERO_KILLED5              voc/woopss.voc              0   0   255 12  0                    //     –£–ø—Å—Å !
 
-definesound GULLS02                         voc/gulls02.voc      0    0   3   0    0               //      è‚®Á™† ´•‚†•‚,™‡®Á®‚...
-definesound BIRD01                               voc/kakun.voc      0    0   3    0    0             //       è‚®Á™† ™†™„≠
-definesound LADY_SCREAM            voc/FSCRM10.voc    -256   0 254   8   0           //       è‚®Á™®≠ ™‡®™
+//    –û–ø–µ—Ä–∞—Ç–æ—Ä ( —Å–æ–≤–µ—Ç—ã , –∫–æ–º–º–µ–Ω—Ç–∞—Ä–∏–∏ )
 
-definesound ORIENTAL              voc/sultan.voc          0     0   3    0    0                     //      ë®‚†‡ ( ‰‡†ß† )
-definesound GORGUL                 voc/gorgul.voc         0     0    3    0   0                     //      ÉÆ‡£„´ †™‚®¢®‡„•‚·Ô
-definesound OST_D                    voc/dancer.voc        0     0    2    0    0                    //       í†≠ÊÆ¢È®Ê†  ( °Æ≠£® )
-definesound BONGO                   voc/bongo.voc         0     0    0    0    0                    //       ÅÆ≠£† ( ™Æ¢•‡ )
-definesound STRAUS1              voc/straus1.voc         0     0    2    0    0                    //       ë‚‡†„· ·•‡§®‚·Ô
+definesound REMEMBER                        voc/dictor.voc              0   0   255   4   0            //       –î–∏–∫—Ç–æ—Ä
+definesound AGENT01                           voc/irina01.voc              0   0   255   4   0            //       –ê–≥–µ–Ω—Å—Ç–≤–æ –Ω–∞—à–ª–æ –≤–æ–∑–º–æ–∂–Ω–æ—Å—Ç—å –ø–æ–º–æ—á—å ( –∞–≥–µ–Ω—Ç )
+definesound TOSEE                                 voc/tosee.voc              0   0   255   4   0            //       –¢–µ–±—è –∑–∞—Å–µ–∫–ª–∏
+definesound HERO_SEARCH2             voc/advice1.voc              0   0   255   4   0            //       –ü–æ–ø—Ä–æ–±—É–π—Ç–µ –≤–ª–µ–≤–æ ...
+definesound HERO_CRACK2              voc/makrame.voc             0   0   255   4   0            //       –ú–∞–∫—Ä–∞–º–µ
+definesound NOWAY                                 voc/stop.VOC             0   0   254   4   0            //       –î–∞–ª—å—à–µ –¥–æ—Ä–æ–≥–∏ –Ω–µ—Ç
+definesound NOSEE                                voc/nosee.voc             0   0   255   4   0             //       –ù–µ –≤–∏–∂—É —Ç–µ–±—è
+definesound NOTROUGH                       voc/noslim.voc              0   0   255   4   0            //       –ó–¥–µ—Å—å –Ω–µ –ø—Ä–æ–ª–µ–∑—Ç—å
+definesound KEROSENE                          voc/keros.voc              0   0   255   4   0            //        –ö–µ—Ä–æ—Å–∏–Ω
+definesound DENRA                                 voc/denra.voc              0   0   255  4   0             //        –û—Å—Ç–æ—Ä–æ–∂–Ω–æ —Å–ø—Ä–∞–≤–∞
+definesound DANGOR                          voc/dangorg.voc               0   0   255  4   0            //        –û—Å—Ç–æ—Ä–æ–∂–Ω–æ –≥–æ—Ä–≥—É–ª
+definesound OPONLINE                      voc/oponline.voc               0   0   255  4   0             //       –û–ø–µ—Ä–∞—Ç–æ—Ä –Ω–∞ —Å–≤—è–∑–∏
+definesound COWARD                           voc/coward.voc               0   0   255  4   0             //       –ù—É –∫–∞–∫ –ø—Ä–æ–≥—É–ª–∫–∞
+definesound HERO_CRACK                      voc/alarm.voc              0   0   255  4   0              //      C—á–µ—Ç—á–∏–∫ –∏ –±–∞—é-—é–∞–π
+definesound TAPLAP                               voc/taplap.voc               0   0   255  4   0             //       –í–ª—è–ø–∞–ª—Å—è –ø–æ –∫—Ä—É–ø–Ω–æ–º—É
+definesound SILENCE                           voc/silence.voc               0   0  255   4   0              //      –°–ª–∏—à–∫–æ–º —Ç–∏—Ö–æ
+definesound LETSGO                              voc/letsgo.voc               0   0  255   4   0              //      –ù—É,–¥–∞–≤–∞–π –µ—â–µ –Ω–µ–º–Ω–æ–∂–∫–æ
+definesound SUPER2                             voc/super2.voc               0  0  255    4   0             //       –û –∫–µ–π ,—Å—É–ø–µ—Ä–º–µ–Ω !
+definesound HERO_KILLED4                   voc/client.voc               0   0   255  12   0            //       –ö–ª–∏–µ–Ω—Ç –≥–æ—Ç–æ–≤ !
+definesound HERO_KILLED3                   voc/ready.voc               0   0   255  12  0             //      –û—Ç–∏–≥—Ä–∞–ª—Å—è , –≥–æ–ª—É–±—á–∏–∫
+definesound FORSPIDER                       voc/forspid.voc               0   0   255   4   0             //      –¢–∏—Ö–æ,–∑–¥–µ—Å—å –∫—Ç–æ —Ç–æ –µ—Å—Ç—å
+definesound EXIT                                        voc/exit.voc               0   0   255   12  0             //      –î–ª—è –≤—ã—Ö–æ–¥–∞  –Ω–∞–∂–º–∏—Ç–µ ESC
+definesound MIND                                     voc/mind.voc               0   0   255   4    0             //     –î—É–º–∞–π
+definesound NOTFOR                               voc/notfor.voc               0   0   255   4    0            //      –ö–∞–±–∏–Ω–∞ –∑–∞–Ω—è—Ç–∞
+definesound NOTSOME                             voc/nono.voc               0   0    3   0    0               //      –ù–µ —É–≥–∞–¥–∞–ª  ( –æ—à–∏–±–æ—á–∫–∞ ! )
 
-//    ÉéãéÇÄëíàä
+definesound PROBLEM2                   voc/problem2.voc                0   0   255   4   0              //     –ù–µ—Ç—É –∏—Ö ( –¢–µ—Ç—è –ö–ª–∞–≤–∞ )
+definesound KLAVA                                  voc/klava.voc                0   0    1     2     0             //     –ú–æ–Ω–æ–ª–æ–≥ —É–±–æ—Ä—â–∏—Ü—ã
 
-definesound HEADER_WALK         voc/hdrwalk.voc                 0   0   3   0   0          //     Ø•‡•§¢®¶•≠®•
+//  –û–±—â–∏–µ –ó–≤—É–∫–∏ –°–º–µ—Ä—Ç–∏
+
+definesound FLESH_BURNING       voc/fire09.voc      -256   0   0   0   6100                          //    –°–≥–æ—Ä–∞–Ω–∏–µ
+definesound THUD                             voc/thud.voc           0   0   0   0   0                                //    –ü–∞–¥–µ–Ω–∏–µ —Ç–µ–ª–∞
+definesound SQUISHED                 voc/squish.voc           0   0   3   0   0                                //    –ü–æ—Å–ª–µ–¥–Ω–∏–π –ß–≤—è–∫
+
+//  –ó–≤—É–∫–∏ –û–±–æ—Ä—É–¥–æ–≤–∞–Ω–∏—è
+
+
+definesound ELEVATOR_ON            voc/gbelev01.voc       0   0    2   0   0               //      –õ–∏—Ñ—Ç          ( —Ç–µ–ª–µ–ø–æ—Ä—Ç–∏—Ä—É–µ–º—ã–π)
+definesound ELEVATOR_OFF           voc/gbelev02.voc       0   0   2   0   0                //      –õ–∏—Ñ—Ç —Å—Ç–æ–ø  ( —Ç–µ–ª–µ–ø–æ—Ä—Ç–∏—Ä—É–µ–º—ã–π)
+definesound SWITCH_ON                    voc/switch.voc        0   0   2   0   0                //      –í—ã–∫–ª—é—á–∞—Ç–µ–ª—å ( default )
+definesound HEALTH                            voc/health.voc        0   0   255    4   0           //     –ü–æ–ª—É—á–µ–Ω–∏–µ –∂–∏–∑–Ω–∏ –∏–ª–∏ –∑–∞—â–∏—Ç—ã
+definesound SHRINKER_HIT                voc/naphit.voc        0   0   3    0   0                //      –ü–æ–ø–∞–¥–∞–Ω–∏–µ –∏–∑ –Ω–∞–ø–∞–ª–º–∞
+
+//   –ê–ö–¢–ï–†–´
+
+definesound KAMORA                         voc/kamora.voc       0    0   3   0    0              //     –ú–∞—Å–∫–∞ –∑–º–µ–µ–ø–ª—é–π–∫–∞
+
+definesound SHDWWALK                  voc/shadow.voc       0    0   3   0    0              //      –¢–µ–Ω—å  ( —Ö–æ–¥–∏—Ç - –±—Ä–æ–¥–∏—Ç )
+definesound SHDWATT                    voc/shadow2.voc       0    0   3   0    0              //      –¢–µ–Ω—å –¥–µ—Ä–µ—Ç—Å—è
+definesound MAT                                  voc/noend.voc       0    0   1    2   0              //      –ñ—Ç–æ –µ—â–µ –Ω–µ –≤—Å–µ...
+
+definesound GULLS02                         voc/gulls02.voc      0    0   3   0    0               //      –ü—Ç–∏—á–∫–∞ –ª–µ—Ç–∞–µ—Ç,–∫—Ä–∏—á–∏—Ç...
+definesound BIRD01                               voc/kakun.voc      0    0   3    0    0             //       –ü—Ç–∏—á–∫–∞ –∫–∞–∫—É–Ω
+definesound LADY_SCREAM            voc/FSCRM10.voc    -256   0 254   8   0           //       –ü—Ç–∏—á–∫–∏–Ω –∫—Ä–∏–∫
+
+definesound ORIENTAL              voc/sultan.voc          0     0   3    0    0                     //      –°–∏—Ç–∞—Ä ( —Ñ—Ä–∞–∑–∞ )
+definesound GORGUL                 voc/gorgul.voc         0     0    3    0   0                     //      –ì–æ—Ä–≥—É–ª –∞–∫—Ç–∏–≤–∏—Ä—É–µ—Ç—Å—è
+definesound OST_D                    voc/dancer.voc        0     0    2    0    0                    //       –¢–∞–Ω—Ü–æ–≤—â–∏—Ü–∞  ( –±–æ–Ω–≥–∏ )
+definesound BONGO                   voc/bongo.voc         0     0    0    0    0                    //       –ë–æ–Ω–≥–∞ ( –∫–æ–≤–µ—Ä )
+definesound STRAUS1              voc/straus1.voc         0     0    2    0    0                    //       –°—Ç—Ä–∞—É—Å —Å–µ—Ä–¥–∏—Ç—Å—è
+
+//    –ì–û–õ–û–í–ê–°–¢–ò–ö
+
+definesound HEADER_WALK         voc/hdrwalk.voc                 0   0   3   0   0          //     –ø–µ—Ä–µ–¥–≤–∏–∂–µ–Ω–∏–µ

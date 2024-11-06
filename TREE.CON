@@ -618,7 +618,7 @@ define GET_ACCESS       6
 define GET_MEDICINE     9
 define GET_BLUEPOISON       10
 
-// áÇìäà
+// –ó–í–£–ö–ò
 
 define KICK_HIT                                  0
 define PISTOL_RICOCHET                  1
@@ -632,7 +632,7 @@ define POOLBALLHIT                          8
 define RPG_EXPLODE                  9
 define CAT_FIRE                                 10
 define SHRINKER_FIRE                      11
-define VIRTUAL                                   12         //  Å•·™Æ≠•Á≠Î© ØÆ´•‚
+define VIRTUAL                                   12         //  –ë–µ—Å–∫–æ–Ω–µ—á–Ω—ã–π –ø–æ–ª–µ—Ç
 define PIPEBOMB_BOUNCE              13
 define PIPEBOMB_EXPLODE             14
 define LASERTRIP_ONWALL              15
@@ -647,16 +647,16 @@ define HERO_BREATHING                   23
 define HERO_EXHALING                      24
 define HERO_GASP                              25
 define SLIM_RECOG                             26
-define BIGHART                                    27              //    ç®ß™Æ• °„Â†≠Ï•(( Æ™‡„¶•≠®• )
-define SIMPLY                                      28              //    ä†Ø†ÓÈ†Ô ¢Æ§† ( ß†Ê®™´•≠†Ô )
+define BIGHART                                    27              //    –ù–∏–∑–∫–æ–µ –±—É—Ö–∞–Ω—å–µ(( –æ–∫—Ä—É–∂–µ–Ω–∏–µ )
+define SIMPLY                                      28              //    –ö–∞–ø–∞—é—â–∞—è –≤–æ–¥–∞ ( –∑–∞—Ü–∏–∫–ª–µ–Ω–∞—è )
 define ENDSEQVOL3SND2                   29
-define ENDSEQVOL3SND3                   30             //    ã®™„ÓÈ†Ô ‚Æ´Ø†
-define HEADER_WALK                          31             //    ÉéãéÇÄëíàä  ( Ø•‡•§¢®¶•≠®• )
-define SUPER2                                      32             //   é ™•© ,·„Ø•‡¨•≠ !  ( ÆØ•‡†‚Æ‡ )
+define ENDSEQVOL3SND3                   30             //    –õ–∏–∫—É—é—â–∞—è —Ç–æ–ª–ø–∞
+define HEADER_WALK                          31             //    –ì–û–õ–û–í–ê–°–¢–ò–ö  ( –ø–µ—Ä–µ–¥–≤–∏–∂–µ–Ω–∏–µ )
+define SUPER2                                      32             //   –û –∫–µ–π ,—Å—É–ø–µ—Ä–º–µ–Ω !  ( –æ–ø–µ—Ä–∞—Ç–æ—Ä )
 define HERO_CRACK                             33
 define SLIM_ATTACK                             34
 define SOMETHINGHITFORCE              35
-define NOTSOME                                   36        //   ç• „£†§†´ ( ™Æ¨•≠‚†‡®© )
+define NOTSOME                                   36        //   –ù–µ —É–≥–∞–¥–∞–ª ( –∫–æ–º–µ–Ω—Ç–∞—Ä–∏–π )
 define HERO_KILLED1                          37
 define HERO_GRUNT                            38
 define HERO_HARTBEAT                      39
@@ -664,30 +664,30 @@ define HERO_ONWATER                       40
 define HERO_DEAD                               41
 define HERO_LAND                               42
 define HERO_WALKINDUCTS               43
-define DEVIL2                                        44          //  ë¨•Â ≠•ß§Æ‡Æ¢Î© ( Ø„£†´™† ß†Ê®™´•≠≠†Ô )
+define DEVIL2                                        44          //  –°–º–µ—Ö –Ω–µ–∑–¥–æ—Ä–æ–≤—ã–π ( –ø—É–≥–∞–ª–∫–∞ –∑–∞—Ü–∏–∫–ª–µ–Ω–Ω–∞—è )
 define HERO_YES                                 45
-define SHORTING                                  46          //  äÆ‡Æ‚™Æ• ß†¨Î™†≠®• ( Æ™‡„¶•≠®• )
-define STEPONGLASS                           47          //  ïÆ¶§•≠®• ØÆ ·‚•™´†¨
+define SHORTING                                  46          //  –ö–æ—Ä–æ—Ç–∫–æ–µ –∑–∞–º—ã–∫–∞–Ω–∏–µ ( –æ–∫—Ä—É–∂–µ–Ω–∏–µ )
+define STEPONGLASS                           47          //  –•–æ–∂–¥–µ–Ω–∏–µ –ø–æ —Å—Ç–µ–∫–ª–∞–º
 define HERO_UNDERWATER                48
-define NOTFOR                                      49                    //        ä†°®≠† ß†≠Ô‚†  ( ÆØ•‡†‚Æ‡ )
-define HMANSONG                                 50                    //       Ä™‚®¢†Ê®Ô ( Ø†´†Á ØÆ•‚ )
-define HMANSTEP                                  51                    //       è†´†Á Ë†£†•‚
-define DANGOR                                      52                    //        é·‚Æ‡Æ¶≠Æ £Æ‡£„´  ( ÆØ•‡†‚Æ‡ )
-define NOTROUGH                                 53                    //        á§•·Ï ≠• Ø‡Æ´•ß‚Ï ( ÆØ•‡†‚Æ‡ )
-define KEROSENE                                  54                    //        ä•‡Æ·®≠
-define TOSEE                                          55                   //        í•°Ô ß†·•™´® ( ÆØ•‡†‚Æ‡ )
-define HMANPAIN                                    56                  //        ™Æ‡Æ‚™®© ·_¨•ËÆ™  ( Ø†´†Á )
-define OPONLINE                                    57                   //       éØ•‡†‚Æ‡ ≠† ·¢Ôß®
-define LETSGO                                        58                   //       ç„, §†¢†© •È• ≠•¨≠Æ¶™Æ ( ÆØ•‡†‚Æ‡ )
-define FORSPIDER                                  59                   //      í®ÂÆ,ß§•·Ï ™‚Æ ‚Æ •·‚Ï  ( ÆØ•‡†‚Æ‡ )
-define EXIT                                              60                   //       Ñ´Ô ¢ÎÂÆ§† ESC ( ÆØ•‡†‚Æ‡ )
+define NOTFOR                                      49                    //        –ö–∞–±–∏–Ω–∞ –∑–∞–Ω—è—Ç–∞  ( –æ–ø–µ—Ä–∞—Ç–æ—Ä )
+define HMANSONG                                 50                    //       –ê–∫—Ç–∏–≤–∞—Ü–∏—è ( –ø–∞–ª–∞—á –ø–æ–µ—Ç )
+define HMANSTEP                                  51                    //       –ü–∞–ª–∞—á —à–∞–≥–∞–µ—Ç
+define DANGOR                                      52                    //        –û—Å—Ç–æ—Ä–æ–∂–Ω–æ –≥–æ—Ä–≥—É–ª  ( –æ–ø–µ—Ä–∞—Ç–æ—Ä )
+define NOTROUGH                                 53                    //        –ó–¥–µ—Å—å –Ω–µ –ø—Ä–æ–ª–µ–∑—Ç—å ( –æ–ø–µ—Ä–∞—Ç–æ—Ä )
+define KEROSENE                                  54                    //        –ö–µ—Ä–æ—Å–∏–Ω
+define TOSEE                                          55                   //        –¢–µ–±—è –∑–∞—Å–µ–∫–ª–∏ ( –æ–ø–µ—Ä–∞—Ç–æ—Ä )
+define HMANPAIN                                    56                  //        –∫–æ—Ä–æ—Ç–∫–∏–π —Å_–º–µ—à–æ–∫  ( –ø–∞–ª–∞—á )
+define OPONLINE                                    57                   //       –û–ø–µ—Ä–∞—Ç–æ—Ä –Ω–∞ —Å–≤—è–∑–∏
+define LETSGO                                        58                   //       –ù—É, –¥–∞–≤–∞–π –µ—â–µ –Ω–µ–º–Ω–æ–∂–∫–æ ( –æ–ø–µ—Ä–∞—Ç–æ—Ä )
+define FORSPIDER                                  59                   //      –¢–∏—Ö–æ,–∑–¥–µ—Å—å –∫—Ç–æ —Ç–æ –µ—Å—Ç—å  ( –æ–ø–µ—Ä–∞—Ç–æ—Ä )
+define EXIT                                              60                   //       –î–ª—è –≤—ã—Ö–æ–¥–∞ ESC ( –æ–ø–µ—Ä–∞—Ç–æ—Ä )
 define LIZARD_BEG                                61
-define AGENT01                                      62                    //       Ä£•≠·‚¢Æ ≠†Ë´Æ ¢Æß¨Æ¶≠Æ·‚Ï ØÆ¨ÆÁÏ ( †£•≠‚ )
+define AGENT01                                      62                    //       –ê–≥–µ–Ω—Å—Ç–≤–æ –Ω–∞—à–ª–æ –≤–æ–∑–º–æ–∂–Ω–æ—Å—Ç—å –ø–æ–º–æ—á—å ( –∞–≥–µ–Ω—Ç )
 define LIZARD_DEATH                            63
 define LIZARD_SPIT                                64
 define LBALLE1_HISSRATTLE                65
 define LBALLE1_HISSSCREECH             66
-define DENRA                                          67                   //   é·‚Æ‡Æ¶≠Æ ·Ø‡†¢† ( ÆØ•‡†‚Æ‡ )
+define DENRA                                          67                   //   –û—Å—Ç–æ—Ä–æ–∂–Ω–æ —Å–ø—Ä–∞–≤–∞ ( –æ–ø–µ—Ä–∞—Ç–æ—Ä )
 define FLESH_BURNING                         68
 define SQUISHED                                    69
 define TELEPORTER                               70
@@ -695,26 +695,26 @@ define ELEVATOR_ON                             71
 define HERO_KILLED3                            72
 define ELEVATOR_OFF                            73
 define DOOR_OPERATE1                        74
-define AUTOBUS                                      75                   //   Ä¢‚Æ°„·
+define AUTOBUS                                      75                   //   –ê–≤—Ç–æ–±—É—Å
 define SWITCH_ON                                 76
 define FAN                                               77
 define HERO_GETWEAPON3                  78
-define MIND                                             79                    //   Ñ„¨†© ( ÆØ•‡†‚Æ‡ )    ???
-define FLUGER                                        80                    //    î´Ó£•‡
+define MIND                                             79                    //   –î—É–º–∞–π ( –æ–ø–µ—Ä–∞—Ç–æ—Ä )    ???
+define FLUGER                                        80                    //    –§–ª—é–≥–µ—Ä
 define EARTHQUAKE                               81
 define INTRUDER_ALERT                        82
 define END_OF_LEVEL_WARN                83
-define PRESSING                                     84                   //    è‡•··
+define PRESSING                                     84                   //    –ü—Ä–µ—Å—Å
 define AM_HERE                                      85
-define TUNELL                                         86                    //   í„≠•´Ï ¢‡•¨•≠® Æ‚™‡Î¢†•‚·Ô
+define TUNELL                                         86                    //   –¢—É–Ω–µ–ª—å –≤—Ä–µ–º–µ–Ω–∏ –æ—Ç–∫—Ä—ã–≤–∞–µ—Ç—Å—è
 define GEARS_GRINDING                        87
 define BUBBLE_AMBIENCE                    88
-define CRESCENDO                                 89                    //  ä‡•È•≠§Æ ( ‚†‡•´™† ØÆ ≠†‡†·‚†ÓÈ•© )
+define CRESCENDO                                 89                    //  –ö—Ä–µ—â–µ–Ω–¥–æ ( —Ç–∞—Ä–µ–ª–∫–∞ –ø–æ –Ω–∞—Ä–∞—Å—Ç–∞—é—â–µ–π )
 define SEWER_AMBIENCE                      90
-define PRESSS                                         91                    //   éØ„·™†ÓÈ®©·Ô ØÆ‚Æ´Æ™
+define PRESSS                                         91                    //   –û–ø—É—Å–∫–∞—é—â–∏–π—Å—è –ø–æ—Ç–æ–ª–æ–∫
 define SOMETHING_DRIPPING                92
 define STEAM_HISSING                            93
-define BATSOUND                                     94                    //    ã•‚„Á†Ô ¨ÎË†
+define BATSOUND                                     94                    //    –õ–µ—Ç—É—á–∞—è –º—ã—à–∞
 define THE_FLY                                        95
 define WIZ1_ROAM                                   96
 define WIZ1_RECOG                                 97
@@ -749,7 +749,7 @@ define RECO_ROAM                                  125
 define RECO_RECOG                                126
 define RECO_ATTACK                                127
 define RECO_PAIN                                     128
-define BIRD01                                            129                //    è‚®Ê† ™†™„Á†Ô
+define BIRD01                                            129                //    –ü—Ç–∏—Ü–∞ –∫–∞–∫—É—á–∞—è
 define LBALL_ROAM                                  130
 define LBALL_RECOG                                131
 define LBALL_ATTACK1                              132
@@ -760,14 +760,14 @@ define COMM_RECOG                                136
 define COMM_ATTACK                               137
 define COMM_PAIN                                    138
 define COMM_DYING                                 139
-define AXEINFLY                                        140         //   íÆØÆ‡ ¢ ØÆ´•‚•
-define AXEINBODY                                     141        //    èÆØ†§†≠®• ‚ÆØÆ‡† ¢ £•‡ÆÔ
-define AXEINWALL                                     142         //   èÆØ†§†≠®• ‚ÆØÆ‡† ¢ ·‚•≠„
+define AXEINFLY                                        140         //   –¢–æ–ø–æ—Ä –≤ –ø–æ–ª–µ—Ç–µ
+define AXEINBODY                                     141        //    –ü–æ–ø–∞–¥–∞–Ω–∏–µ —Ç–æ–ø–æ—Ä–∞ –≤ –≥–µ—Ä–æ—è
+define AXEINWALL                                     142         //   –ü–æ–ø–∞–¥–∞–Ω–∏–µ —Ç–æ–ø–æ—Ä–∞ –≤ —Å—Ç–µ–Ω—É
 define OCTA_PAIN                                      143
 define OCTA_DYING                                   144
 define CAPT_ROAM2                                  145
-define HERORUN                                       146          //   á¢„™ Ë†£Æ¢ Ø‡® °•£•
-define NOSEE                                             147          //    ç• ¢®¶„ ‚•°Ô ( ÆØ•‡†‚Æ‡ )
+define HERORUN                                       146          //   –ó–≤—É–∫ —à–∞–≥–æ–≤ –ø—Ä–∏ –±–µ–≥–µ
+define NOSEE                                             147          //    –ù–µ –≤–∏–∂—É —Ç–µ–±—è ( –æ–ø–µ—Ä–∞—Ç–æ—Ä )
 define SAMA_WALK                                    148
 define SLIM_DYING                                    149
 define SAMA_ROAM                                    150
@@ -781,48 +781,48 @@ define LBALL_ATTACK2                              157
 define THUD                                                158
 define OCTA_ATTACK2                                159
 define WIERDSHOT_FLY                            160
-define TURNDOOR                                      161             //    Ñ¢•‡Ï ØÆ¢Æ‡Æ‚≠†Ô
-define TAPLAP                                             162             //     Ç´ÔØ†´·Ô ØÆ ™‡„Ø≠Æ¨„ ( ÆØ•‡†‚Æ‡ )
+define TURNDOOR                                      161             //    –î–≤–µ—Ä—å –ø–æ–≤–æ—Ä–æ—Ç–Ω–∞—è
+define TAPLAP                                             162             //     –í–ª—è–ø–∞–ª—Å—è –ø–æ –∫—Ä—É–ø–Ω–æ–º—É ( –æ–ø–µ—Ä–∞—Ç–æ—Ä )
 define SLIM_ROAM                                     163
 define LADY_SCREAM                                164
-define ENIGMA                                            165             //    á†£†§ÆÁ≠Æ• §•©·‚¢®•  ( ™‡†‚™Æ )
-define OLDLIFT                                           166             //    ê¶†¢Î© ØÆ§Í•¨≠®™
-define SKY_TH                                            167             //    É‡Æ¨ ≠•°•·≠Î©
-define BHAHA2                                            168             //     Å•· Ø‡®™†´Î¢†•‚·Ô
+define ENIGMA                                            165             //    –ó–∞–≥–∞–¥–æ—á–Ω–æ–µ –¥–µ–π—Å—Ç–≤–∏–µ  ( –∫—Ä–∞—Ç–∫–æ )
+define OLDLIFT                                           166             //    –†–∂–∞–≤—ã–π –ø–æ–¥—ä–µ–º–Ω–∏–∫
+define SKY_TH                                            167             //    –ì—Ä–æ–º –Ω–µ–±–µ—Å–Ω—ã–π
+define BHAHA2                                            168             //     –ë–µ—Å –ø—Ä–∏–∫–∞–ª—ã–≤–∞–µ—Ç—Å—è
 define SHOTGUN_COCK                             169
 define PRESSURI                                        170
-define DIAFRA                                              171              //   Ñ¢•‡Ï §®†‰‡†£¨†
+define DIAFRA                                              171              //   –î–≤–µ—Ä—å –¥–∏–∞—Ñ—Ä–∞–≥–º–∞
 define GENERIC_AMBIENCE3                     172
 define GENERIC_AMBIENCE4                     173
 define MYSTIFIE                                          174
-define WOLF                                                175              //  ÇÆ´™ ( ß¢„™ Æ™‡„¶†ÓÈ®© )
+define WOLF                                                175              //  –í–æ–ª–∫ ( –∑–≤—É–∫ –æ–∫—Ä—É–∂–∞—é—â–∏–π )
 define SAMA_ATTACK2                                176
 define HEALTH                                             177
 define STRAUS1                                           178
 define POISON                                             179
 define CASH                                                 180
 define L_CREAK                                           181
-define BOGDOOR                                         182             //   ë™Æ´ÏßÔÈ†Ô ‡¶†¢†Ô §¢•‡Ï
+define BOGDOOR                                         182             //   –°–∫–æ–ª—å–∑—è—â–∞—è —Ä–∂–∞–≤–∞—è –¥–≤–µ—Ä—å
 define DEVIL                                                 183
 define PROBLEM2                                        184
 define OFFICE1                                             185
 define AMBIENCE10                                     186
 define OFFICE2                                             187
 define MODERN                                           188
-define AGAIN                                                189              //  åÔ·Æ2
+define AGAIN                                                189              //  –ú—è—Å–æ2
 define BIGMETOP                                        190
 define GULLS02                                           191
 define STEEL                                                192
 define CHOISING                                          193
-define FIRE_CRACKLE                                 194              //   ÅÆ´ÏËÆ© Æ£Æ≠Ï
-define SUCCESS                                          195              //     Ü•´†•¨ „·Ø•Â† ( †£•≠‚ )
-define SUCCESS2                                        196              //     Ü•´†•¨ „·Ø•Â† ( †£•≠‚ )
-define AGENT02                                           197              //     Ü•´†•¨ „·Ø•Â† ( †£•≠‚ )
+define FIRE_CRACKLE                                 194              //   –ë–æ–ª—å—à–æ–π –æ–≥–æ–Ω—å
+define SUCCESS                                          195              //     –ñ–µ–ª–∞–µ–º —É—Å–ø–µ—Ö–∞ ( –∞–≥–µ–Ω—Ç )
+define SUCCESS2                                        196              //     –ñ–µ–ª–∞–µ–º —É—Å–ø–µ—Ö–∞ ( –∞–≥–µ–Ω—Ç )
+define AGENT02                                           197              //     –ñ–µ–ª–∞–µ–º —É—Å–ø–µ—Ö–∞ ( –∞–≥–µ–Ω—Ç )
 define SKEL_CAPTURE_HERO                    198
-define LEVELSND                                             199              //     á¢„™ Ø‡® Ø•‡•ß†£‡„ß™• „‡Æ¢≠Ô
+define LEVELSND                                             199              //     –ó–≤—É–∫ –ø—Ä–∏ –ø–µ—Ä–µ–∑–∞–≥—Ä—É–∑–∫–µ —É—Ä–æ–≤–Ω—è
 define HERO_LAND_HURT                          200
 define HERO_HIT_STRIPPER1                    201
-define COWARD                                           202               //    ç„ ™†™ Ø‡Æ£„´™†  ( ÆØ•‡†‚Æ‡ )
+define COWARD                                           202               //    –ù—É –∫–∞–∫ –ø—Ä–æ–≥—É–ª–∫–∞  ( –æ–ø–µ—Ä–∞—Ç–æ—Ä )
 define HERO_KILLED2                                 203
 define PRED_ROAM2                                   204
 define SKEL_ROAM2                                    205
@@ -837,52 +837,52 @@ define NITEVISION_ONOFF                           213
 define HERO_HIT_STRIPPER2                     214
 define HERO_CRACK_FIRST                         215
 define HERO_USEMEDKIT                            216
-define SILENCE                                             217                  //     ë´®Ë™Æ¨ ‚®ÂÆ ( ÆØ•‡†‚Æ‡ )
-define KEYDOOR                                          218                  //    Ñ¢•Ï Æ‚™‡Î¢†•¨†Ô ™´ÓÁ•¨
+define SILENCE                                             217                  //     –°–ª–∏—à–∫–æ–º —Ç–∏—Ö–æ ( –æ–ø–µ—Ä–∞—Ç–æ—Ä )
+define KEYDOOR                                          218                  //    –î–≤–µ—å –æ—Ç–∫—Ä—ã–≤–∞–µ–º–∞—è –∫–ª—é—á–µ–º
 define SELECT_WEAPON                             219
 define WATER_GURGLE                               220
 define HERO_GETWEAPON4                        221
-define GARDIN                                              222                   //     £†‡§®≠†
+define GARDIN                                              222                   //     –≥–∞—Ä–¥–∏–Ω–∞
 define JIBBED_ACTOR2                                223
 define JIBBED_ACTOR3                                224
 define JIBBED_ACTOR4                                225
-define SUPERLEVEL                                      226                   //    4 „‡Æ¢•≠Ï  - Ä¨°†
-define SUCCESS3                                          227                   //    Ü•´†•¨ „·Ø•Â†  ( 1 „‡Æ¢•≠Ï )
+define SUPERLEVEL                                      226                   //    4 —É—Ä–æ–≤–µ–Ω—å  - –ê–º–±–∞
+define SUCCESS3                                          227                   //    –ñ–µ–ª–∞–µ–º —É—Å–ø–µ—Ö–∞  ( 1 —É—Ä–æ–≤–µ–Ω—å )
 define JIBBED_ACTOR7                                 228
 define HERO_GOTHEALTHATLOW                 229
-define ARIA                                                      230                 //     Ä‡®Ô ,, åÔ·Æ ,, · †Ø´Æ§®·¨•≠‚†¨®
+define ARIA                                                      230                 //     –ê—Ä–∏—è ,, –ú—è—Å–æ ,, —Å –∞–ø–ª–æ–¥–∏—Å–º–µ–Ω—Ç–∞–º–∏
 define BONES03                                              231
-define  MER_BOMBFLY                                  232                 //     ã•‚†ÓÈ†Ô °Æ¨°† å•‡™„‡®¨†≠†
+define  MER_BOMBFLY                                  232                 //     –õ–µ—Ç–∞—é—â–∞—è –±–æ–º–±–∞ –ú–µ—Ä–∫—É—Ä–∏–º–∞–Ω–∞
 define OST_D                                                  233
-define CARDINAL                                             234                 //     Ö• ÇÎ·ÆÁ•·‚¢Æ ( ™´†¢•·®≠ ™†‡§®≠†´† )
+define CARDINAL                                             234                 //     –ï–µ –í—ã—Å–æ—á–µ—Å—Ç–≤–æ ( –∫–ª–∞–≤–µ—Å–∏–Ω –∫–∞—Ä–¥–∏–Ω–∞–ª–∞ )
 define DINNER                                                235
-define SANDSOUND                                        236                  //    è•‡•·ÎØ†ÓÈ®©·Ô Ø•·Æ™
-define FIRE_F                                                  237                 //    é£Æ≠Ï  ( ™Æ´Æ≠≠Î ¢ è®‡†¨®§• )
-define REMEMBER                                         238                  //    Ñ®™‚Æ‡
-define RATTLE                                                239                   //   É‡•¨„Á†Ô ß¨•Ô ( ØÆ£‡•¨„Ë™† )
-define NOWAY                                               240                    //   Ñ†´ÏË• §Æ‡Æ£® ≠•‚
-define HOOFS                                                241                    //    ™ÆØÎ‚†
-define SHUTTLEAMB                                     242                    //    £„§•´™† Ø•™•´Ï≠†Ô
+define SANDSOUND                                        236                  //    –ü–µ—Ä–µ—Å—ã–ø–∞—é—â–∏–π—Å—è –ø–µ—Å–æ–∫
+define FIRE_F                                                  237                 //    –û–≥–æ–Ω—å  ( –∫–æ–ª–æ–Ω–Ω—ã –≤ –ü–∏—Ä–∞–º–∏–¥–µ )
+define REMEMBER                                         238                  //    –î–∏–∫—Ç–æ—Ä
+define RATTLE                                                239                   //   –ì—Ä–µ–º—É—á–∞—è –∑–º–µ—è ( –ø–æ–≥—Ä–µ–º—É—à–∫–∞ )
+define NOWAY                                               240                    //   –î–∞–ª—å—à–µ –¥–æ—Ä–æ–≥–∏ –Ω–µ—Ç
+define HOOFS                                                241                    //    –∫–æ–ø—ã—Ç–∞
+define SHUTTLEAMB                                     242                    //    –≥—É–¥–µ–ª–∫–∞ –ø–µ–∫–µ–ª—å–Ω–∞—è
 define EXITMENUSOUND                              243
 define FLY_BY                                              244
 define HERO_SCREAM                                  245
 define SHRINKER_HIT                                   246
-define RATTY                                                  247                    //   ä‡Î·™® ØÆ°•¶†´®
+define RATTY                                                  247                    //   –ö—Ä—ã—Å–∫–∏ –ø–æ–±–µ–∂–∞–ª–∏
 define INTO_MENU                                        248
-define BONUSMUSIC                                     249                    //   å„ßÎ™† ¨•¶§„ „‡Æ¢≠Ô¨®
-define RING                                                    250                    //   äÆ´Æ™Æ´ÏÁ®™ ( ·‚ÆØ §´Ô ENIGMA )
-define CSTL_P                                                251                    //   Ñ¢®£†ÓÈ†Ô·Ô ‡•Ë•‚™†
-define HMANATTACK                                      252                    //   Ä‚†™† Ø†´†Á† ( ‡†°Æ‚† )
+define BONUSMUSIC                                     249                    //   –ú—É–∑—ã–∫–∞ –º–µ–∂–¥—É —É—Ä–æ–≤–Ω—è–º–∏
+define RING                                                    250                    //   –ö–æ–ª–æ–∫–æ–ª—å—á–∏–∫ ( —Å—Ç–æ–ø –¥–ª—è ENIGMA )
+define CSTL_P                                                251                    //   –î–≤–∏–≥–∞—é—â–∞—è—Å—è —Ä–µ—à–µ—Ç–∫–∞
+define HMANATTACK                                      252                    //   –ê—Ç–∞–∫–∞ –ø–∞–ª–∞—á–∞ ( —Ä–∞–±–æ—Ç–∞ )
 define SKEL_ROAM3                                     253
 define ORIENTAL                                           254
 define LBALL_JETSND                                  255
-define TOWERFLAG                                       256                    //  Å†Ë•≠≠Î© ‰´†£
-define HOWOUT                                             257                    //  è•¢Á†Ô Ø‚®Ê†
-define BRIDGE                                               258                    //    èÆ§Í•¨≠Î© ¨Æ·‚
-define OPERATORS4                                      259                    //   ò„¨•´™† ÆØ•‡†‚Æ‡·™†Ô
-define DOORPSS                                            260                    //    èÆ¨ØÆ¢†Ô §¢•Ï
-define OPERATORS                                        261                    //   Å®™®-¶¨Ô™® ™ÆØÏÓ‚•‡≠Î•
-define T_FAN                                                  262                     //    Ç•≠‚®´Ô‚Æ‡
+define TOWERFLAG                                       256                    //  –ë–∞—à–µ–Ω–Ω—ã–π —Ñ–ª–∞–≥
+define HOWOUT                                             257                    //  –ü–µ–≤—á–∞—è –ø—Ç–∏—Ü–∞
+define BRIDGE                                               258                    //    –ü–æ–¥—ä–µ–º–Ω—ã–π –º–æ—Å—Ç
+define OPERATORS4                                      259                    //   –®—É–º–µ–ª–∫–∞ –æ–ø–µ—Ä–∞—Ç–æ—Ä—Å–∫–∞—è
+define DOORPSS                                            260                    //    –ü–æ–º–ø–æ–≤–∞—è –¥–≤–µ—å
+define OPERATORS                                        261                    //   –ë–∏–∫–∏-–∂–º—è–∫–∏ –∫–æ–ø—å—é—Ç–µ—Ä–Ω—ã–µ
+define T_FAN                                                  262                     //    –í–µ–Ω—Ç–∏–ª—è—Ç–æ—Ä
 define JIBBED_ACTOR13                               263
 define HERO_GETWEAPON6                         264
 define JIBBED_ACTOR8                                 265
@@ -892,23 +892,23 @@ define JIBBED_ACTOR11                               268
 define JIBBED_ACTOR12                               269
 define HERO_KILLED4                                   270
 define HERO_KILLED5                                   271
-define PREZIDENT                                         272                     //      Ø‡•ß®§•≠‚
+define PREZIDENT                                         272                     //      –ø—Ä–µ–∑–∏–¥–µ–Ω—Ç
 define HERO_STEPONFECES                         273
 define HERO_LONGTERM_PAIN2                   274
 define HERO_LONGTERM_PAIN3                   275
 define HERO_LONGTERM_PAIN4                   276
 define COMPANB2                                          277
 define KTIT                                                      278
-define HEROWALK                                          279                //   á¢„™ Ë†£Æ¢
+define HEROWALK                                          279                //   –ó–≤—É–∫ —à–∞–≥–æ–≤
 define STEPNIT                                               280
-define SULTAN                                                281                //   ÉÆ≠£
-define BONGO                                                 282                //   ÅÆ≠£Æ (  ¨„ß.®≠·‚‡. )
+define SULTAN                                                281                //   –ì–æ–Ω–≥
+define BONGO                                                 282                //   –ë–æ–Ω–≥–æ (  –º—É–∑.–∏–Ω—Å—Ç—Ä. )
 define SLIM_HATCH                                        283
 define RIPHEADNECK                                     284
-define MAGICRYSTALL                                   285                //  å†£®Á•·™®© ™‡®·‚†´
-define OPERATORS2                                      286                //  É„§•´™† ™Æ¨ØÏÓ‚•‡≠†Ô
-define OPERATORS3                                      287                //  ÅÆ´‚†´™† ÆØ•‡†‚Æ‡·™†Ô
-define SHUTTLE                                             288                //   òÄíã
+define MAGICRYSTALL                                   285                //  –ú–∞–≥–∏—á–µ—Å–∫–∏–π –∫—Ä–∏—Å—Ç–∞–ª
+define OPERATORS2                                      286                //  –ì—É–¥–µ–ª–∫–∞ –∫–æ–º–ø—å—é—Ç–µ—Ä–Ω–∞—è
+define OPERATORS3                                      287                //  –ë–æ–ª—Ç–∞–ª–∫–∞ –æ–ø–µ—Ä–∞—Ç–æ—Ä—Å–∫–∞—è
+define SHUTTLE                                             288                //   –®–ê–¢–õ
 define ENDSEQVOL3SND5                             289
 define ENDSEQVOL3SND6                             290
 define ENDSEQVOL3SND7                             291
@@ -922,41 +922,41 @@ define ENDSEQVOL2SND4                             298
 define ENDSEQVOL2SND5                             299
 define ENDSEQVOL2SND6                             300
 define ENDSEQVOL2SND7                             301
-define GORGUL                                               302            //  ÉÆ‡£„´ †™‚®¢®‡„•‚·Ô
+define GORGUL                                               302            //  –ì–æ—Ä–≥—É–ª –∞–∫—Ç–∏–≤–∏—Ä—É–µ—Ç—Å—è
 define SOMETHINGFROZE                              303
 define HERO_LONGTERM_PAIN5                   304
 define HERO_LONGTERM_PAIN6                   305
 define HERO_LONGTERM_PAIN7                   306
 define HERO_LONGTERM_PAIN8                   307
-define KLAVA                                                    308             //   åÆ≠Æ´Æ£ „°Æ‡È®ÊÎ
-define MAT                                                       309             //   ù‚Æ •È• ≠• ¢·•... ( ‚•≠Ï )
+define KLAVA                                                    308             //   –ú–æ–Ω–æ–ª–æ–≥ —É–±–æ—Ä—â–∏—Ü—ã
+define MAT                                                       309             //   –≠—Ç–æ –µ—â–µ –Ω–µ –≤—Å–µ... ( —Ç–µ–Ω—å )
 define SLADE                                                   310
-define KAMORA                                                311              //    å†·™† ß¨••Ø´Ó©™†
-define METDOOR                                             312              //   è†§†ÓÈ†Ô ‡•Ë•‚™†
-define BOMBSPAWN                                       313              //  Ç‡†È†ÓÈ†Ô·Ô ¨®≠† ( ØÆ‡Æ¶§†•¨†Ô )
-define SHARKSOUND                                      314               //   Ä™„´†
-define OFNOISE                                               315               //    é‰®·≠Î© Ë„¨
-define WATCIRC                                               316              //   ãÏÓÈ†Ô·Ô ¢Æ§† ( Æ°ÎÁ≠Æ )
+define KAMORA                                                311              //    –ú–∞—Å–∫–∞ –∑–º–µ–µ–ø–ª—é–π–∫–∞
+define METDOOR                                             312              //   –ü–∞–¥–∞—é—â–∞—è —Ä–µ—à–µ—Ç–∫–∞
+define BOMBSPAWN                                       313              //  –í—Ä–∞—â–∞—é—â–∞—è—Å—è –º–∏–Ω–∞ ( –ø–æ—Ä–æ–∂–¥–∞–µ–º–∞—è )
+define SHARKSOUND                                      314               //   –ê–∫—É–ª–∞
+define OFNOISE                                               315               //    –û—Ñ–∏—Å–Ω—ã–π —à—É–º
+define WATCIRC                                               316              //   –õ—å—é—â–∞—è—Å—è –≤–æ–¥–∞ ( –æ–±—ã—á–Ω–æ )
 define TIME                                                      317
-define SOFTLAP                                               318             //   ÇÆ§† - Ø´•·™
-define OIL2                                                       319             //   é£Æ≠Ï  ( ≠•°Æ´ÏËÆ© )
-define ZEFIR                                                     320            //   ã•£™®© ¢•‚•‡
-define FLYBAT                                                  321            //   ò•´•·‚ ™Æ¶†≠≠ÎÂ ™‡Î´Ï•¢
-define SHDWWALK                                           322            //   í•≠Ï ( ÂÆ§®‚ - °‡Æ§®‚ )
+define SOFTLAP                                               318             //   –í–æ–¥–∞ - –ø–ª–µ—Å–∫
+define OIL2                                                       319             //   –û–≥–æ–Ω—å  ( –Ω–µ–±–æ–ª—å—à–æ–π )
+define ZEFIR                                                     320            //   –õ–µ–≥–∫–∏–π –≤–µ—Ç–µ—Ä
+define FLYBAT                                                  321            //   –®–µ–ª–µ—Å—Ç –∫–æ–∂–∞–Ω–Ω—ã—Ö –∫—Ä—ã–ª—å–µ–≤
+define SHDWWALK                                           322            //   –¢–µ–Ω—å ( —Ö–æ–¥–∏—Ç - –±—Ä–æ–¥–∏—Ç )
 define THUNDER                                               323
-define CANE00                                                   324           //   ÅÆ´Æ‚≠Î• ·‚‡•™Æ‚†´™®
-define DUCK                                                      325            //   ä‡Ô™†´™†
-define BOG_P                                                    326           //   ÅÆ´Æ‚Æ · Ø´ÓÂÆ¨
+define CANE00                                                   324           //   –ë–æ–ª–æ—Ç–Ω—ã–µ —Å—Ç—Ä–µ–∫–æ—Ç–∞–ª–∫–∏
+define DUCK                                                      325            //   –ö—Ä—è–∫–∞–ª–∫–∞
+define BOG_P                                                    326           //   –ë–æ–ª–æ—Ç–æ —Å –ø–ª—é—Ö–æ–º
 define BUBBY                                                   327
 define WIND_H                                                 328
-define LONGBEL                                               329            //   äÆ´Æ™Æ´
-define SQUEAKY                                               330            //   ä†¨•≠≠Î© ·‚ÆØ
+define LONGBEL                                               329            //   –ö–æ–ª–æ–∫–æ–ª
+define SQUEAKY                                               330            //   –ö–∞–º–µ–Ω–Ω—ã–π —Å—Ç–æ–ø
 define ST_MACH                                               331
-define UFO_STOP                                             332           //   çãé - ë‚ÆØ
-define UFO_PLAY                                             333           //   çãé - èÆ´•‚
+define UFO_STOP                                             332           //   –ù–õ–û - –°—Ç–æ–ø
+define UFO_PLAY                                             333           //   –ù–õ–û - –ü–æ–ª–µ—Ç
 define SH_DOOR                                              334
-define OLD_MASH                                            335            //  Ñ‡•¢≠®© ¨•Â†≠®ß¨ ( °Æ´ÏË†Ô §¢•‡Ï ß†¨™† )
-define SKAVEN                                                  336           //   á≠†‚≠Î© Ë®Ø„≠ ( ·‚ÆØ °Æ´ÏËÆ© ß†¨™Æ¢Æ© §¢•‡® )
-define PUTSH                                                    337           //   ìØ†¢Ë†Ô £®´Ïß†
-define CSTL_S                                                   338           //   ë‚ÆØ §´Ô ‡†ß≠ÎÂ ¶•´•ßÔ™ ( §¢•‡•© ® ‚.§. )
-define SPIDER                                                   339           //   è†„™® ( Â‡„·Ï - Â‡„·Ï )
+define OLD_MASH                                            335            //  –î—Ä–µ–≤–Ω–∏–π –º–µ—Ö–∞–Ω–∏–∑–º ( –±–æ–ª—å—à–∞—è –¥–≤–µ—Ä—å –∑–∞–º–∫–∞ )
+define SKAVEN                                                  336           //   –ó–Ω–∞—Ç–Ω—ã–π —à–∏–ø—É–Ω ( —Å—Ç–æ–ø –±–æ–ª—å—à–æ–π –∑–∞–º–∫–æ–≤–æ–π –¥–≤–µ—Ä–∏ )
+define PUTSH                                                    337           //   –£–ø–∞–≤—à–∞—è –≥–∏–ª—å–∑–∞
+define CSTL_S                                                   338           //   –°—Ç–æ–ø –¥–ª—è —Ä–∞–∑–Ω—ã—Ö –∂–µ–ª–µ–∑—è–∫ ( –¥–≤–µ—Ä–µ–π –∏ —Ç.–¥. )
+define SPIDER                                                   339           //   –ü–∞—É–∫–∏ ( —Ö—Ä—É—Å—å - —Ö—Ä—É—Å—å )
