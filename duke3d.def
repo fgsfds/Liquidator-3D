@@ -1,14 +1,3 @@
 music { id "intro" file "MENU.MID" }
 
-// Voxel
-voxel "voxels/0060.KVX"	{ tile 60 scale 5 rotate } // KEY
-
-// Hi Res tiles
-texture 0040 { pal 0 { file "tiles/0040.png" indexed } }
-texture 0041 { pal 0 { file "tiles/0041.png" indexed } }
-texture 0044 { pal 0 { file "tiles/0044.png" indexed } }
-texture 0046 { pal 0 { file "tiles/0046.png" indexed } }
-texture 0047 { pal 0 { file "tiles/0047.png" indexed } }
-texture 0049 { pal 0 { file "tiles/0049.png" indexed } }
-texture 0054 { pal 0 { file "tiles/0054.png" indexed } }
-texture 0060 { pal 0 { file "tiles/0060.png" indexed } }
+include liquid.def

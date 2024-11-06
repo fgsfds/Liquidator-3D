@@ -4,5 +4,4 @@ tilefromtexture 9220 { file "tiles/9220.png" }
 // Armor
 tilefromtexture 9221 { file "tiles/9221.png" }
 
-// Voxel
-voxel "voxels/0060.KVX"	{ tile 60 scale 6 rotate } // KEY
+include liquid.def
