@@ -94,11 +94,13 @@ Dzierzan (https://twitter.com/Dzierzan23)
 CHANGELOG
 ==========================================================================
 
-Version 1.5 (TBA)
+Version 1.5 (02.10.2025)
 ---------------------------
 + Added voxel key
 + Added original high resolution tiles for pickups
 * Improved shotgun animation
+* Tiles offsets fixes
+* More translated textures
 
 
 Version 1.4 (10.02.2020)

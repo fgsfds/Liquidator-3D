@@ -2,8 +2,7 @@
   "id": "duke3d-liquidator",
   "type": "TC",
   "game": {
-    "name": "Duke3D",
-    "version": "Duke3D_13D"
+    "name": "Duke3D"
   },
   "title": "Liquidator 3D",
   "version": "1.5",
